@@ -250,22 +250,26 @@ h1.long-name {
 }
 
 .watermark {
-  top: 315px;
-  left: 300px;
-  width: 522px;
-  height: 520px;
+  top: 880px;
+  left: 456px;
+  width: 210px;
+  height: 210px;
   object-fit: contain;
-  filter: grayscale(1) sepia(0.25);
+  filter: grayscale(0.25) sepia(0.18) contrast(0.9);
   mix-blend-mode: multiply;
-  opacity: 0.055;
+  opacity: 0.52;
 }
 
 .watermark.tree {
-  left: 250px;
-  width: 622px;
+  top: 275px;
+  left: 180px;
+  width: 762px;
+  height: 450px;
   object-fit: cover;
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 22%, transparent 72%);
-  mask-image: radial-gradient(ellipse at center, #000 22%, transparent 72%);
+  filter: grayscale(0.38) sepia(0.16) brightness(1.16) contrast(0.78);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.12) 78%, transparent);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.12) 78%, transparent);
+  opacity: 0.3;
 }
 
 .back-copy {
@@ -300,18 +304,33 @@ h1.long-name {
 }
 
 .protection-box {
-  padding: 24px 30px 26px;
+  position: relative;
+  padding: 22px 18px 0;
   color: #173c37;
-  background: rgba(231, 239, 231, 0.84);
-  border: 1px solid color-mix(in srgb, var(--accent) 58%, #b58b3e);
-  border-left-width: 6px;
-  text-align: left;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 38%, #b58b3e);
+  text-align: center;
+}
+
+.protection-box::before {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  content: "◆";
+  color: #b58b3e;
+  background: #f2e8d5;
+  font-size: 13px;
+  line-height: 15px;
+  transform: translateX(-50%);
 }
 
 .protection-box strong {
   display: block;
   margin-bottom: 10px;
-  color: color-mix(in srgb, var(--accent) 72%, #1c534c);
+  color: color-mix(in srgb, var(--accent) 58%, #8b692e);
   font-family: Arial, sans-serif;
   font-size: 18px;
   letter-spacing: 0.15em;
@@ -323,6 +342,7 @@ h1.long-name {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 26px;
   line-height: 1.4;
+  text-align: center;
 }
 
 .back .cue {

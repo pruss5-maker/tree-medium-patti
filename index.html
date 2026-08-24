@@ -17,8 +17,8 @@
     <title>KELA — Messages from the Trees with Tree Medium Patti</title>
     <link rel="icon" href="assets/kela-mark.svg" type="image/svg+xml" />
     <link rel="preload" href="assets/kela-tree-hero.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="styles.css?v=20260823-3" />
-    <script src="script.js?v=20260823-3" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260823-4" />
+    <script src="script.js?v=20260823-4" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to the message</a>
@@ -29,25 +29,29 @@
         <small>Messages from the Trees</small>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        data-menu-toggle
-      >
-        <span class="sr-only">Open navigation</span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </button>
+      <div class="header-actions">
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
+          <a href="#meet-kela">Meet Kela</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#reading">The reading</a>
+          <a href="#meet-patti">Meet Patti</a>
+          <a href="#faq">FAQ</a>
+        </nav>
 
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
-        <a href="#meet-kela">Meet Kela</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#reading">The reading</a>
-        <a href="#meet-patti">Meet Patti</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+        <button class="nav-booking" type="button" data-terms-open>Book with Patti</button>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          data-menu-toggle
+        >
+          <span class="sr-only">Open navigation</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
     </header>
 
     <main id="main">
@@ -323,27 +327,16 @@
       <section class="book section" id="book" aria-labelledby="book-title">
         <span class="magnolia-accent magnolia-book" data-magnolia aria-hidden="true"></span>
         <div class="shell book-card">
-          <div>
-            <p class="eyebrow gold">Your invitation</p>
-            <h2 id="book-title">Step out of the noise. Return with a message.</h2>
-            <p>
-              Your personal Tree Message includes Patti’s tree visit, prepared reading, and a
-              private 45-minute live conversation.
-            </p>
-          </div>
-          <div class="book-action">
-            <button
-              class="button button-gold"
-              type="button"
-              data-terms-open
-            >
-              Book Your Tree Message
-            </button>
-            <small>Pricing and payment details are shown before checkout.</small>
-            <a class="book-email" href="mailto:treemedium@proton.me?subject=Question%20about%20Your%20Tree%20Message">
-              Questions? Email Patti
-            </a>
-          </div>
+          <p class="eyebrow gold">Your invitation</p>
+          <h2 id="book-title">Step out of the noise. Return with a message.</h2>
+          <p>
+            Your personal Tree Message includes Patti’s tree visit, prepared reading, and a
+            private 45-minute live conversation. When you feel ready, the “Book with Patti” tab
+            at the top of the page will guide you through the next step.
+          </p>
+          <a class="book-email" href="mailto:treemedium@proton.me?subject=Question%20about%20Your%20Tree%20Message">
+            Questions before booking? Email Patti
+          </a>
         </div>
       </section>
     </main>

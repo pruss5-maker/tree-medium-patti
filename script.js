@@ -26,6 +26,7 @@ const setTermsConsentState = () => {
 
 const openTerms = () => {
   if (!termsModal || !termsDialog || !termsConsent) return;
+  closeMenu();
   termsPreviousFocus = document.activeElement;
   termsConsent.checked = false;
   setTermsConsentState();
@@ -68,8 +69,6 @@ termsContinue?.addEventListener("click", (event) => {
 });
 termsDialog?.addEventListener("keydown", trapTermsFocus);
 
-if (window.location.hash === "#booking-terms") openTerms();
-
 const setHeaderState = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 24);
 };
@@ -81,6 +80,8 @@ const closeMenu = () => {
   const label = menuToggle?.querySelector(".sr-only");
   if (label) label.textContent = "Open navigation";
 };
+
+if (window.location.hash === "#booking-terms") openTerms();
 
 menuToggle?.addEventListener("click", () => {
   const willOpen = menuToggle.getAttribute("aria-expanded") !== "true";

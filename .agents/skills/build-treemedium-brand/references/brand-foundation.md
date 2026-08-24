@@ -39,8 +39,8 @@ allow. The client does not attend the tree visit and does not select a requested
 Keep the `$149` price off the public marketing pages. Reveal it in the booking flow before payment,
 with clear pricing and payment details available before the client commits.
 
-Use only one Stripe booking button on the public website. Place it in the final invitation section
-after visitors have had room to understand the experience.
+Use only one Stripe booking button on the public website. Keep it visible in the fixed top navigation
+as `Book with Patti`; it opens the required policy-consent window before continuing to Stripe.
 
 ## Positioning
 

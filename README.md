@@ -26,6 +26,16 @@ changing the visitor's saved daily draw.
 This is a dependency-free static website. Connect its GitHub repository to Vercel and deploy with
 no build command. The output directory is the project root (`.`).
 
+## Search and social metadata
+
+The production canonical base is currently `https://treemedium.vercel.app`. Canonical links,
+Open Graph URLs, JSON-LD, `robots.txt`, and `sitemap.xml` all use that base. When a custom domain is
+connected, replace that hostname everywhere before asking search engines to index the new domain.
+
+The three files in `assets/social/` are 1200 × 630 JPEG previews for the home page and both free
+oracles. The animal and tree card artwork is also listed in the image sitemap; keep the sitemap in
+sync when the decks change.
+
 ## Before public launch
 
 - Verify the live Stripe payment link redirects to Calendly after successful payment.

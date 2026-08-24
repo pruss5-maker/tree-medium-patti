@@ -2072,11 +2072,54 @@ summary:focus-visible {
   font-size: 1.35rem;
 }
 
-.oracle-deck-list p {
+.oracle-deck-list .oracle-deck-intro {
   max-width: 900px;
   padding-bottom: 25px;
   margin: 0;
   color: rgba(251, 248, 239, 0.7);
+}
+
+.animal-deck-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1px;
+  padding-bottom: 30px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.animal-deck-grid figure {
+  min-width: 0;
+  margin: 0;
+  color: var(--forest-950);
+  background: var(--cream-50);
+}
+
+.animal-deck-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #f8f0df;
+  object-fit: contain;
+}
+
+.animal-deck-grid figcaption {
+  padding: 12px 9px 14px;
+  color: var(--forest-800);
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .animal-deck-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .animal-deck-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @keyframes oracle-breathe {
@@ -2907,5 +2950,434 @@ summary:focus-visible {
   .tree-gallery-card img {
     aspect-ratio: 4 / 3;
     object-position: center 38%;
+  }
+}
+
+/* Keep the oracle draw and its reveal together within the first viewport. */
+.oracle-hero {
+  display: grid;
+  align-items: center;
+  padding: 112px 0 34px;
+}
+
+@media (min-width: 761px) {
+  .oracle-layout {
+    width: min(1240px, calc(100% - 40px));
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 400px);
+    gap: clamp(38px, 5vw, 76px);
+  }
+
+  .oracle-intro {
+    max-width: 690px;
+    margin: 0;
+    text-align: left;
+  }
+
+  .oracle-intro h1,
+  .oracle-lede,
+  .oracle-naming {
+    margin-inline: 0;
+  }
+
+  .oracle-intro h1 {
+    font-size: clamp(3.4rem, 5.4vw, 5.4rem);
+  }
+
+  .oracle-experience {
+    width: min(100%, 400px, calc(66.667svh - 104px));
+    min-width: 300px;
+  }
+
+  .oracle-layout:has(.oracle-card.is-revealed) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .oracle-layout:has(.oracle-card.is-revealed) .oracle-intro {
+    display: none;
+  }
+
+  .oracle-experience:has(.oracle-card.is-revealed) {
+    width: min(100%, 1000px);
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-result {
+    display: grid;
+    grid-template-areas:
+      "heading message"
+      "heading echo"
+      "heading protection"
+      "heading actions";
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 14px 30px;
+    padding: 28px;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-result-heading {
+    grid-area: heading;
+    justify-content: center;
+    padding: 0 26px 0 0;
+    border-right: 1px solid var(--cream-200);
+    border-bottom: 0;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-glyph {
+    width: 170px;
+    height: 170px;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-result-heading h2 {
+    font-size: clamp(2.8rem, 4vw, 4rem);
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-message {
+    grid-area: message;
+    padding: 0 0 14px;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-message p {
+    font-size: clamp(1.08rem, 1.6vw, 1.32rem);
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-echo {
+    grid-area: echo;
+    padding: 18px 20px;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-protection {
+    grid-area: protection;
+    padding: 18px 20px;
+    margin-top: 0;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-result-actions {
+    grid-area: actions;
+    padding-top: 0;
+  }
+
+  .tree-oracle-result {
+    display: grid;
+    grid-template-columns: minmax(310px, 0.78fr) repeat(2, minmax(0, 0.61fr));
+    padding: 0;
+  }
+
+  .tree-result-portrait {
+    height: 100%;
+    min-height: 620px;
+    grid-column: 1;
+    grid-row: 1 / 5;
+  }
+
+  .tree-result-portrait::after {
+    inset: 0 0 0 auto;
+    width: 22%;
+    height: auto;
+    background: linear-gradient(90deg, transparent, rgba(250, 248, 242, 0.98));
+  }
+
+  .tree-result-heading,
+  .tree-oracle-result .oracle-protection,
+  .tree-oracle-result .oracle-result-actions {
+    grid-column: 2 / -1;
+    margin-inline: 30px;
+  }
+
+  .tree-result-heading {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 24px 8px 18px 0;
+    margin: 0 8px 0 30px;
+    border-bottom: 0;
+  }
+
+  .tree-result-heading h2 {
+    font-size: clamp(2.8rem, 3.7vw, 3.8rem);
+  }
+
+  .tree-oracle-result .oracle-message {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+    padding: 20px 0;
+    margin: 0 30px 0 8px;
+  }
+
+  .tree-oracle-result .oracle-message p {
+    font-size: clamp(0.96rem, 1.35vw, 1.12rem);
+    line-height: 1.38;
+  }
+
+  .tree-oracle-result .oracle-echo,
+  .tree-oracle-result .oracle-protection {
+    padding: 16px 18px;
+    margin-top: 10px;
+  }
+
+  .tree-oracle-result .oracle-echo {
+    grid-column: 2;
+    grid-row: 2;
+    margin-right: 8px;
+    margin-left: 30px;
+  }
+
+  .tree-oracle-result .oracle-question {
+    grid-column: 3;
+    grid-row: 2;
+    padding: 16px 18px;
+    margin: 10px 30px 0 8px;
+    background: rgba(255, 253, 248, 0.72);
+    border-left: 3px solid var(--guide-accent);
+  }
+
+  .tree-oracle-result .oracle-protection {
+    grid-row: 3;
+  }
+
+  .tree-oracle-result .oracle-result-actions {
+    grid-row: 4;
+    padding: 14px 0 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .oracle-hero {
+    min-height: 100svh;
+    padding: 100px 0 14px;
+  }
+
+  .oracle-layout {
+    gap: 12px;
+  }
+
+  .oracle-intro .eyebrow {
+    margin-bottom: 7px;
+    font-size: 0.7rem;
+  }
+
+  .oracle-intro h1 {
+    margin-bottom: 8px;
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+    line-height: 0.98;
+  }
+
+  .oracle-lede {
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1.28;
+  }
+
+  .oracle-naming {
+    display: none;
+  }
+
+  .oracle-experience {
+    width: min(100%, 300px, calc(66.667svh - 196px));
+    min-width: 220px;
+    padding: 8px;
+  }
+
+  .oracle-card-back-copy {
+    padding: 14px;
+  }
+
+  .oracle-card-brand p {
+    margin-bottom: 4px;
+    font-size: 1.45rem;
+  }
+
+  .oracle-card-brand small {
+    font-size: 0.52rem;
+  }
+
+  .oracle-ritual {
+    padding: 14px;
+  }
+
+  .oracle-ritual .oracle-mini-label {
+    margin-bottom: 4px;
+    font-size: 0.6rem;
+  }
+
+  .oracle-ritual h2 {
+    margin-bottom: 6px;
+    font-size: clamp(1.35rem, 7vw, 1.8rem);
+  }
+
+  .oracle-ritual > p:not(.oracle-mini-label, .oracle-status) {
+    margin-bottom: 9px;
+    font-size: 0.74rem;
+    line-height: 1.32;
+  }
+
+  .oracle-reveal {
+    min-height: 42px;
+    padding: 9px 10px;
+    font-size: 0.7rem;
+  }
+
+  .oracle-ritual > small {
+    margin-top: 7px;
+    font-size: 0.62rem;
+  }
+
+  .oracle-status {
+    min-height: 0;
+    margin-top: 6px;
+    font-size: 0.66rem;
+  }
+
+  .oracle-layout:has(.oracle-card.is-revealed) .oracle-intro {
+    display: none;
+  }
+
+  .oracle-experience:has(.oracle-card.is-revealed) {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-result {
+    padding: 18px;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-result-heading {
+    flex-direction: row;
+    gap: 14px;
+    align-items: center;
+    padding-bottom: 14px;
+    text-align: left;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-glyph {
+    width: 104px;
+    height: 104px;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-result-heading h2 {
+    margin-bottom: 3px;
+    font-size: 2.1rem;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-keyword {
+    font-size: 1rem;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-message {
+    padding: 14px 0;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-message p {
+    font-size: 1rem;
+    line-height: 1.38;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-echo,
+  .oracle-page:not(.tree-oracle-page) .oracle-protection {
+    padding: 13px 14px;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-protection {
+    margin-top: 10px;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-echo > p:last-child,
+  .oracle-page:not(.tree-oracle-page) .oracle-protection > p:last-child {
+    font-size: 0.84rem;
+    line-height: 1.38;
+  }
+
+  .oracle-page:not(.tree-oracle-page) .oracle-result-actions {
+    gap: 10px;
+    padding-top: 14px;
+  }
+
+  .tree-oracle-result {
+    display: grid;
+    grid-template-columns: 108px minmax(0, 1fr);
+    padding: 14px;
+    gap: 0 14px;
+  }
+
+  .tree-result-portrait {
+    width: 108px;
+    height: 128px;
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 14px;
+  }
+
+  .tree-result-portrait::after {
+    display: none;
+  }
+
+  .tree-result-heading {
+    grid-column: 2;
+    align-self: center;
+    padding: 0;
+    margin: 0;
+    border-bottom: 0;
+  }
+
+  .tree-result-heading h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .tree-result-heading,
+  .tree-oracle-result .oracle-message,
+  .tree-oracle-result .oracle-echo,
+  .tree-oracle-result .oracle-question,
+  .tree-oracle-result .oracle-protection,
+  .tree-oracle-result .oracle-result-actions {
+    margin-inline: 0;
+  }
+
+  .tree-oracle-result .oracle-message,
+  .tree-oracle-result .oracle-echo,
+  .tree-oracle-result .oracle-question,
+  .tree-oracle-result .oracle-protection,
+  .tree-oracle-result .oracle-result-actions {
+    grid-column: 1 / -1;
+  }
+
+  .tree-oracle-result .oracle-message {
+    padding: 12px 0;
+  }
+
+  .tree-oracle-result .oracle-message p {
+    font-size: 0.92rem;
+    line-height: 1.36;
+  }
+
+  .tree-oracle-result .oracle-echo,
+  .tree-oracle-result .oracle-question,
+  .tree-oracle-result .oracle-protection {
+    padding: 11px 13px;
+    margin-top: 8px;
+  }
+
+  .tree-oracle-result .oracle-echo > p:last-child,
+  .tree-oracle-result .oracle-question > p:last-child,
+  .tree-oracle-result .oracle-protection > p:last-child {
+    font-size: 0.8rem;
+    line-height: 1.34;
+  }
+
+  .tree-oracle-result .oracle-result-actions {
+    gap: 8px;
+    padding-top: 12px;
+  }
+
+  .tree-oracle-result .oracle-result-actions .button {
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 760px) and (max-height: 700px) {
+  .oracle-intro .oracle-lede,
+  .oracle-ritual > small,
+  .oracle-result-actions small {
+    display: none;
+  }
+
+  .oracle-experience {
+    width: min(100%, 280px, calc(66.667svh - 210px));
   }
 }

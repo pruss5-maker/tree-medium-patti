@@ -287,7 +287,7 @@ const renderGallery = () => {
     const article = document.createElement("article");
     article.className = "tree-gallery-card";
     article.innerHTML = `
-      <img src="${tree.art}" width="720" height="1080" loading="lazy" alt="Photograph of a ${tree.name} tree">
+      <img src="${tree.art}" width="720" height="1080" loading="lazy" decoding="async" alt="Photograph of a ${tree.name} tree">
       <div>
         <p class="tree-gallery-number">${String(index + 1).padStart(2, "0")}</p>
         <h3>${tree.name}</h3>

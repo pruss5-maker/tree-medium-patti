@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://treemedium.vercel.app/sitemap.xml

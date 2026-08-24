@@ -7,7 +7,7 @@ const renderData = renderDeck === "animal"
   : renderDeck === "plant" ? plantGuides[renderIndex] : treeGuides[renderIndex];
 const renderSlug = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const renderDataSlug = renderSlug(renderData.name);
-const renderProtection = `Your mind deserves to be a sanctuary. KELA invites you to close your eyes and tune into the energy of ${renderData.name}. Ask ${renderData.name} to protect your mind and energy today.`;
+const renderProtection = `Your mind deserves to be a sanctuary. KELA invites you to close your eyes and tune into the energy of ${renderData.name}. “Dear energy of ${renderData.name}, please protect my mind and energy on autopilot from any perceived threat before it enters my field.”`;
 const renderBackProtection = renderDeck === "plant"
   ? `Ask your ${renderData.name} plant to protect your mind and energy in meditation. ${renderData.practice}`
   : renderProtection;

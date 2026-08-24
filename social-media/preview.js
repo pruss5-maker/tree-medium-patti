@@ -56,14 +56,15 @@ socialDecks.forEach(({ id, deck, title, cards }) => {
 
   cards.forEach(([name, slug]) => {
     const imagePath = `reels/${deck}/${slug}.jpg`;
+    const imageUrl = `${imagePath}?v=20260824-3`;
     const figure = document.createElement("figure");
     figure.innerHTML = `
-      <a class="image-link" href="${imagePath}" target="_blank" rel="noopener">
-        <img src="${imagePath}" width="1080" height="1920" loading="lazy" decoding="async" alt="${name} ${title} social Reel card">
+      <a class="image-link" href="${imageUrl}" target="_blank" rel="noopener">
+        <img src="${imageUrl}" width="1080" height="1920" loading="lazy" decoding="async" alt="${name} ${title} social Reel card">
       </a>
       <figcaption>
         <span class="card-name">${name}</span>
-        <a class="download" href="${imagePath}" download="kela-${deck}-oracle-${slug}-reel.jpg">Download</a>
+        <a class="download" href="${imageUrl}" download="kela-${deck}-oracle-${slug}-reel.jpg">Download</a>
       </figcaption>`;
     gallery.append(figure);
   });

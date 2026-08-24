@@ -56,7 +56,7 @@ socialDecks.forEach(({ id, deck, title, cards }) => {
 
   cards.forEach(([name, slug]) => {
     const imagePath = `reels/${deck}/${slug}.jpg`;
-    const imageUrl = `${imagePath}?v=20260824-3`;
+    const imageUrl = `${imagePath}?v=20260824-4`;
     const figure = document.createElement("figure");
     figure.innerHTML = `
       <a class="image-link" href="${imageUrl}" target="_blank" rel="noopener">

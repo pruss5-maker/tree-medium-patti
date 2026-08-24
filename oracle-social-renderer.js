@@ -18,7 +18,7 @@ const socialLabels = {
 };
 const socialDataSlug = socialSlug(socialData.name);
 const socialCardFace = `assets/oracle-cards/${socialDeck}/${socialDataSlug}-front.webp`;
-const socialProtection = `Your mind deserves to be a sanctuary. KELA invites you to close your eyes and tune into the energy of ${socialData.name}. “Dear energy of ${socialData.name}, please protect my mind and energy on autopilot from any perceived threat before it enters my field.”`;
+const socialProtection = `Your mind deserves to be a sanctuary. Tune into ${socialData.name} and hold one spiritual meaning: ${socialData.keyword}. “Dear energy of ${socialData.name}, please protect my mind and energy on autopilot from any perceived threat before it enters my field.”`;
 const canvas = document.querySelector("[data-social-canvas]");
 
 canvas.className = `social-canvas ${socialDeck}`;
@@ -34,7 +34,7 @@ canvas.innerHTML = `
     <img class="social-card-face" src="${socialCardFace}" width="810" height="1012" alt="${socialData.name} ${socialLabels[socialDeck]} card">
   </article>
   <section class="social-protection">
-    <p class="social-protection-label">PSYCHIC PROTECTION · YOUR MIND IS A SANCTUARY</p>
+    <p class="social-protection-label">KELA PROTECTION INVOCATION · YOUR MIND IS A SANCTUARY</p>
     <p>${socialProtection}</p>
   </section>
   <div class="social-cta">

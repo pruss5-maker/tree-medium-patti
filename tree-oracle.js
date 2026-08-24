@@ -264,7 +264,7 @@ const fillTree = (index) => {
   updateTreeSeo(tree);
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
   if (treeCardFront) {
-    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260824-7`;
+    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260824-8`;
     treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;
   }
   if (treeCardBack) {

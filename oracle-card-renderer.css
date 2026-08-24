@@ -59,7 +59,7 @@ body {
 .brand p {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 72px;
+  font-size: 80px;
   font-weight: 400;
   letter-spacing: 0.2em;
   line-height: 1;
@@ -69,9 +69,9 @@ body {
   display: block;
   margin-top: 15px;
   font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-size: 27px;
   font-weight: 700;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.19em;
 }
 
 .tree .brand {
@@ -140,7 +140,7 @@ body {
   margin: 0 0 10px;
   color: #1e5960;
   font-family: Arial, sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   letter-spacing: 0.2em;
 }
@@ -294,13 +294,13 @@ h1.long-name {
   align-items: center;
   color: #20372f;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 36px;
+  font-size: 40px;
   line-height: 1.42;
   text-align: left;
 }
 
 .back-copy.long-message .message {
-  font-size: 33px;
+  font-size: 36px;
 }
 
 .protection-box {
@@ -332,7 +332,7 @@ h1.long-name {
   margin-bottom: 10px;
   color: color-mix(in srgb, var(--accent) 58%, #8b692e);
   font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-size: 21px;
   letter-spacing: 0.15em;
 }
 
@@ -340,7 +340,7 @@ h1.long-name {
   margin: 0;
   color: #21372f;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 26px;
+  font-size: 30px;
   line-height: 1.4;
   text-align: center;
 }

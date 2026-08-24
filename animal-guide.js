@@ -371,7 +371,7 @@ const fillGuide = (index, colorIndex) => {
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
   if (animalCardFront) {
-    animalCardFront.src = `${cardAssetBase}-front.webp?v=20260824-5`;
+    animalCardFront.src = `${cardAssetBase}-front.webp?v=20260824-6`;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;
   }
   if (animalCardBack) {

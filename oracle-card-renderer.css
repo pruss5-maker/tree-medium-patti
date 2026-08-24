@@ -217,8 +217,17 @@ h1.long-name {
   margin: 0 auto;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 29px;
-  line-height: 1.35;
+  font-size: 22px;
+  line-height: 1.28;
+}
+
+.front-protection strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #9b742f;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.16em;
 }
 
 .cue {
@@ -226,7 +235,7 @@ h1.long-name {
   align-items: center;
   justify-content: center;
   height: 96px;
-  margin: 34px auto 0;
+  margin: 24px auto 0;
   color: #e7bd70;
   background: transparent;
   border: 0;
@@ -250,13 +259,13 @@ h1.long-name {
   box-shadow: none;
 }
 
-.animal.front .protection {
-  margin-top: 62px;
+.animal.front .front-protection {
+  margin-top: 34px;
 }
 
-.tree.front .protection,
-.plant.front .protection {
-  margin-top: 52px;
+.tree.front .front-protection,
+.plant.front .front-protection {
+  margin-top: 34px;
 }
 
 .watermark {

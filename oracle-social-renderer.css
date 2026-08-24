@@ -1,5 +1,5 @@
 :root {
-  color: #17352b;
+  color: #123247;
   background: #f4f0e7;
   font-synthesis: none;
 }
@@ -24,10 +24,10 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 82px 80px 70px;
+  padding: 76px 80px 64px;
   background:
-    radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 32%),
-    radial-gradient(circle at 8% 92%, rgba(218, 185, 123, 0.24), transparent 34%),
+    radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 32%),
+    radial-gradient(circle at 8% 92%, rgba(218, 185, 123, 0.25), transparent 34%),
     linear-gradient(145deg, #fbf9f3, #eee8da);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -36,7 +36,7 @@ body {
   position: absolute;
   inset: 22px;
   content: "";
-  border: 1px solid rgba(80, 88, 63, 0.18);
+  border: 1px solid rgba(18, 50, 71, 0.16);
   border-radius: 38px;
 }
 
@@ -49,6 +49,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
+  color: #123247;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 64px;
   letter-spacing: 0.24em;
@@ -67,146 +68,77 @@ body {
 }
 
 .social-series {
-  margin: 78px 0 16px;
+  margin: 50px 0 18px;
   color: #8a6a37;
   font-size: 22px;
   font-weight: 800;
   letter-spacing: 0.18em;
+  text-align: center;
   text-transform: uppercase;
 }
 
-.social-oracle-card {
+.social-card-stage {
   position: relative;
-  height: 1020px;
-  overflow: hidden;
-  background: #fffdf8;
-  border: 2px solid color-mix(in srgb, var(--accent) 72%, #b9945f);
-  border-radius: 48px;
-  box-shadow: 0 34px 80px rgba(25, 43, 35, 0.18);
-}
-
-.social-oracle-card::before {
-  position: absolute;
-  inset: 18px;
-  z-index: 5;
-  content: "";
-  border: 1px solid color-mix(in srgb, var(--accent) 42%, #d8c397);
-  border-radius: 33px;
-  pointer-events: none;
-}
-
-.social-visual {
-  position: relative;
-  height: 745px;
-  overflow: hidden;
-  background: radial-gradient(circle, #fff 0 18%, color-mix(in srgb, var(--accent) 14%, #f7f1e4) 52%, #eee7d8 100%);
-}
-
-.social-visual img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.social-visual.tree img,
-.social-visual.plant img {
-  object-fit: cover;
-}
-
-.social-visual.tree::after,
-.social-visual.plant::after {
-  position: absolute;
-  inset: 55% 0 0;
-  content: "";
-  background: linear-gradient(transparent, rgba(15, 34, 27, 0.25));
-}
-
-.social-visual.animal img {
-  width: 78%;
-  height: 90%;
-  margin: 5% auto;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-}
-
-.social-title-panel {
   display: grid;
-  height: 275px;
-  padding: 24px 54px 30px;
+  height: 1040px;
+  margin: 0;
+  place-items: center;
+}
+
+.social-card-stage::before {
+  position: absolute;
+  inset: 45px 76px 32px;
+  content: "";
+  background: color-mix(in srgb, var(--accent) 11%, #fffdf8);
+  border: 1px solid color-mix(in srgb, var(--accent) 44%, #d8c397);
+  border-radius: 54px;
+  box-shadow: 0 42px 90px rgba(25, 43, 35, 0.16);
+  transform: rotate(-1.2deg);
+}
+
+.social-card-face {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 760px;
+  height: 950px;
+  object-fit: cover;
+  border-radius: 40px;
+  box-shadow: 0 30px 70px rgba(18, 50, 71, 0.22);
+}
+
+.social-protection {
+  display: grid;
+  min-height: 265px;
+  padding: 24px 34px 18px;
   align-content: center;
-  background: linear-gradient(180deg, #fffdf9, #f3eddf);
   text-align: center;
 }
 
-.social-kind {
-  margin: 0 0 10px;
-  color: #567a6d;
-  font-size: 18px;
+.social-protection-label {
+  margin: 0 0 13px;
+  color: #9b742f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px !important;
   font-weight: 800;
   letter-spacing: 0.17em;
+  line-height: 1.2 !important;
 }
 
-h1 {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 90px;
-  font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 0.98;
-}
-
-.social-botanical,
-.social-keyword {
-  margin: 12px 0 0;
+.social-protection p {
+  max-width: 860px;
+  margin: 0 auto;
+  color: #123247;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 32px;
-  font-style: italic;
-  line-height: 1.08;
-}
-
-.social-botanical {
-  margin-top: 8px;
-  color: #45645a;
-  font-size: 20px;
-}
-
-.social-keyword {
-  color: color-mix(in srgb, var(--accent) 72%, #405b50);
-}
-
-.tree .social-title-panel,
-.plant .social-title-panel {
-  padding-top: 18px;
-  padding-bottom: 22px;
-}
-
-.tree h1,
-.plant h1 {
-  font-size: 76px;
-}
-
-.social-message {
-  display: grid;
-  min-height: 260px;
-  padding: 28px 30px 20px;
-  align-content: center;
-  text-align: center;
-}
-
-.social-message p {
-  max-width: 875px;
-  margin: 0 auto;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 38px;
-  line-height: 1.4;
+  line-height: 1.34;
 }
 
 .social-cta {
   position: relative;
-  height: 90px;
-  padding: 0 34px;
-  margin-top: 20px;
-  color: #17352b;
+  height: 88px;
+  margin-top: 8px;
+  color: #123247;
   background: #dfc18c;
   border-radius: 16px;
 }
@@ -214,9 +146,9 @@ h1 {
 .social-cta strong {
   position: absolute;
   top: 50%;
-  left: 34px;
-  font-size: 23px;
-  letter-spacing: 0.1em;
+  left: 30px;
+  font-size: 21px;
+  letter-spacing: 0.09em;
   white-space: nowrap;
   text-transform: uppercase;
   transform: translateY(-50%);
@@ -225,17 +157,17 @@ h1 {
 .social-cta span {
   position: absolute;
   top: 50%;
-  right: 34px;
-  font-size: 24px;
+  right: 30px;
+  font-size: 22px;
   font-weight: 800;
   white-space: nowrap;
   transform: translateY(-50%);
 }
 
 .social-footer {
-  margin-top: 24px;
+  margin-top: 21px;
   color: #5b6b64;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-align: center;

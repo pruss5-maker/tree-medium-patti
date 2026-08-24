@@ -16,20 +16,9 @@ const socialLabels = {
   tree: "TREE ORACLE",
   plant: "PLANT ORACLE",
 };
-const socialArt = socialDeck === "animal"
-  ? socialData.isolatedArt || `assets/animals/cutouts/${socialSlug(socialData.name)}-cutout-v2.webp`
-  : socialData.art;
-
-const firstThought = (message) => {
-  const matches = message.match(/[^.!?]+[.!?]+/g);
-  if (!matches) return message;
-  const candidate = matches.slice(0, 2).join(" ").trim();
-  return candidate.length <= 235 ? candidate : matches[0].trim();
-};
-
-const botanical = socialData.botanical
-  ? `<p class="social-botanical"><em>${socialData.botanical}</em></p>`
-  : "";
+const socialDataSlug = socialSlug(socialData.name);
+const socialCardFace = `assets/oracle-cards/${socialDeck}/${socialDataSlug}-front.webp`;
+const socialProtection = `Your mind deserves to be a sanctuary. KELA invites you to close your eyes and tune into the energy of ${socialData.name}. Ask ${socialData.name} to protect your mind and energy today.`;
 const canvas = document.querySelector("[data-social-canvas]");
 
 canvas.className = `social-canvas ${socialDeck}`;
@@ -41,16 +30,13 @@ canvas.innerHTML = `
     <div class="social-brand-note">Messages from the Trees</div>
   </header>
   <p class="social-series">${socialLabels[socialDeck]} · CARD OF THE DAY</p>
-  <article class="social-oracle-card">
-    <div class="social-visual ${socialDeck}"><img src="${socialArt}" alt=""></div>
-    <div class="social-title-panel">
-      <p class="social-kind">THE ${socialDeck.toUpperCase()} CALLING YOU TODAY</p>
-      <h1>${socialData.name}</h1>
-      ${botanical}
-      <p class="social-keyword">${socialData.keyword}</p>
-    </div>
+  <article class="social-card-stage">
+    <img class="social-card-face" src="${socialCardFace}" width="810" height="1012" alt="${socialData.name} ${socialLabels[socialDeck]} card">
   </article>
-  <section class="social-message"><p>${firstThought(socialData.message)}</p></section>
+  <section class="social-protection">
+    <p class="social-protection-label">PSYCHIC PROTECTION · YOUR MIND IS A SANCTUARY</p>
+    <p>${socialProtection}</p>
+  </section>
   <div class="social-cta">
     <strong>Take your free daily draw</strong>
     <span>treemedium.vercel.app/${socialDeck}-oracle</span>

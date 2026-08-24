@@ -19,6 +19,11 @@ the layouts and motion can be completed while the final palette is still being t
 
 The `samples/` folder contains feed and vertical masters for Blue Owl and Madrona.
 
+The private `preview.html` library contains all 54 finished 1080 × 1920 Reel cards. These use the
+same rendered physical-card faces as the live decks. Every social card leads with the sanctuary
+principle—“Your mind deserves to be a sanctuary”—and identifies the selected guide as a focus for
+psychic protection without promising that a symbol prevents harm.
+
 ## Motion concept
 
 Use one restrained 7–9 second loop:

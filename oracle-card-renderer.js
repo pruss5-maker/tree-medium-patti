@@ -7,7 +7,7 @@ const renderData = renderDeck === "animal"
   : renderDeck === "plant" ? plantGuides[renderIndex] : treeGuides[renderIndex];
 const renderSlug = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const renderDataSlug = renderSlug(renderData.name);
-const renderProtection = `Tune into ${renderData.name}. Ask ${renderData.name} to protect your mind and energy today.`;
+const renderProtection = `Your mind deserves to be a sanctuary. KELA invites you to close your eyes and tune into the energy of ${renderData.name}. Ask ${renderData.name} to protect your mind and energy today.`;
 const renderBackProtection = renderDeck === "plant"
   ? `Ask your ${renderData.name} plant to protect your mind and energy in meditation. ${renderData.practice}`
   : renderProtection;
@@ -43,7 +43,10 @@ const renderFront = `
     ${renderBotanical}
     <p class="keyword" style="--accent:${renderData.accent}">${renderData.keyword}</p>
     <span class="ornament" aria-hidden="true">◆</span>
-    <p class="protection">${renderProtection}</p>
+    <div class="front-protection">
+      <strong>PSYCHIC PROTECTION</strong>
+      <p class="protection">${renderProtection}</p>
+    </div>
     <div class="cue">${renderCue}</div>
   </section>`;
 

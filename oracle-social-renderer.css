@@ -1,0 +1,243 @@
+:root {
+  color: #17352b;
+  background: #f4f0e7;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 1080px;
+  height: 1920px;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.social-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 82px 80px 70px;
+  background:
+    radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 32%),
+    radial-gradient(circle at 8% 92%, rgba(218, 185, 123, 0.24), transparent 34%),
+    linear-gradient(145deg, #fbf9f3, #eee8da);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.social-canvas::before {
+  position: absolute;
+  inset: 22px;
+  content: "";
+  border: 1px solid rgba(80, 88, 63, 0.18);
+  border-radius: 38px;
+}
+
+.social-brand-row {
+  position: relative;
+  height: 64px;
+}
+
+.social-brand {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 64px;
+  letter-spacing: 0.24em;
+  line-height: 1;
+}
+
+.social-brand-note {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #47685c;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.social-series {
+  margin: 78px 0 16px;
+  color: #8a6a37;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.social-oracle-card {
+  position: relative;
+  height: 1020px;
+  overflow: hidden;
+  background: #fffdf8;
+  border: 2px solid color-mix(in srgb, var(--accent) 72%, #b9945f);
+  border-radius: 48px;
+  box-shadow: 0 34px 80px rgba(25, 43, 35, 0.18);
+}
+
+.social-oracle-card::before {
+  position: absolute;
+  inset: 18px;
+  z-index: 5;
+  content: "";
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, #d8c397);
+  border-radius: 33px;
+  pointer-events: none;
+}
+
+.social-visual {
+  position: relative;
+  height: 745px;
+  overflow: hidden;
+  background: radial-gradient(circle, #fff 0 18%, color-mix(in srgb, var(--accent) 14%, #f7f1e4) 52%, #eee7d8 100%);
+}
+
+.social-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.social-visual.tree img,
+.social-visual.plant img {
+  object-fit: cover;
+}
+
+.social-visual.tree::after,
+.social-visual.plant::after {
+  position: absolute;
+  inset: 55% 0 0;
+  content: "";
+  background: linear-gradient(transparent, rgba(15, 34, 27, 0.25));
+}
+
+.social-visual.animal img {
+  width: 78%;
+  height: 90%;
+  margin: 5% auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.social-title-panel {
+  display: grid;
+  height: 275px;
+  padding: 24px 54px 30px;
+  align-content: center;
+  background: linear-gradient(180deg, #fffdf9, #f3eddf);
+  text-align: center;
+}
+
+.social-kind {
+  margin: 0 0 10px;
+  color: #567a6d;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 90px;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+.social-botanical,
+.social-keyword {
+  margin: 12px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-style: italic;
+  line-height: 1.08;
+}
+
+.social-botanical {
+  margin-top: 8px;
+  color: #45645a;
+  font-size: 20px;
+}
+
+.social-keyword {
+  color: color-mix(in srgb, var(--accent) 72%, #405b50);
+}
+
+.tree .social-title-panel,
+.plant .social-title-panel {
+  padding-top: 18px;
+  padding-bottom: 22px;
+}
+
+.tree h1,
+.plant h1 {
+  font-size: 76px;
+}
+
+.social-message {
+  display: grid;
+  min-height: 260px;
+  padding: 28px 30px 20px;
+  align-content: center;
+  text-align: center;
+}
+
+.social-message p {
+  max-width: 875px;
+  margin: 0 auto;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+  line-height: 1.4;
+}
+
+.social-cta {
+  position: relative;
+  height: 90px;
+  padding: 0 34px;
+  margin-top: 20px;
+  color: #17352b;
+  background: #dfc18c;
+  border-radius: 16px;
+}
+
+.social-cta strong {
+  position: absolute;
+  top: 50%;
+  left: 34px;
+  font-size: 23px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transform: translateY(-50%);
+}
+
+.social-cta span {
+  position: absolute;
+  top: 50%;
+  right: 34px;
+  font-size: 24px;
+  font-weight: 800;
+  white-space: nowrap;
+  transform: translateY(-50%);
+}
+
+.social-footer {
+  margin-top: 24px;
+  color: #5b6b64;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}

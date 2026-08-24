@@ -74,13 +74,16 @@ body {
   letter-spacing: 0.19em;
 }
 
-.tree .brand {
+.tree .brand,
+.plant .brand {
   top: 112px;
   text-align: left;
 }
 
 .tree .brand p,
-.tree .brand small {
+.tree .brand small,
+.plant .brand p,
+.plant .brand small {
   padding-left: 26px;
 }
 
@@ -107,7 +110,8 @@ body {
   transform: scale(1.17);
 }
 
-.art-area.tree {
+.art-area.tree,
+.art-area.plant {
   top: 276px;
   left: 180px;
   width: 762px;
@@ -116,7 +120,8 @@ body {
   border-radius: 42px 42px 0 0;
 }
 
-.art-area.tree img {
+.art-area.tree img,
+.art-area.plant img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -132,7 +137,8 @@ body {
   top: 842px;
 }
 
-.tree.front .front-copy {
+.tree.front .front-copy,
+.plant.front .front-copy {
   top: 735px;
 }
 
@@ -145,7 +151,8 @@ body {
   letter-spacing: 0.2em;
 }
 
-.tree .calling {
+.tree .calling,
+.plant .calling {
   color: #a77b2e;
 }
 
@@ -179,7 +186,8 @@ h1.long-name {
   font-size: 18px;
 }
 
-.tree .keyword {
+.tree .keyword,
+.plant .keyword {
   margin-top: 10px;
 }
 
@@ -234,7 +242,8 @@ h1.long-name {
   width: 610px;
 }
 
-.tree .cue {
+.tree .cue,
+.plant .cue {
   color: #e5c27f;
   background: transparent;
   border: 0;
@@ -245,7 +254,8 @@ h1.long-name {
   margin-top: 62px;
 }
 
-.tree.front .protection {
+.tree.front .protection,
+.plant.front .protection {
   margin-top: 52px;
 }
 
@@ -260,7 +270,8 @@ h1.long-name {
   opacity: 0.52;
 }
 
-.watermark.tree {
+.watermark.tree,
+.watermark.plant {
   top: 275px;
   left: 180px;
   width: 762px;
@@ -356,16 +367,19 @@ h1.long-name {
   font-size: 20px;
 }
 
-.tree.back .back-copy {
+.tree.back .back-copy,
+.plant.back .back-copy {
   top: 280px;
 }
 
-.tree.back .back-copy .message {
+.tree.back .back-copy .message,
+.plant.back .back-copy .message {
   min-height: 320px;
 }
 
 .animal.back .back-copy .cue,
-.tree.back .back-copy .cue {
+.tree.back .back-copy .cue,
+.plant.back .back-copy .cue {
   position: absolute;
   left: 56px;
 }
@@ -376,4 +390,13 @@ h1.long-name {
 
 .tree.back .back-copy .cue {
   top: 806px;
+}
+
+.plant.back .back-copy .cue {
+  top: 806px;
+}
+
+.plant.back .protection-box p {
+  font-size: 24px;
+  line-height: 1.32;
 }

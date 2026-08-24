@@ -1,0 +1,305 @@
+.plant-oracle-page {
+  --plant-ink: #173126;
+  --plant-card-color: #314a3c;
+  --plant-gold: #e8c47d;
+  --plant-gold-bright: #f3d79d;
+  --plant-gold-muted: #d7b875;
+}
+
+.plant-oracle-page .plant-oracle-hero .oracle-forest {
+  background:
+    linear-gradient(90deg, rgba(10, 30, 22, 0.8), rgba(10, 30, 22, 0.28)),
+    url("assets/plants/lavender.webp") center 43% / cover;
+  opacity: 0.46;
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-card-art {
+  object-position: center 47%;
+  filter: saturate(0.85) brightness(0.55);
+}
+
+.plant-oracle-page .plant-flip-front,
+.plant-oracle-page .plant-flip-back {
+  color: var(--plant-gold-bright);
+  background: var(--plant-card-color);
+  border-color: var(--plant-gold);
+}
+
+.plant-oracle-page .plant-flip-front::before,
+.plant-oracle-page .plant-flip-back::before {
+  border-color: rgba(232, 196, 125, 0.82);
+  box-shadow: inset 0 0 28px rgba(243, 215, 157, 0.06);
+}
+
+.plant-oracle-page .plant-flip-front > img {
+  border-color: rgba(232, 196, 125, 0.86);
+  filter: saturate(0.92) contrast(1.05) brightness(0.9);
+}
+
+.plant-oracle-page .plant-flip-front-copy {
+  inset: auto 8% 4.5%;
+  display: flex;
+  min-height: 30.5%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 6px 12px;
+  color: var(--plant-gold-bright);
+  background: transparent;
+  border: 0;
+  border-top: 1px solid rgba(232, 196, 125, 0.46);
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: 0 1px rgba(5, 18, 13, 0.42);
+}
+
+.plant-oracle-page .plant-flip-front-copy .oracle-result-kicker,
+.plant-oracle-page .plant-flip-front-copy .oracle-keyword,
+.plant-oracle-page .plant-flip-front-copy h2 {
+  color: var(--plant-gold-bright);
+}
+
+.plant-oracle-page .plant-flip-front-copy .oracle-result-kicker {
+  margin-bottom: 5px;
+  font-size: clamp(0.52rem, 1.7vw, 0.65rem);
+}
+
+.plant-oracle-page .plant-flip-front-copy h2 {
+  margin-bottom: 3px;
+  font-size: clamp(2.25rem, 8.4vw, 3.35rem);
+  line-height: 0.98;
+}
+
+.plant-oracle-page .plant-flip-front-copy .oracle-keyword {
+  font-size: clamp(0.88rem, 2.8vw, 1.08rem);
+}
+
+.plant-oracle-page .plant-flip-front-copy .tree-flip-cue,
+.plant-oracle-page .plant-flip-back .tree-flip-cue {
+  padding: 7px 14px;
+  color: var(--plant-card-color);
+  background: var(--plant-gold-bright);
+  border-color: var(--plant-gold-bright);
+  font-size: 0.6rem;
+  box-shadow: 0 4px 16px rgba(5, 18, 13, 0.22);
+}
+
+.plant-oracle-page .plant-flip-front-copy .tree-flip-cue {
+  margin-top: 10px;
+}
+
+.plant-oracle-page .plant-flip-back {
+  padding: clamp(84px, 14%, 104px) clamp(30px, 8%, 40px) clamp(20px, 4%, 28px);
+}
+
+.plant-oracle-page .plant-flip-back::after {
+  display: none;
+}
+
+.plant-oracle-page .plant-flip-back .tree-flip-back-heading {
+  padding-bottom: 10px;
+  border-bottom-color: rgba(232, 196, 125, 0.42);
+}
+
+.plant-oracle-page .plant-flip-back h2 {
+  margin-bottom: 2px;
+  color: var(--plant-gold-bright);
+  font-size: clamp(2rem, 7.2vw, 2.95rem);
+  line-height: 1;
+}
+
+.plant-oracle-page .plant-flip-back .oracle-result-kicker,
+.plant-oracle-page .plant-flip-back .oracle-mini-label,
+.plant-oracle-page .plant-flip-back .tree-botanical,
+.plant-oracle-page .plant-flip-back .oracle-keyword {
+  color: var(--plant-gold-muted);
+}
+
+.plant-oracle-page .plant-flip-card[data-plant-slug="stinging-nettle"] h2 {
+  font-size: clamp(1.65rem, 6.4vw, 2.5rem);
+}
+
+.plant-oracle-page .plant-flip-card[data-plant-slug="lemon-balm"] h2,
+.plant-oracle-page .plant-flip-card[data-plant-slug="red-clover"] h2 {
+  font-size: clamp(1.8rem, 6.8vw, 2.7rem);
+}
+
+.plant-oracle-page .plant-flip-back .oracle-message p {
+  color: var(--plant-gold-bright);
+  font-size: clamp(0.84rem, 2.45vw, 1rem);
+  line-height: 1.36;
+}
+
+.plant-oracle-page .plant-flip-back .oracle-quick-prompt > p:last-child {
+  color: var(--plant-gold-bright);
+  font-size: clamp(0.76rem, 2.2vw, 0.9rem);
+  line-height: 1.32;
+}
+
+.plant-oracle-page .plant-flip-back .oracle-quick-prompt {
+  padding: 11px 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid rgba(232, 196, 125, 0.42);
+  border-bottom: 1px solid rgba(232, 196, 125, 0.24);
+  border-radius: 0;
+}
+
+.plant-oracle-page .plant-flip-back .tree-flip-cue {
+  margin: 14px auto 0;
+}
+
+.plant-oracle-page .plant-meaning-watermark {
+  inset: 15% 8% 8%;
+  width: 84%;
+  height: 77%;
+  object-fit: cover;
+  filter: grayscale(1) sepia(1) saturate(1.5) brightness(1.65);
+  mix-blend-mode: screen;
+  opacity: 0.14;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 18%, rgba(0, 0, 0, 0.7) 50%, transparent 78%);
+  mask-image: radial-gradient(ellipse at center, #000 18%, rgba(0, 0, 0, 0.7) 50%, transparent 78%);
+}
+
+.plant-oracle-page .oracle-face-brand span {
+  font-size: clamp(1.7rem, 6vw, 2.3rem);
+}
+
+.plant-oracle-page .oracle-face-brand small {
+  font-size: clamp(0.58rem, 2vw, 0.76rem);
+  letter-spacing: 0.14em;
+}
+
+.plant-oracle-page .plant-flip-front .oracle-face-brand,
+.plant-oracle-page .plant-flip-back .oracle-face-brand {
+  color: var(--plant-gold);
+}
+
+/* Use the approved ICR physical-card artwork for the live Plant Oracle faces. */
+.plant-oracle-page .plant-flip-card {
+  aspect-ratio: 810 / 1012;
+}
+
+.plant-oracle-page .oracle-card-raster-face {
+  padding: 0;
+  background: #2f241a;
+  border: 0;
+}
+
+.plant-oracle-page .oracle-card-raster-face::before,
+.plant-oracle-page .oracle-card-raster-face::after {
+  display: none;
+}
+
+.plant-oracle-page .oracle-card-raster-face > :not(.oracle-card-raster) {
+  display: none;
+}
+
+.plant-oracle-page .oracle-card-raster-face > .oracle-card-raster {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  border-radius: 0;
+  filter: none;
+  opacity: 1;
+  transform: none;
+}
+
+.plant-oracle-page .plant-gallery .tree-gallery-link {
+  text-decoration: none;
+}
+
+.plant-oracle-page .plant-gallery .tree-gallery-card img {
+  object-fit: cover;
+}
+
+.plant-oracle-page .plant-gallery .tree-gallery-card > div > p:last-child {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+@media (min-width: 761px) {
+  .plant-oracle-page .plant-flip-back {
+    padding-top: 90px;
+  }
+}
+
+@media (max-width: 520px) {
+  .plant-oracle-page .plant-flip-front-copy h2 {
+    font-size: clamp(2.05rem, 10vw, 2.65rem);
+  }
+
+  .plant-oracle-page .plant-flip-back h2 {
+    font-size: clamp(1.85rem, 8.5vw, 2.35rem);
+  }
+
+  .plant-oracle-page .plant-flip-card[data-plant-slug="stinging-nettle"] h2 {
+    font-size: clamp(1.5rem, 7vw, 1.9rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .plant-oracle-page .oracle-card-raster-face > .oracle-card-raster {
+    transform: scale(1.1);
+  }
+
+  .plant-oracle-page .site-header,
+  .plant-oracle-page .site-header.is-scrolled {
+    min-height: 66px;
+    padding: 8px 14px;
+  }
+
+  .plant-oracle-page .site-header .wordmark span {
+    font-size: 1.75rem;
+  }
+
+  .plant-oracle-page .site-header > .wordmark small {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.52rem;
+    letter-spacing: 0.09em;
+    line-height: 1;
+  }
+
+  .plant-oracle-page .nav-booking {
+    display: none;
+  }
+
+  .plant-oracle-page .menu-toggle {
+    width: 38px;
+    height: 38px;
+    padding: 8px 6px;
+  }
+
+  .plant-oracle-page .oracle-hero {
+    padding-top: 72px;
+  }
+}
+
+@media (max-height: 760px) {
+  .plant-oracle-page .plant-flip-back {
+    padding: 72px 28px 16px;
+  }
+
+  .plant-oracle-page .plant-flip-back .oracle-message p {
+    font-size: clamp(0.75rem, 1.9vh, 0.86rem);
+    line-height: 1.27;
+  }
+
+  .plant-oracle-page .plant-flip-back .oracle-quick-prompt > p:last-child {
+    font-size: clamp(0.68rem, 1.7vh, 0.78rem);
+    line-height: 1.24;
+  }
+
+  .plant-oracle-page .plant-flip-back .tree-flip-cue {
+    padding: 6px 12px;
+    margin-top: 10px;
+    font-size: 0.55rem;
+  }
+}

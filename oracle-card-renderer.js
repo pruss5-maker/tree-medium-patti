@@ -2,18 +2,29 @@ const renderParams = new URLSearchParams(window.location.search);
 const renderDeck = document.body.dataset.deck;
 const renderIndex = Number.parseInt(renderParams.get("index"), 10) || 0;
 const renderSide = renderParams.get("side") === "back" ? "back" : "front";
-const renderData = renderDeck === "animal" ? animalGuides[renderIndex] : treeGuides[renderIndex];
+const renderData = renderDeck === "animal"
+  ? animalGuides[renderIndex]
+  : renderDeck === "plant" ? plantGuides[renderIndex] : treeGuides[renderIndex];
 const renderSlug = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const renderDataSlug = renderSlug(renderData.name);
 const renderProtection = `Tune into ${renderData.name}. Ask ${renderData.name} to protect your mind and energy today.`;
+const renderBackProtection = renderDeck === "plant"
+  ? `Ask your ${renderData.name} plant to protect your mind and energy in meditation. ${renderData.practice}`
+  : renderProtection;
 const renderArt = renderDeck === "animal"
   ? renderData.isolatedArt || `assets/animals/cutouts/${renderDataSlug}-cutout-v2.webp`
   : renderData.art;
-const renderBotanical = renderDeck === "tree" ? `<p class="botanical"><em>${renderData.botanical}</em></p>` : "";
-const renderDeckName = renderDeck === "animal" ? "ANIMAL ORACLE · CARD OF THE DAY" : "TREE ORACLE · CARD OF THE DAY";
-const renderCalling = renderDeck === "animal" ? "THE ANIMAL CALLING YOU TODAY" : "THE TREE CALLING YOU TODAY";
-const renderCue = renderDeck === "animal" ? "TAP TO REVEAL ITS MEANING" : "TAP TO REVEAL ITS MEANING";
-const renderBackCue = renderDeck === "animal" ? "TAP TO SEE YOUR ANIMAL" : "TAP TO SEE YOUR TREE";
+const renderBotanical = renderDeck !== "animal" ? `<p class="botanical"><em>${renderData.botanical}</em></p>` : "";
+const renderDeckName = renderDeck === "animal"
+  ? "ANIMAL ORACLE · CARD OF THE DAY"
+  : renderDeck === "plant" ? "PLANT ORACLE · CARD OF THE DAY" : "TREE ORACLE · CARD OF THE DAY";
+const renderCalling = renderDeck === "animal"
+  ? "THE ANIMAL CALLING YOU TODAY"
+  : renderDeck === "plant" ? "THE PLANT CALLING YOU TODAY" : "THE TREE CALLING YOU TODAY";
+const renderCue = "TAP TO REVEAL ITS MEANING";
+const renderBackCue = renderDeck === "animal"
+  ? "TAP TO SEE YOUR ANIMAL"
+  : renderDeck === "plant" ? "TAP TO SEE YOUR PLANT" : "TAP TO SEE YOUR TREE";
 const renderNameClass = renderData.name.length > 11 ? " long-name" : "";
 const renderMessageClass = renderData.message.length > 205 ? " long-message" : "";
 
@@ -52,7 +63,7 @@ const renderBack = `
     <p class="message">${renderData.message}</p>
     <div class="protection-box">
       <strong>PROTECTION &amp; CONFIRMATION</strong>
-      <p>${renderProtection}</p>
+      <p>${renderBackProtection}</p>
     </div>
     <div class="cue">${renderBackCue}</div>
   </section>`;

@@ -15,9 +15,31 @@
     {
       "source": "/tree-oracle/:card",
       "destination": "/tree-oracle"
+    },
+    {
+      "source": "/plant-oracle/:card",
+      "destination": "/plant-oracle"
     }
   ],
   "headers": [
+    {
+      "source": "/social-media/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/oracle-social-render(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
     {
       "source": "/assets/(.*)",
       "headers": [

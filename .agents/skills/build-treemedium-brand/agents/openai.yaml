@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Tree Medium Brand"
+  short_description: "Create Tree Medium content and web experiences"
+  default_prompt: "Use $build-treemedium-brand to create an on-brand page or content idea for Psychic Sister Pat."

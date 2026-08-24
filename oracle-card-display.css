@@ -4,6 +4,12 @@
   aspect-ratio: 1122 / 1402;
 }
 
+.animal-oracle-page .oracle-experience:has(.oracle-card.is-revealed),
+.tree-oracle-page .oracle-experience:has(.oracle-card.is-revealed) {
+  width: min(100%, 620px);
+  max-width: 620px;
+}
+
 .oracle-card-raster-face {
   padding: 0;
   background: #2f241a;

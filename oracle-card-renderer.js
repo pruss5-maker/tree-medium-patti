@@ -4,8 +4,11 @@ const renderIndex = Number.parseInt(renderParams.get("index"), 10) || 0;
 const renderSide = renderParams.get("side") === "back" ? "back" : "front";
 const renderData = renderDeck === "animal" ? animalGuides[renderIndex] : treeGuides[renderIndex];
 const renderSlug = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const renderDataSlug = renderSlug(renderData.name);
 const renderProtection = `Tune into ${renderData.name}. Ask ${renderData.name} to protect your mind and energy today.`;
-const renderArt = renderData.isolatedArt || renderData.art;
+const renderArt = renderDeck === "animal"
+  ? renderData.isolatedArt || `assets/animals/cutouts/${renderDataSlug}-cutout-v2.webp`
+  : renderData.art;
 const renderBotanical = renderDeck === "tree" ? `<p class="botanical"><em>${renderData.botanical}</em></p>` : "";
 const renderDeckName = renderDeck === "animal" ? "ANIMAL ORACLE · CARD OF THE DAY" : "TREE ORACLE · CARD OF THE DAY";
 const renderCalling = renderDeck === "animal" ? "THE ANIMAL CALLING YOU TODAY" : "THE TREE CALLING YOU TODAY";

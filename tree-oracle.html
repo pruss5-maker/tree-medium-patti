@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Draw a free daily tree oracle card from 12 sacred tree archetypes. Receive an original reflection, attunement practice, and question from KELA."
+      content="Draw a free daily card from KELA's 12-card Tree Oracle deck. Discover your tree's spiritual meaning, protection message, and signs of confirmation."
     />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#10231c" />
@@ -13,8 +13,8 @@
     <link rel="canonical" href="https://treemedium.vercel.app/tree-oracle" />
     <meta property="og:site_name" content="KELA — Messages from the Trees" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Free Tree Oracle | The Tree Calling by KELA" />
-    <meta property="og:description" content="Draw one of 12 sacred tree cards and receive an original reflection, attunement practice, and question for your day." />
+    <meta property="og:title" content="Free Tree Oracle Card Deck | KELA" />
+    <meta property="og:description" content="Draw one of 12 Tree Oracle cards for spiritual meaning, protection, and daily confirmation." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://treemedium.vercel.app/tree-oracle" />
     <meta property="og:image" content="https://treemedium.vercel.app/assets/social/kela-tree-oracle-social.jpg" />
@@ -23,18 +23,18 @@
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:alt" content="Three botanical tree oracle cards from The Tree Calling by KELA" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Free Tree Oracle | The Tree Calling by KELA" />
-    <meta name="twitter:description" content="Draw one of 12 sacred tree cards and receive an original reflection and daily attunement." />
+    <meta name="twitter:title" content="Free Tree Oracle Card Deck | KELA" />
+    <meta name="twitter:description" content="Draw a free Tree Oracle card for spiritual meaning, protection, and confirmation." />
     <meta name="twitter:image" content="https://treemedium.vercel.app/assets/social/kela-tree-oracle-social.jpg" />
     <meta name="twitter:image:alt" content="Three botanical tree oracle cards from The Tree Calling by KELA" />
-    <title>Free Tree Oracle | Daily Sacred Tree Card | KELA</title>
+    <title>Free Tree Oracle Card Deck | Daily Tree Card | KELA</title>
     <link rel="icon" href="assets/kela-mark.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preload" href="assets/tree-photos/madrona.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="styles.css?v=20260824-14" />
+    <link rel="stylesheet" href="styles.css?v=20260824-36" />
     <script src="script.js?v=20260823-5" defer></script>
     <script src="ux-observer.js?v=20260824-1" data-clarity-project-id="" defer></script>
-    <script src="tree-oracle.js?v=20260823-4" defer></script>
+    <script src="tree-oracle.js?v=20260824-11" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -43,8 +43,8 @@
             "@type": "WebPage",
             "@id": "https://treemedium.vercel.app/tree-oracle#webpage",
             "url": "https://treemedium.vercel.app/tree-oracle",
-            "name": "Free Tree Oracle | Daily Sacred Tree Card | KELA",
-            "description": "A free daily oracle draw featuring 12 sacred tree archetypes, original reflections, attunement practices, and questions.",
+            "name": "Free Tree Oracle Card Deck | Daily Tree Card | KELA",
+            "description": "A free daily draw from a 12-card Tree Oracle deck with original spiritual meanings and confirmation messages.",
             "isPartOf": { "@id": "https://treemedium.vercel.app/#website" },
             "primaryImageOfPage": { "@type": "ImageObject", "url": "https://treemedium.vercel.app/assets/social/kela-tree-oracle-social.jpg", "width": 1200, "height": 630 },
             "inLanguage": "en-US"
@@ -52,7 +52,7 @@
           {
             "@type": "WebApplication",
             "@id": "https://treemedium.vercel.app/tree-oracle#oracle",
-            "name": "The Tree Calling — KELA Tree Oracle",
+            "name": "KELA Tree Oracle Card Deck",
             "url": "https://treemedium.vercel.app/tree-oracle",
             "applicationCategory": "LifestyleApplication",
             "operatingSystem": "Any web browser",
@@ -84,7 +84,7 @@
       <div class="header-actions">
         <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
           <a href="index.html#meet-kela">Meet Kela</a>
-          <a href="animal-guide.html">Spirit Animal</a>
+          <a href="animal-oracle.html">Animal Oracle</a>
           <a href="tree-oracle.html" aria-current="page">Tree Oracle</a>
           <a href="index.html#how-it-works">How it works</a>
           <a href="index.html#reading">The reading</a>
@@ -115,8 +115,8 @@
 
         <div class="shell oracle-layout">
           <div class="oracle-intro">
-            <p class="eyebrow">Go Go's Tree Oracle · A free daily draw</p>
-            <h1 id="tree-oracle-title">The Tree Calling</h1>
+            <p class="eyebrow">The Tree Calling · Free daily oracle card deck</p>
+            <h1 id="tree-oracle-title">Tree Oracle</h1>
             <p class="oracle-lede">
               One tree is reaching through the living network to meet you today. Let its shape,
               story, and invitation help you notice what is already stirring within you.
@@ -158,42 +158,82 @@
                 </div>
               </div>
 
-              <article class="oracle-result tree-oracle-result" data-tree-oracle-result hidden tabindex="-1">
-                <figure class="tree-result-portrait">
-                  <img data-tree-art src="" alt="" width="720" height="1080" />
-                </figure>
-
-                <header class="tree-result-heading">
-                  <p class="oracle-result-kicker">The tree calling you today</p>
-                  <h2 data-tree-name></h2>
-                  <p class="tree-botanical"><em data-tree-botanical></em></p>
-                  <p class="oracle-keyword" data-tree-keyword></p>
-                </header>
-
-                <div class="oracle-message">
-                  <p data-tree-message></p>
+              <div class="oracle-listening-signal" aria-hidden="true">
+                <div class="oracle-listening-rings">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <i></i>
                 </div>
+                <p>KELA is listening</p>
+                <small>Take one slow breath</small>
+              </div>
 
-                <section class="oracle-echo">
-                  <p class="oracle-mini-label">Tune in to this tree</p>
-                  <p data-tree-attunement></p>
-                </section>
+              <article class="oracle-result tree-oracle-result" data-tree-oracle-result hidden tabindex="-1">
+                <div
+                  class="tree-flip-card"
+                  data-tree-flip
+                  role="button"
+                  tabindex="0"
+                  aria-pressed="false"
+                  aria-label="Reveal this tree's meaning"
+                >
+                  <div class="tree-flip-inner">
+                    <section class="tree-flip-face tree-flip-front" data-tree-flip-front>
+                      <div class="oracle-face-brand" aria-hidden="true">
+                        <span>KELA</span>
+                        <small>Messages from the Trees</small>
+                      </div>
+                      <img data-tree-art src="" alt="" width="720" height="1080" />
+                      <div class="tree-flip-front-copy">
+                        <p class="oracle-result-kicker">The tree calling you today</p>
+                        <h2 data-tree-name></h2>
+                        <p class="oracle-keyword" data-tree-keyword></p>
+                        <span class="tree-flip-cue">Tap to reveal its meaning</span>
+                      </div>
+                    </section>
 
-                <section class="oracle-question">
-                  <p class="oracle-mini-label">Carry this question</p>
-                  <p data-tree-question></p>
-                </section>
+                    <section class="tree-flip-face tree-flip-back" data-tree-flip-back aria-hidden="true">
+                      <div class="oracle-face-brand" aria-hidden="true">
+                        <span>KELA</span>
+                        <small>Messages from the Trees</small>
+                      </div>
+                      <img
+                        class="tree-meaning-watermark"
+                        data-tree-watermark
+                        src=""
+                        width="512"
+                        height="768"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <div class="tree-flip-back-heading">
+                        <p class="oracle-result-kicker">Your tree oracle</p>
+                        <h2 data-tree-name-back></h2>
+                        <p class="tree-botanical"><em data-tree-botanical></em></p>
+                        <p class="oracle-keyword" data-tree-keyword-back></p>
+                      </div>
 
-                <section class="oracle-protection">
-                  <p class="oracle-mini-label" data-tree-protection-title>Psychic Protection</p>
-                  <p data-tree-protection></p>
-                </section>
+                      <div class="oracle-message">
+                        <p data-tree-message></p>
+                      </div>
+
+                      <section class="oracle-quick-prompt">
+                        <p class="oracle-mini-label">Protection &amp; confirmation</p>
+                        <p data-tree-watch></p>
+                      </section>
+
+                      <span class="tree-flip-cue">Tap to see your tree</span>
+                    </section>
+                  </div>
+                </div>
 
                 <div class="oracle-result-actions">
                   <button class="button button-secondary" type="button" data-share-tree>
                     Share My Tree
                   </button>
-                  <small>Your tree will remain here until tomorrow.</small>
+                  <small>Your tree stays here until tomorrow.</small>
                 </div>
               </article>
             </div>
@@ -280,7 +320,7 @@
         </p>
         <div class="footer-links">
           <a href="index.html">Home</a>
-          <a href="animal-guide.html">Spirit Animal</a>
+          <a href="animal-oracle.html">Animal Oracle</a>
           <a href="terms.html">Booking terms</a>
           <a href="privacy.html">Privacy</a>
           <a href="photo-credits.html">Photo credits</a>

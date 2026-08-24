@@ -2,6 +2,7 @@ const animalGuides = [
   {
     name: "Blue Owl",
     art: "assets/animals/blue-owl.webp",
+    isolatedArt: "assets/animals/blue-owl-cutout-v1.webp",
     keyword: "Quiet confirmation",
     accent: "#86b8d8",
     message:
@@ -35,7 +36,7 @@ const animalGuides = [
     keyword: "The repeated word",
     accent: "#79ad83",
     message:
-      "Parrot asks you to listen closely to what repeats. A phrase, name, or idea may be circling because it needs your attention. Your own voice also deserves to be heard in its true colors.",
+      "Parrot symbolizes communication, repetition, and authentic expression. Notice the words or ideas that keep returning; they may be guiding you toward what needs to be heard or spoken.",
     echo:
       "If parrots appear—or the same unusual words keep arriving through different people and places—receive the repetition as confirmation. Notice what is being echoed and what you are ready to say.",
   },
@@ -231,17 +232,35 @@ const previewTools = document.querySelector("[data-preview-tools]");
 const previewNext = document.querySelector("[data-preview-next]");
 const shareButton = document.querySelector("[data-share-guide]");
 const guideName = document.querySelector("[data-guide-name]");
+const guideNameBack = document.querySelector("[data-guide-name-back]");
 const guideGlyph = document.querySelector("[data-guide-glyph]");
+const guideGlyphEcho = document.querySelector("[data-guide-glyph-echo]");
+const guideGlyphBack = document.querySelector("[data-guide-glyph-back]");
 const guideKeyword = document.querySelector("[data-guide-keyword]");
+const guideKeywordBack = document.querySelector("[data-guide-keyword-back]");
 const guideMessage = document.querySelector("[data-guide-message]");
-const guideEcho = document.querySelector("[data-guide-echo]");
-const guideEchoTitle = document.querySelector("[data-guide-echo-title]");
-const guideProtectionTitle = document.querySelector("[data-guide-protection-title]");
-const guideProtection = document.querySelector("[data-guide-protection]");
+const guideWatch = document.querySelector("[data-guide-watch]");
+const animalFlip = document.querySelector("[data-animal-flip]");
+const animalFlipFront = document.querySelector("[data-animal-flip-front]");
+const animalFlipBack = document.querySelector("[data-animal-flip-back]");
 
 const storageKey = "kela-animal-guide-v1";
+const animalCardColors = [
+  { name: "Teal", value: "#159d98" },
+  { name: "Sunshine Yellow", value: "#f2c438" },
+  { name: "Magenta", value: "#d8409a" },
+  { name: "Royal Purple", value: "#6842c2" },
+  { name: "Blue", value: "#3478d4" },
+  { name: "Orange", value: "#f0822f" },
+  { name: "Emerald", value: "#299663" },
+  { name: "Coral", value: "#ec5e69" },
+  { name: "Turquoise", value: "#2db7c0" },
+  { name: "Indigo", value: "#4e59bd" },
+];
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let activeGuideIndex = -1;
+let activeColorIndex = -1;
+let animalTurnTimer = 0;
 
 const localDateKey = () => {
   const today = new Date();
@@ -260,67 +279,132 @@ const readSavedGuide = () => {
       && saved.index >= 0
       && saved.index < animalGuides.length
     ) {
-      return saved.index;
+      const colorIndex = Number.isInteger(saved.colorIndex)
+        && saved.colorIndex >= 0
+        && saved.colorIndex < animalCardColors.length
+        ? saved.colorIndex
+        : saved.index % animalCardColors.length;
+      return { index: saved.index, colorIndex };
     }
   } catch {
-    return -1;
+    return null;
   }
-  return -1;
+  return null;
 };
 
-const saveGuide = (index) => {
+const saveGuide = (index, colorIndex) => {
   try {
-    window.localStorage.setItem(storageKey, JSON.stringify({ date: localDateKey(), index }));
+    window.localStorage.setItem(
+      storageKey,
+      JSON.stringify({ date: localDateKey(), index, colorIndex }),
+    );
   } catch {
     // The oracle still works when browser storage is unavailable.
   }
 };
 
-const randomGuideIndex = () => {
-  if (!window.crypto?.getRandomValues) return Math.floor(Math.random() * animalGuides.length);
+const secureRandomIndex = (length) => {
+  if (!window.crypto?.getRandomValues) return Math.floor(Math.random() * length);
   const range = 0x100000000;
-  const ceiling = Math.floor(range / animalGuides.length) * animalGuides.length;
+  const ceiling = Math.floor(range / length) * length;
   const value = new Uint32Array(1);
   do window.crypto.getRandomValues(value);
   while (value[0] >= ceiling);
-  return value[0] % animalGuides.length;
+  return value[0] % length;
 };
 
-const fillGuide = (index) => {
+const randomGuideIndex = () => secureRandomIndex(animalGuides.length);
+const randomColorIndex = () => secureRandomIndex(animalCardColors.length);
+
+const fillGuide = (index, colorIndex) => {
   const guide = animalGuides[index];
+  const cardColor = animalCardColors[colorIndex] || animalCardColors[0];
   if (!guide || !oracleCard || !oracleResult) return;
   activeGuideIndex = index;
-  oracleCard.style.setProperty("--guide-accent", guide.accent);
+  activeColorIndex = animalCardColors.indexOf(cardColor);
+  oracleCard.style.setProperty("--guide-accent", cardColor.value);
+  oracleCard.dataset.guideSlug = guide.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  oracleCard.dataset.cardColor = cardColor.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   if (guideName) guideName.textContent = guide.name;
+  if (guideNameBack) guideNameBack.textContent = guide.name;
   if (guideGlyph) {
-    guideGlyph.src = guide.art;
-    guideGlyph.alt = `A loose pencil drawing of ${guide.name}`;
+    guideGlyph.src = guide.isolatedArt || guide.art;
+    guideGlyph.alt = `Pencil illustration of the ${guide.name} Animal Oracle card from the KELA oracle deck`;
   }
+  if (guideGlyphEcho) guideGlyphEcho.src = guide.isolatedArt || guide.art;
+  if (guideGlyphBack) guideGlyphBack.src = guide.art;
   if (guideKeyword) guideKeyword.textContent = guide.keyword;
+  if (guideKeywordBack) guideKeywordBack.textContent = guide.keyword;
   if (guideMessage) guideMessage.textContent = guide.message;
-  if (guideEcho) guideEcho.textContent = guide.echo;
-  if (guideEchoTitle) guideEchoTitle.textContent = `How ${guide.name} may confirm your path`;
-  if (guideProtectionTitle) {
-    guideProtectionTitle.textContent = `Psychic Protection · ${guide.name} stands by`;
-  }
-  if (guideProtection) {
-    guideProtection.textContent =
-      `Close your eyes. Feel and tune into ${guide.name}'s energy. `
-      + `Ask ${guide.name} to stand by and, on autopilot, protect your mind from any `
-      + "perceived threats so you can have peace of mind going forward.";
+  if (guideWatch) {
+    guideWatch.textContent =
+      `Tune into ${guide.name}. Ask ${guide.name} to protect your mind and energy today.`;
   }
 };
 
-const showGuide = (index, { focus = true, save = true } = {}) => {
+const commitAnimalFace = (showMeaning) => {
+  if (!animalFlip) return;
+  animalFlip.classList.toggle("is-flipped", showMeaning);
+  animalFlip.setAttribute("aria-pressed", String(showMeaning));
+  animalFlip.setAttribute(
+    "aria-label",
+    showMeaning ? "Show the animal illustration" : "Reveal this animal's meaning",
+  );
+  animalFlipFront?.setAttribute("aria-hidden", String(showMeaning));
+  animalFlipBack?.setAttribute("aria-hidden", String(!showMeaning));
+};
+
+const setAnimalFace = (showMeaning, { animate = false } = {}) => {
+  if (!animalFlip) return;
+  if (animalFlip.classList.contains("is-turning")) {
+    if (animate) return;
+    window.clearTimeout(animalTurnTimer);
+    animalFlip.classList.remove("is-turning");
+    commitAnimalFace(showMeaning);
+    return;
+  }
+  const isShowingMeaning = animalFlip.classList.contains("is-flipped");
+  if (isShowingMeaning === showMeaning) return;
+  window.clearTimeout(animalTurnTimer);
+  if (!animate || prefersReducedMotion) {
+    animalFlip.classList.remove("is-turning");
+    commitAnimalFace(showMeaning);
+    return;
+  }
+  animalFlip.classList.add("is-turning");
+  animalTurnTimer = window.setTimeout(() => {
+    commitAnimalFace(showMeaning);
+    window.requestAnimationFrame(() => animalFlip.classList.remove("is-turning"));
+  }, 170);
+};
+
+const toggleAnimalFace = () => {
+  if (!animalFlip) return;
+  setAnimalFace(!animalFlip.classList.contains("is-flipped"), { animate: true });
+};
+
+const showGuide = (
+  index,
+  { focus = true, save = true, colorIndex = randomColorIndex() } = {},
+) => {
   if (!oracleCard || !oracleResult || !oracleRitual) return;
-  fillGuide(index);
-  if (save) saveGuide(index);
+  fillGuide(index, colorIndex);
+  setAnimalFace(false);
+  if (save) saveGuide(index, activeColorIndex);
   oracleResult.hidden = false;
   oracleRitual.hidden = true;
   oracleCard.classList.remove("is-listening");
   oracleCard.classList.add("is-revealed");
   if (status) status.textContent = `${animalGuides[index].name} is walking with you today.`;
-  if (focus) window.setTimeout(() => oracleResult.focus(), prefersReducedMotion ? 0 : 550);
+  if (focus) {
+    window.setTimeout(() => {
+      oracleCard.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "center",
+      });
+      oracleResult.focus({ preventScroll: true });
+    }, prefersReducedMotion ? 0 : 550);
+  }
 };
 
 const beginReveal = () => {
@@ -337,29 +421,47 @@ const beginReveal = () => {
 const copyGuideText = async () => {
   const guide = animalGuides[activeGuideIndex];
   if (!guide || !shareButton) return;
+  const cardColor = animalCardColors[activeColorIndex];
   const text = [
     `${guide.name} — ${guide.keyword}`,
+    cardColor ? `Today's card color: ${cardColor.name}` : "",
     guide.message,
-    `How confirmation may find me: ${guide.echo}`,
-    guideProtection ? `Psychic Protection: ${guideProtection.textContent}` : "",
+    `Protection & confirmation: Ask ${guide.name} to protect your mind and energy. Watch for ${guide.name} to begin showing up as confirmation.`,
     window.location.href,
   ].filter(Boolean).join("\n\n");
 
   try {
     if (navigator.share) {
-      await navigator.share({ title: `My KELA spirit animal: ${guide.name}`, text, url: window.location.href });
+      await navigator.share({ title: `My KELA Animal Oracle card: ${guide.name}`, text, url: window.location.href });
       return;
     }
     await navigator.clipboard.writeText(text);
-    shareButton.textContent = "Spirit Animal Copied";
-    window.setTimeout(() => { shareButton.textContent = "Share My Spirit Animal"; }, 1800);
+    const label = shareButton.querySelector("span");
+    if (label) label.textContent = "Card copied";
+    window.setTimeout(() => {
+      const currentLabel = shareButton.querySelector("span");
+      if (currentLabel) currentLabel.textContent = "Share this card";
+    }, 1800);
   } catch (error) {
-    if (error?.name !== "AbortError") shareButton.textContent = "Sharing unavailable";
+    if (error?.name !== "AbortError") {
+      const label = shareButton.querySelector("span");
+      if (label) label.textContent = "Sharing unavailable";
+      window.setTimeout(() => {
+        const currentLabel = shareButton.querySelector("span");
+        if (currentLabel) currentLabel.textContent = "Share this card";
+      }, 1800);
+    }
   }
 };
 
 revealButton?.addEventListener("click", beginReveal);
 shareButton?.addEventListener("click", copyGuideText);
+animalFlip?.addEventListener("click", toggleAnimalFace);
+animalFlip?.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") return;
+  event.preventDefault();
+  toggleAnimalFace();
+});
 
 const isLocalPreview = ["", "localhost", "127.0.0.1"].includes(window.location.hostname);
 if (previewTools && isLocalPreview) previewTools.hidden = false;
@@ -369,7 +471,14 @@ previewNext?.addEventListener("click", () => {
   showGuide(nextIndex, { focus: false });
 });
 
-const requestedPreview = Number.parseInt(new URLSearchParams(window.location.search).get("guide"), 10);
+const previewParams = new URLSearchParams(window.location.search);
+const requestedPreview = Number.parseInt(previewParams.get("guide"), 10);
+const requestedColor = Number.parseInt(previewParams.get("color"), 10);
+const previewColorIndex = Number.isInteger(requestedColor)
+  && requestedColor >= 0
+  && requestedColor < animalCardColors.length
+  ? requestedColor
+  : randomColorIndex();
 if (
   oracle
   && isLocalPreview
@@ -377,8 +486,15 @@ if (
   && requestedPreview >= 0
   && requestedPreview < animalGuides.length
 ) {
-  showGuide(requestedPreview, { focus: false, save: false });
+  showGuide(requestedPreview, { focus: false, save: false, colorIndex: previewColorIndex });
+  if (previewParams.get("side") === "meaning") setAnimalFace(true);
 } else {
-  const savedGuideIndex = readSavedGuide();
-  if (oracle && savedGuideIndex >= 0) showGuide(savedGuideIndex, { focus: false, save: false });
+  const savedGuide = readSavedGuide();
+  if (oracle && savedGuide) {
+    showGuide(savedGuide.index, {
+      focus: false,
+      save: false,
+      colorIndex: savedGuide.colorIndex,
+    });
+  }
 }

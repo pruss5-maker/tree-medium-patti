@@ -6,7 +6,7 @@ const treeGuides = [
     keyword: "Inner Vision",
     accent: "#a2769f",
     message:
-      "Madrona sheds what has grown too tight and reveals luminous color beneath. In this oracle, its clear, high presence invites the third eye to soften open—not to predict, but to notice the images, patterns, and quiet knowing already moving through you.",
+      "Madrona sheds what has grown too tight, revealing luminous color beneath. Its clear presence invites your inner sight to soften open and notice the images, patterns, and quiet knowing already moving through you.",
     attunement:
       "Rest your gaze on the places where Madrona's bark opens. Breathe slowly and imagine one old layer loosening from your inner sight.",
     question: "What am I ready to see now that I could not see before?",
@@ -18,7 +18,7 @@ const treeGuides = [
     keyword: "Sacred Clearing",
     accent: "#71965f",
     message:
-      "Neem arrives like clean air moving through an overfilled room. It calls you to clear what clouds your energy—stale habits, borrowed worries, and noise that was never yours to carry—so your own signal can become easier to hear.",
+      "Neem arrives like clean air in an overfilled room. Clear the stale habits, borrowed worries, and noise that cloud your energy so your own signal becomes easier to hear.",
     attunement:
       "With each exhale, name one thing you can set down for today. Leave a little unfilled space and notice what returns to it.",
     question: "What can I release so my own energy has room to move?",
@@ -78,7 +78,7 @@ const treeGuides = [
     keyword: "Steady Power",
     accent: "#9a794c",
     message:
-      "Oak does not rush to prove its strength. It grows power ring by ring, season by season, and calls you back to the promise that can be kept through weather—not just in a burst of inspiration.",
+      "Oak does not rush to prove its strength. It grows power ring by ring, calling you back to the promise you can keep through changing weather—not only in a burst of inspiration.",
     attunement:
       "Press your feet gently into the earth. Choose one small action you can repeat, and let consistency be the source of its power.",
     question: "What deserves my steady devotion now?",
@@ -155,19 +155,23 @@ const previewTools = document.querySelector("[data-tree-preview-tools]");
 const previewNext = document.querySelector("[data-tree-preview-next]");
 const shareButton = document.querySelector("[data-share-tree]");
 const treeName = document.querySelector("[data-tree-name]");
+const treeNameBack = document.querySelector("[data-tree-name-back]");
 const treeBotanical = document.querySelector("[data-tree-botanical]");
 const treeArt = document.querySelector("[data-tree-art]");
+const treeWatermark = document.querySelector("[data-tree-watermark]");
 const treeKeyword = document.querySelector("[data-tree-keyword]");
+const treeKeywordBack = document.querySelector("[data-tree-keyword-back]");
 const treeMessage = document.querySelector("[data-tree-message]");
-const treeAttunement = document.querySelector("[data-tree-attunement]");
-const treeQuestion = document.querySelector("[data-tree-question]");
-const treeProtectionTitle = document.querySelector("[data-tree-protection-title]");
-const treeProtection = document.querySelector("[data-tree-protection]");
+const treeWatch = document.querySelector("[data-tree-watch]");
+const treeFlip = document.querySelector("[data-tree-flip]");
+const treeFlipFront = document.querySelector("[data-tree-flip-front]");
+const treeFlipBack = document.querySelector("[data-tree-flip-back]");
 const gallery = document.querySelector("[data-tree-gallery]");
 
 const storageKey = "kela-tree-oracle-v1";
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let activeTreeIndex = -1;
+let treeTurnTimer = 0;
 
 const localDateKey = () => {
   const today = new Date();
@@ -216,36 +220,82 @@ const fillTree = (index) => {
   activeTreeIndex = index;
   oracleCard.style.setProperty("--guide-accent", tree.accent);
   if (treeName) treeName.textContent = tree.name;
+  if (treeNameBack) treeNameBack.textContent = tree.name;
   if (treeBotanical) treeBotanical.textContent = tree.botanical;
   if (treeArt) {
     treeArt.src = tree.art;
     treeArt.alt = `Photograph of a ${tree.name} tree`;
   }
+  if (treeWatermark) treeWatermark.src = tree.art;
   if (treeKeyword) treeKeyword.textContent = tree.keyword;
+  if (treeKeywordBack) treeKeywordBack.textContent = tree.keyword;
   if (treeMessage) treeMessage.textContent = tree.message;
-  if (treeAttunement) treeAttunement.textContent = tree.attunement;
-  if (treeQuestion) treeQuestion.textContent = tree.question;
-  if (treeProtectionTitle) {
-    treeProtectionTitle.textContent = `Psychic Protection · ${tree.name} stands by`;
+  if (treeWatch) {
+    treeWatch.textContent =
+      `Tune into ${tree.name}. Ask ${tree.name} to protect your mind and energy today.`;
   }
-  if (treeProtection) {
-    treeProtection.textContent =
-      `Close your eyes. Feel and tune into ${tree.name}'s energy. `
-      + `Ask ${tree.name} to stand by and, on autopilot, protect your mind from any perceived `
-      + "threats so you can have peace of mind going forward.";
+};
+
+const commitTreeFace = (showMeaning) => {
+  if (!treeFlip) return;
+  treeFlip.classList.toggle("is-flipped", showMeaning);
+  treeFlip.setAttribute("aria-pressed", String(showMeaning));
+  treeFlip.setAttribute(
+    "aria-label",
+    showMeaning ? "Show the tree photograph" : "Reveal this tree's meaning",
+  );
+  treeFlipFront?.setAttribute("aria-hidden", String(showMeaning));
+  treeFlipBack?.setAttribute("aria-hidden", String(!showMeaning));
+};
+
+const setTreeFace = (showMeaning, { animate = false } = {}) => {
+  if (!treeFlip) return;
+  if (treeFlip.classList.contains("is-turning")) {
+    if (animate) return;
+    window.clearTimeout(treeTurnTimer);
+    treeFlip.classList.remove("is-turning");
+    commitTreeFace(showMeaning);
+    return;
   }
+  const isShowingMeaning = treeFlip.classList.contains("is-flipped");
+  if (isShowingMeaning === showMeaning) return;
+  window.clearTimeout(treeTurnTimer);
+  if (!animate || prefersReducedMotion) {
+    treeFlip.classList.remove("is-turning");
+    commitTreeFace(showMeaning);
+    return;
+  }
+  treeFlip.classList.add("is-turning");
+  treeTurnTimer = window.setTimeout(() => {
+    commitTreeFace(showMeaning);
+    window.requestAnimationFrame(() => treeFlip.classList.remove("is-turning"));
+  }, 170);
+};
+
+const toggleTreeFace = () => {
+  if (!treeFlip) return;
+  setTreeFace(!treeFlip.classList.contains("is-flipped"), { animate: true });
 };
 
 const showTree = (index, { focus = true, save = true } = {}) => {
   if (!oracleCard || !oracleResult || !oracleRitual) return;
   fillTree(index);
+  setTreeFace(false);
   if (save) saveTree(index);
   oracleResult.hidden = false;
   oracleRitual.hidden = true;
   oracleCard.classList.remove("is-listening");
   oracleCard.classList.add("is-revealed");
   if (status) status.textContent = `${treeGuides[index].name} is calling you into the network today.`;
-  if (focus) window.setTimeout(() => oracleResult.focus(), prefersReducedMotion ? 0 : 550);
+  if (focus) {
+    window.setTimeout(() => {
+      oracleCard.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "center",
+      });
+      oracleResult.focus({ preventScroll: true });
+    }, prefersReducedMotion ? 0 : 550);
+  }
 };
 
 const beginReveal = () => {
@@ -262,9 +312,7 @@ const shareTree = async () => {
   const text = [
     `${tree.name} — ${tree.keyword}`,
     tree.message,
-    `Tune in: ${tree.attunement}`,
-    `Question: ${tree.question}`,
-    treeProtection ? `Psychic Protection: ${treeProtection.textContent}` : "",
+    `Protection & confirmation: Ask ${tree.name} to protect your mind and energy. Watch for ${tree.name} to begin showing up as confirmation.`,
     window.location.href,
   ].filter(Boolean).join("\n\n");
 
@@ -301,6 +349,12 @@ const renderGallery = () => {
 
 revealButton?.addEventListener("click", beginReveal);
 shareButton?.addEventListener("click", shareTree);
+treeFlip?.addEventListener("click", toggleTreeFace);
+treeFlip?.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") return;
+  event.preventDefault();
+  toggleTreeFace();
+});
 renderGallery();
 
 const isLocalPreview = ["", "localhost", "127.0.0.1"].includes(window.location.hostname);
@@ -311,7 +365,8 @@ previewNext?.addEventListener("click", () => {
   showTree(nextIndex, { focus: false, save: false });
 });
 
-const requestedPreview = Number.parseInt(new URLSearchParams(window.location.search).get("tree"), 10);
+const previewParams = new URLSearchParams(window.location.search);
+const requestedPreview = Number.parseInt(previewParams.get("tree"), 10);
 if (
   oracle
   && isLocalPreview
@@ -320,6 +375,7 @@ if (
   && requestedPreview < treeGuides.length
 ) {
   showTree(requestedPreview, { focus: false, save: false });
+  if (previewParams.get("side") === "meaning") setTreeFace(true);
 } else {
   const savedTreeIndex = readSavedTree();
   if (oracle && savedTreeIndex >= 0) showTree(savedTreeIndex, { focus: false, save: false });

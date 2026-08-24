@@ -31,10 +31,10 @@
     <link rel="icon" href="assets/kela-mark.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preload" href="assets/tree-photos/madrona.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="styles.css?v=20260824-36" />
+    <link rel="stylesheet" href="styles.css?v=20260824-38" />
     <script src="script.js?v=20260823-5" defer></script>
     <script src="ux-observer.js?v=20260824-1" data-clarity-project-id="" defer></script>
-    <script src="tree-oracle.js?v=20260824-11" defer></script>
+    <script src="tree-oracle.js?v=20260824-12" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -171,9 +171,12 @@
               </div>
 
               <article class="oracle-result tree-oracle-result" data-tree-oracle-result hidden tabindex="-1">
-                <div
+                <figure
                   class="tree-flip-card"
                   data-tree-flip
+                  data-card-figure
+                  itemscope
+                  itemtype="https://schema.org/ImageObject"
                   role="button"
                   tabindex="0"
                   aria-pressed="false"
@@ -185,7 +188,7 @@
                         <span>KELA</span>
                         <small>Messages from the Trees</small>
                       </div>
-                      <img data-tree-art src="" alt="" width="720" height="1080" />
+                      <img data-tree-art itemprop="contentUrl" src="" alt="" width="720" height="1080" />
                       <div class="tree-flip-front-copy">
                         <p class="oracle-result-kicker">The tree calling you today</p>
                         <h2 data-tree-name></h2>
@@ -227,7 +230,11 @@
                       <span class="tree-flip-cue">Tap to see your tree</span>
                     </section>
                   </div>
-                </div>
+                  <meta itemprop="name" data-card-seo-name content="" />
+                  <meta itemprop="description" data-card-seo-description content="" />
+                  <link itemprop="url" data-card-seo-url href="https://treemedium.vercel.app/tree-oracle" />
+                  <figcaption class="sr-only" data-card-seo-caption></figcaption>
+                </figure>
 
                 <div class="oracle-result-actions">
                   <button class="button button-secondary" type="button" data-share-tree>
@@ -278,6 +285,9 @@
             </p>
           </header>
           <div class="tree-gallery" data-tree-gallery></div>
+          <nav class="oracle-card-slugs" aria-label="Individual Tree Oracle cards">
+            <a href="/tree-oracle/madrona">Madrona card</a><a href="/tree-oracle/neem">Neem card</a><a href="/tree-oracle/baobab">Baobab card</a><a href="/tree-oracle/banyan">Banyan card</a><a href="/tree-oracle/willow">Willow card</a><a href="/tree-oracle/cedar">Cedar card</a><a href="/tree-oracle/oak">Oak card</a><a href="/tree-oracle/birch">Birch card</a><a href="/tree-oracle/redwood">Redwood card</a><a href="/tree-oracle/olive">Olive card</a><a href="/tree-oracle/ginkgo">Ginkgo card</a><a href="/tree-oracle/jacaranda">Jacaranda card</a>
+          </nav>
         </div>
       </section>
 

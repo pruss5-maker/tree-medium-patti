@@ -243,6 +243,11 @@ const guideWatch = document.querySelector("[data-guide-watch]");
 const animalFlip = document.querySelector("[data-animal-flip]");
 const animalFlipFront = document.querySelector("[data-animal-flip-front]");
 const animalFlipBack = document.querySelector("[data-animal-flip-back]");
+const cardFigure = document.querySelector("[data-card-figure]");
+const cardSeoName = document.querySelector("[data-card-seo-name]");
+const cardSeoDescription = document.querySelector("[data-card-seo-description]");
+const cardSeoUrl = document.querySelector("[data-card-seo-url]");
+const cardSeoCaption = document.querySelector("[data-card-seo-caption]");
 
 const storageKey = "kela-animal-guide-v1";
 const animalCardColors = [
@@ -315,6 +320,44 @@ const secureRandomIndex = (length) => {
 
 const randomGuideIndex = () => secureRandomIndex(animalGuides.length);
 const randomColorIndex = () => secureRandomIndex(animalCardColors.length);
+const slugify = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+const setMetaContent = (selector, content) => {
+  const element = document.querySelector(selector);
+  if (element) element.setAttribute("content", content);
+};
+
+const updateGuideSeo = (guide, cardColor) => {
+  const slug = slugify(guide.name);
+  const colorSlug = slugify(cardColor.name);
+  const seoUrl = new URL(`/animal-oracle/${slug}`, window.location.origin);
+  const cardUrl = new URL(seoUrl);
+  cardUrl.searchParams.set("color", colorSlug);
+  const description = `${guide.name} Animal Oracle card — ${guide.keyword}. Read its original KELA message and protection prompt.`;
+  const imageLabel = `${guide.name} — ${guide.keyword}, a KELA Animal Oracle card with a pencil illustration and a spiritual protection message.`;
+
+  oracleCard.dataset.guideSlug = slug;
+  oracleCard.dataset.cardColor = colorSlug;
+  oracleCard.dataset.cardUrl = cardUrl.href;
+  cardFigure?.setAttribute("aria-label", imageLabel);
+  cardSeoName?.setAttribute("content", `${guide.name} Animal Oracle card`);
+  cardSeoDescription?.setAttribute("content", description);
+  cardSeoUrl?.setAttribute("href", seoUrl.href);
+  if (cardSeoCaption) cardSeoCaption.textContent = imageLabel;
+  if (guideGlyph) guideGlyph.title = `${guide.name} Animal Oracle card — ${guide.keyword}`;
+
+  document.title = `${guide.name} Animal Oracle Card Meaning | KELA`;
+  setMetaContent('meta[name="description"]', description);
+  setMetaContent('meta[property="og:title"]', `${guide.name} Animal Oracle Card | KELA`);
+  setMetaContent('meta[property="og:description"]', description);
+  setMetaContent('meta[property="og:url"]', seoUrl.href);
+  setMetaContent('meta[property="og:image:alt"]', imageLabel);
+  setMetaContent('meta[name="twitter:title"]', `${guide.name} Animal Oracle Card | KELA`);
+  setMetaContent('meta[name="twitter:description"]', description);
+  setMetaContent('meta[name="twitter:image:alt"]', imageLabel);
+  document.querySelector('link[rel="canonical"]')?.setAttribute("href", seoUrl.href);
+  window.history.replaceState(null, "", `${cardUrl.pathname}${cardUrl.search}`);
+};
 
 const fillGuide = (index, colorIndex) => {
   const guide = animalGuides[index];
@@ -323,8 +366,7 @@ const fillGuide = (index, colorIndex) => {
   activeGuideIndex = index;
   activeColorIndex = animalCardColors.indexOf(cardColor);
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
-  oracleCard.dataset.guideSlug = guide.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-  oracleCard.dataset.cardColor = cardColor.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  updateGuideSeo(guide, cardColor);
   if (guideName) guideName.textContent = guide.name;
   if (guideNameBack) guideNameBack.textContent = guide.name;
   if (guideGlyph) {
@@ -344,11 +386,14 @@ const fillGuide = (index, colorIndex) => {
 
 const commitAnimalFace = (showMeaning) => {
   if (!animalFlip) return;
+  const guide = animalGuides[activeGuideIndex];
   animalFlip.classList.toggle("is-flipped", showMeaning);
   animalFlip.setAttribute("aria-pressed", String(showMeaning));
   animalFlip.setAttribute(
     "aria-label",
-    showMeaning ? "Show the animal illustration" : "Reveal this animal's meaning",
+    guide
+      ? `${guide.name} Animal Oracle card — ${showMeaning ? "show its illustration" : "reveal its meaning"}`
+      : showMeaning ? "Show the animal illustration" : "Reveal this animal's meaning",
   );
   animalFlipFront?.setAttribute("aria-hidden", String(showMeaning));
   animalFlipBack?.setAttribute("aria-hidden", String(!showMeaning));
@@ -474,12 +519,22 @@ previewNext?.addEventListener("click", () => {
 const previewParams = new URLSearchParams(window.location.search);
 const requestedPreview = Number.parseInt(previewParams.get("guide"), 10);
 const requestedColor = Number.parseInt(previewParams.get("color"), 10);
-const previewColorIndex = Number.isInteger(requestedColor)
+const requestedColorSlug = slugify(previewParams.get("color") || "");
+const requestedColorBySlug = animalCardColors.findIndex((color) => slugify(color.name) === requestedColorSlug);
+const previewColorIndex = requestedColorBySlug >= 0
+  ? requestedColorBySlug
+  : Number.isInteger(requestedColor)
   && requestedColor >= 0
   && requestedColor < animalCardColors.length
   ? requestedColor
   : randomColorIndex();
-if (
+const pathParts = window.location.pathname.split("/").filter(Boolean);
+const pathCardSlug = pathParts[0] === "animal-oracle" && pathParts.length > 1 ? pathParts[1] : "";
+const requestedCardSlug = slugify(previewParams.get("card") || pathCardSlug);
+const requestedCardIndex = animalGuides.findIndex((guide) => slugify(guide.name) === requestedCardSlug);
+if (oracle && requestedCardIndex >= 0) {
+  showGuide(requestedCardIndex, { focus: false, save: false, colorIndex: previewColorIndex });
+} else if (
   oracle
   && isLocalPreview
   && Number.isInteger(requestedPreview)

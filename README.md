@@ -12,6 +12,15 @@ python3 -m http.server 4173
 
 Then visit `http://localhost:4173`.
 
+Working oracle previews:
+
+- Spirit Animal: `http://localhost:4173/animal-guide.html`
+- Tree Oracle: `http://localhost:4173/tree-oracle.html`
+
+On localhost, each oracle includes a preview control for cycling through the full working deck.
+The Tree Oracle also accepts `?tree=0` through `?tree=11` for reviewing a specific card without
+changing the visitor's saved daily draw.
+
 ## Publish on Vercel
 
 This is a dependency-free static website. Connect its GitHub repository to Vercel and deploy with

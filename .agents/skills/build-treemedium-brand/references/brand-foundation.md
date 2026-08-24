@@ -94,6 +94,47 @@ These remain proposals, not confirmed offerings, and should not appear on the in
 
 Before publishing, confirm each offer's name, format, duration, price, deliverables, cancellation terms, and booking method.
 
+## Working Spirit Animal Oracle
+
+`Reveal Your Spirit Animal` is a working, not-yet-published free website experience. Its public
+language now uses `Spirit Animal` at Patti's direction. A visitor sets an intention, takes one slow
+breath, and reveals one of 22 spirit animals to watch for as ongoing confirmation. The selection is
+made privately in the browser and stays consistent for one
+local calendar day.
+
+The distinctive practice is `The Echo`: the animal may later show up in a conversation, book,
+picture, toy, dream, song, passing remark, or nature. Its reappearance is framed as an invitation to
+pause and reflect on what the visitor was thinking, asking, or deciding—not as guaranteed prophecy
+or a command. Every card needs Patti-specific confirmation language through its main message and
+`The Echo`. Do not add a separate reflection-question box to the spirit-animal cards.
+
+Every spirit-animal and tree card also carries a `Psychic Protection` practice. Each practice is
+self-contained: an animal card asks the visitor to tune into and call on only that named animal,
+while a tree card asks the visitor to tune into and call on only that named tree. The visitor asks
+that individual guide to stand by and protect their mind on autopilot from perceived threats so they
+can move forward with peace of mind. This is framed as a personal spiritual request, not a guaranteed
+outcome.
+
+The working opening copy follows Patti's direct, conversational three-beat rhythm: ask whether the
+visitor wonders if they are on the right path, ask whether their deepest thoughts need confirmation,
+then invite them to reveal the spirit animal ready to show up—and keep showing up—as confirmation
+along their path.
+
+The working 22 are Blue Owl, Octopus, Tiger, Parrot, Fox, Bunny Rabbit, Mole, Turtle, Hummingbird,
+Bear, Deer, Crow, Whale, Frog, Spider, Horse, Elephant, Moth, Bee, Dolphin, Snake, and Dragonfly.
+Blue Owl is rooted in Patti's lived experience of owl figures, toys, images, and encounters arriving
+when she needs confirmation. All card meanings and artwork remain working drafts until Patti reviews
+them. Patti approved the reviewed Spirit Animal experience for public launch on August 23, 2026.
+
+The working animal artwork is a cohesive set of rudimentary graphite pencil studies on warm ivory paper:
+simple, recognizable animals with imperfect hand-drawn contour lines and sparse crosshatching. The
+Blue Owl alone carries a faint dusty-blue pencil wash. Avoid emoji, polished clip art, card labels,
+and busy scenery; the animal should feel like a quiet drawing found in a naturalist's field journal.
+The interactive experience is centered around a recognizable portrait oracle-card deck rather than
+an arched panel. Its original KELA card back uses a living tree, mirrored roots, deep spruce, warm
+ivory, and restrained gold botanical ornament. The tone should feel luminous, refined, and magical—not
+somber, gothic, funeral-like, or derivative of another creator's deck.
+
 ## Working Calls to Action
 
 - Book a Tree Message

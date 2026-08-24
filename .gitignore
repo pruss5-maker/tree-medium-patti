@@ -1,1 +1,4 @@
 .vercel
+
+# Local image-generation source sheets; optimized web cards live in assets/animals/.
+assets/animal-pencil-sheet-*.png

@@ -1,0 +1,34 @@
+/* The interactive deck uses the same finished physical-card renders as the social preview. */
+.animal-flip-card,
+.tree-flip-card {
+  aspect-ratio: 1122 / 1402;
+}
+
+.oracle-card-raster-face {
+  padding: 0;
+  background: #2f241a;
+  border: 0;
+}
+
+.oracle-card-raster-face::before,
+.oracle-card-raster-face::after {
+  display: none;
+}
+
+.oracle-card-raster-face > :not(.oracle-card-raster) {
+  display: none;
+}
+
+.oracle-card-raster-face > .oracle-card-raster {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  border-radius: 0;
+  filter: none;
+  opacity: 1;
+  transform: none;
+}

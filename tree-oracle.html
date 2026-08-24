@@ -33,9 +33,10 @@
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preload" href="assets/tree-photos/madrona.webp" as="image" type="image/webp" />
     <link rel="stylesheet" href="styles.css?v=20260824-38" />
+    <link rel="stylesheet" href="oracle-card-display.css?v=20260824-1" />
     <script src="script.js?v=20260823-5" defer></script>
     <script src="ux-observer.js?v=20260824-1" data-clarity-project-id="" defer></script>
-    <script src="tree-oracle.js?v=20260824-12" defer></script>
+    <script src="tree-oracle.js?v=20260824-13" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -184,12 +185,13 @@
                   aria-label="Reveal this tree's meaning"
                 >
                   <div class="tree-flip-inner">
-                    <section class="tree-flip-face tree-flip-front" data-tree-flip-front>
+                    <section class="tree-flip-face tree-flip-front oracle-card-raster-face" data-tree-flip-front>
+                      <img class="oracle-card-raster" data-tree-card-front itemprop="contentUrl" src="" alt="" />
                       <div class="oracle-face-brand" aria-hidden="true">
                         <span>KELA</span>
                         <small>Messages from the Trees</small>
                       </div>
-                      <img data-tree-art itemprop="contentUrl" src="" alt="" width="720" height="1080" />
+                      <img data-tree-art src="" alt="" width="720" height="1080" />
                       <div class="tree-flip-front-copy">
                         <p class="oracle-result-kicker">The tree calling you today</p>
                         <h2 data-tree-name></h2>
@@ -198,7 +200,8 @@
                       </div>
                     </section>
 
-                    <section class="tree-flip-face tree-flip-back" data-tree-flip-back aria-hidden="true">
+                    <section class="tree-flip-face tree-flip-back oracle-card-raster-face" data-tree-flip-back aria-hidden="true">
+                      <img class="oracle-card-raster" data-tree-card-back src="" alt="" />
                       <div class="oracle-face-brand" aria-hidden="true">
                         <span>KELA</span>
                         <small>Messages from the Trees</small>

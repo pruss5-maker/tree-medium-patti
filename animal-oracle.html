@@ -33,9 +33,10 @@
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preload" href="assets/kela-tree-hero.webp" as="image" type="image/webp" />
     <link rel="stylesheet" href="styles.css?v=20260824-38" />
+    <link rel="stylesheet" href="oracle-card-display.css?v=20260824-1" />
     <script src="script.js?v=20260823-5" defer></script>
     <script src="ux-observer.js?v=20260824-1" data-clarity-project-id="" defer></script>
-    <script src="animal-guide.js?v=20260824-22" defer></script>
+    <script src="animal-guide.js?v=20260824-23" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -182,7 +183,8 @@
                   aria-label="Reveal this animal's meaning"
                 >
                   <div class="animal-flip-inner">
-                    <section class="animal-flip-face animal-flip-front" data-animal-flip-front>
+                    <section class="animal-flip-face animal-flip-front oracle-card-raster-face" data-animal-flip-front>
+                      <img class="oracle-card-raster" data-animal-card-front itemprop="contentUrl" src="" alt="" />
                       <div class="oracle-face-brand" aria-hidden="true">
                         <span>KELA</span>
                         <small>Messages from the Trees</small>
@@ -190,7 +192,7 @@
                       <span class="animal-still-light" aria-hidden="true"></span>
                       <span class="animal-art-layer">
                         <img class="animal-depth-echo" data-guide-glyph-echo src="" alt="" aria-hidden="true" />
-                        <img class="animal-card-illustration" data-guide-glyph itemprop="contentUrl" src="" alt="" />
+                        <img class="animal-card-illustration" data-guide-glyph src="" alt="" />
                         <span class="animal-owl-catchlights" aria-hidden="true"></span>
                       </span>
                       <span class="animal-surface-light" aria-hidden="true"></span>
@@ -202,7 +204,8 @@
                       </div>
                     </section>
 
-                    <section class="animal-flip-face animal-flip-back" data-animal-flip-back aria-hidden="true">
+                    <section class="animal-flip-face animal-flip-back oracle-card-raster-face" data-animal-flip-back aria-hidden="true">
+                      <img class="oracle-card-raster" data-animal-card-back src="" alt="" />
                       <div class="oracle-face-brand" aria-hidden="true">
                         <span>KELA</span>
                         <small>Messages from the Trees</small>

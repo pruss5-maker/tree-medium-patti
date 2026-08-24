@@ -159,6 +159,8 @@ const treeNameBack = document.querySelector("[data-tree-name-back]");
 const treeBotanical = document.querySelector("[data-tree-botanical]");
 const treeArt = document.querySelector("[data-tree-art]");
 const treeWatermark = document.querySelector("[data-tree-watermark]");
+const treeCardFront = document.querySelector("[data-tree-card-front]");
+const treeCardBack = document.querySelector("[data-tree-card-back]");
 const treeKeyword = document.querySelector("[data-tree-keyword]");
 const treeKeywordBack = document.querySelector("[data-tree-keyword-back]");
 const treeMessage = document.querySelector("[data-tree-message]");
@@ -260,6 +262,15 @@ const fillTree = (index) => {
   activeTreeIndex = index;
   oracleCard.style.setProperty("--guide-accent", tree.accent);
   updateTreeSeo(tree);
+  const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
+  if (treeCardFront) {
+    treeCardFront.src = `${cardAssetBase}-front.webp`;
+    treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;
+  }
+  if (treeCardBack) {
+    treeCardBack.src = `${cardAssetBase}-back.webp`;
+    treeCardBack.alt = `${tree.name} KELA Tree Oracle meaning card`;
+  }
   if (treeName) treeName.textContent = tree.name;
   if (treeNameBack) treeNameBack.textContent = tree.name;
   if (treeBotanical) treeBotanical.textContent = tree.botanical;

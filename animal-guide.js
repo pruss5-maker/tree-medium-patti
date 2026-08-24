@@ -236,6 +236,8 @@ const guideNameBack = document.querySelector("[data-guide-name-back]");
 const guideGlyph = document.querySelector("[data-guide-glyph]");
 const guideGlyphEcho = document.querySelector("[data-guide-glyph-echo]");
 const guideGlyphBack = document.querySelector("[data-guide-glyph-back]");
+const animalCardFront = document.querySelector("[data-animal-card-front]");
+const animalCardBack = document.querySelector("[data-animal-card-back]");
 const guideKeyword = document.querySelector("[data-guide-keyword]");
 const guideKeywordBack = document.querySelector("[data-guide-keyword-back]");
 const guideMessage = document.querySelector("[data-guide-message]");
@@ -367,6 +369,15 @@ const fillGuide = (index, colorIndex) => {
   activeColorIndex = animalCardColors.indexOf(cardColor);
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
   updateGuideSeo(guide, cardColor);
+  const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
+  if (animalCardFront) {
+    animalCardFront.src = `${cardAssetBase}-front.webp`;
+    animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;
+  }
+  if (animalCardBack) {
+    animalCardBack.src = `${cardAssetBase}-back.webp`;
+    animalCardBack.alt = `${guide.name} KELA Animal Oracle meaning card`;
+  }
   if (guideName) guideName.textContent = guide.name;
   if (guideNameBack) guideNameBack.textContent = guide.name;
   if (guideGlyph) {

@@ -264,11 +264,11 @@ const fillTree = (index) => {
   updateTreeSeo(tree);
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
   if (treeCardFront) {
-    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260824-4`;
+    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260824-5`;
     treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;
   }
   if (treeCardBack) {
-    treeCardBack.src = `${cardAssetBase}-back.webp?v=20260824-4`;
+    treeCardBack.src = `${cardAssetBase}-back.webp?v=20260824-5`;
     treeCardBack.alt = `${tree.name} KELA Tree Oracle meaning card`;
   }
   if (treeName) treeName.textContent = tree.name;

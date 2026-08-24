@@ -1,5 +1,5 @@
 :root {
-  --ink: #17352d;
+  --ink: #123247;
   --gold: #b98e42;
   --ivory: #f7efdf;
   font-synthesis: none;
@@ -48,7 +48,7 @@ body {
 }
 
 .brand {
-  top: 122px;
+  top: 180px;
   left: 180px;
   width: 762px;
   color: #d9ae5f;
@@ -89,10 +89,10 @@ body {
 }
 
 .art-area.animal {
-  top: 260px;
+  top: 350px;
   left: 205px;
   width: 712px;
-  height: 575px;
+  height: 485px;
 }
 
 .art-area.animal img {
@@ -138,7 +138,7 @@ body {
 
 .calling {
   margin: 0 0 10px;
-  color: #1e5960;
+  color: #a77b2e;
   font-family: Arial, sans-serif;
   font-size: 22px;
   font-weight: 800;
@@ -151,7 +151,7 @@ body {
 
 h1 {
   margin: 0;
-  color: #113d38;
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 72px;
   font-weight: 400;
@@ -166,7 +166,7 @@ h1.long-name {
 .keyword,
 .botanical {
   margin: 11px 0 0;
-  color: color-mix(in srgb, var(--accent) 68%, #68503a);
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 30px;
   font-style: italic;
@@ -175,7 +175,7 @@ h1.long-name {
 
 .botanical {
   margin-top: 8px;
-  color: #685f54;
+  color: var(--ink);
   font-size: 18px;
 }
 
@@ -207,7 +207,7 @@ h1.long-name {
 .protection {
   max-width: 680px;
   margin: 0 auto;
-  color: #21352e;
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 29px;
   line-height: 1.35;
@@ -279,6 +279,10 @@ h1.long-name {
   text-align: center;
 }
 
+.animal.back .back-copy {
+  top: 390px;
+}
+
 .back-copy h1 {
   font-size: 66px;
 }
@@ -292,7 +296,7 @@ h1.long-name {
   min-height: 340px;
   margin: 18px 0 0;
   align-items: center;
-  color: #20372f;
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 40px;
   line-height: 1.42;
@@ -306,10 +310,10 @@ h1.long-name {
 .protection-box {
   position: relative;
   padding: 22px 18px 0;
-  color: #173c37;
+  color: var(--ink);
   background: transparent;
   border: 0;
-  border-top: 1px solid color-mix(in srgb, var(--accent) 38%, #b58b3e);
+  border-top: 1px solid #b58b3e;
   text-align: center;
 }
 
@@ -330,7 +334,7 @@ h1.long-name {
 .protection-box strong {
   display: block;
   margin-bottom: 10px;
-  color: color-mix(in srgb, var(--accent) 58%, #8b692e);
+  color: var(--ink);
   font-family: Arial, sans-serif;
   font-size: 21px;
   letter-spacing: 0.15em;
@@ -338,7 +342,7 @@ h1.long-name {
 
 .protection-box p {
   margin: 0;
-  color: #21372f;
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 30px;
   line-height: 1.4;
@@ -367,7 +371,7 @@ h1.long-name {
 }
 
 .animal.back .back-copy .cue {
-  top: 855px;
+  top: 790px;
 }
 
 .tree.back .back-copy .cue {

@@ -166,6 +166,11 @@
 }
 
 @media (max-width: 760px) {
+  .animal-flip-card,
+  .tree-flip-card {
+    aspect-ratio: 0.68;
+  }
+
   .oracle-page .site-header,
   .oracle-page .site-header.is-scrolled {
     min-height: 66px;

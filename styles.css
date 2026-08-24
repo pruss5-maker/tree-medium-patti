@@ -1567,6 +1567,92 @@ summary:focus-visible {
   font-size: 0.9rem;
 }
 
+.analytics-consent {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1200;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 980px;
+  padding: 22px 24px;
+  margin-inline: auto;
+  color: var(--cream-50);
+  background: rgba(10, 34, 24, 0.98);
+  border: 1px solid rgba(221, 194, 148, 0.58);
+  border-radius: 16px;
+  box-shadow: 0 18px 55px rgba(5, 24, 15, 0.3);
+}
+
+.analytics-consent p {
+  max-width: 680px;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.analytics-consent p + p {
+  margin-top: 7px;
+  color: rgba(251, 248, 239, 0.74);
+}
+
+.analytics-consent a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--gold-light);
+  font-size: 0.82rem;
+}
+
+.analytics-consent-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.analytics-consent-actions .button {
+  min-height: 46px;
+  padding: 11px 18px;
+  font-size: 0.72rem;
+}
+
+.analytics-consent-actions .text-link {
+  padding: 8px 0;
+  color: var(--cream-50);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.privacy-settings-link {
+  padding: 0;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 700px) {
+  .analytics-consent {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .analytics-consent-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
 .oracle-page {
   color: var(--ink);
   background: var(--cream-50);

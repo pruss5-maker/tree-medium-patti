@@ -50,7 +50,7 @@ if (header && menuToggle) {
   if (!document.querySelector('link[href*="header-symbols.css"]')) {
     const symbolStyles = document.createElement("link");
     symbolStyles.rel = "stylesheet";
-    symbolStyles.href = "/header-symbols.css?v=20260825-1";
+    symbolStyles.href = "/header-symbols.css?v=20260825-4";
     document.head.append(symbolStyles);
   }
   if (!header.querySelector(".header-triskele")) {
@@ -1010,7 +1010,7 @@ startMoss();
 
 if (!document.querySelector('script[data-atmosphere]')) {
   const atmosphereScript = document.createElement("script");
-  atmosphereScript.src = "/atmosphere.js?v=20260825-4";
+  atmosphereScript.src = "/atmosphere.js?v=20260825-5";
   atmosphereScript.async = false;
   atmosphereScript.dataset.atmosphere = "";
   document.head.append(atmosphereScript);

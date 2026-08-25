@@ -42,6 +42,28 @@ html[data-theme="dark"] .header-triskele {
   filter: drop-shadow(0 3px 8px rgba(5, 24, 15, 0.42)) brightness(1.12);
 }
 
+/* An etched Tree of Life sits beneath the open menu and its gold blossoms. */
+.site-nav::before {
+  position: absolute;
+  inset: 84px 18px 34px;
+  z-index: 0;
+  content: "";
+  opacity: 0.3;
+  background: url("assets/oak-tree-outline.webp") center / contain no-repeat;
+  filter: sepia(1) saturate(1.05) hue-rotate(354deg) brightness(1.9) contrast(1.12) drop-shadow(0 0 18px rgba(220, 180, 84, 0.28));
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.menu-petal-canvas {
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 7px rgba(225, 183, 82, 0.48));
+}
+
+html[data-theme="light"] body.menu-open .site-nav::before {
+  opacity: 0.28;
+}
+
 .menu-toggle::before {
   animation: kela-cherry-float 3.2s ease-in-out infinite;
 }

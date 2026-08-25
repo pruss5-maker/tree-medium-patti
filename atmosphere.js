@@ -60,7 +60,7 @@
 
   if (reducedMotion) return;
 
-  const startFallingSprites = ({ canvas, source, regions, count, size, speed, alpha, isActive, flip = false }) => {
+  const startFallingSprites = ({ canvas, source, regions, count, size, speed, alpha, isActive, flip = false, tint = "" }) => {
     const context = canvas.getContext("2d", { alpha: true });
     if (!context) return;
 
@@ -138,6 +138,12 @@
         context.globalAlpha = particle.alpha;
         if (image.complete && image.naturalWidth) {
           context.drawImage(image, region.x, region.y, region.width, region.height, -particle.size / 2, -drawHeight / 2, particle.size, drawHeight);
+          if (tint) {
+            context.globalCompositeOperation = "source-atop";
+            context.fillStyle = tint;
+            context.fillRect(-particle.size / 2, -drawHeight / 2, particle.size, drawHeight);
+            context.globalCompositeOperation = "source-over";
+          }
         }
         context.restore();
       });
@@ -181,6 +187,7 @@
       speed: [18, 34],
       alpha: [0.45, 0.78],
       isActive: () => body.classList.contains("menu-open"),
+      tint: "#d9b65f",
     });
   }
 

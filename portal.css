@@ -646,6 +646,19 @@ html[data-theme="dark"] .patti-door-page .site-header {
 .patti-profile-copy h1,
 .patti-profile-copy h2 { font-size: clamp(2.5rem, 5vw, 5.4rem); }
 
+.patti-profile-copy .patti-origin-note {
+  padding: 14px 16px;
+  color: rgba(255, 249, 232, 0.94);
+  background: rgba(240, 204, 114, 0.08);
+  border-left: 3px solid rgba(240, 204, 114, 0.85);
+  border-radius: 0 10px 10px 0;
+}
+
+.patti-origin-note strong {
+  color: #f0cc72;
+  font-size: 1.08em;
+}
+
 .patti-reading-card { padding: clamp(28px, 4vw, 54px); }
 
 .patti-reading-card > header { position: relative; z-index: 2; text-align: center; }

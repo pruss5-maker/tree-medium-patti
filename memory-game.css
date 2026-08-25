@@ -1,0 +1,388 @@
+:root {
+  --memory-ink: #13271f;
+  --memory-deep: #0a2f27;
+  --memory-deeper: #061f1b;
+  --memory-gold: #d7ad52;
+  --memory-gold-light: #f2d992;
+  --memory-cream: #f7f0dd;
+}
+
+body.memory-page,
+body.memory-hub-page {
+  min-height: 100vh;
+  color: var(--memory-cream);
+  background:
+    linear-gradient(rgba(5, 31, 26, 0.9), rgba(4, 24, 21, 0.96)),
+    url("assets/plants/chamomile.webp") center / cover fixed;
+}
+
+.memory-main {
+  padding-top: 68px;
+}
+
+.memory-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(58px, 8vw, 112px) 0 clamp(40px, 6vw, 78px);
+  text-align: center;
+}
+
+.memory-hero::before,
+.memory-hero::after {
+  position: absolute;
+  width: 330px;
+  aspect-ratio: 1;
+  content: "";
+  border: 1px solid rgba(222, 178, 83, 0.28);
+  border-radius: 50%;
+  box-shadow: 0 0 0 36px rgba(222, 178, 83, 0.05), 0 0 0 74px rgba(222, 178, 83, 0.035);
+}
+
+.memory-hero::before { top: -180px; left: -120px; }
+.memory-hero::after { right: -160px; bottom: -230px; }
+
+.memory-hero .shell { position: relative; z-index: 1; }
+
+.memory-hero h1 {
+  max-width: 820px;
+  margin: 12px auto 16px;
+  color: var(--memory-gold-light);
+  font-size: clamp(3rem, 7vw, 6.6rem);
+  line-height: 0.92;
+}
+
+.memory-hero p:not(.eyebrow) {
+  max-width: 650px;
+  margin-inline: auto;
+  color: rgba(247, 240, 221, 0.82);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.memory-deck-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.memory-deck-nav a {
+  padding: 10px 16px;
+  color: var(--memory-gold-light);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid rgba(224, 181, 86, 0.52);
+  border-radius: 999px;
+}
+
+.memory-deck-nav a[aria-current="page"],
+.memory-deck-nav a:hover,
+.memory-deck-nav a:focus-visible {
+  color: var(--memory-deeper);
+  background: var(--memory-gold-light);
+}
+
+.game-shell {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 90px;
+}
+
+.memory-game-panel {
+  padding: clamp(20px, 4vw, 44px);
+  background:
+    linear-gradient(145deg, rgba(21, 67, 53, 0.96), rgba(6, 33, 28, 0.98)),
+    url("assets/oracle-cards/masters/tree-card-master-v5-chamomile.png") center / cover;
+  border: 1px solid rgba(225, 181, 83, 0.74);
+  border-radius: 32px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.36), inset 0 0 0 5px rgba(246, 220, 148, 0.06);
+}
+
+.memory-controls {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto auto;
+  gap: 14px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+.memory-field { display: grid; gap: 6px; }
+
+.memory-field span,
+.memory-stat span {
+  color: var(--memory-gold-light);
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.memory-field select {
+  min-height: 45px;
+  padding: 0 40px 0 14px;
+  color: var(--memory-cream);
+  background: #0a2c25;
+  border: 1px solid rgba(220, 176, 78, 0.58);
+  border-radius: 8px;
+}
+
+.memory-button {
+  display: inline-grid;
+  place-items: center;
+  min-height: 45px;
+  padding: 0 18px;
+  color: var(--memory-deeper);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #f0d88f, #c89634);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.memory-button.secondary {
+  color: var(--memory-gold-light);
+  background: transparent;
+  border: 1px solid rgba(225, 181, 83, 0.6);
+}
+
+.memory-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(225, 181, 83, 0.32);
+  border-radius: 12px;
+}
+
+.memory-stat {
+  display: grid;
+  gap: 3px;
+  padding: 12px;
+  text-align: center;
+}
+
+.memory-stat + .memory-stat { border-left: 1px solid rgba(225, 181, 83, 0.24); }
+.memory-stat strong { color: #fff8e5; font-size: 1.3rem; }
+
+.memory-status {
+  min-height: 28px;
+  margin: 0 0 18px;
+  color: rgba(255, 248, 226, 0.82);
+  text-align: center;
+}
+
+.is-complete .memory-status { color: var(--memory-gold-light); font-weight: 800; }
+
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(8px, 1.5vw, 16px);
+  perspective: 1200px;
+}
+
+.memory-card {
+  position: relative;
+  padding: 0;
+  aspect-ratio: 4 / 5;
+  background: transparent;
+  border: 0;
+  border-radius: 16px;
+  cursor: pointer;
+  perspective: 900px;
+}
+
+.memory-card-inner {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transition: transform 480ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.memory-card.is-flipped .memory-card-inner,
+.memory-card.is-matched .memory-card-inner { transform: rotateY(180deg); }
+
+.memory-card-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  backface-visibility: hidden;
+  border-radius: 16px;
+}
+
+.memory-card-back {
+  align-content: center;
+  gap: 5px;
+  color: var(--memory-gold-light);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(224, 181, 83, 0.22), transparent 34%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 7px),
+    #0c3a31;
+  border: 2px solid #cda449;
+  box-shadow: inset 0 0 0 5px #0c3a31, inset 0 0 0 6px rgba(238, 203, 116, 0.46), 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.memory-card-kela {
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.memory-card-back small,
+.memory-card-front small {
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.memory-card-front {
+  grid-template-rows: 1fr auto auto;
+  gap: 2px;
+  padding: 10px 10px 12px;
+  color: #142820;
+  background: #fffefa;
+  border: 2px solid var(--memory-gold);
+  box-shadow: inset 0 0 0 5px #fffefa, inset 0 0 0 6px #d4ae59;
+  transform: rotateY(180deg);
+}
+
+.memory-card-front img {
+  width: 100%;
+  min-height: 0;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.memory-card-front strong {
+  font-family: Georgia, serif;
+  font-size: clamp(0.8rem, 2vw, 1.25rem);
+  line-height: 1;
+  text-align: center;
+}
+
+.memory-card-front small { color: #7a5a1f; }
+
+.memory-card.is-matched .memory-card-front {
+  box-shadow: 0 0 0 4px rgba(240, 210, 126, 0.34), 0 0 32px rgba(233, 195, 98, 0.48);
+}
+
+.memory-card:focus-visible { outline: 4px solid #fff3bf; outline-offset: 4px; }
+
+.memory-print-callout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 22px;
+  align-items: center;
+  margin-top: 24px;
+  padding: 22px 24px;
+  color: var(--memory-ink);
+  background: rgba(250, 245, 229, 0.96);
+  border: 1px solid var(--memory-gold);
+  border-radius: 18px;
+}
+
+.memory-print-callout h2 { margin: 0 0 4px; font-size: 1.55rem; }
+.memory-print-callout p { margin: 0; color: #4e5b53; }
+.memory-print-actions { display: grid; gap: 8px; min-width: 190px; }
+.print-deck { display: none; }
+
+.memory-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-bottom: 100px;
+}
+
+.memory-hub-card {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 480px;
+  overflow: hidden;
+  color: var(--memory-cream);
+  text-decoration: none;
+  background: linear-gradient(155deg, rgba(24, 75, 59, 0.96), rgba(6, 32, 27, 0.98));
+  border: 1px solid rgba(225, 181, 83, 0.72);
+  border-radius: 26px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.memory-hub-card:hover,
+.memory-hub-card:focus-visible { transform: translateY(-5px); box-shadow: 0 30px 70px rgba(0,0,0,0.38); }
+
+.memory-hub-art {
+  display: grid;
+  margin: 18px;
+  place-items: center;
+  background: #fffefa;
+  border: 1px solid var(--memory-gold);
+  border-radius: 18px;
+}
+
+.memory-hub-art img { width: min(88%, 330px); mix-blend-mode: multiply; }
+.memory-hub-copy { padding: 0 26px 28px; }
+.memory-hub-copy h2 { margin: 0 0 5px; color: var(--memory-gold-light); font-size: 2rem; }
+.memory-hub-copy p { margin: 0; color: rgba(247, 240, 221, 0.75); }
+
+@media (max-width: 760px) {
+  .memory-main { padding-top: 57px; }
+  .memory-controls { grid-template-columns: 1fr 1fr; }
+  .memory-field { grid-column: 1 / -1; }
+  .memory-board { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .memory-card-front { padding: 5px 5px 8px; }
+  .memory-card-back small, .memory-card-front small { display: none; }
+  .memory-print-callout { grid-template-columns: 1fr; }
+  .memory-hub-grid { grid-template-columns: 1fr; }
+  .memory-hub-card { min-height: 390px; }
+}
+
+@media (max-width: 440px) {
+  .memory-game-panel { padding: 14px; border-radius: 20px; }
+  .memory-board { gap: 6px; }
+  .memory-card, .memory-card-face { border-radius: 10px; }
+  .memory-card-front strong { font-size: 0.64rem; }
+  .memory-card-kela { font-size: 1.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .memory-card-inner, .memory-hub-card { transition: none; }
+}
+
+@page { size: letter portrait; margin: 0.32in; }
+
+@media print {
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  body { color: #000 !important; background: #fff !important; }
+  .skip-link, .site-header, .memory-main, .site-footer { display: none !important; }
+  .print-deck { display: block !important; }
+  .print-deck-header { display: grid; grid-template-columns: 1fr auto; align-items: end; margin: 0 0 0.14in; border-bottom: 1.5px solid #000; }
+  .print-deck-header h1 { margin: 0; color: #000; font: 700 20pt/1 Georgia, serif; }
+  .print-deck-header p { margin: 0 0 3px; font: 8pt/1.2 Arial, sans-serif; }
+  .print-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 2.25in; gap: 0.08in; }
+  .print-memory-card {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 100%;
+    height: 2.25in;
+    padding: 0.08in;
+    overflow: hidden;
+    color: #000;
+    background: #fff;
+    border: 1px dashed #555;
+    break-inside: avoid;
+  }
+  .print-card-brand { font: 700 7pt/1 Georgia, serif; letter-spacing: 0.18em; }
+  .print-memory-card img { width: 100%; height: 100%; min-height: 0; object-fit: contain; filter: grayscale(1) contrast(1.3); }
+  .print-memory-card strong { font: 700 10pt/1 Georgia, serif; text-align: center; }
+}

@@ -231,6 +231,21 @@ const randomTreeIndex = () => {
 
 const slugify = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
+const preloadTreeCard = (index) => {
+  const tree = treeGuides[index];
+  if (!tree) return Promise.resolve();
+  const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
+  const preloadFace = (side) => new Promise((resolve) => {
+    const image = new Image();
+    image.addEventListener("load", resolve, { once: true });
+    image.addEventListener("error", resolve, { once: true });
+    image.src = `${cardAssetBase}-${side}.webp?v=20260825-6`;
+    if (image.complete) resolve();
+  });
+  preloadFace("back");
+  return preloadFace("front");
+};
+
 const setMetaContent = (selector, content) => {
   const element = document.querySelector(selector);
   if (element) element.setAttribute("content", content);
@@ -365,7 +380,13 @@ const beginReveal = () => {
   revealButton.disabled = true;
   oracleCard.classList.add("is-listening");
   if (status) status.textContent = "The roots are listening. Take one slow breath.";
-  window.setTimeout(() => showTree(randomTreeIndex()), prefersReducedMotion ? 50 : 2600);
+  const treeIndex = randomTreeIndex();
+  const minimumPause = new Promise((resolve) => {
+    window.setTimeout(resolve, prefersReducedMotion ? 50 : 2600);
+  });
+  const preloadLimit = new Promise((resolve) => window.setTimeout(resolve, 5000));
+  Promise.all([minimumPause, Promise.race([preloadTreeCard(treeIndex), preloadLimit])])
+    .then(() => showTree(treeIndex));
 };
 
 const shareTree = async () => {

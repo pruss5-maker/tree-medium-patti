@@ -333,6 +333,21 @@ const randomGuideIndex = () => secureRandomIndex(animalGuides.length);
 const randomColorIndex = () => secureRandomIndex(animalCardColors.length);
 const slugify = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
+const preloadGuideCard = (index) => {
+  const guide = animalGuides[index];
+  if (!guide) return Promise.resolve();
+  const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
+  const preloadFace = (side) => new Promise((resolve) => {
+    const image = new Image();
+    image.addEventListener("load", resolve, { once: true });
+    image.addEventListener("error", resolve, { once: true });
+    image.src = `${cardAssetBase}-${side}.webp?v=20260825-6`;
+    if (image.complete) resolve();
+  });
+  preloadFace("back");
+  return preloadFace("front");
+};
+
 const setMetaContent = (selector, content) => {
   const element = document.querySelector(selector);
   if (element) element.setAttribute("content", content);
@@ -476,10 +491,14 @@ const beginReveal = () => {
   revealButton.disabled = true;
   oracleCard.classList.add("is-listening");
   if (status) status.textContent = "The grove is listening. Take one slow breath.";
-  window.setTimeout(
-    () => showGuide(randomGuideIndex()),
-    prefersReducedMotion ? 50 : 2800,
-  );
+  const guideIndex = randomGuideIndex();
+  const colorIndex = randomColorIndex();
+  const minimumPause = new Promise((resolve) => {
+    window.setTimeout(resolve, prefersReducedMotion ? 50 : 2800);
+  });
+  const preloadLimit = new Promise((resolve) => window.setTimeout(resolve, 5000));
+  Promise.all([minimumPause, Promise.race([preloadGuideCard(guideIndex), preloadLimit])])
+    .then(() => showGuide(guideIndex, { colorIndex }));
 };
 
 const copyGuideText = async () => {

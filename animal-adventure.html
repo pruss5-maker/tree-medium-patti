@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Play KELA's free Animal Guide Bug Quest. Jump, tap, and help all 22 animal guides catch glowing bugs along the living path."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#10231c" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href="https://treemedium.vercel.app/animal-adventure" />
+    <meta property="og:site_name" content="KELA — Messages from the Trees" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Animal Guide Bug Quest | KELA" />
+    <meta property="og:description" content="Jump or tap to help KELA's animal guides catch bugs along the living path." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://treemedium.vercel.app/animal-adventure" />
+    <title>Animal Guide Bug Quest | Free KELA Game</title>
+    <link rel="icon" href="assets/kela-mark.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="styles.css?v=20260825-7" />
+    <link rel="stylesheet" href="animal-adventure.css?v=20260825-1" />
+    <script src="script.js?v=20260825-7" defer></script>
+    <script src="animal-adventure.js?v=20260825-1" defer></script>
+  </head>
+  <body class="animal-game-page">
+    <a class="skip-link" href="#game">Skip to the game</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="index.html" aria-label="Kela home">
+        <span>KELA</span>
+        <small>Messages from the Trees</small>
+      </a>
+
+      <div class="header-actions">
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
+          <a href="index.html#meet-kela">Meet Kela</a>
+          <a href="animal-oracle.html">Animal Oracle</a>
+          <a href="animal-adventure.html" aria-current="page">Animal Game</a>
+          <a href="tree-oracle.html">Tree Oracle</a>
+          <a href="plant-oracle.html">Plant Oracle</a>
+          <a href="index.html#reading">The reading</a>
+          <a href="index.html#meet-patti">Meet Patti</a>
+        </nav>
+
+        <a class="nav-booking" href="index.html#booking-terms">An Experience</a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          data-menu-toggle
+        >
+          <span class="sr-only">Open navigation</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="game">
+      <section class="animal-game-hero">
+        <div class="animal-game-glow" aria-hidden="true"></div>
+        <div class="shell animal-game-heading">
+          <p class="eyebrow">A tiny journey through the living network</p>
+          <h1>Animal Guide<br />Bug Quest</h1>
+          <p>
+            Help every KELA animal guide gather glowing bugs. Jump with the keyboard or tap the
+            game on your phone. When Octopus arrives, the forest becomes water and jumping becomes
+            a gentle swim-pulse.
+          </p>
+        </div>
+
+        <div class="shell game-card">
+          <div class="game-toolbar" aria-label="Game information and settings">
+            <div class="game-stat">
+              <span>Guide</span>
+              <strong data-game-guide>Blue Owl</strong>
+            </div>
+            <div class="game-stat">
+              <span>Bugs gathered</span>
+              <strong data-game-score>0</strong>
+            </div>
+            <div class="game-stat">
+              <span>Best journey</span>
+              <strong data-game-best>0</strong>
+            </div>
+            <div class="game-stat game-lives">
+              <span>Glow</span>
+              <strong data-game-lives aria-label="Three glow leaves">● ● ●</strong>
+            </div>
+          </div>
+
+          <div class="game-stage" data-game-stage>
+            <canvas
+              class="animal-game-canvas"
+              data-game-canvas
+              width="960"
+              height="540"
+              tabindex="0"
+              aria-label="Animal Guide Bug Quest. Press Space, the up arrow, W, or tap to jump and catch bugs."
+            >
+              Your browser does not support the game canvas. You can still visit the Animal Oracle.
+            </canvas>
+
+            <div class="game-welcome" data-game-welcome>
+              <p class="eyebrow">The path is ready</p>
+              <h2>Catch the glowing bugs</h2>
+              <p>Every five catches, another animal guide joins the journey.</p>
+              <button class="button button-gold" type="button" data-game-start>Begin the Quest</button>
+            </div>
+          </div>
+
+          <p class="sr-only" data-game-live aria-live="polite"></p>
+
+          <div class="game-controls">
+            <label class="game-guide-picker">
+              <span>Begin with</span>
+              <select data-game-guide-picker aria-label="Choose your starting animal guide"></select>
+            </label>
+
+            <button class="game-action" type="button" data-game-action>
+              <span aria-hidden="true">↑</span>
+              <strong data-game-action-label>Jump</strong>
+              <small>Space · ↑ · W · Tap</small>
+            </button>
+
+            <button class="button button-secondary game-pause" type="button" data-game-pause disabled>
+              Pause
+            </button>
+          </div>
+
+          <div class="game-how">
+            <p><strong>Catch bugs:</strong> meet them in the air as your guide moves along.</p>
+            <p><strong>Keep the glow:</strong> three missed bugs end the journey.</p>
+            <p><strong>Meet everyone:</strong> the next guide arrives after five catches.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell game-after" aria-labelledby="playful-path-title">
+        <div>
+          <p class="eyebrow ink">A playful path</p>
+          <h2 id="playful-path-title">Movement, timing, and a little joy.</h2>
+        </div>
+        <div class="prose">
+          <p>
+            This game is simply a lighthearted way to spend time with the animal-guide artwork.
+            Choose any guide to begin, then let the full family rotate through the journey.
+          </p>
+          <p>
+            Ready for a quieter experience? Return to the
+            <a class="text-link" href="animal-oracle.html">Animal Oracle</a> and draw the one guide
+            meant to accompany your day.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span class="magnolia-accent magnolia-footer" data-magnolia aria-hidden="true"></span>
+      <div class="shell footer-grid">
+        <div class="footer-brand">
+          <p class="wordmark footer-wordmark"><span>KELA</span><small>Messages from the Trees</small></p>
+          <p>with Tree Medium Patti</p>
+        </div>
+        <p class="footer-note">A gentle game for play, timing, and connection.</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="animal-oracle.html">Animal Oracle</a>
+          <a href="terms.html">Booking terms</a>
+          <a href="privacy.html">Privacy</a>
+          <span>Lumen Pleroma LLC</span>
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <p>© <span data-year></span> Lumen Pleroma LLC</p>
+        <p>Woven together across the Earth and beyond.</p>
+      </div>
+    </footer>
+  </body>
+</html>

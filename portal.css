@@ -20,14 +20,16 @@ body.portal-page {
 }
 
 .portal-main {
+  display: grid;
   height: 100svh;
   padding: 104px 16px 14px;
+  place-items: center;
 }
 
 .portal-grid {
   display: grid;
-  width: min(100%, 1180px);
-  height: 100%;
+  width: min(100%, 980px);
+  height: min(100%, 720px);
   margin: 0 auto;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: minmax(0, 1.12fr) minmax(0, 0.8fr);
@@ -381,6 +383,8 @@ body.patti-door-page {
 @media (max-width: 760px) {
   .portal-main { padding: 82px 8px 8px; }
   .portal-grid {
+    width: min(calc(100% - 12px), 430px);
+    height: min(100%, 720px);
     grid-template-columns: 1fr;
     grid-template-rows: minmax(0, 0.86fr) minmax(0, 1.24fr) minmax(0, 0.9fr);
     gap: 7px;
@@ -413,7 +417,7 @@ body.patti-door-page {
 
 @media (max-height: 690px) {
   body.portal-page { height: auto; overflow-y: auto; }
-  .portal-main { min-height: 690px; }
+  .portal-main { min-height: 690px; place-items: start center; }
 }
 
 @media (prefers-reduced-motion: reduce) {

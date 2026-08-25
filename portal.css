@@ -453,6 +453,28 @@ html[data-theme="dark"] .patti-door-page .site-header {
 
 .patti-kela-copy { grid-column: 2; align-self: center; }
 
+.patti-kela-copy > .portal-eyebrow {
+  color: #f3d681;
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  letter-spacing: 0.13em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.88);
+}
+
+.patti-door-card .patti-kela-copy h1 {
+  max-width: 12ch;
+  margin: 12px 0 18px;
+  color: var(--portal-light-gold);
+  font-size: clamp(1.65rem, 3.5vw, 3rem);
+  line-height: 1;
+}
+
+.patti-kela-name {
+  color: #f0cc72;
+  font: 700 1.16em/1 var(--serif, Georgia, serif);
+  letter-spacing: 0.015em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.72);
+}
+
 .patti-kela-story {
   position: relative;
   z-index: 2;

@@ -14,6 +14,30 @@ const termsCloseButtons = document.querySelectorAll("[data-terms-close]");
 const termsConsent = document.querySelector("[data-terms-consent]");
 const termsContinue = document.querySelector("[data-terms-continue]");
 
+document.querySelectorAll("[data-nav]").forEach((menu) => {
+  const bookingLink = menu.querySelector(".site-nav-booking");
+  let pattiLink = menu.querySelector('a[href^="/meet-patti"]');
+  let kelaLink = menu.querySelector('a[href^="/meet-kela"]');
+
+  if (!pattiLink) {
+    pattiLink = document.createElement("a");
+    pattiLink.href = "/meet-patti";
+    pattiLink.textContent = "Meet Patti";
+    menu.insertBefore(pattiLink, bookingLink);
+  }
+
+  if (!kelaLink) {
+    kelaLink = document.createElement("a");
+    kelaLink.href = "/meet-kela";
+    kelaLink.textContent = "Meet KELA";
+    menu.insertBefore(kelaLink, pattiLink);
+  }
+
+  if (/\/meet-kela(?:\.html)?\/?$/.test(window.location.pathname)) {
+    kelaLink.setAttribute("aria-current", "page");
+  }
+});
+
 document.querySelectorAll(".site-footer, .legal-footer").forEach((footer) => {
   if (footer.querySelector(".footer-sanctuary-phrase")) return;
   const phrase = document.createElement("p");

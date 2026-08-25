@@ -213,11 +213,11 @@ const fillPlant = (index) => {
   updatePlantSeo(plant);
   const cardAssetBase = `assets/oracle-cards/plant/${slugify(plant.name)}`;
   if (plantCardFront) {
-    plantCardFront.src = `${cardAssetBase}-front.webp?v=20260824-4`;
+    plantCardFront.src = `${cardAssetBase}-front.webp?v=20260824-10`;
     plantCardFront.alt = `${plant.name} KELA Plant Oracle card`;
   }
   if (plantCardBack) {
-    plantCardBack.src = `${cardAssetBase}-back.webp?v=20260824-1`;
+    plantCardBack.src = `${cardAssetBase}-back.webp?v=20260824-5`;
     plantCardBack.alt = `${plant.name} KELA Plant Oracle meaning card`;
   }
   plantName.textContent = plant.name;

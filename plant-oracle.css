@@ -177,7 +177,7 @@
 
 /* Use the approved ICR physical-card artwork for the live Plant Oracle faces. */
 .plant-oracle-page .plant-flip-card {
-  aspect-ratio: 810 / 1012;
+  aspect-ratio: 850 / 1220;
 }
 
 .plant-oracle-page .oracle-card-raster-face {
@@ -245,24 +245,28 @@
 }
 
 @media (max-width: 760px) {
+  .plant-oracle-page .plant-flip-card {
+    aspect-ratio: 850 / 1220;
+  }
+
   .plant-oracle-page .oracle-card-raster-face > .oracle-card-raster {
-    transform: scale(1.1);
+    transform: none;
   }
 
   .plant-oracle-page .site-header,
   .plant-oracle-page .site-header.is-scrolled {
-    min-height: 66px;
-    padding: 8px 14px;
+    min-height: 58px;
+    padding: 5px 12px;
   }
 
   .plant-oracle-page .site-header .wordmark span {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 
   .plant-oracle-page .site-header > .wordmark small {
     display: block;
-    margin-top: 3px;
-    font-size: 0.52rem;
+    margin-top: 1px;
+    font-size: 0.48rem;
     letter-spacing: 0.09em;
     line-height: 1;
   }
@@ -278,7 +282,41 @@
   }
 
   .plant-oracle-page .oracle-hero {
-    padding-top: 72px;
+    padding-top: 62px;
+  }
+}
+
+@media (max-width: 760px) and (max-height: 700px) {
+  .plant-oracle-page .site-header,
+  .plant-oracle-page .site-header.is-scrolled {
+    min-height: 50px;
+    padding: 3px 12px;
+  }
+
+  .plant-oracle-page .site-header .wordmark span {
+    font-size: 1.35rem;
+  }
+
+  .plant-oracle-page .site-header > .wordmark small {
+    font-size: 0.42rem;
+  }
+
+  .plant-oracle-page .menu-toggle {
+    width: 32px;
+    height: 32px;
+    padding: 6px 5px;
+  }
+
+  .plant-oracle-page .oracle-hero {
+    padding-top: 50px;
+  }
+
+  .plant-oracle-page .plant-oracle-result .oracle-result-actions {
+    padding-top: 4px;
+  }
+
+  .plant-oracle-page .plant-oracle-result .oracle-result-actions small {
+    display: none;
   }
 }
 

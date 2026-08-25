@@ -7,12 +7,12 @@ const renderData = renderDeck === "animal"
   : renderDeck === "plant" ? plantGuides[renderIndex] : treeGuides[renderIndex];
 const renderSlug = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const renderDataSlug = renderSlug(renderData.name);
-const renderProtection = `Your mind deserves to be a sanctuary. Tune into ${renderData.name} and hold one spiritual meaning: ${renderData.keyword}. “Dear energy of ${renderData.name}, please protect my mind and energy on autopilot from any perceived threat before it enters my field.”`;
+const renderFrontProtection = `“Dear ${renderData.name}, protect my mind and energy on autopilot before it enters my field.”`;
 const renderBackProtection = renderDeck === "plant"
-  ? `Ask your ${renderData.name} plant to protect your mind and energy in meditation. ${renderData.practice}`
-  : renderProtection;
+  ? `Ask ${renderData.name} to protect your mind and energy in meditation. Imagine a soft, luminous boundary around you.`
+  : renderFrontProtection;
 const renderArt = renderDeck === "animal"
-  ? renderData.isolatedArt || `assets/animals/cutouts/${renderDataSlug}-cutout-v2.webp`
+  ? `assets/animals/cutouts-transparent/${renderDataSlug}.png`
   : renderData.art;
 const renderBotanical = renderDeck !== "animal" ? `<p class="botanical"><em>${renderData.botanical}</em></p>` : "";
 const renderDeckName = renderDeck === "animal"
@@ -21,7 +21,7 @@ const renderDeckName = renderDeck === "animal"
 const renderCalling = renderDeck === "animal"
   ? "THE ANIMAL CALLING YOU TODAY"
   : renderDeck === "plant" ? "THE PLANT CALLING YOU TODAY" : "THE TREE CALLING YOU TODAY";
-const renderCue = "TAP TO REVEAL ITS MEANING";
+const renderCue = "TAP FOR ITS MEANING";
 const renderBackCue = renderDeck === "animal"
   ? "TAP TO SEE YOUR ANIMAL"
   : renderDeck === "plant" ? "TAP TO SEE YOUR PLANT" : "TAP TO SEE YOUR TREE";
@@ -45,7 +45,7 @@ const renderFront = `
     <span class="ornament" aria-hidden="true">◆</span>
     <div class="front-protection">
       <strong>PROTECTION INVOCATION</strong>
-      <p class="protection">${renderProtection}</p>
+      <p class="protection">${renderFrontProtection}</p>
     </div>
     <div class="cue">${renderCue}</div>
   </section>`;

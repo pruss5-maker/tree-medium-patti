@@ -99,7 +99,6 @@ if (gameRoot) {
     <button class="memory-card" type="button" data-memory-card data-slug="${item.slug}" aria-label="Hidden memory card">
       <span class="memory-card-inner">
         <span class="memory-card-face memory-card-back" aria-hidden="true">
-          <span class="memory-card-kela">K</span>
           <small>Find a pair</small>
         </span>
         <span class="memory-card-face memory-card-front">

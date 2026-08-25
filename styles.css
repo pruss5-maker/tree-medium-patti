@@ -195,7 +195,6 @@ h3 {
 .site-nav a:focus-visible,
 .site-nav button:focus-visible,
 .nav-booking:focus-visible,
-.header-triskele:focus-visible,
 .wordmark:focus-visible,
 .menu-toggle:focus-visible,
 summary:focus-visible {
@@ -359,38 +358,6 @@ summary:focus-visible {
   cursor: pointer;
   font-family: inherit;
   text-align: left;
-}
-
-.header-triskele {
-  display: grid;
-  width: 46px;
-  height: 46px;
-  flex: 0 0 46px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  place-items: center;
-  text-decoration: none;
-}
-
-.header-triskele::before {
-  width: 38px;
-  height: 38px;
-  content: "";
-  background: url("assets/triskele.svg") center / contain no-repeat;
-  filter: drop-shadow(0 2px 5px rgba(5, 24, 15, 0.3));
-  animation: triskele-spin 18s linear infinite;
-  transition: filter 180ms ease;
-}
-
-.header-triskele:hover::before,
-.header-triskele:focus-visible::before {
-  filter: drop-shadow(0 3px 8px rgba(5, 24, 15, 0.42)) brightness(1.12);
-}
-
-@keyframes triskele-spin {
-  to { transform: rotate(360deg); }
 }
 
 .nav-booking {
@@ -1595,6 +1562,418 @@ summary:focus-visible {
   border-top: 1px solid var(--cream-200);
 }
 
+/* Booking reveal: the service details arrive as a KELA oracle card. */
+.terms-modal {
+  perspective: 1200px;
+}
+
+.terms-backdrop {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(49, 88, 74, 0.28), transparent 30rem),
+    rgba(4, 18, 13, 0.86);
+}
+
+.terms-dialog {
+  width: min(520px, 100%);
+  color: #f8efd9;
+  background:
+    linear-gradient(112deg, rgba(255, 255, 255, 0.055), transparent 30%, rgba(0, 0, 0, 0.1) 78%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 4px),
+    linear-gradient(150deg, #31584a, #10231c 72%);
+  border: 2px solid #ddc294;
+  border-radius: 28px;
+  box-shadow:
+    0 2px 0 rgba(221, 194, 148, 0.28),
+    0 11px 0 rgba(5, 20, 14, 0.22),
+    0 36px 90px rgba(2, 13, 9, 0.55);
+  isolation: isolate;
+  animation: terms-oracle-arrive 520ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+}
+
+.terms-dialog::before {
+  position: absolute;
+  inset: 10px;
+  z-index: 4;
+  content: "";
+  border: 1px solid rgba(232, 196, 125, 0.72);
+  border-radius: 19px;
+  box-shadow: inset 0 0 24px rgba(255, 248, 226, 0.05);
+  pointer-events: none;
+}
+
+.terms-dialog::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    radial-gradient(circle at 16% 19%, rgba(232, 196, 125, 0.1) 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 73%, rgba(232, 196, 125, 0.08) 0 1px, transparent 2px);
+  background-size: 29px 29px, 37px 37px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@keyframes terms-oracle-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(28px) rotateX(5deg) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0) scale(1);
+  }
+}
+
+.terms-dialog-header {
+  position: relative;
+  display: block;
+  padding: 24px 54px 18px;
+  text-align: center;
+  border: 0;
+}
+
+.terms-oracle-heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.terms-oracle-brand {
+  width: 100%;
+  color: #e8c47d;
+  line-height: 1;
+  text-align: center;
+}
+
+.terms-oracle-brand::after {
+  display: block;
+  width: 62%;
+  height: 1px;
+  margin: 8px auto 0;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(232, 196, 125, 0.84), transparent);
+}
+
+.terms-oracle-brand span,
+.terms-oracle-brand small {
+  display: block;
+}
+
+.terms-oracle-brand span {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+}
+
+.terms-oracle-brand small {
+  margin-top: 5px;
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.terms-oracle-mark {
+  width: 42px;
+  height: 42px;
+  margin: 11px 0 8px;
+  filter: drop-shadow(0 4px 10px rgba(2, 13, 9, 0.28));
+}
+
+.terms-dialog-header .eyebrow {
+  margin: 0 0 4px;
+  color: rgba(248, 239, 217, 0.7);
+  font-size: 0.68rem;
+}
+
+.terms-dialog-header h2 {
+  margin: 0;
+  color: #fff9e9;
+  font-size: clamp(2.15rem, 6vw, 2.85rem);
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 12px rgba(2, 13, 9, 0.34);
+}
+
+.terms-oracle-note {
+  margin: 6px 0 0;
+  color: #e8c47d;
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+.terms-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 6;
+  width: 36px;
+  height: 36px;
+  color: #f6ddb0;
+  border-color: rgba(232, 196, 125, 0.52);
+  font-size: 1.35rem;
+}
+
+.terms-close:hover {
+  color: var(--forest-950);
+  background: #e8c47d;
+}
+
+.terms-dialog-content {
+  position: relative;
+  margin: 0 15px;
+  padding: 20px 22px 8px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 50% 0, rgba(221, 194, 148, 0.22), transparent 15rem),
+    linear-gradient(145deg, #fffaf0, #eee5d2);
+  border: 1px solid rgba(232, 196, 125, 0.8);
+  border-radius: 15px;
+  box-shadow: inset 0 0 36px rgba(121, 91, 47, 0.08);
+}
+
+.terms-dialog-content > p:first-child {
+  margin-bottom: 16px;
+  color: rgba(28, 43, 35, 0.78);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.48;
+  text-align: center;
+}
+
+.terms-price {
+  position: relative;
+  padding: 15px 17px;
+  margin-bottom: 15px;
+  background: rgba(23, 48, 40, 0.07);
+  border-color: rgba(185, 148, 95, 0.55);
+}
+
+.terms-price::before,
+.terms-price::after {
+  color: var(--gold);
+  content: "✦";
+  font-size: 0.68rem;
+  opacity: 0.75;
+}
+
+.terms-price::before {
+  margin-right: -10px;
+}
+
+.terms-price::after {
+  margin-left: -10px;
+}
+
+.terms-price p {
+  font-size: 1.25rem;
+}
+
+.terms-price strong {
+  color: var(--forest-700);
+  font-size: 2.2rem;
+}
+
+.terms-simple-copy > p {
+  text-align: center;
+}
+
+.terms-links {
+  justify-content: center;
+}
+
+.terms-consent {
+  margin: 17px 0 12px;
+  background: rgba(255, 253, 248, 0.58);
+  border-color: rgba(185, 148, 95, 0.42);
+  border-radius: 4px;
+}
+
+.terms-dialog-actions {
+  grid-template-columns: 0.7fr 1.3fr;
+  padding: 15px 24px 22px;
+  background: transparent;
+  border: 0;
+}
+
+.terms-dialog-actions .button {
+  min-height: 52px;
+}
+
+.terms-dialog-actions .button-secondary {
+  color: #f8efd9;
+  border-color: rgba(232, 196, 125, 0.46);
+}
+
+.terms-dialog-actions .button-secondary:hover {
+  color: var(--forest-950);
+  background: rgba(232, 196, 125, 0.88);
+  border-color: #e8c47d;
+}
+
+.terms-dialog-actions .button-gold {
+  background: linear-gradient(135deg, #f3d79d, #c99f60);
+  box-shadow: 0 8px 22px rgba(2, 13, 9, 0.24);
+}
+
+@media (max-width: 720px) {
+  .terms-modal {
+    align-items: center;
+    padding: 10px;
+  }
+
+  .terms-dialog {
+    width: min(430px, 100%);
+    max-height: calc(100dvh - 20px);
+    border-radius: 24px;
+  }
+
+  .terms-dialog::before {
+    inset: 8px;
+    border-radius: 16px;
+  }
+
+  .terms-dialog-header {
+    padding: 17px 44px 12px;
+  }
+
+  .terms-oracle-brand span {
+    font-size: 1.25rem;
+  }
+
+  .terms-oracle-mark {
+    width: 34px;
+    height: 34px;
+    margin-block: 7px 5px;
+  }
+
+  .terms-dialog-header h2 {
+    font-size: clamp(1.85rem, 8.5vw, 2.35rem);
+  }
+
+  .terms-oracle-note {
+    margin-top: 3px;
+    font-size: 0.78rem;
+  }
+
+  .terms-close {
+    top: 15px;
+    right: 15px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .terms-dialog-content {
+    margin-inline: 11px;
+    padding: 16px 16px 6px;
+  }
+
+  .terms-dialog-content > p:first-child {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+  }
+
+  .terms-price {
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    padding: 12px 13px;
+    margin-bottom: 12px;
+  }
+
+  .terms-price::before,
+  .terms-price::after {
+    display: none;
+  }
+
+  .terms-price p {
+    font-size: 1.05rem;
+  }
+
+  .terms-price small {
+    font-size: 0.72rem;
+  }
+
+  .terms-price strong {
+    font-size: 1.75rem;
+  }
+
+  .terms-simple-copy > p,
+  .terms-consent {
+    font-size: 0.8rem;
+  }
+
+  .terms-links {
+    margin-top: 9px;
+  }
+
+  .terms-links a {
+    font-size: 0.76rem;
+  }
+
+  .terms-consent {
+    gap: 10px;
+    padding: 11px;
+    margin-block: 12px 9px;
+  }
+
+  .terms-consent input {
+    width: 18px;
+    height: 18px;
+  }
+
+  .terms-dialog-actions {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 11px 20px 17px;
+  }
+
+  .terms-dialog-actions .button {
+    min-height: 44px;
+    padding-block: 10px;
+    font-size: 0.82rem;
+  }
+
+  .terms-dialog-actions .button-secondary {
+    order: 2;
+    min-height: 40px;
+  }
+}
+
+@media (max-height: 700px) {
+  .terms-dialog-header {
+    padding-top: 14px;
+    padding-bottom: 9px;
+  }
+
+  .terms-oracle-mark {
+    display: none;
+  }
+
+  .terms-oracle-brand::after {
+    margin-top: 5px;
+  }
+
+  .terms-dialog-content {
+    padding-top: 13px;
+  }
+
+  .terms-dialog-actions {
+    padding-top: 9px;
+    padding-bottom: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terms-dialog {
+    animation: none;
+  }
+}
+
 .legal-page {
   min-height: 100vh;
   background: var(--cream-50);
@@ -2748,10 +3127,9 @@ summary:focus-visible {
   }
 }
 
-/* Keep the header quiet at every width: KELA + booking triskele + menu blossom. */
+/* Keep the header quiet at every width: KELA + menu blossom. */
 .site-header > .wordmark,
   .menu-toggle,
-  .header-triskele,
   .nav-booking {
     position: relative;
     z-index: 2;
@@ -2933,17 +3311,6 @@ summary:focus-visible {
     width: 40px;
   }
 
-  .header-triskele {
-    width: 40px;
-    height: 40px;
-    flex-basis: 40px;
-  }
-
-  .header-triskele::before {
-    width: 32px;
-    height: 32px;
-  }
-
   .oracle-companions {
     bottom: max(10px, env(safe-area-inset-bottom));
     left: max(10px, env(safe-area-inset-left));
@@ -2962,7 +3329,6 @@ summary:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .header-triskele::before,
   .menu-toggle::before,
   .menu-toggle::after,
   .site-header.is-scrolling .menu-toggle::before,
@@ -6324,5 +6690,44 @@ summary:focus-visible {
 
   .oracle-face-brand::after {
     margin-top: 6px;
+  }
+}
+
+/* Keep the booking reveal a floating card after the global mobile-sheet rules. */
+@media (max-width: 720px) {
+  .terms-modal {
+    align-items: center;
+    padding: 8px;
+  }
+
+  .terms-dialog {
+    width: 100%;
+    max-height: calc(100dvh - 16px);
+    border-radius: 24px;
+  }
+
+  .terms-dialog::before {
+    inset: 8px;
+    border-radius: 16px;
+  }
+
+  .terms-dialog-header {
+    padding: 17px 44px 12px;
+  }
+
+  .terms-dialog-content {
+    padding: 16px 16px 6px;
+    margin-inline: 11px;
+  }
+
+  .terms-price {
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .terms-dialog-actions {
+    grid-template-columns: 1fr;
+    padding: 11px 20px 17px;
   }
 }

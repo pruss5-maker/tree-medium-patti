@@ -31,7 +31,7 @@
     <link rel="icon" href="assets/kela-mark.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preload" href="assets/kela-tree-hero.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="styles.css?v=20260825-11" />
+    <link rel="stylesheet" href="styles.css?v=20260825-12" />
     <script src="script.js?v=20260825-9" defer></script>
     <script src="ux-observer.js?v=20260824-1" data-clarity-project-id="" defer></script>
     <script type="application/ld+json">
@@ -123,8 +123,6 @@
           <a href="#faq">FAQ</a>
           <button class="site-nav-booking" type="button" data-terms-open>Book with Patti</button>
         </nav>
-
-        <button class="header-triskele" type="button" data-terms-open aria-label="Book with Patti"></button>
 
         <button
           class="menu-toggle"
@@ -468,9 +466,15 @@
         data-terms-dialog
       >
         <header class="terms-dialog-header">
-          <div>
-            <p class="eyebrow ink">Book with Patti</p>
+          <div class="terms-oracle-heading">
+            <div class="terms-oracle-brand" aria-hidden="true">
+              <span>KELA</span>
+              <small>Messages from the Trees</small>
+            </div>
+            <img class="terms-oracle-mark" src="assets/kela-mark.svg" alt="" width="64" height="64" />
+            <p class="eyebrow">Book with Patti</p>
             <h2 id="terms-title">Your Tree Message</h2>
+            <p class="terms-oracle-note">A living tree selected for you</p>
           </div>
           <button class="terms-close" type="button" data-terms-close aria-label="Close booking terms">
             <span aria-hidden="true">&times;</span>

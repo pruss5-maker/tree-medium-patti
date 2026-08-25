@@ -217,11 +217,6 @@ body.memory-hub-page {
   box-shadow: inset 0 0 0 5px #0c3a31, inset 0 0 0 6px rgba(238, 203, 116, 0.46), 0 12px 28px rgba(0,0,0,0.25);
 }
 
-.memory-card-kela {
-  font-family: Georgia, serif;
-  font-size: clamp(2rem, 5vw, 4rem);
-}
-
 .memory-card-back small,
 .memory-card-front small {
   font-size: 0.55rem;
@@ -454,7 +449,6 @@ body.memory-modal-open { overflow: hidden; }
   .memory-board { gap: 6px; }
   .memory-card, .memory-card-face { border-radius: 10px; }
   .memory-card-front strong { font-size: 0.64rem; }
-  .memory-card-kela { font-size: 1.8rem; }
   .memory-win-modal { padding: 12px; }
   .memory-win-card { padding: 25px 18px 20px; border-radius: 22px; }
   .memory-win-art { width: 132px; margin-top: 10px; }

@@ -3339,18 +3339,18 @@ summary:focus-visible {
   bottom: max(18px, env(safe-area-inset-bottom));
   z-index: 44;
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   padding: 0;
   color: #f1d69f;
   background:
     radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.13), transparent 34%),
-    rgba(16, 35, 28, 0.92);
-  border: 1px solid rgba(221, 194, 148, 0.58);
+    rgba(10, 39, 30, 0.98);
+  border: 2px solid rgba(234, 203, 139, 0.88);
   border-radius: 50%;
   box-shadow:
-    0 8px 28px rgba(7, 25, 18, 0.22),
-    inset 0 0 0 3px rgba(255, 253, 248, 0.045);
+    0 10px 32px rgba(3, 18, 13, 0.42),
+    inset 0 0 0 3px rgba(255, 253, 248, 0.075);
   cursor: pointer;
   place-items: center;
   -webkit-backdrop-filter: blur(10px);
@@ -3419,13 +3419,25 @@ summary:focus-visible {
 }
 
 .ambient-jazz-icon {
-  width: 24px;
-  height: 24px;
+  width: 34px;
+  height: 34px;
   overflow: visible;
 }
 
-.ambient-jazz-note {
+.ambient-jazz-speaker-body {
   fill: currentColor;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.ambient-jazz-waves {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2.35;
+  transition: opacity 180ms ease;
+}
+
+.ambient-jazz-speaker {
   transform-origin: center;
 }
 
@@ -3440,15 +3452,19 @@ summary:focus-visible {
 }
 
 .ambient-jazz-toggle.is-muted {
-  color: rgba(241, 214, 159, 0.62);
-  background: rgba(16, 35, 28, 0.82);
+  color: rgba(241, 214, 159, 0.86);
+  background: rgba(10, 39, 30, 0.96);
+}
+
+.ambient-jazz-toggle.is-muted .ambient-jazz-waves {
+  opacity: 0;
 }
 
 .ambient-jazz-toggle.is-muted .ambient-jazz-slash {
   opacity: 1;
 }
 
-.ambient-jazz-toggle.is-waiting .ambient-jazz-note {
+.ambient-jazz-toggle.is-waiting .ambient-jazz-speaker {
   animation: ambient-jazz-ready 2.6s ease-in-out infinite;
 }
 
@@ -3469,27 +3485,28 @@ summary:focus-visible {
 
 @media (max-width: 520px) {
   .ambient-jazz-toggle {
-    right: max(10px, env(safe-area-inset-right));
-    bottom: max(10px, env(safe-area-inset-bottom));
-    width: 44px;
-    height: 44px;
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: 56px;
+    height: 56px;
   }
 
   .ambient-jazz-icon {
-    width: 22px;
-    height: 22px;
+    width: 31px;
+    height: 31px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ambient-jazz-toggle,
   .ambient-jazz-toggle::after,
-  .ambient-jazz-note {
+  .ambient-jazz-speaker,
+  .ambient-jazz-waves {
     transition: none;
   }
 
   .ambient-jazz-toggle::before,
-  .ambient-jazz-toggle.is-waiting .ambient-jazz-note {
+  .ambient-jazz-toggle.is-waiting .ambient-jazz-speaker {
     animation: none;
   }
 }

@@ -35,8 +35,11 @@
   button.type = "button";
   button.innerHTML = `
     <svg class="ambient-jazz-icon" viewBox="0 0 32 32" aria-hidden="true">
-      <path class="ambient-jazz-note" d="M19.2 7.2v13.3a4.3 4.3 0 1 1-2-3.6V9.6l9-2.1v10.8a4.3 4.3 0 1 1-2-3.6V5z"/>
-      <path class="ambient-jazz-slash" d="M7 6.5 26 25.5"/>
+      <g class="ambient-jazz-speaker">
+        <path class="ambient-jazz-speaker-body" d="M4.5 12.5h5L16.5 7v18l-7-5.5h-5z"/>
+        <path class="ambient-jazz-waves" d="M20.2 12.1a5.5 5.5 0 0 1 0 7.8M23.5 8.8a10 10 0 0 1 0 14.4"/>
+      </g>
+      <path class="ambient-jazz-slash" d="M6.5 6.5 25.5 25.5"/>
     </svg>
     <span class="sr-only" data-ambient-jazz-label></span>
   `;

@@ -978,7 +978,7 @@ startMoss();
 
 if (!document.querySelector('script[data-ambient-jazz]')) {
   const ambientJazzScript = document.createElement("script");
-  ambientJazzScript.src = "/ambient-jazz.js?v=20260825-1";
+  ambientJazzScript.src = "/ambient-jazz.js?v=20260825-2";
   ambientJazzScript.dataset.ambientJazz = "";
   document.head.append(ambientJazzScript);
 }

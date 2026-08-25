@@ -1,17 +1,17 @@
 # KELA — Messages from the Trees
 
-> KELA is the original spiritual-reflection work of Tree Medium Patti, published by Lumen Pleroma LLC. The site offers a private Tree Message service plus free animal, tree, and plant oracle decks and nature memory games.
+> KELA is the original spiritual-reflection work of Tree Medium Patti, published by Lumen Pleroma LLC. The site offers free online animal, tree, and plant oracle cards, nature memory games, and a private Tree Message service. Its nature-based oracle experience is distinct from traditional tarot.
 
 ## Primary pages
 
-- [KELA home](https://treemedium.vercel.app/): A card doorway into KELA, free oracle draws, nature memory games, and Tree Medium Patti.
+- [Free Online Oracle Cards](https://treemedium.vercel.app/): Draw a free animal, tree, or plant oracle card online with no signup; an original nature-based alternative to tarot.
 - [Meet Tree Medium Patti](https://treemedium.vercel.app/meet-patti): Patti's story, the KELA presence, private Tree Messages, and booking.
 
 ## Interactive experiences
 
-- [Free Animal Oracle](https://treemedium.vercel.app/animal-oracle)
-- [Free Tree Oracle](https://treemedium.vercel.app/tree-oracle)
-- [Free Plant Oracle](https://treemedium.vercel.app/plant-oracle)
+- [Free Animal Oracle Card Online](https://treemedium.vercel.app/animal-oracle)
+- [Free Tree Oracle Card Online](https://treemedium.vercel.app/tree-oracle)
+- [Free Plant Oracle Card Online](https://treemedium.vercel.app/plant-oracle)
 - [Free Nature Memory Games](https://treemedium.vercel.app/memory-games)
 - [Animal Guide Bug Quest](https://treemedium.vercel.app/animal-adventure)
 

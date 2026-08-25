@@ -101,6 +101,7 @@ window.KelaCompanions = (() => {
 })();
 
 let termsPreviousFocus = null;
+let scrollSettledTimer = 0;
 
 const setTermsConsentState = () => {
   if (!termsConsent || !termsContinue) return;
@@ -180,7 +181,13 @@ menuToggle?.addEventListener("click", () => {
 
 nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 
-window.addEventListener("scroll", setHeaderState, { passive: true });
+window.addEventListener("scroll", () => {
+  setHeaderState();
+  if (!header) return;
+  header.classList.add("is-scrolling");
+  window.clearTimeout(scrollSettledTimer);
+  scrollSettledTimer = window.setTimeout(() => header.classList.remove("is-scrolling"), 650);
+}, { passive: true });
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     if (termsModal && !termsModal.hidden) closeTerms();

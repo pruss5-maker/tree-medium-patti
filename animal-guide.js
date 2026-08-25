@@ -341,7 +341,7 @@ const preloadGuideCard = (index) => {
     const image = new Image();
     image.addEventListener("load", resolve, { once: true });
     image.addEventListener("error", resolve, { once: true });
-    image.src = `${cardAssetBase}-${side}.webp?v=20260825-6`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260825-7`;
     if (image.complete) resolve();
   });
   preloadFace("back");
@@ -394,11 +394,11 @@ const fillGuide = (index, colorIndex) => {
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
   if (animalCardFront) {
-    animalCardFront.src = `${cardAssetBase}-front.webp?v=20260825-6`;
+    animalCardFront.src = `${cardAssetBase}-front.webp?v=20260825-7`;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;
   }
   if (animalCardBack) {
-    animalCardBack.src = `${cardAssetBase}-back.webp?v=20260825-6`;
+    animalCardBack.src = `${cardAssetBase}-back.webp?v=20260825-7`;
     animalCardBack.alt = `${guide.name} KELA Animal Oracle meaning card`;
   }
   if (guideName) guideName.textContent = guide.name;

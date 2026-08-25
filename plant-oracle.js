@@ -167,7 +167,7 @@ const preloadPlantCard = (index) => {
     const image = new Image();
     image.addEventListener("load", resolve, { once: true });
     image.addEventListener("error", resolve, { once: true });
-    image.src = `${cardAssetBase}-${side}.webp?v=20260825-6`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260825-7`;
     if (image.complete) resolve();
   });
   preloadFace("back");
@@ -237,11 +237,11 @@ const fillPlant = (index) => {
   updatePlantSeo(plant);
   const cardAssetBase = `assets/oracle-cards/plant/${slugify(plant.name)}`;
   if (plantCardFront) {
-    plantCardFront.src = `${cardAssetBase}-front.webp?v=20260825-6`;
+    plantCardFront.src = `${cardAssetBase}-front.webp?v=20260825-7`;
     plantCardFront.alt = `${plant.name} KELA Plant Oracle card`;
   }
   if (plantCardBack) {
-    plantCardBack.src = `${cardAssetBase}-back.webp?v=20260825-6`;
+    plantCardBack.src = `${cardAssetBase}-back.webp?v=20260825-7`;
     plantCardBack.alt = `${plant.name} KELA Plant Oracle meaning card`;
   }
   plantName.textContent = plant.name;

@@ -16,9 +16,6 @@ const renderBotanical = renderDeck !== "animal" ? `<p class="botanical"><em>${re
 const renderDeckName = renderDeck === "animal"
   ? "ANIMAL ORACLE · CARD OF THE DAY"
   : renderDeck === "plant" ? "PLANT ORACLE · CARD OF THE DAY" : "TREE ORACLE · CARD OF THE DAY";
-const renderCalling = renderDeck === "animal"
-  ? "THE ANIMAL CALLING YOU TODAY"
-  : renderDeck === "plant" ? "THE PLANT CALLING YOU TODAY" : "THE TREE CALLING YOU TODAY";
 const renderCue = "TAP FOR MEANING";
 const renderBackCue = renderDeck === "animal"
   ? "TAP TO SEE YOUR ANIMAL"
@@ -41,7 +38,6 @@ const renderFront = `
     <img src="${renderArt}" alt="">
   </section>
   <section class="front-copy">
-    <p class="calling">${renderCalling}</p>
     <h1 class="${renderNameClass}">${renderData.name}</h1>
     <p class="keyword" style="--accent:${renderData.accent}">${renderData.keyword}</p>
     <span class="ornament" aria-hidden="true">◆</span>
@@ -55,7 +51,6 @@ const renderFront = `
 const renderBack = `
   <img class="master" src="${document.body.dataset.master}" alt="">
   ${renderBrand(`${renderDeck.toUpperCase()} ORACLE · MEANING CARD`)}
-  <img class="watermark ${renderDeck}" src="${renderArt}" alt="">
   <section class="back-copy${renderMessageClass}">
     <h1 class="${renderNameClass}">${renderData.name}</h1>
     ${renderBotanical}

@@ -239,7 +239,7 @@ const preloadTreeCard = (index) => {
     const image = new Image();
     image.addEventListener("load", resolve, { once: true });
     image.addEventListener("error", resolve, { once: true });
-    image.src = `${cardAssetBase}-${side}.webp?v=20260825-6`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260825-7`;
     if (image.complete) resolve();
   });
   preloadFace("back");
@@ -286,11 +286,11 @@ const fillTree = (index) => {
   updateTreeSeo(tree);
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
   if (treeCardFront) {
-    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260825-6`;
+    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260825-7`;
     treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;
   }
   if (treeCardBack) {
-    treeCardBack.src = `${cardAssetBase}-back.webp?v=20260825-6`;
+    treeCardBack.src = `${cardAssetBase}-back.webp?v=20260825-7`;
     treeCardBack.alt = `${tree.name} KELA Tree Oracle meaning card`;
   }
   if (treeName) treeName.textContent = tree.name;
@@ -363,7 +363,7 @@ const showTree = (index, { focus = true, save = true } = {}) => {
   oracleRitual.hidden = true;
   oracleCard.classList.remove("is-listening");
   oracleCard.classList.add("is-revealed");
-  if (status) status.textContent = `${treeGuides[index].name} is calling you into the network today.`;
+  if (status) status.textContent = `${treeGuides[index].name} is here with you today.`;
   if (focus) {
     window.setTimeout(() => {
       oracleCard.scrollIntoView({

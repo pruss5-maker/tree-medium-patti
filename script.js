@@ -978,7 +978,7 @@ startMoss();
 
 if (!document.querySelector('script[data-atmosphere]')) {
   const atmosphereScript = document.createElement("script");
-  atmosphereScript.src = "/atmosphere.js?v=20260825-3";
+  atmosphereScript.src = "/atmosphere.js?v=20260825-4";
   atmosphereScript.async = false;
   atmosphereScript.dataset.atmosphere = "";
   document.head.append(atmosphereScript);

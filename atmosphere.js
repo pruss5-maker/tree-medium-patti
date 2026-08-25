@@ -11,13 +11,20 @@
   controlRail.setAttribute("aria-label", "Site controls");
   body.append(controlRail);
 
-  let theme = "dark";
+  const setTheme = (nextTheme) => {
+    root.dataset.theme = nextTheme;
+    root.style.colorScheme = nextTheme;
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    if (themeColor) themeColor.content = nextTheme === "dark" ? "#020d0a" : "#eee4cf";
+  };
+
+  let theme = "light";
   try {
-    theme = window.localStorage.getItem(themeKey) === "light" ? "light" : "dark";
+    theme = window.localStorage.getItem(themeKey) === "dark" ? "dark" : "light";
   } catch {
-    theme = "dark";
+    theme = "light";
   }
-  root.dataset.theme = theme;
+  setTheme(theme);
 
   if (menuToggle) controlRail.append(menuToggle);
   const triskele = headerActions?.querySelector(".header-triskele") || document.querySelector(".header-triskele");
@@ -40,7 +47,7 @@
 
     themeButton.addEventListener("click", () => {
       const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-      root.dataset.theme = nextTheme;
+      setTheme(nextTheme);
       try {
         window.localStorage.setItem(themeKey, nextTheme);
       } catch {

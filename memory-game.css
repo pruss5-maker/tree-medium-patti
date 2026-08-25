@@ -16,6 +16,32 @@ body.memory-hub-page {
     url("assets/plants/chamomile.webp") center / cover fixed;
 }
 
+html[data-theme="dark"] body.memory-page,
+html[data-theme="dark"] body.memory-hub-page {
+  background:
+    linear-gradient(rgba(1, 13, 10, 0.95), rgba(1, 9, 7, 0.98)),
+    url("assets/plants/chamomile.webp") center / cover fixed;
+}
+
+html[data-theme="dark"] .memory-page .site-header,
+html[data-theme="dark"] .memory-hub-page .site-header {
+  background: rgba(1, 13, 10, 0.97);
+  border-color: rgba(211, 168, 73, 0.2);
+}
+
+html[data-theme="dark"] .memory-game-panel,
+html[data-theme="dark"] .memory-hub-card {
+  background: linear-gradient(155deg, rgba(5, 35, 27, 0.98), rgba(1, 15, 11, 0.99));
+  box-shadow: 0 30px 84px rgba(0, 0, 0, 0.58);
+}
+
+html[data-theme="dark"] .memory-card-back {
+  background:
+    radial-gradient(circle at 50% 38%, rgba(211, 168, 73, 0.14), transparent 34%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 7px),
+    #031c16;
+}
+
 .memory-main {
   padding-top: 68px;
 }

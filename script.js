@@ -14,6 +14,14 @@ const termsCloseButtons = document.querySelectorAll("[data-terms-close]");
 const termsConsent = document.querySelector("[data-terms-consent]");
 const termsContinue = document.querySelector("[data-terms-continue]");
 
+document.querySelectorAll(".site-footer, .legal-footer").forEach((footer) => {
+  if (footer.querySelector(".footer-sanctuary-phrase")) return;
+  const phrase = document.createElement("p");
+  phrase.className = "footer-sanctuary-phrase";
+  phrase.textContent = "The mind should be a sanctuary, and less like a battlefield.";
+  footer.append(phrase);
+});
+
 if (header && menuToggle) {
   if (!document.querySelector('link[href*="header-symbols.css"]')) {
     const symbolStyles = document.createElement("link");

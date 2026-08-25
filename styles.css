@@ -1345,6 +1345,30 @@ summary:focus-visible {
   text-transform: uppercase;
 }
 
+.footer-sanctuary-phrase {
+  width: var(--shell);
+  margin: 0 auto;
+  padding: 24px 16px 2px;
+  color: rgba(246, 220, 153, 0.9);
+  font: italic clamp(1rem, 1.8vw, 1.25rem)/1.45 var(--serif);
+  letter-spacing: 0.02em;
+  text-align: center;
+  border-top: 1px solid rgba(222, 184, 101, 0.28);
+}
+
+.legal-footer .footer-sanctuary-phrase {
+  margin-top: 24px;
+}
+
+@media (max-width: 760px) {
+  .footer-sanctuary-phrase {
+    width: calc(100% - 80px);
+    margin-right: 66px;
+    margin-left: 14px;
+    padding-inline: 8px;
+  }
+}
+
 .footer-bottom p {
   margin: 0;
 }

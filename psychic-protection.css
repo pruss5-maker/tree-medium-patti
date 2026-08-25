@@ -1,0 +1,585 @@
+.protection-page {
+  color: var(--ink);
+  background: #f4f1e8;
+}
+
+.protection-page .site-header {
+  min-height: 72px;
+  padding-block: 8px;
+  color: #fff8e8;
+  background: rgba(12, 42, 31, 0.96);
+  border-color: rgba(221, 194, 148, 0.22);
+  backdrop-filter: blur(12px);
+}
+
+.protection-page .site-header.is-scrolled {
+  min-height: 68px;
+  color: #fff8e8;
+  background: rgba(12, 42, 31, 0.97);
+  border-color: rgba(221, 194, 148, 0.22);
+}
+
+.protection-page .site-header .wordmark span {
+  font-size: 2rem;
+}
+
+.protection-page .site-header .wordmark small {
+  margin-top: 4px;
+  font-size: 0.68rem;
+}
+
+.protection-page .site-nav a {
+  font-size: 0.76rem;
+}
+
+.protection-page .nav-booking {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.protection-hero {
+  position: relative;
+  display: grid;
+  min-height: min(820px, 92svh);
+  place-items: end start;
+  overflow: hidden;
+  color: #fff9e9;
+  background: #10271e;
+}
+
+.protection-hero-image,
+.protection-hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.protection-hero-image {
+  background: url("assets/kela-tree-hero.webp") center 43% / cover no-repeat;
+  filter: saturate(0.78) contrast(1.05) brightness(0.8);
+  transform: scale(1.02);
+}
+
+.protection-hero-shade {
+  background:
+    linear-gradient(90deg, rgba(5, 24, 17, 0.94) 0%, rgba(5, 24, 17, 0.7) 48%, rgba(5, 24, 17, 0.18) 82%),
+    linear-gradient(0deg, rgba(5, 21, 15, 0.8), transparent 55%);
+}
+
+.protection-hero-content {
+  position: relative;
+  z-index: 1;
+  width: var(--shell);
+  padding-top: 140px;
+  padding-bottom: clamp(58px, 9vw, 110px);
+}
+
+.protection-hero-content h1 {
+  max-width: 850px;
+  margin: 12px 0 22px;
+  color: #fff8e8;
+  font-size: clamp(4rem, 8vw, 8.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.protection-hero-lede {
+  max-width: 710px;
+  margin: 0 0 30px;
+  color: rgba(255, 249, 233, 0.9);
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  line-height: 1.48;
+}
+
+.protection-scroll {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  color: #15261e;
+  background: var(--gold-light);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.protection-intro {
+  background: #f4f1e8;
+}
+
+.protection-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(360px, 1.2fr);
+  gap: clamp(42px, 8vw, 118px);
+  align-items: start;
+}
+
+.protection-intro h2,
+.protection-heading h2,
+.protection-boundary-copy h2,
+.protection-practice-copy h2,
+.protection-close-card h2 {
+  margin: 10px 0 0;
+  color: var(--forest-900);
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.protection-prose {
+  font-family: var(--serif);
+  font-size: clamp(1.18rem, 2vw, 1.48rem);
+  line-height: 1.68;
+}
+
+.protection-prose p + p {
+  margin-top: 22px;
+}
+
+.protection-principles {
+  padding-top: 0;
+  background: #f4f1e8;
+}
+
+.protection-heading {
+  max-width: 850px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.protection-heading p:last-child {
+  max-width: 650px;
+  margin-top: 15px;
+  color: var(--forest-700);
+  font-size: 1.05rem;
+}
+
+.protection-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.protection-teaching-card {
+  min-height: 420px;
+  padding: clamp(28px, 4vw, 48px);
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.06), transparent 40%),
+    #17392c;
+  border: 1px solid rgba(215, 184, 117, 0.56);
+  box-shadow: 0 22px 55px rgba(27, 43, 33, 0.12);
+  color: #f7edda;
+}
+
+.protection-number {
+  margin-bottom: 68px;
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.protection-teaching-card h3 {
+  margin: 0 0 18px;
+  color: #fff6e3;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.55rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.protection-teaching-card > p:last-child {
+  color: rgba(255, 248, 232, 0.82);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.protection-boundary {
+  padding-block: 0;
+  color: #fff5df;
+  background: #102a20;
+}
+
+.protection-boundary-grid {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.92fr) minmax(420px, 1.08fr);
+  min-height: 780px;
+  align-items: stretch;
+}
+
+.protection-plant-image {
+  min-height: 620px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.protection-plant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.78) brightness(0.7) contrast(1.08);
+}
+
+.protection-boundary-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(60px, 8vw, 120px);
+}
+
+.protection-boundary-copy h2 {
+  color: #fff5df;
+}
+
+.protection-prose.light {
+  margin-top: 30px;
+  color: rgba(255, 247, 229, 0.83);
+  font-size: clamp(1.08rem, 1.7vw, 1.3rem);
+}
+
+.protection-pullquote {
+  padding-top: 25px;
+  color: var(--gold-light);
+  border-top: 1px solid rgba(224, 192, 126, 0.38);
+  font-style: italic;
+}
+
+.protection-practice {
+  background:
+    radial-gradient(circle at 80% 12%, rgba(194, 157, 81, 0.13), transparent 34%),
+    #ebe5d8;
+}
+
+.protection-practice-grid {
+  display: grid;
+  grid-template-columns: minmax(420px, 1.2fr) minmax(320px, 0.8fr);
+  gap: clamp(40px, 8vw, 110px);
+  align-items: center;
+}
+
+.practice-lede {
+  max-width: 760px;
+  margin-top: 26px;
+  color: var(--forest-700);
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.65;
+}
+
+.protection-steps {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin: 36px 0 0;
+  list-style: none;
+}
+
+.protection-steps li {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(27, 66, 49, 0.18);
+  color: #2a3e34;
+  line-height: 1.55;
+}
+
+.protection-steps li:last-child {
+  border-bottom: 1px solid rgba(27, 66, 49, 0.18);
+}
+
+.protection-steps li > span {
+  color: #9a7226;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+}
+
+.protection-steps strong {
+  color: var(--forest-900);
+}
+
+.protection-prayer {
+  position: relative;
+  padding: clamp(42px, 5vw, 68px) clamp(30px, 5vw, 58px);
+  color: #f8e9ca;
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.07), transparent 44%),
+    #244b39;
+  border: 1px solid #c6a45e;
+  box-shadow: inset 0 0 0 8px #244b39, inset 0 0 0 9px rgba(221, 187, 116, 0.48), 0 25px 65px rgba(29, 45, 35, 0.18);
+}
+
+.protection-prayer .oracle-mini-label {
+  color: #ddbc76;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.protection-prayer blockquote {
+  margin: 28px 0;
+  color: #fff6e3;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.protection-signoff {
+  color: #ddbc76;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.protection-videos {
+  background: #f7f3e9;
+}
+
+.protection-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.protection-video-grid a {
+  display: flex;
+  min-height: 156px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 26px;
+  color: #f8ead0;
+  background: #193b2d;
+  border: 1px solid rgba(194, 157, 81, 0.56);
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.protection-video-grid a:hover,
+.protection-video-grid a:focus-visible {
+  background: #24513d;
+  transform: translateY(-3px);
+}
+
+.protection-video-grid span {
+  margin-bottom: 8px;
+  color: #d9b870;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.protection-video-grid strong {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.protection-close {
+  background: #17392c;
+}
+
+.protection-close-card {
+  max-width: 1000px;
+  color: #fff5df;
+  text-align: center;
+}
+
+.protection-close-card h2 {
+  color: #fff5df;
+}
+
+.protection-close-card > p:not(.eyebrow) {
+  max-width: 780px;
+  margin: 26px auto 0;
+  color: rgba(255, 247, 229, 0.84);
+  font-family: var(--serif);
+  font-size: clamp(1.18rem, 2.1vw, 1.5rem);
+  line-height: 1.65;
+}
+
+.protection-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+.protection-actions a {
+  min-width: 170px;
+  padding: 13px 18px;
+  color: #182d23;
+  background: #ddbd78;
+  border: 1px solid #f2dab0;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.protection-note {
+  padding-block: 28px;
+}
+
+.protection-note p {
+  max-width: 930px;
+  margin: 0 auto;
+  color: #66726c;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .protection-page .site-header,
+  .protection-page .site-header.is-scrolled {
+    min-height: 66px;
+    padding: 8px 14px;
+  }
+
+  .protection-page .site-header .wordmark span {
+    font-size: 1.75rem;
+  }
+
+  .protection-page .site-header .wordmark small {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.52rem;
+    letter-spacing: 0.09em;
+  }
+
+  .protection-page .nav-booking {
+    display: none;
+  }
+
+  .protection-hero {
+    min-height: 760px;
+  }
+
+  .protection-intro-grid,
+  .protection-practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .protection-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .protection-teaching-card {
+    min-height: 0;
+  }
+
+  .protection-number {
+    margin-bottom: 40px;
+  }
+
+  .protection-boundary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .protection-plant-image {
+    min-height: 460px;
+    max-height: 620px;
+  }
+
+  .protection-video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .protection-hero {
+    min-height: 700px;
+  }
+
+  .protection-hero-image {
+    background-position: 59% center;
+  }
+
+  .protection-hero-shade {
+    background:
+      linear-gradient(0deg, rgba(5, 24, 17, 0.94), rgba(5, 24, 17, 0.52) 68%, rgba(5, 24, 17, 0.2)),
+      linear-gradient(90deg, rgba(5, 24, 17, 0.42), transparent);
+  }
+
+  .protection-hero-content {
+    padding-top: 120px;
+    padding-bottom: 52px;
+  }
+
+  .protection-hero-content h1 {
+    font-size: clamp(3.5rem, 18vw, 5.2rem);
+  }
+
+  .protection-hero-lede {
+    font-size: 1.14rem;
+  }
+
+  .protection-intro-grid {
+    gap: 28px;
+  }
+
+  .protection-intro h2,
+  .protection-heading h2,
+  .protection-boundary-copy h2,
+  .protection-practice-copy h2,
+  .protection-close-card h2 {
+    font-size: clamp(2.45rem, 12vw, 3.5rem);
+  }
+
+  .protection-prose {
+    font-size: 1.08rem;
+    line-height: 1.62;
+  }
+
+  .protection-teaching-card {
+    padding: 28px;
+  }
+
+  .protection-plant-image {
+    min-height: 360px;
+  }
+
+  .protection-boundary-copy {
+    padding: 52px 22px;
+  }
+
+  .protection-prayer {
+    padding: 42px 25px;
+  }
+
+  .protection-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .protection-video-grid a {
+    min-height: 132px;
+  }
+
+  .protection-actions {
+    flex-direction: column;
+  }
+
+  .protection-actions a {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .protection-video-grid a {
+    transition: none;
+  }
+}

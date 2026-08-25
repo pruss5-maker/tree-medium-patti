@@ -310,7 +310,7 @@ const saveGuide = (index, colorIndex) => {
       window.KelaCompanions?.remember({
         deck: "animal",
         name: guide.name,
-        image: guide.art,
+        image: `/${guide.art.replace(/^\/+/, "")}`,
         href: "/animal-oracle",
       });
     }
@@ -379,11 +379,11 @@ const fillGuide = (index, colorIndex) => {
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
   if (animalCardFront) {
-    animalCardFront.src = `${cardAssetBase}-front.webp?v=20260825-5`;
+    animalCardFront.src = `${cardAssetBase}-front.webp?v=20260825-6`;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;
   }
   if (animalCardBack) {
-    animalCardBack.src = `${cardAssetBase}-back.webp?v=20260825-5`;
+    animalCardBack.src = `${cardAssetBase}-back.webp?v=20260825-6`;
     animalCardBack.alt = `${guide.name} KELA Animal Oracle meaning card`;
   }
   if (guideName) guideName.textContent = guide.name;
@@ -573,7 +573,7 @@ if (oracle && isLocalPreview && requestedCardIndex >= 0) {
       window.KelaCompanions?.remember({
         deck: "animal",
         name: guide.name,
-        image: guide.art,
+        image: `/${guide.art.replace(/^\/+/, "")}`,
         href: "/animal-oracle",
       });
     }

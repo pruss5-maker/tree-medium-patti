@@ -7,7 +7,7 @@ const renderData = renderDeck === "animal"
   : renderDeck === "plant" ? plantGuides[renderIndex] : treeGuides[renderIndex];
 const renderSlug = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const renderDataSlug = renderSlug(renderData.name);
-const renderFrontProtection = `“Dear ${renderData.name}, please protect my mind and energy on autopilot from any perceived threats or unkind thoughts before they enter my field.”`;
+const renderFrontProtection = `“Dear ${renderData.name}, please protect my mind and energy. Allow only kind thoughts and words to enter my field.”`;
 const renderBackProtection = renderFrontProtection;
 const renderArt = renderDeck === "animal"
   ? `assets/animals/cutouts-transparent/${renderDataSlug}.png`

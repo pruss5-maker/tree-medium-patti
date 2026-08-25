@@ -210,7 +210,7 @@ const saveTree = (index) => {
       window.KelaCompanions?.remember({
         deck: "tree",
         name: tree.name,
-        image: tree.art,
+        image: `/${tree.art.replace(/^\/+/, "")}`,
         href: "/tree-oracle",
       });
     }
@@ -271,11 +271,11 @@ const fillTree = (index) => {
   updateTreeSeo(tree);
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
   if (treeCardFront) {
-    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260825-5`;
+    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260825-6`;
     treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;
   }
   if (treeCardBack) {
-    treeCardBack.src = `${cardAssetBase}-back.webp?v=20260825-5`;
+    treeCardBack.src = `${cardAssetBase}-back.webp?v=20260825-6`;
     treeCardBack.alt = `${tree.name} KELA Tree Oracle meaning card`;
   }
   if (treeName) treeName.textContent = tree.name;
@@ -432,7 +432,7 @@ if (oracle && isLocalPreview && requestedCardIndex >= 0) {
       window.KelaCompanions?.remember({
         deck: "tree",
         name: tree.name,
-        image: tree.art,
+        image: `/${tree.art.replace(/^\/+/, "")}`,
         href: "/tree-oracle",
       });
     }

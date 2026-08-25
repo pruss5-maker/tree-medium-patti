@@ -66,7 +66,9 @@ window.KelaCompanions = (() => {
       link.href = companion.href;
       link.setAttribute("aria-label", `Return to your ${companion.name} ${companion.deck} card`);
       picture.className = "oracle-companion-picture";
-      image.src = companion.image;
+      image.src = companion.image.startsWith("/")
+        ? companion.image
+        : `/${companion.image.replace(/^\.?\/+/, "")}`;
       image.alt = "";
       image.width = 72;
       image.height = 72;

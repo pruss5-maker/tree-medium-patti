@@ -179,7 +179,7 @@ const savePlant = (index) => {
       window.KelaCompanions?.remember({
         deck: "plant",
         name: plant.name,
-        image: plant.art,
+        image: `/${plant.art.replace(/^\/+/, "")}`,
         href: "/plant-oracle",
       });
     }
@@ -222,11 +222,11 @@ const fillPlant = (index) => {
   updatePlantSeo(plant);
   const cardAssetBase = `assets/oracle-cards/plant/${slugify(plant.name)}`;
   if (plantCardFront) {
-    plantCardFront.src = `${cardAssetBase}-front.webp?v=20260825-5`;
+    plantCardFront.src = `${cardAssetBase}-front.webp?v=20260825-6`;
     plantCardFront.alt = `${plant.name} KELA Plant Oracle card`;
   }
   if (plantCardBack) {
-    plantCardBack.src = `${cardAssetBase}-back.webp?v=20260825-5`;
+    plantCardBack.src = `${cardAssetBase}-back.webp?v=20260825-6`;
     plantCardBack.alt = `${plant.name} KELA Plant Oracle meaning card`;
   }
   plantName.textContent = plant.name;
@@ -341,7 +341,7 @@ if (oracle && isLocalPreview && requestedCardIndex >= 0) {
       window.KelaCompanions?.remember({
         deck: "plant",
         name: plant.name,
-        image: plant.art,
+        image: `/${plant.art.replace(/^\/+/, "")}`,
         href: "/plant-oracle",
       });
     }

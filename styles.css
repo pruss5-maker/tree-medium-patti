@@ -1890,9 +1890,9 @@ summary:focus-visible {
 
 @media (max-width: 980px) {
   .oracle-switcher {
-    top: 66px;
+    top: auto;
     right: 8px;
-    bottom: auto;
+    bottom: max(10px, env(safe-area-inset-bottom));
     grid-auto-flow: column;
     transform: none;
   }

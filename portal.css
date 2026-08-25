@@ -158,7 +158,7 @@ html[data-theme="light"] body.portal-page.menu-open .site-nav {
 
 .portal-kela {
   z-index: 2;
-  transform: translateX(20px) rotate(-1.35deg) scale(0.97);
+  transform: translateX(34px) rotate(-1.35deg) scale(0.97);
   transform-origin: right bottom;
   background: #092f27 url("assets/kela-tree-hero.webp") center 46% / cover no-repeat;
 }
@@ -193,15 +193,18 @@ html[data-theme="light"] body.portal-page.menu-open .site-nav {
 .portal-oracles {
   z-index: 6;
   display: grid;
+  width: 54%;
+  grid-column: 1 / -1;
   grid-template-rows: auto minmax(0, 1fr);
+  justify-self: center;
   padding: clamp(17px, 2vw, 25px);
   color: var(--portal-cream);
   background:
     linear-gradient(180deg, rgba(3, 29, 23, 0.58), rgba(2, 24, 19, 0.8)),
     url("assets/kela-oracle-card-back-v1.webp") center 38% / cover no-repeat,
     #062d24;
-  transform: translate(-20px, -6px) rotate(0.8deg) scale(1.02);
-  transform-origin: left bottom;
+  transform: translateY(-66px) rotate(0.35deg) scale(1.04);
+  transform-origin: center top;
 }
 
 .portal-oracle-heading {
@@ -291,11 +294,9 @@ html[data-theme="light"] body.portal-page.menu-open .site-nav {
 
 .portal-patti {
   z-index: 1;
-  grid-column: 1 / -1;
-  width: 50%;
-  justify-self: center;
   background: linear-gradient(120deg, #0d4739, #05271f);
-  transform: translateY(-34px) rotate(-0.3deg) scale(0.97);
+  transform: translateX(-34px) rotate(1.35deg) scale(0.97);
+  transform-origin: left bottom;
 }
 
 .portal-patti-image {
@@ -373,6 +374,120 @@ body.patti-door-page {
 }
 
 .patti-kela-copy { grid-column: 2; align-self: center; }
+
+.patti-kela-story {
+  position: relative;
+  z-index: 2;
+  padding: clamp(28px, 5vw, 54px) clamp(8px, 2vw, 18px) clamp(34px, 5vw, 64px);
+}
+
+.patti-kela-story-heading {
+  max-width: 720px;
+  margin: 0 auto clamp(26px, 4vw, 44px);
+  text-align: center;
+}
+
+.patti-kela-story-heading h2 {
+  margin: 8px 0 0;
+  color: var(--portal-light-gold);
+  font-size: clamp(2.5rem, 5vw, 5.1rem);
+  line-height: 0.95;
+}
+
+.patti-kela-story-spread {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.8vw, 20px);
+  align-items: start;
+}
+
+.patti-kela-story-card {
+  position: relative;
+  display: flex;
+  min-height: 390px;
+  padding: 34px 24px 30px;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  color: var(--portal-cream);
+  background:
+    linear-gradient(165deg, rgba(14, 71, 56, 0.86), rgba(3, 27, 22, 0.98) 72%),
+    url("assets/kela-oracle-card-back-v1.webp") center / cover;
+  border: 1px solid rgba(230, 190, 95, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.34);
+  transform: rotate(-0.8deg);
+}
+
+.patti-kela-story-card::before {
+  position: absolute;
+  inset: 7px;
+  content: "";
+  pointer-events: none;
+  border: 1px solid rgba(244, 216, 142, 0.25);
+  border-radius: 14px;
+}
+
+.patti-kela-story-card::after {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  width: 58px;
+  aspect-ratio: 1;
+  content: "";
+  opacity: 0.34;
+  background: url("assets/kela-mark.svg") center / contain no-repeat;
+  transform: translateX(-50%);
+}
+
+.patti-kela-story-card:nth-child(even) {
+  margin-top: 30px;
+  transform: rotate(0.8deg);
+}
+
+.patti-kela-card-number {
+  position: absolute;
+  top: 19px;
+  right: 20px;
+  color: rgba(244, 216, 142, 0.72);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.patti-kela-story-card .portal-eyebrow {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 10px;
+  color: #e4c36f;
+}
+
+.patti-kela-story-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 12px;
+  color: #fff7dc;
+  font-size: clamp(1.65rem, 2.2vw, 2.25rem);
+  line-height: 0.98;
+}
+
+.patti-kela-story-card p:last-child {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: rgba(255, 249, 232, 0.82);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.patti-kela-story-note {
+  max-width: 720px;
+  margin: 36px auto 0;
+  color: rgba(255, 249, 232, 0.58);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
 
 .patti-door-card h1,
 .patti-door-card h2 {
@@ -478,7 +593,7 @@ body.patti-door-page {
   .portal-deck-choices a { grid-template-columns: 42px 1fr; }
   .portal-deck-choices img { width: 34px; margin-left: 5px; }
   .portal-deck-choices span { gap: 3px; padding: 4px 4px 5px 0; font-size: 0.52rem; letter-spacing: 0.1em; white-space: nowrap; }
-  .portal-patti { grid-column: 1 / -1; width: 50%; }
+  .portal-oracles { width: 58%; transform: translateY(-58px) rotate(.35deg) scale(1.04); }
   .portal-patti-image { width: 100%; }
   .portal-patti .portal-card-content { width: 100%; }
   .portal-patti .portal-card-content strong { font-size: 1.75rem; }
@@ -486,10 +601,22 @@ body.patti-door-page {
   .patti-door-main { padding-top: 86px; }
   .patti-kela-card { min-height: 500px; grid-template-columns: 1fr; align-items: end; background: linear-gradient(180deg, rgba(3,25,20,.12), rgba(3,25,20,.96) 65%), url("assets/kela-tree-hero.webp") center / cover; }
   .patti-kela-copy { grid-column: 1; }
+  .patti-kela-story { padding-right: 0; padding-left: 0; }
+  .patti-kela-story-spread { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .patti-kela-story-card { min-height: 430px; padding: 32px 20px 26px; }
+  .patti-kela-story-card:nth-child(even) { margin-top: 22px; }
   .patti-profile-card { grid-template-columns: 1fr; }
   .patti-profile-card img { max-height: 430px; }
   .patti-reading-steps { grid-template-columns: 1fr 1fr; }
   .patti-booking-card { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .patti-kela-story-spread { width: min(100%, 340px); margin: 0 auto; grid-template-columns: 1fr; gap: 16px; }
+  .patti-kela-story-card,
+  .patti-kela-story-card:nth-child(even) { min-height: 440px; margin-top: 0; }
+  .patti-kela-story-card:nth-child(2),
+  .patti-kela-story-card:nth-child(4) { transform: rotate(0.8deg); }
 }
 
 @media (max-height: 690px) {

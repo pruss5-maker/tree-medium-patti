@@ -163,15 +163,22 @@ const preloadPlantCard = (index) => {
   const plant = plantGuides[index];
   if (!plant) return Promise.resolve();
   const cardAssetBase = `assets/oracle-cards/plant/${slugify(plant.name)}`;
-  const preloadFace = (side) => new Promise((resolve) => {
-    const image = new Image();
-    image.addEventListener("load", resolve, { once: true });
-    image.addEventListener("error", resolve, { once: true });
+  const preloadFace = (image, side) => new Promise((resolve) => {
+    if (!image) return resolve();
+    const finish = () => {
+      image.removeEventListener("load", finish);
+      image.removeEventListener("error", finish);
+      resolve();
+    };
+    image.addEventListener("load", finish);
+    image.addEventListener("error", finish);
     image.src = `${cardAssetBase}-${side}.webp?v=20260825-7`;
-    if (image.complete) resolve();
+    if (image.complete && image.naturalWidth > 0) finish();
   });
-  preloadFace("back");
-  return preloadFace("front");
+  return Promise.all([
+    preloadFace(plantCardFront, "front"),
+    preloadFace(plantCardBack, "back"),
+  ]);
 };
 const localDateKey = () => {
   const today = new Date();
@@ -236,12 +243,14 @@ const fillPlant = (index) => {
   oracleCard.style.setProperty("--plant-card-color", plantCardColors[index] || plantCardColors[0]);
   updatePlantSeo(plant);
   const cardAssetBase = `assets/oracle-cards/plant/${slugify(plant.name)}`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260825-7`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260825-7`;
   if (plantCardFront) {
-    plantCardFront.src = `${cardAssetBase}-front.webp?v=20260825-7`;
+    if (plantCardFront.getAttribute("src") !== cardFrontSrc) plantCardFront.src = cardFrontSrc;
     plantCardFront.alt = `${plant.name} KELA Plant Oracle card`;
   }
   if (plantCardBack) {
-    plantCardBack.src = `${cardAssetBase}-back.webp?v=20260825-7`;
+    if (plantCardBack.getAttribute("src") !== cardBackSrc) plantCardBack.src = cardBackSrc;
     plantCardBack.alt = `${plant.name} KELA Plant Oracle meaning card`;
   }
   plantName.textContent = plant.name;

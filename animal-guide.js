@@ -337,15 +337,22 @@ const preloadGuideCard = (index) => {
   const guide = animalGuides[index];
   if (!guide) return Promise.resolve();
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
-  const preloadFace = (side) => new Promise((resolve) => {
-    const image = new Image();
-    image.addEventListener("load", resolve, { once: true });
-    image.addEventListener("error", resolve, { once: true });
+  const preloadFace = (image, side) => new Promise((resolve) => {
+    if (!image) return resolve();
+    const finish = () => {
+      image.removeEventListener("load", finish);
+      image.removeEventListener("error", finish);
+      resolve();
+    };
+    image.addEventListener("load", finish);
+    image.addEventListener("error", finish);
     image.src = `${cardAssetBase}-${side}.webp?v=20260825-7`;
-    if (image.complete) resolve();
+    if (image.complete && image.naturalWidth > 0) finish();
   });
-  preloadFace("back");
-  return preloadFace("front");
+  return Promise.all([
+    preloadFace(animalCardFront, "front"),
+    preloadFace(animalCardBack, "back"),
+  ]);
 };
 
 const setMetaContent = (selector, content) => {
@@ -393,12 +400,14 @@ const fillGuide = (index, colorIndex) => {
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260825-7`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260825-7`;
   if (animalCardFront) {
-    animalCardFront.src = `${cardAssetBase}-front.webp?v=20260825-7`;
+    if (animalCardFront.getAttribute("src") !== cardFrontSrc) animalCardFront.src = cardFrontSrc;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;
   }
   if (animalCardBack) {
-    animalCardBack.src = `${cardAssetBase}-back.webp?v=20260825-7`;
+    if (animalCardBack.getAttribute("src") !== cardBackSrc) animalCardBack.src = cardBackSrc;
     animalCardBack.alt = `${guide.name} KELA Animal Oracle meaning card`;
   }
   if (guideName) guideName.textContent = guide.name;

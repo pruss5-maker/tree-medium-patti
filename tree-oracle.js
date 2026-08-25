@@ -235,15 +235,22 @@ const preloadTreeCard = (index) => {
   const tree = treeGuides[index];
   if (!tree) return Promise.resolve();
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
-  const preloadFace = (side) => new Promise((resolve) => {
-    const image = new Image();
-    image.addEventListener("load", resolve, { once: true });
-    image.addEventListener("error", resolve, { once: true });
+  const preloadFace = (image, side) => new Promise((resolve) => {
+    if (!image) return resolve();
+    const finish = () => {
+      image.removeEventListener("load", finish);
+      image.removeEventListener("error", finish);
+      resolve();
+    };
+    image.addEventListener("load", finish);
+    image.addEventListener("error", finish);
     image.src = `${cardAssetBase}-${side}.webp?v=20260825-7`;
-    if (image.complete) resolve();
+    if (image.complete && image.naturalWidth > 0) finish();
   });
-  preloadFace("back");
-  return preloadFace("front");
+  return Promise.all([
+    preloadFace(treeCardFront, "front"),
+    preloadFace(treeCardBack, "back"),
+  ]);
 };
 
 const setMetaContent = (selector, content) => {
@@ -285,12 +292,14 @@ const fillTree = (index) => {
   oracleCard.style.setProperty("--guide-accent", tree.accent);
   updateTreeSeo(tree);
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260825-7`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260825-7`;
   if (treeCardFront) {
-    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260825-7`;
+    if (treeCardFront.getAttribute("src") !== cardFrontSrc) treeCardFront.src = cardFrontSrc;
     treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;
   }
   if (treeCardBack) {
-    treeCardBack.src = `${cardAssetBase}-back.webp?v=20260825-7`;
+    if (treeCardBack.getAttribute("src") !== cardBackSrc) treeCardBack.src = cardBackSrc;
     treeCardBack.alt = `${tree.name} KELA Tree Oracle meaning card`;
   }
   if (treeName) treeName.textContent = tree.name;

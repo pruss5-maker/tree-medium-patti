@@ -121,6 +121,9 @@ body {
 }
 
 .art-area.animal img {
+  position: relative;
+  top: var(--animal-art-y, 0);
+  left: var(--animal-art-x, 0);
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -132,6 +135,30 @@ body {
 .canvas[data-slug="blue-owl"] .art-area.animal img {
   transform: scale(1.17);
 }
+
+/* Center each visible silhouette rather than its uneven transparent image canvas. */
+.canvas[data-slug="bear"] { --animal-art-x: -31.8px; --animal-art-y: 42.2px; }
+.canvas[data-slug="bee"] { --animal-art-x: 2.4px; --animal-art-y: -22.3px; }
+.canvas[data-slug="blue-owl"] { --animal-art-x: 7.2px; --animal-art-y: -12.9px; }
+.canvas[data-slug="bunny-rabbit"] { --animal-art-x: 5.2px; --animal-art-y: 27.5px; }
+.canvas[data-slug="crow"] { --animal-art-x: 25.2px; --animal-art-y: 24.7px; }
+.canvas[data-slug="deer"] { --animal-art-x: 9px; --animal-art-y: 51.7px; }
+.canvas[data-slug="dolphin"] { --animal-art-x: 29.9px; --animal-art-y: -6.6px; }
+.canvas[data-slug="dragonfly"] { --animal-art-x: 61.7px; --animal-art-y: 28.5px; }
+.canvas[data-slug="elephant"] { --animal-art-x: 0.5px; --animal-art-y: 17.1px; }
+.canvas[data-slug="fox"] { --animal-art-x: -11.9px; --animal-art-y: 9px; }
+.canvas[data-slug="frog"] { --animal-art-x: -23.7px; --animal-art-y: -19px; }
+.canvas[data-slug="horse"] { --animal-art-x: -11.4px; --animal-art-y: 22.8px; }
+.canvas[data-slug="hummingbird"] { --animal-art-x: 12.8px; --animal-art-y: -10.4px; }
+.canvas[data-slug="mole"] { --animal-art-x: -1.4px; --animal-art-y: -36.1px; }
+.canvas[data-slug="moth"] { --animal-art-x: 15.7px; --animal-art-y: 7.1px; }
+.canvas[data-slug="octopus"] { --animal-art-x: 11.9px; --animal-art-y: -19px; }
+.canvas[data-slug="parrot"] { --animal-art-x: -33.2px; --animal-art-y: 11.4px; }
+.canvas[data-slug="snake"] { --animal-art-x: -23.3px; --animal-art-y: 44.6px; }
+.canvas[data-slug="spider"] { --animal-art-x: 28.5px; --animal-art-y: -12.8px; }
+.canvas[data-slug="tiger"] { --animal-art-x: -9px; --animal-art-y: -10px; }
+.canvas[data-slug="turtle"] { --animal-art-x: 0; --animal-art-y: -75.9px; }
+.canvas[data-slug="whale"] { --animal-art-x: -27.5px; --animal-art-y: 3.8px; }
 
 .art-area.tree,
 .art-area.plant {

@@ -13,9 +13,100 @@
   opacity: 0.46;
 }
 
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) {
+  aspect-ratio: 1122 / 1402;
+  background: #213d2e;
+  border: 0;
+  border-radius: 24px;
+  box-shadow: 0 34px 82px rgba(8, 28, 20, 0.3);
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-card-back::after {
+  background:
+    radial-gradient(circle at 50% 38%, rgba(243, 215, 157, 0.05), transparent 33%),
+    linear-gradient(180deg, rgba(5, 24, 15, 0.02), rgba(5, 24, 15, 0.12));
+}
+
 .plant-oracle-page .plant-oracle-card .oracle-card-art {
-  object-position: center 47%;
-  filter: saturate(0.85) brightness(0.55);
+  object-position: center;
+  filter: none;
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-card-back-copy {
+  justify-content: flex-start;
+  padding: 8.5% 15% 14%;
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-card-brand {
+  color: var(--plant-gold-bright);
+  text-shadow: 0 2px 16px rgba(5, 24, 15, 0.46);
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-card-brand p {
+  margin-bottom: 5px;
+  font-size: clamp(1.65rem, 4.2vw, 2.25rem);
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-card-brand small {
+  color: var(--plant-gold);
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-ritual {
+  display: flex;
+  height: 100%;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 20% 3% 0;
+  color: var(--plant-gold-bright);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-ritual .oracle-mini-label {
+  color: var(--plant-gold);
+  font-size: clamp(0.58rem, 1.45vw, 0.72rem);
+  letter-spacing: 0.15em;
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-ritual h2 {
+  max-width: 330px;
+  margin-bottom: 14px;
+  color: var(--plant-gold-bright);
+  font-size: clamp(2rem, 5.1vw, 2.85rem);
+  text-shadow: 0 2px 18px rgba(5, 24, 15, 0.34);
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-ritual > p:not(.oracle-mini-label, .oracle-status) {
+  max-width: 300px;
+  color: rgba(255, 241, 207, 0.88);
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-reveal {
+  order: 5;
+  min-height: 48px;
+  margin-top: 0;
+  color: var(--plant-gold-bright);
+  background: transparent;
+  border-color: transparent;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-reveal:hover,
+.plant-oracle-page .plant-oracle-card .oracle-reveal:focus-visible {
+  color: var(--plant-card-color);
+  background: var(--plant-gold-bright);
+}
+
+.plant-oracle-page .plant-oracle-card .oracle-ritual > small {
+  order: 4;
+  margin-top: auto;
+  margin-bottom: 8px;
+  color: rgba(232, 196, 125, 0.86);
 }
 
 .plant-oracle-page .plant-flip-front,

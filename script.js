@@ -9,7 +9,7 @@ const samaraCanvas = document.querySelector("[data-samaras]");
 const magnoliaAccents = document.querySelectorAll("[data-magnolia]");
 const termsModal = document.querySelector("[data-terms-modal]");
 const termsDialog = document.querySelector("[data-terms-dialog]");
-const termsOpen = document.querySelector("[data-terms-open]");
+const termsOpenButtons = document.querySelectorAll("[data-terms-open]");
 const termsCloseButtons = document.querySelectorAll("[data-terms-close]");
 const termsConsent = document.querySelector("[data-terms-consent]");
 const termsContinue = document.querySelector("[data-terms-continue]");
@@ -148,7 +148,7 @@ const trapTermsFocus = (event) => {
   }
 };
 
-termsOpen?.addEventListener("click", openTerms);
+termsOpenButtons.forEach((button) => button.addEventListener("click", openTerms));
 termsCloseButtons.forEach((button) => button.addEventListener("click", closeTerms));
 termsConsent?.addEventListener("change", setTermsConsentState);
 termsContinue?.addEventListener("click", (event) => {

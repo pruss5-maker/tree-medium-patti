@@ -22,6 +22,50 @@ if (gameRoot) {
   let locked = false;
   let startedAt = 0;
   let timerId = 0;
+  let winTimerId = 0;
+
+  gameRoot.insertAdjacentHTML("beforeend", `
+    <div class="memory-win-modal" data-memory-win-modal hidden>
+      <div class="memory-win-backdrop" data-memory-win-close></div>
+      <section class="memory-win-card" role="dialog" aria-modal="true" aria-labelledby="memory-win-title" aria-describedby="memory-win-invocation">
+        <button class="memory-win-close" type="button" data-memory-win-close aria-label="Close winning guide">×</button>
+        <p class="memory-win-eyebrow" data-memory-win-eyebrow>Your winning ${deck?.label || "nature"} guide</p>
+        <div class="memory-win-art"><img data-memory-win-image width="640" height="640" alt="" /></div>
+        <h2 id="memory-win-title" data-memory-win-title></h2>
+        <p class="memory-win-label">KELA protection invocation</p>
+        <blockquote id="memory-win-invocation" data-memory-win-invocation></blockquote>
+        <p class="memory-win-woven">Woven together across the Earth and beyond.</p>
+        <div class="memory-win-actions">
+          <button class="memory-button" type="button" data-memory-win-again>Play Again</button>
+          <a class="memory-button secondary" data-memory-win-oracle>Visit the ${deck?.label || "Nature"} Oracle</a>
+        </div>
+      </section>
+    </div>`);
+
+  const winModal = gameRoot.querySelector("[data-memory-win-modal]");
+  const winTitle = gameRoot.querySelector("[data-memory-win-title]");
+  const winImage = gameRoot.querySelector("[data-memory-win-image]");
+  const winInvocation = gameRoot.querySelector("[data-memory-win-invocation]");
+  const winOracle = gameRoot.querySelector("[data-memory-win-oracle]");
+  const winAgain = gameRoot.querySelector("[data-memory-win-again]");
+
+  const closeWinningGuide = () => {
+    if (!winModal || winModal.hidden) return;
+    winModal.hidden = true;
+    document.body.classList.remove("memory-modal-open");
+  };
+
+  const showWinningGuide = (item) => {
+    if (!winModal || !item) return;
+    winTitle.textContent = `${item.name} found you!`;
+    winImage.src = item.image;
+    winImage.alt = `${item.name} coloring outline`;
+    winInvocation.textContent = `“Dear ${item.name}, please protect my mind and energy from any unkind thoughts or energies. Allow only kind thoughts and words to enter my field.”`;
+    winOracle.href = `${deckKey}-oracle.html`;
+    winModal.hidden = false;
+    document.body.classList.add("memory-modal-open");
+    gameRoot.querySelector("[data-memory-win-close]")?.focus();
+  };
 
   const shuffle = (items) => {
     const copy = [...items];
@@ -65,11 +109,13 @@ if (gameRoot) {
       </span>
     </button>`;
 
-  const finishGame = () => {
+  const finishGame = (winningItem) => {
     window.clearInterval(timerId);
     updateTimer();
-    statusOutput.textContent = `You found all ${matches} pairs in ${moves} moves. Beautiful remembering!`;
+    statusOutput.textContent = `You found all ${matches} pairs in ${moves} moves. ${winningItem.name} is your winning ${deck.label.toLowerCase()}!`;
     gameRoot.classList.add("is-complete");
+    window.clearTimeout(winTimerId);
+    winTimerId = window.setTimeout(() => showWinningGuide(winningItem), 560);
   };
 
   const hideUnmatched = () => {
@@ -111,7 +157,7 @@ if (gameRoot) {
       firstCard = null;
       secondCard = null;
       locked = false;
-      if (matches === activeCards.length) finishGame();
+      if (matches === activeCards.length) finishGame(item);
       return;
     }
 
@@ -122,17 +168,31 @@ if (gameRoot) {
   const renderPrintDeck = () => {
     if (!deck || !printGrid) return;
     printDeckName.textContent = `${deck.label} Memory Cards`;
-    printGrid.innerHTML = deck.items.flatMap((item) => [0, 1].map(() => `
-      <article class="print-memory-card">
-        <span class="print-card-brand">KELA</span>
-        <img src="${item.image}" width="640" height="640" alt="" />
-        <strong>${item.name}</strong>
-      </article>`)).join("");
+    const cards = deck.items.flatMap((item) => [0, 1].map(() => `
+        <article class="print-memory-card">
+          <span class="print-card-brand">KELA</span>
+          <img src="${item.image}" width="640" height="640" alt="" />
+          <strong>${item.name}</strong>
+        </article>`));
+    const pages = [];
+    for (let index = 0; index < cards.length; index += 16) {
+      pages.push(`
+        <section class="print-page">
+          <header class="print-page-header">
+            <h2>${deck.label} Memory Cards</h2>
+            <p>KELA · Print at 100% · Color · Cut · Mix · Match</p>
+          </header>
+          <div class="print-page-grid">${cards.slice(index, index + 16).join("")}</div>
+        </section>`);
+    }
+    printGrid.innerHTML = pages.join("");
   };
 
   const newGame = () => {
     if (!deck || !board) return;
     window.clearInterval(timerId);
+    window.clearTimeout(winTimerId);
+    closeWinningGuide();
     const requestedPairs = pairSelect.value === "all" ? deck.items.length : Number.parseInt(pairSelect.value, 10);
     activeCards = shuffle(deck.items).slice(0, Math.min(requestedPairs, deck.items.length));
     const dealtCards = shuffle(activeCards.flatMap((item) => [{ item }, { item }]));
@@ -159,6 +219,13 @@ if (gameRoot) {
   pairSelect.addEventListener("change", newGame);
   resetButton.addEventListener("click", newGame);
   printButton?.addEventListener("click", () => window.print());
+  winAgain?.addEventListener("click", newGame);
+  gameRoot.querySelectorAll("[data-memory-win-close]").forEach((button) => {
+    button.addEventListener("click", closeWinningGuide);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !winModal?.hidden) closeWinningGuide();
+  });
   renderPrintDeck();
   newGame();
 }

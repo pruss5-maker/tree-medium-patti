@@ -19,10 +19,10 @@
     <link rel="icon" href="assets/kela-mark.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preload" href="assets/plants/lavender.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="styles.css?v=20260825-8" />
+    <link rel="stylesheet" href="styles.css?v=20260825-10" />
     <link rel="stylesheet" href="oracle-card-display.css?v=20260825-5" />
-    <link rel="stylesheet" href="plant-oracle.css?v=20260825-5" />
-    <script src="script.js?v=20260825-8" defer></script>
+    <link rel="stylesheet" href="plant-oracle.css?v=20260825-6" />
+    <script src="script.js?v=20260825-9" defer></script>
     <script src="ux-observer.js?v=20260824-1" data-clarity-project-id="" defer></script>
     <script src="plant-oracle.js?v=20260825-9" defer></script>
   </head>
@@ -42,8 +42,8 @@
           <a href="plant-oracle.html" aria-current="page">Plant Oracle</a>
           <a href="index.html#reading">The reading</a>
           <a href="index.html#meet-patti">Meet Patti</a>
+          <a class="site-nav-booking" href="index.html#booking-terms">Book with Patti</a>
         </nav>
-        <a class="nav-booking" href="index.html#booking-terms">Book Here</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
           <span class="sr-only">Open navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span>
         </button>
@@ -65,14 +65,21 @@
           <div class="oracle-experience" data-plant-oracle>
             <div class="oracle-card tree-oracle-card plant-oracle-card" data-plant-oracle-card>
               <div class="oracle-card-back">
-                <img class="oracle-card-art" src="assets/plants/lavender.webp" width="720" height="1080" alt="" aria-hidden="true" />
+                <img
+                  class="oracle-card-art"
+                  src="assets/oracle-cards/masters/tree-card-master-v5-chamomile.png"
+                  width="1122"
+                  height="1402"
+                  alt=""
+                  aria-hidden="true"
+                />
                 <div class="oracle-card-back-copy">
                   <div class="oracle-card-brand"><p>KELA</p><small>Messages from the Trees</small></div>
                   <div class="oracle-ritual" data-plant-oracle-ritual>
-                    <p class="oracle-mini-label">One plant · One day</p>
-                    <h2>Enter the living garden</h2>
-                    <p>Feel the ground beneath you, ask which plant is calling, and take one slow breath.</p>
-                    <button class="button button-gold oracle-reveal" type="button" data-reveal-plant>Draw My Plant</button>
+                    <p class="oracle-mini-label">Plant Oracle · Card of the Day</p>
+                    <h2>Meet your plant for today</h2>
+                    <p>Take one slow breath and ask which plant is ready to meet you.</p>
+                    <button class="button button-gold oracle-reveal" type="button" data-reveal-plant>Draw My Plant Card</button>
                     <small>Carry its invitation with you until tomorrow.</small>
                     <p class="oracle-status" data-plant-oracle-status aria-live="polite"></p>
                   </div>
@@ -159,16 +166,6 @@
         </div>
       </section>
 
-      <section class="oracle-how section" aria-labelledby="plant-how-title">
-        <div class="shell oracle-how-grid">
-          <header><p class="eyebrow sage">A grounded oracle</p><h2 id="plant-how-title">One plant. One practice. One day to listen.</h2></header>
-          <div class="oracle-how-points">
-            <article><span>01</span><h3>Chosen privately</h3><p>Your plant is drawn in your browser. No name, account, or private question is collected.</p></article>
-            <article><span>02</span><h3>Held for the day</h3><p>Your draw stays until tomorrow, giving its invitation time to take root.</p></article>
-            <article><span>03</span><h3>Reflection, not fate</h3><p>The card is a prompt for attention—not a prediction, diagnosis, treatment, or command.</p></article>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">

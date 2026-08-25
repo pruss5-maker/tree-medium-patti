@@ -1,0 +1,16 @@
+{
+  "reviewIntervalHours": 12,
+  "lastReviewed": "2026-08-25",
+  "tracks": [
+    {
+      "id": "woodland-afterglow",
+      "title": "Woodland Afterglow",
+      "status": "cleared",
+      "rightsBasis": "Original KELA composition rendered entirely with LMMS built-in synthesis; no third-party recordings or samples.",
+      "sources": [
+        { "src": "/assets/audio/woodland-afterglow.ogg", "type": "audio/ogg" },
+        { "src": "/assets/audio/woodland-afterglow.mp3", "type": "audio/mpeg" }
+      ]
+    }
+  ]
+}

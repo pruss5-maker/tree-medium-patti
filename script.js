@@ -14,6 +14,22 @@ const termsCloseButtons = document.querySelectorAll("[data-terms-close]");
 const termsConsent = document.querySelector("[data-terms-consent]");
 const termsContinue = document.querySelector("[data-terms-continue]");
 
+if (header && menuToggle) {
+  if (!document.querySelector('link[href*="header-symbols.css"]')) {
+    const symbolStyles = document.createElement("link");
+    symbolStyles.rel = "stylesheet";
+    symbolStyles.href = "/header-symbols.css?v=20260825-1";
+    document.head.append(symbolStyles);
+  }
+  if (!header.querySelector(".header-triskele")) {
+    const triskele = document.createElement("a");
+    triskele.className = "header-triskele";
+    triskele.href = "/#booking-terms";
+    triskele.setAttribute("aria-label", "Book with Patti");
+    menuToggle.before(triskele);
+  }
+}
+
 window.KelaCompanions = (() => {
   const companionStorageKey = "kela-oracle-companions-v1";
   const companionDeckOrder = ["tree", "plant", "animal"];
@@ -126,8 +142,18 @@ const closeTerms = () => {
   if (!termsModal) return;
   termsModal.hidden = true;
   document.body.classList.remove("terms-open");
+  if (window.location.hash === "#booking-terms") {
+    window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+  }
   if (termsPreviousFocus instanceof HTMLElement) termsPreviousFocus.focus();
 };
+
+const openTermsFromHash = () => {
+  if (termsModal && window.location.hash === "#booking-terms") openTerms();
+};
+
+window.addEventListener("hashchange", openTermsFromHash);
+if (window.location.hash === "#booking-terms") window.requestAnimationFrame(openTermsFromHash);
 
 const trapTermsFocus = (event) => {
   if (event.key !== "Tab" || !termsDialog || termsModal?.hidden) return;
@@ -949,3 +975,10 @@ const startMoss = () => {
 };
 
 startMoss();
+
+if (!document.querySelector('script[data-ambient-jazz]')) {
+  const ambientJazzScript = document.createElement("script");
+  ambientJazzScript.src = "/ambient-jazz.js?v=20260825-1";
+  ambientJazzScript.dataset.ambientJazz = "";
+  document.head.append(ambientJazzScript);
+}

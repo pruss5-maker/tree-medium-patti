@@ -3328,6 +3328,172 @@ summary:focus-visible {
   }
 }
 
+/* Quiet, site-wide ambient jazz control. */
+.ambient-jazz-audio {
+  display: none;
+}
+
+.ambient-jazz-toggle {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 44;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  color: #f1d69f;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.13), transparent 34%),
+    rgba(16, 35, 28, 0.92);
+  border: 1px solid rgba(221, 194, 148, 0.58);
+  border-radius: 50%;
+  box-shadow:
+    0 8px 28px rgba(7, 25, 18, 0.22),
+    inset 0 0 0 3px rgba(255, 253, 248, 0.045);
+  cursor: pointer;
+  place-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.ambient-jazz-toggle::before {
+  position: absolute;
+  inset: -5px;
+  content: "";
+  border: 1px solid rgba(185, 148, 95, 0.28);
+  border-radius: inherit;
+  opacity: 0;
+  transform: scale(0.88);
+}
+
+.ambient-jazz-toggle::after {
+  position: absolute;
+  right: calc(100% + 10px);
+  width: max-content;
+  max-width: min(250px, calc(100vw - 90px));
+  padding: 7px 10px;
+  color: var(--cream-50);
+  background: rgba(16, 35, 28, 0.94);
+  border: 1px solid rgba(221, 194, 148, 0.35);
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(7, 25, 18, 0.18);
+  content: attr(data-tooltip);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(5px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.ambient-jazz-toggle:hover,
+.ambient-jazz-toggle:focus-visible {
+  color: #ffe5ae;
+  background: rgba(23, 61, 43, 0.97);
+  border-color: rgba(232, 196, 125, 0.82);
+  box-shadow:
+    0 10px 32px rgba(7, 25, 18, 0.28),
+    0 0 0 3px rgba(232, 196, 125, 0.14);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.ambient-jazz-toggle:hover::after,
+.ambient-jazz-toggle:focus-visible::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ambient-jazz-toggle:not(.is-muted, .is-waiting)::before {
+  animation: ambient-jazz-breathe 3.8s ease-out infinite;
+}
+
+.ambient-jazz-icon {
+  width: 24px;
+  height: 24px;
+  overflow: visible;
+}
+
+.ambient-jazz-note {
+  fill: currentColor;
+  transform-origin: center;
+}
+
+.ambient-jazz-slash {
+  fill: none;
+  stroke: var(--cream-50);
+  stroke-linecap: round;
+  stroke-width: 2.4;
+  opacity: 0;
+  filter: drop-shadow(0 1px 1px rgba(16, 35, 28, 0.7));
+  transition: opacity 180ms ease;
+}
+
+.ambient-jazz-toggle.is-muted {
+  color: rgba(241, 214, 159, 0.62);
+  background: rgba(16, 35, 28, 0.82);
+}
+
+.ambient-jazz-toggle.is-muted .ambient-jazz-slash {
+  opacity: 1;
+}
+
+.ambient-jazz-toggle.is-waiting .ambient-jazz-note {
+  animation: ambient-jazz-ready 2.6s ease-in-out infinite;
+}
+
+.ambient-jazz-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+@keyframes ambient-jazz-breathe {
+  0% { opacity: 0.6; transform: scale(0.9); }
+  60%, 100% { opacity: 0; transform: scale(1.18); }
+}
+
+@keyframes ambient-jazz-ready {
+  0%, 100% { opacity: 0.68; transform: translateY(1px); }
+  50% { opacity: 1; transform: translateY(-1px); }
+}
+
+@media (max-width: 520px) {
+  .ambient-jazz-toggle {
+    right: max(10px, env(safe-area-inset-right));
+    bottom: max(10px, env(safe-area-inset-bottom));
+    width: 44px;
+    height: 44px;
+  }
+
+  .ambient-jazz-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-jazz-toggle,
+  .ambient-jazz-toggle::after,
+  .ambient-jazz-note {
+    transition: none;
+  }
+
+  .ambient-jazz-toggle::before,
+  .ambient-jazz-toggle.is-waiting .ambient-jazz-note {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .menu-toggle::before,
   .menu-toggle::after,

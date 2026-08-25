@@ -58,7 +58,7 @@
       <div>
         <p id="analytics-consent-title"><strong>Help us make the grove easier to explore?</strong></p>
         <p>Optional, privacy-conscious analytics show where visitors pause, scroll, or get stuck. We do not use this for advertising or record anything you type.</p>
-        <a href="privacy.html#optional-analytics">How optional analytics work</a>
+        <a href="/privacy#optional-analytics">How optional analytics work</a>
       </div>
       <div class="analytics-consent-actions">
         <button class="button button-gold" type="button" data-analytics-accept>Allow analytics</button>

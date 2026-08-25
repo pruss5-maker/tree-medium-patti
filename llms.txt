@@ -4,11 +4,8 @@
 
 ## Primary pages
 
-- [Tree Medium Patti and private Tree Messages](https://treemedium.vercel.app/): Service, method, Patti biography, booking flow, and frequently asked questions.
-- [Oracle Card Meanings](https://treemedium.vercel.app/oracle-card-meanings): Hub for 54 original KELA oracle meanings.
-- [Animal Oracle Card Meanings](https://treemedium.vercel.app/animal-oracle-card-meanings): All 22 original animal meanings and confirmation reflections.
-- [Tree Oracle Card Meanings](https://treemedium.vercel.app/tree-oracle-card-meanings): All 12 original tree meanings, botanical names, attunements, and reflection questions.
-- [Plant Oracle Card Meanings](https://treemedium.vercel.app/plant-oracle-card-meanings): All 20 original plant meanings, botanical names, and meditation prompts.
+- [KELA home](https://treemedium.vercel.app/): A card doorway into KELA, free oracle draws, nature memory games, and Tree Medium Patti.
+- [Meet Tree Medium Patti](https://treemedium.vercel.app/meet-patti): Patti's story, the KELA presence, private Tree Messages, and booking.
 
 ## Interactive experiences
 
@@ -20,7 +17,7 @@
 
 ## Important context
 
-- KELA card meanings are original interpretations for spiritual reflection and personal growth.
+- Each revealed KELA card offers an original interpretation for spiritual reflection and personal growth.
 - They do not claim universal, Indigenous, religious, supernatural, or medical authority.
 - Oracle content is not a prediction, diagnosis, treatment, or command.
 - No plant card is advice to ingest or apply a plant.

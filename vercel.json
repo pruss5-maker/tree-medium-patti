@@ -7,26 +7,6 @@
       "permanent": true
     },
     {
-      "source": "/oracle-meanings",
-      "destination": "/oracle-card-meanings",
-      "permanent": true
-    },
-    {
-      "source": "/animal-oracle-meanings",
-      "destination": "/animal-oracle-card-meanings",
-      "permanent": true
-    },
-    {
-      "source": "/tree-oracle-meanings",
-      "destination": "/tree-oracle-card-meanings",
-      "permanent": true
-    },
-    {
-      "source": "/plant-oracle-meanings",
-      "destination": "/plant-oracle-card-meanings",
-      "permanent": true
-    },
-    {
       "source": "/tree-medium-patti",
       "destination": "/meet-patti",
       "permanent": true

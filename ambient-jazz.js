@@ -49,7 +49,15 @@
   status.className = "sr-only";
   status.setAttribute("aria-live", "polite");
 
-  document.body.append(player, button, status);
+  const controlRail = document.querySelector(".thumb-control-rail");
+  const themeToggle = controlRail?.querySelector(".theme-toggle");
+  if (controlRail) {
+    button.classList.add("is-header-control");
+    controlRail.insertBefore(button, themeToggle || null);
+    document.body.append(player, status);
+  } else {
+    document.body.append(player, button, status);
+  }
 
   const label = button.querySelector("[data-ambient-jazz-label]");
   let selectedTrack = fallbackTrack;

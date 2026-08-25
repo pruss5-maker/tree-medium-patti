@@ -976,9 +976,18 @@ const startMoss = () => {
 
 startMoss();
 
+if (!document.querySelector('script[data-atmosphere]')) {
+  const atmosphereScript = document.createElement("script");
+  atmosphereScript.src = "/atmosphere.js?v=20260825-3";
+  atmosphereScript.async = false;
+  atmosphereScript.dataset.atmosphere = "";
+  document.head.append(atmosphereScript);
+}
+
 if (!document.querySelector('script[data-ambient-jazz]')) {
   const ambientJazzScript = document.createElement("script");
-  ambientJazzScript.src = "/ambient-jazz.js?v=20260825-2";
+  ambientJazzScript.src = "/ambient-jazz.js?v=20260825-3";
+  ambientJazzScript.async = false;
   ambientJazzScript.dataset.ambientJazz = "";
   document.head.append(ambientJazzScript);
 }

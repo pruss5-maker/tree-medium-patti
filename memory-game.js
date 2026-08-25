@@ -10,7 +10,6 @@ if (gameRoot) {
   const statusOutput = gameRoot.querySelector("[data-memory-status]");
   const pairSelect = gameRoot.querySelector("[data-memory-pairs]");
   const resetButton = gameRoot.querySelector("[data-memory-reset]");
-  const printButton = document.querySelector("[data-memory-print]");
   const printGrid = document.querySelector("[data-print-grid]");
   const printDeckName = document.querySelector("[data-print-deck-name]");
 
@@ -218,7 +217,6 @@ if (gameRoot) {
   pairSelect.querySelector('[value="all"]').textContent = `Full deck · ${deck.items.length} pairs`;
   pairSelect.addEventListener("change", newGame);
   resetButton.addEventListener("click", newGame);
-  printButton?.addEventListener("click", () => window.print());
   winAgain?.addEventListener("click", newGame);
   gameRoot.querySelectorAll("[data-memory-win-close]").forEach((button) => {
     button.addEventListener("click", closeWinningGuide);

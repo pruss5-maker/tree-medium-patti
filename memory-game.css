@@ -207,6 +207,7 @@ html[data-theme="dark"] .memory-card-back {
 
 .memory-card {
   position: relative;
+  min-width: 0;
   padding: 0;
   aspect-ratio: 4 / 5;
   background: transparent;
@@ -281,10 +282,13 @@ html[data-theme="dark"] .memory-card-back {
 }
 
 .memory-card-front strong {
+  max-width: 100%;
   font-family: Georgia, serif;
-  font-size: clamp(0.8rem, 2vw, 1.25rem);
-  line-height: 1;
+  font-size: clamp(1rem, 2.1vw, 1.4rem);
+  line-height: 1.04;
+  overflow-wrap: anywhere;
   text-align: center;
+  text-wrap: balance;
 }
 
 .memory-card-front small { color: #7a5a1f; }
@@ -596,7 +600,7 @@ body.memory-modal-open { overflow: hidden; }
   .memory-game-panel { padding: 14px; border-radius: 20px; }
   .memory-board { gap: 6px; }
   .memory-card, .memory-card-face { border-radius: 10px; }
-  .memory-card-front strong { font-size: 0.64rem; }
+  .memory-card-front strong { font-size: clamp(0.78rem, 3.25vw, 0.9rem); }
   .memory-win-modal { padding: 12px; }
   .memory-win-card { padding: 25px 18px 20px; border-radius: 22px; }
   .memory-win-art { width: 132px; margin-top: 10px; }

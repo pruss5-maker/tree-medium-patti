@@ -177,7 +177,7 @@
 
 /* Use the approved ICR physical-card artwork for the live Plant Oracle faces. */
 .plant-oracle-page .plant-flip-card {
-  aspect-ratio: 850 / 1220;
+  aspect-ratio: 850 / 1295;
 }
 
 .plant-oracle-page .oracle-card-raster-face {
@@ -246,7 +246,7 @@
 
 @media (max-width: 760px) {
   .plant-oracle-page .plant-flip-card {
-    aspect-ratio: 850 / 1220;
+    aspect-ratio: 850 / 1295;
   }
 
   .plant-oracle-page .oracle-card-raster-face > .oracle-card-raster {
@@ -265,8 +265,8 @@
 
   .plant-oracle-page .site-header > .wordmark small {
     display: block;
-    margin-top: 1px;
-    font-size: 0.48rem;
+    margin-top: 4px;
+    font-size: 9px;
     letter-spacing: 0.09em;
     line-height: 1;
   }
@@ -298,7 +298,7 @@
   }
 
   .plant-oracle-page .site-header > .wordmark small {
-    font-size: 0.42rem;
+    font-size: 9px;
   }
 
   .plant-oracle-page .menu-toggle {

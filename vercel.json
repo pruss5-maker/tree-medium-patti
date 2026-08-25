@@ -7,20 +7,6 @@
       "permanent": true
     }
   ],
-  "rewrites": [
-    {
-      "source": "/animal-oracle/:card",
-      "destination": "/animal-oracle"
-    },
-    {
-      "source": "/tree-oracle/:card",
-      "destination": "/tree-oracle"
-    },
-    {
-      "source": "/plant-oracle/:card",
-      "destination": "/plant-oracle"
-    }
-  ],
   "headers": [
     {
       "source": "/social-media/(.*)",

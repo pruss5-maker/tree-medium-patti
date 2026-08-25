@@ -145,7 +145,6 @@ const plantFlipBack = document.querySelector("[data-plant-flip-back]");
 const plantCardFront = document.querySelector("[data-plant-card-front]");
 const plantCardBack = document.querySelector("[data-plant-card-back]");
 const plantCaption = document.querySelector("[data-plant-caption]");
-const gallery = document.querySelector("[data-plant-gallery]");
 
 const storageKey = "kela-plant-oracle-v1";
 const plantCardColors = [
@@ -173,7 +172,18 @@ const readSavedPlant = () => {
 };
 
 const savePlant = (index) => {
-  try { window.localStorage.setItem(storageKey, JSON.stringify({ date: localDateKey(), index })); } catch { /* The oracle still works without storage. */ }
+  try {
+    window.localStorage.setItem(storageKey, JSON.stringify({ date: localDateKey(), index }));
+    const plant = plantGuides[index];
+    if (plant) {
+      window.KelaCompanions?.remember({
+        deck: "plant",
+        name: plant.name,
+        image: plant.art,
+        href: "/plant-oracle",
+      });
+    }
+  } catch { /* The oracle still works without storage. */ }
 };
 
 const randomPlantIndex = () => {
@@ -189,7 +199,7 @@ const protectionText = (plant) => `Ask your ${plant.name} plant to protect your 
 
 const updatePlantSeo = (plant) => {
   const slug = slugify(plant.name);
-  const cardUrl = new URL(`/plant-oracle/${slug}`, window.location.origin);
+  const cardUrl = new URL("/plant-oracle", window.location.origin);
   const description = `${plant.name} Plant Oracle card — ${plant.keyword}. Read its original KELA meaning and meditation prompt.`;
   oracleCard.dataset.plantSlug = slug;
   plantFlip.dataset.plantSlug = slug;
@@ -201,7 +211,6 @@ const updatePlantSeo = (plant) => {
   document.querySelector('meta[property="og:description"]')?.setAttribute("content", description);
   document.querySelector('meta[property="og:url"]')?.setAttribute("content", cardUrl.href);
   document.querySelector('link[rel="canonical"]')?.setAttribute("href", cardUrl.href);
-  window.history.replaceState(null, "", cardUrl.pathname);
 };
 
 const fillPlant = (index) => {
@@ -213,11 +222,11 @@ const fillPlant = (index) => {
   updatePlantSeo(plant);
   const cardAssetBase = `assets/oracle-cards/plant/${slugify(plant.name)}`;
   if (plantCardFront) {
-    plantCardFront.src = `${cardAssetBase}-front.webp?v=20260824-10`;
+    plantCardFront.src = `${cardAssetBase}-front.webp?v=20260825-5`;
     plantCardFront.alt = `${plant.name} KELA Plant Oracle card`;
   }
   if (plantCardBack) {
-    plantCardBack.src = `${cardAssetBase}-back.webp?v=20260824-5`;
+    plantCardBack.src = `${cardAssetBase}-back.webp?v=20260825-5`;
     plantCardBack.alt = `${plant.name} KELA Plant Oracle meaning card`;
   }
   plantName.textContent = plant.name;
@@ -299,18 +308,6 @@ const sharePlant = async () => {
   }
 };
 
-const renderGallery = () => {
-  if (!gallery) return;
-  plantGuides.forEach((plant, index) => {
-    const link = document.createElement("a");
-    link.className = "tree-gallery-link";
-    link.href = `/plant-oracle/${slugify(plant.name)}`;
-    link.setAttribute("aria-label", `Open the ${plant.name} Plant Oracle card`);
-    link.innerHTML = `<article class="tree-gallery-card"><img src="${plant.art}" width="720" height="1080" loading="lazy" decoding="async" alt="Botanical portrait of ${plant.name}"><div><p class="tree-gallery-number">${String(index + 1).padStart(2, "0")}</p><h3>${plant.name}</h3><p class="tree-gallery-botanical"><em>${plant.botanical}</em></p><p class="tree-gallery-keyword">${plant.keyword}</p><p>${plant.message}</p></div></article>`;
-    gallery.append(link);
-  });
-};
-
 revealButton?.addEventListener("click", beginReveal);
 shareButton?.addEventListener("click", sharePlant);
 plantFlip?.addEventListener("click", () => setPlantFace(!plantFlip.classList.contains("is-flipped"), { animate: true }));
@@ -319,7 +316,6 @@ plantFlip?.addEventListener("keydown", (event) => {
   event.preventDefault();
   setPlantFace(!plantFlip.classList.contains("is-flipped"), { animate: true });
 });
-renderGallery();
 
 const isLocalPreview = ["", "localhost", "127.0.0.1"].includes(window.location.hostname);
 if (previewTools && isLocalPreview) previewTools.hidden = false;
@@ -327,12 +323,10 @@ previewNext?.addEventListener("click", () => showPlant(activePlantIndex < 0 ? 0 
 
 const previewParams = new URLSearchParams(window.location.search);
 const requestedPreview = Number.parseInt(previewParams.get("plant"), 10);
-const pathParts = window.location.pathname.split("/").filter(Boolean);
-const pathCardSlug = pathParts[0] === "plant-oracle" && pathParts.length > 1 ? pathParts[1] : "";
-const requestedCardSlug = slugify(previewParams.get("card") || pathCardSlug);
+const requestedCardSlug = slugify(previewParams.get("card") || "");
 const requestedCardIndex = plantGuides.findIndex((plant) => slugify(plant.name) === requestedCardSlug);
 
-if (oracle && requestedCardIndex >= 0) {
+if (oracle && isLocalPreview && requestedCardIndex >= 0) {
   showPlant(requestedCardIndex, { focus: false, save: false });
   if (previewParams.get("side") === "meaning") setPlantFace(true);
 } else if (oracle && isLocalPreview && Number.isInteger(requestedPreview) && requestedPreview >= 0 && requestedPreview < plantGuides.length) {
@@ -340,5 +334,16 @@ if (oracle && requestedCardIndex >= 0) {
   if (previewParams.get("side") === "meaning") setPlantFace(true);
 } else {
   const savedPlantIndex = readSavedPlant();
-  if (oracle && savedPlantIndex >= 0) showPlant(savedPlantIndex, { focus: false, save: false });
+  if (oracle && savedPlantIndex >= 0) {
+    showPlant(savedPlantIndex, { focus: false, save: false });
+    const plant = plantGuides[savedPlantIndex];
+    if (plant) {
+      window.KelaCompanions?.remember({
+        deck: "plant",
+        name: plant.name,
+        image: plant.art,
+        href: "/plant-oracle",
+      });
+    }
+  }
 }

@@ -5,7 +5,7 @@
 >
   <url>
     <loc>https://treemedium.vercel.app/</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <image:image><image:loc>https://treemedium.vercel.app/assets/kela-tree-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://treemedium.vercel.app/assets/patti-with-tree.webp</image:loc></image:image>
     <image:image><image:loc>https://treemedium.vercel.app/assets/patti-portrait.webp</image:loc></image:image>
@@ -13,110 +13,19 @@
   </url>
   <url>
     <loc>https://treemedium.vercel.app/animal-oracle</loc>
-    <lastmod>2026-08-24</lastmod>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/kela-oracle-card-back-v1.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/blue-owl.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/octopus.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/tiger.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/parrot.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/fox.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/bunny-rabbit.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/mole.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/turtle.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/hummingbird.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/bear.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/deer.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/crow.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/whale.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/frog.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/spider.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/horse.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/elephant.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/moth.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/bee.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/dolphin.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/snake.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/animals/dragonfly.webp</image:loc></image:image>
+    <lastmod>2026-08-25</lastmod>
     <image:image><image:loc>https://treemedium.vercel.app/assets/social/kela-spirit-animal-oracle-social.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://treemedium.vercel.app/tree-oracle</loc>
-    <lastmod>2026-08-24</lastmod>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/madrona.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/neem.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/baobab.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/banyan.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/willow.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/cedar.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/oak.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/birch.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/redwood.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/olive.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/ginkgo.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/jacaranda.webp</image:loc></image:image>
+    <lastmod>2026-08-25</lastmod>
     <image:image><image:loc>https://treemedium.vercel.app/assets/social/kela-tree-oracle-social.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://treemedium.vercel.app/plant-oracle</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <image:image><image:loc>https://treemedium.vercel.app/assets/plants/lavender.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/plants/red-clover.webp</image:loc></image:image>
-    <image:image><image:loc>https://treemedium.vercel.app/assets/plants/sunflower.webp</image:loc></image:image>
   </url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/blue-owl</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/blue-owl.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/octopus</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/octopus.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/tiger</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/tiger.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/parrot</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/parrot.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/fox</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/fox.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/bunny-rabbit</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/bunny-rabbit.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/mole</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/mole.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/turtle</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/turtle.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/hummingbird</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/hummingbird.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/bear</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/bear.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/deer</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/deer.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/crow</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/crow.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/whale</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/whale.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/frog</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/frog.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/spider</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/spider.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/horse</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/horse.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/elephant</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/elephant.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/moth</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/moth.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/bee</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/bee.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/dolphin</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/dolphin.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/snake</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/snake.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/animal-oracle/dragonfly</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/animals/dragonfly.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/madrona</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/madrona.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/neem</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/neem.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/baobab</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/baobab.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/banyan</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/banyan.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/willow</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/willow.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/cedar</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/cedar.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/oak</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/oak.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/birch</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/birch.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/redwood</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/redwood.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/olive</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/olive.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/ginkgo</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/ginkgo.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/tree-oracle/jacaranda</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/tree-photos/jacaranda.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/yarrow</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/yarrow.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/lavender</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/lavender.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/hibiscus</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/hibiscus.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/comfrey</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/comfrey.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/chamomile</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/chamomile.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/calendula</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/calendula.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/plantain</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/plantain.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/sunflower</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/sunflower.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/rosemary</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/rosemary.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/garden-sage</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/garden-sage.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/mugwort</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/mugwort.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/rose</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/rose.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/dandelion</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/dandelion.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/stinging-nettle</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/stinging-nettle.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/peppermint</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/peppermint.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/basil</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/basil.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/echinacea</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/echinacea.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/jasmine</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/jasmine.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/lemon-balm</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/lemon-balm.webp</image:loc></image:image></url>
-  <url><loc>https://treemedium.vercel.app/plant-oracle/red-clover</loc><lastmod>2026-08-24</lastmod><image:image><image:loc>https://treemedium.vercel.app/assets/plants/red-clover.webp</image:loc></image:image></url>
   <url>
     <loc>https://treemedium.vercel.app/terms</loc>
     <lastmod>2026-08-23</lastmod>

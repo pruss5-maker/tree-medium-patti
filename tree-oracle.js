@@ -168,7 +168,6 @@ const treeWatch = document.querySelector("[data-tree-watch]");
 const treeFlip = document.querySelector("[data-tree-flip]");
 const treeFlipFront = document.querySelector("[data-tree-flip-front]");
 const treeFlipBack = document.querySelector("[data-tree-flip-back]");
-const gallery = document.querySelector("[data-tree-gallery]");
 const cardFigure = document.querySelector("[data-card-figure]");
 const cardSeoName = document.querySelector("[data-card-seo-name]");
 const cardSeoDescription = document.querySelector("[data-card-seo-description]");
@@ -206,6 +205,15 @@ const readSavedTree = () => {
 const saveTree = (index) => {
   try {
     window.localStorage.setItem(storageKey, JSON.stringify({ date: localDateKey(), index }));
+    const tree = treeGuides[index];
+    if (tree) {
+      window.KelaCompanions?.remember({
+        deck: "tree",
+        name: tree.name,
+        image: tree.art,
+        href: "/tree-oracle",
+      });
+    }
   } catch {
     // The oracle still works when browser storage is unavailable.
   }
@@ -230,7 +238,7 @@ const setMetaContent = (selector, content) => {
 
 const updateTreeSeo = (tree) => {
   const slug = slugify(tree.name);
-  const cardUrl = new URL(`/tree-oracle/${slug}`, window.location.origin);
+  const cardUrl = new URL("/tree-oracle", window.location.origin);
   const description = `${tree.name} Tree Oracle card — ${tree.keyword}. Read its original KELA message and protection prompt.`;
   const imageLabel = `${tree.name} — ${tree.keyword}, a KELA Tree Oracle card with a tree photograph and a spiritual protection message.`;
 
@@ -253,7 +261,6 @@ const updateTreeSeo = (tree) => {
   setMetaContent('meta[name="twitter:description"]', description);
   setMetaContent('meta[name="twitter:image:alt"]', imageLabel);
   document.querySelector('link[rel="canonical"]')?.setAttribute("href", cardUrl.href);
-  window.history.replaceState(null, "", `${cardUrl.pathname}${cardUrl.search}`);
 };
 
 const fillTree = (index) => {
@@ -264,11 +271,11 @@ const fillTree = (index) => {
   updateTreeSeo(tree);
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
   if (treeCardFront) {
-    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260824-14`;
+    treeCardFront.src = `${cardAssetBase}-front.webp?v=20260825-5`;
     treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;
   }
   if (treeCardBack) {
-    treeCardBack.src = `${cardAssetBase}-back.webp?v=20260824-9`;
+    treeCardBack.src = `${cardAssetBase}-back.webp?v=20260825-5`;
     treeCardBack.alt = `${tree.name} KELA Tree Oracle meaning card`;
   }
   if (treeName) treeName.textContent = tree.name;
@@ -384,29 +391,6 @@ const shareTree = async () => {
   }
 };
 
-const renderGallery = () => {
-  if (!gallery) return;
-  treeGuides.forEach((tree, index) => {
-    const link = document.createElement("a");
-    link.className = "tree-gallery-link";
-    link.href = `/tree-oracle/${slugify(tree.name)}`;
-    link.setAttribute("aria-label", `Open the ${tree.name} Tree Oracle card`);
-    const article = document.createElement("article");
-    article.className = "tree-gallery-card";
-    article.innerHTML = `
-      <img src="${tree.art}" width="720" height="1080" loading="lazy" decoding="async" alt="Photograph of a ${tree.name} tree">
-      <div>
-        <p class="tree-gallery-number">${String(index + 1).padStart(2, "0")}</p>
-        <h3>${tree.name}</h3>
-        <p class="tree-gallery-botanical"><em>${tree.botanical}</em></p>
-        <p class="tree-gallery-keyword">${tree.keyword}</p>
-        <p>${tree.message}</p>
-      </div>`;
-    link.append(article);
-    gallery.append(link);
-  });
-};
-
 revealButton?.addEventListener("click", beginReveal);
 shareButton?.addEventListener("click", shareTree);
 treeFlip?.addEventListener("click", toggleTreeFace);
@@ -415,7 +399,6 @@ treeFlip?.addEventListener("keydown", (event) => {
   event.preventDefault();
   toggleTreeFace();
 });
-renderGallery();
 
 const isLocalPreview = ["", "localhost", "127.0.0.1"].includes(window.location.hostname);
 if (previewTools && isLocalPreview) previewTools.hidden = false;
@@ -427,11 +410,9 @@ previewNext?.addEventListener("click", () => {
 
 const previewParams = new URLSearchParams(window.location.search);
 const requestedPreview = Number.parseInt(previewParams.get("tree"), 10);
-const pathParts = window.location.pathname.split("/").filter(Boolean);
-const pathCardSlug = pathParts[0] === "tree-oracle" && pathParts.length > 1 ? pathParts[1] : "";
-const requestedCardSlug = slugify(previewParams.get("card") || pathCardSlug);
+const requestedCardSlug = slugify(previewParams.get("card") || "");
 const requestedCardIndex = treeGuides.findIndex((tree) => slugify(tree.name) === requestedCardSlug);
-if (oracle && requestedCardIndex >= 0) {
+if (oracle && isLocalPreview && requestedCardIndex >= 0) {
   showTree(requestedCardIndex, { focus: false, save: false });
 } else if (
   oracle
@@ -444,5 +425,16 @@ if (oracle && requestedCardIndex >= 0) {
   if (previewParams.get("side") === "meaning") setTreeFace(true);
 } else {
   const savedTreeIndex = readSavedTree();
-  if (oracle && savedTreeIndex >= 0) showTree(savedTreeIndex, { focus: false, save: false });
+  if (oracle && savedTreeIndex >= 0) {
+    showTree(savedTreeIndex, { focus: false, save: false });
+    const tree = treeGuides[savedTreeIndex];
+    if (tree) {
+      window.KelaCompanions?.remember({
+        deck: "tree",
+        name: tree.name,
+        image: tree.art,
+        href: "/tree-oracle",
+      });
+    }
+  }
 }

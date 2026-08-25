@@ -305,6 +305,15 @@ const saveGuide = (index, colorIndex) => {
       storageKey,
       JSON.stringify({ date: localDateKey(), index, colorIndex }),
     );
+    const guide = animalGuides[index];
+    if (guide) {
+      window.KelaCompanions?.remember({
+        deck: "animal",
+        name: guide.name,
+        image: guide.art,
+        href: "/animal-oracle",
+      });
+    }
   } catch {
     // The oracle still works when browser storage is unavailable.
   }
@@ -332,7 +341,7 @@ const setMetaContent = (selector, content) => {
 const updateGuideSeo = (guide, cardColor) => {
   const slug = slugify(guide.name);
   const colorSlug = slugify(cardColor.name);
-  const seoUrl = new URL(`/animal-oracle/${slug}`, window.location.origin);
+  const seoUrl = new URL("/animal-oracle", window.location.origin);
   const cardUrl = new URL(seoUrl);
   cardUrl.searchParams.set("color", colorSlug);
   const description = `${guide.name} Animal Oracle card — ${guide.keyword}. Read its original KELA message and protection prompt.`;
@@ -358,7 +367,6 @@ const updateGuideSeo = (guide, cardColor) => {
   setMetaContent('meta[name="twitter:description"]', description);
   setMetaContent('meta[name="twitter:image:alt"]', imageLabel);
   document.querySelector('link[rel="canonical"]')?.setAttribute("href", seoUrl.href);
-  window.history.replaceState(null, "", `${cardUrl.pathname}${cardUrl.search}`);
 };
 
 const fillGuide = (index, colorIndex) => {
@@ -371,11 +379,11 @@ const fillGuide = (index, colorIndex) => {
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
   if (animalCardFront) {
-    animalCardFront.src = `${cardAssetBase}-front.webp?v=20260824-15`;
+    animalCardFront.src = `${cardAssetBase}-front.webp?v=20260825-5`;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;
   }
   if (animalCardBack) {
-    animalCardBack.src = `${cardAssetBase}-back.webp?v=20260824-9`;
+    animalCardBack.src = `${cardAssetBase}-back.webp?v=20260825-5`;
     animalCardBack.alt = `${guide.name} KELA Animal Oracle meaning card`;
   }
   if (guideName) guideName.textContent = guide.name;
@@ -539,11 +547,9 @@ const previewColorIndex = requestedColorBySlug >= 0
   && requestedColor < animalCardColors.length
   ? requestedColor
   : randomColorIndex();
-const pathParts = window.location.pathname.split("/").filter(Boolean);
-const pathCardSlug = pathParts[0] === "animal-oracle" && pathParts.length > 1 ? pathParts[1] : "";
-const requestedCardSlug = slugify(previewParams.get("card") || pathCardSlug);
+const requestedCardSlug = slugify(previewParams.get("card") || "");
 const requestedCardIndex = animalGuides.findIndex((guide) => slugify(guide.name) === requestedCardSlug);
-if (oracle && requestedCardIndex >= 0) {
+if (oracle && isLocalPreview && requestedCardIndex >= 0) {
   showGuide(requestedCardIndex, { focus: false, save: false, colorIndex: previewColorIndex });
 } else if (
   oracle
@@ -562,5 +568,14 @@ if (oracle && requestedCardIndex >= 0) {
       save: false,
       colorIndex: savedGuide.colorIndex,
     });
+    const guide = animalGuides[savedGuide.index];
+    if (guide) {
+      window.KelaCompanions?.remember({
+        deck: "animal",
+        name: guide.name,
+        image: guide.art,
+        href: "/animal-oracle",
+      });
+    }
   }
 }

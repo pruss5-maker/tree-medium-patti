@@ -1,10 +1,16 @@
 /* The interactive deck uses the same finished physical-card renders as the social preview. */
+.oracle-page .site-header > .wordmark small {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+}
+
 .animal-flip-card {
   aspect-ratio: 850 / 1295;
 }
 
 .tree-flip-card {
-  aspect-ratio: 850 / 1220;
+  aspect-ratio: 850 / 1295;
 }
 
 .animal-oracle-page .oracle-experience:has(.oracle-card.is-revealed),
@@ -62,7 +68,7 @@
 
   .oracle-page .site-header .wordmark small {
     margin-top: 4px;
-    font-size: 0.68rem;
+    font-size: 9px;
   }
 
   .oracle-hero {
@@ -207,7 +213,7 @@
   }
 
   .tree-flip-card {
-    aspect-ratio: 850 / 1220;
+    aspect-ratio: 850 / 1295;
   }
 
   .animal-oracle-page .oracle-card-raster-face > .oracle-card-raster,
@@ -227,8 +233,8 @@
 
   .oracle-page .site-header .wordmark small {
     display: block;
-    margin-top: 1px;
-    font-size: 0.48rem;
+    margin-top: 4px;
+    font-size: 9px;
     letter-spacing: 0.09em;
     line-height: 1;
   }
@@ -260,7 +266,7 @@
   }
 
   .oracle-page .site-header .wordmark small {
-    font-size: 0.42rem;
+    font-size: 9px;
   }
 
   .oracle-page .menu-toggle {

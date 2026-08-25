@@ -14,6 +14,90 @@ const termsCloseButtons = document.querySelectorAll("[data-terms-close]");
 const termsConsent = document.querySelector("[data-terms-consent]");
 const termsContinue = document.querySelector("[data-terms-continue]");
 
+window.KelaCompanions = (() => {
+  const companionStorageKey = "kela-oracle-companions-v1";
+  const companionDeckOrder = ["tree", "plant", "animal"];
+
+  const companionDateKey = () => {
+    const today = new Date();
+    return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+  };
+
+  const readCompanions = () => {
+    try {
+      const saved = JSON.parse(window.localStorage.getItem(companionStorageKey));
+      return saved?.date === companionDateKey() && saved.companions
+        ? saved.companions
+        : {};
+    } catch {
+      return {};
+    }
+  };
+
+  const renderCompanions = () => {
+    const savedCompanions = readCompanions();
+    const companions = companionDeckOrder
+      .map((deck) => savedCompanions[deck])
+      .filter((companion) => companion?.name && companion?.image && companion?.href);
+    let companionTray = document.querySelector("[data-oracle-companions]");
+
+    if (!companions.length) {
+      companionTray?.remove();
+      return;
+    }
+
+    if (!companionTray) {
+      companionTray = document.createElement("nav");
+      companionTray.className = "oracle-companions";
+      companionTray.dataset.oracleCompanions = "";
+      companionTray.setAttribute("aria-label", "Your oracle companions for today");
+      companionTray.setAttribute("aria-live", "polite");
+      document.body.append(companionTray);
+    }
+
+    companionTray.replaceChildren();
+    companions.forEach((companion) => {
+      const link = document.createElement("a");
+      const picture = document.createElement("span");
+      const image = document.createElement("img");
+      const name = document.createElement("span");
+
+      link.className = `oracle-companion oracle-companion-${companion.deck}`;
+      link.href = companion.href;
+      link.setAttribute("aria-label", `Return to your ${companion.name} ${companion.deck} card`);
+      picture.className = "oracle-companion-picture";
+      image.src = companion.image;
+      image.alt = "";
+      image.width = 72;
+      image.height = 72;
+      image.decoding = "async";
+      name.className = "oracle-companion-name";
+      name.textContent = companion.name;
+      picture.append(image);
+      link.append(picture, name);
+      companionTray.append(link);
+    });
+  };
+
+  const remember = (companion) => {
+    if (!companionDeckOrder.includes(companion?.deck)) return;
+    const companions = readCompanions();
+    companions[companion.deck] = companion;
+    try {
+      window.localStorage.setItem(
+        companionStorageKey,
+        JSON.stringify({ date: companionDateKey(), companions }),
+      );
+    } catch {
+      return;
+    }
+    renderCompanions();
+  };
+
+  renderCompanions();
+  return { remember, refresh: renderCompanions };
+})();
+
 let termsPreviousFocus = null;
 
 const setTermsConsentState = () => {
@@ -626,13 +710,18 @@ if (magnoliaAccents.length) {
   const magnoliaObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      const accent = entry.target.querySelector(":scope > [data-magnolia]");
+      const accent = entry.target.matches("[data-magnolia]")
+        ? entry.target
+        : entry.target.querySelector("[data-magnolia]");
       accent?.classList.add("is-blooming");
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.01, rootMargin: "-18% 0px -18% 0px" });
 
-  magnoliaAccents.forEach((accent) => magnoliaObserver.observe(accent.parentElement));
+  magnoliaAccents.forEach((accent) => {
+    const section = accent.closest(".method, .offer, .patti, .book, .site-footer");
+    magnoliaObserver.observe(section || accent);
+  });
 }
 
 const startMoss = () => {

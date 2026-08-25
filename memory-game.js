@@ -51,7 +51,7 @@ if (gameRoot) {
     timerId = window.setInterval(updateTimer, 1000);
   };
 
-  const cardMarkup = (item, copyIndex) => `
+  const cardMarkup = (item) => `
     <button class="memory-card" type="button" data-memory-card data-slug="${item.slug}" aria-label="Hidden memory card">
       <span class="memory-card-inner">
         <span class="memory-card-face memory-card-back" aria-hidden="true">
@@ -61,7 +61,6 @@ if (gameRoot) {
         <span class="memory-card-face memory-card-front">
           <img src="${item.image}" width="640" height="640" alt="${item.name} coloring outline" />
           <strong>${item.name}</strong>
-          <small>${copyIndex === 0 ? "One" : "Two"}</small>
         </span>
       </span>
     </button>`;
@@ -136,11 +135,8 @@ if (gameRoot) {
     window.clearInterval(timerId);
     const requestedPairs = pairSelect.value === "all" ? deck.items.length : Number.parseInt(pairSelect.value, 10);
     activeCards = shuffle(deck.items).slice(0, Math.min(requestedPairs, deck.items.length));
-    const dealtCards = shuffle(activeCards.flatMap((item) => [
-      { item, copyIndex: 0 },
-      { item, copyIndex: 1 },
-    ]));
-    board.innerHTML = dealtCards.map(({ item, copyIndex }) => cardMarkup(item, copyIndex)).join("");
+    const dealtCards = shuffle(activeCards.flatMap((item) => [{ item }, { item }]));
+    board.innerHTML = dealtCards.map(({ item }) => cardMarkup(item)).join("");
     board.style.setProperty("--pair-count", String(activeCards.length));
     firstCard = null;
     secondCard = null;

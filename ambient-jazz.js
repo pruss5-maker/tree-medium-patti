@@ -4,7 +4,7 @@
   const rightsKey = "kela-ambient-jazz-rights-v1";
   const rightsUrl = "/assets/audio/music-rights.json";
   const twelveHours = 12 * 60 * 60 * 1000;
-  const listeningVolume = 0.32;
+  const listeningVolume = 0.42;
   const fallbackTrack = {
     id: "woodland-afterglow",
     title: "Woodland Afterglow",
@@ -147,9 +147,11 @@
   const startMusic = async ({ announceStart = false } = {}) => {
     if (isMuted || !isReady) return;
     try {
+      player.muted = false;
+      player.volume = Math.max(player.volume, 0.07);
       await player.play();
       hasStarted = true;
-      fadeTo(listeningVolume, 1100);
+      fadeTo(listeningVolume, 560);
       updateButton();
       if (announceStart) announce(`Soft background jazz playing: ${selectedTrack.title}.`);
     } catch {

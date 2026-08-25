@@ -117,7 +117,7 @@ body {
   top: 350px;
   left: 205px;
   width: 712px;
-  height: 450px;
+  height: 350px;
 }
 
 .art-area.animal img {
@@ -129,11 +129,11 @@ body {
   object-fit: contain;
   filter: none;
   mix-blend-mode: normal;
-  transform: scale(1.08);
+  transform: scale(0.96);
 }
 
 .canvas[data-slug="blue-owl"] .art-area.animal img {
-  transform: scale(1.17);
+  transform: scale(1.03);
 }
 
 /* Center each visible silhouette rather than its uneven transparent image canvas. */
@@ -165,7 +165,7 @@ body {
   top: 350px;
   left: 205px;
   width: 712px;
-  height: 380px;
+  height: 300px;
   background: #173528;
   border: 2px solid rgba(226, 185, 105, 0.9);
   border-radius: 42px;
@@ -189,26 +189,26 @@ body {
 }
 
 .animal.front .front-copy {
-  top: 820px;
+  top: 710px;
 }
 
 .tree.front .front-copy,
 .plant.front .front-copy {
-  top: 740px;
+  top: 660px;
 }
 
 h1 {
   margin: 0;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 72px;
+  font-size: 82px;
   font-weight: 400;
   letter-spacing: -0.035em;
   line-height: 1.02;
 }
 
 h1.long-name {
-  font-size: 60px;
+  font-size: 68px;
 }
 
 .keyword,
@@ -216,7 +216,7 @@ h1.long-name {
   margin: 6px 0 0;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 30px;
+  font-size: 35px;
   font-style: italic;
   line-height: 1.1;
 }
@@ -224,7 +224,7 @@ h1.long-name {
 .botanical {
   margin-top: 4px;
   color: var(--ink);
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .tree .keyword,
@@ -258,8 +258,8 @@ h1.long-name {
   margin: 0 auto;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 34px;
-  line-height: 1.25;
+  font-size: 42px;
+  line-height: 1.2;
 }
 
 .front-protection strong {
@@ -267,7 +267,7 @@ h1.long-name {
   margin-bottom: 6px;
   color: var(--gold);
   font-family: Arial, sans-serif;
-  font-size: 28px;
+  font-size: 31px;
   letter-spacing: 0.12em;
 }
 
@@ -275,7 +275,7 @@ h1.long-name {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 96px;
+  height: 64px;
   margin: 18px auto 0;
   color: var(--ink);
   background: transparent;
@@ -306,7 +306,7 @@ h1.long-name {
 
 .animal.front .cue {
   position: absolute;
-  top: 376px;
+  top: 502px;
   left: 54px;
   margin-top: 0;
 }
@@ -319,28 +319,28 @@ h1.long-name {
 .tree.front .cue,
 .plant.front .cue {
   position: absolute;
-  top: 376px;
+  top: 472px;
   left: 54px;
   margin-top: 0;
 }
 
 .back-copy {
-  top: 350px;
-  left: 220px;
-  width: 682px;
+  top: 320px;
+  left: 201px;
+  width: 720px;
   text-align: center;
 }
 
 .animal.back .back-copy {
-  top: 390px;
+  top: 380px;
 }
 
 .back-copy h1 {
-  font-size: 72px;
+  font-size: 82px;
 }
 
 .back-copy h1.long-name {
-  font-size: 60px;
+  font-size: 68px;
 }
 
 .back-copy .message {
@@ -351,14 +351,14 @@ h1.long-name {
   justify-content: center;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 38px;
-  line-height: 1.32;
+  font-size: 45px;
+  line-height: 1.25;
   text-align: center;
 }
 
 .back-copy.long-message .message {
-  font-size: 35px;
-  line-height: 1.3;
+  font-size: 40px;
+  line-height: 1.24;
 }
 
 .protection-box {
@@ -390,7 +390,7 @@ h1.long-name {
   margin-bottom: 8px;
   color: var(--gold);
   font-family: Arial, sans-serif;
-  font-size: 30px;
+  font-size: 32px;
   letter-spacing: 0.12em;
 }
 
@@ -398,21 +398,21 @@ h1.long-name {
   margin: 0;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 34px;
-  line-height: 1.25;
+  font-size: 40px;
+  line-height: 1.2;
   text-align: center;
 }
 
 .back .cue {
   width: 570px;
-  height: 94px;
+  height: 64px;
   margin: 0;
   font-size: 30px;
 }
 
 .tree.back .back-copy,
 .plant.back .back-copy {
-  top: 350px;
+  top: 340px;
 }
 
 .tree.back .back-copy .message,
@@ -428,18 +428,18 @@ h1.long-name {
 }
 
 .animal.back .back-copy .cue {
-  top: 790px;
+  top: 815px;
 }
 
 .tree.back .back-copy .cue {
-  top: 736px;
+  top: 761px;
 }
 
 .plant.back .back-copy .cue {
-  top: 736px;
+  top: 761px;
 }
 
 .plant.back .protection-box p {
-  font-size: 34px;
-  line-height: 1.25;
+  font-size: 40px;
+  line-height: 1.2;
 }

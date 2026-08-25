@@ -986,7 +986,7 @@ if (!document.querySelector('script[data-atmosphere]')) {
 
 if (!document.querySelector('script[data-ambient-jazz]')) {
   const ambientJazzScript = document.createElement("script");
-  ambientJazzScript.src = "/ambient-jazz.js?v=20260825-3";
+  ambientJazzScript.src = "/ambient-jazz.js?v=20260825-4";
   ambientJazzScript.async = false;
   ambientJazzScript.dataset.ambientJazz = "";
   document.head.append(ambientJazzScript);

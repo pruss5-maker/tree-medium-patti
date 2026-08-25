@@ -174,14 +174,15 @@ if (gameRoot) {
           <strong>${item.name}</strong>
         </article>`));
     const pages = [];
-    for (let index = 0; index < cards.length; index += 16) {
+    const cardsPerSheet = 24;
+    for (let index = 0; index < cards.length; index += cardsPerSheet) {
       pages.push(`
         <section class="print-page">
           <header class="print-page-header">
             <h2>${deck.label} Memory Cards</h2>
             <p>KELA · Print at 100% · Color · Cut · Mix · Match</p>
           </header>
-          <div class="print-page-grid">${cards.slice(index, index + 16).join("")}</div>
+          <div class="print-page-grid">${cards.slice(index, index + cardsPerSheet).join("")}</div>
         </section>`);
     }
     printGrid.innerHTML = pages.join("");

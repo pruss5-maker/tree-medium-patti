@@ -458,6 +458,115 @@ body.memory-modal-open { overflow: hidden; }
 .memory-hub-copy h2 { margin: 0 0 5px; color: var(--memory-gold-light); font-size: 2rem; }
 .memory-hub-copy p { margin: 0; color: rgba(247, 240, 221, 0.75); }
 
+/* The memory hub echoes the homepage's compact, overlapping card spread. */
+.memory-hub-page .memory-main {
+  display: grid;
+  min-height: 100svh;
+  padding: 96px 0 28px;
+  align-content: center;
+}
+
+.memory-hub-page .memory-hero {
+  padding: 12px 0 clamp(24px, 4vw, 42px);
+}
+
+.memory-hub-page .memory-hero h1 {
+  margin-top: 8px;
+  font-size: clamp(3rem, 7vw, 5.6rem);
+}
+
+.memory-hub-page .memory-hub-grid {
+  display: flex;
+  width: min(calc(100% - 32px), 620px);
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 26px;
+}
+
+.memory-hub-page .memory-hub-card {
+  height: 340px;
+  min-height: 0;
+  flex: 0 0 34%;
+  grid-template-rows: minmax(0, 68%) minmax(0, 32%);
+  aspect-ratio: auto;
+  transform-origin: center bottom;
+}
+
+.memory-hub-page .memory-hub-card + .memory-hub-card { margin-left: -2%; }
+
+.memory-hub-page .memory-hub-art {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.memory-hub-page .memory-hub-art img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.memory-hub-page .memory-hub-copy {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.memory-hub-page .memory-hub-copy h2 { font-size: clamp(1.45rem, 2.5vw, 1.85rem); }
+
+.memory-hub-page .memory-hub-card:nth-child(1) {
+  z-index: 1;
+  transform: translateX(8px) rotate(-3deg) scale(0.96);
+}
+
+.memory-hub-page .memory-hub-card:nth-child(2) {
+  z-index: 3;
+  transform: scale(1.045);
+}
+
+.memory-hub-page .memory-hub-card:nth-child(3) {
+  z-index: 2;
+  transform: translateX(-8px) rotate(3deg) scale(0.96);
+}
+
+.memory-hub-page .memory-hub-card:hover,
+.memory-hub-page .memory-hub-card:focus-visible {
+  z-index: 5;
+  transform: translateY(-8px) scale(1.045);
+}
+
+@media (min-width: 761px) {
+  .memory-page .memory-main { padding-top: 68px; }
+  .memory-page .memory-hero .eyebrow { display: none; }
+  .memory-page .memory-hero { padding: 10px 0; }
+  .memory-page .memory-hero h1 { margin: 4px auto 5px; font-size: clamp(2.55rem, 4vw, 3.8rem); }
+  .memory-page .memory-hero p:not(.eyebrow) { font-size: 0.9rem; line-height: 1.25; }
+  .memory-page .memory-deck-nav { margin-top: 8px; }
+  .memory-page .memory-deck-nav a { padding: 7px 13px; }
+  .memory-page .game-shell { padding-bottom: 44px; }
+  .memory-page .memory-game-panel {
+    display: grid;
+    padding: 16px;
+    grid-template-columns: minmax(420px, 1fr) minmax(250px, 0.58fr);
+    gap: 9px 16px;
+  }
+  .memory-page .memory-controls { margin: 0; }
+  .memory-page .memory-field { gap: 2px; }
+  .memory-page .memory-field span,
+  .memory-page .memory-stat span { font-size: 0.6rem; }
+  .memory-page .memory-field select,
+  .memory-page .memory-button { min-height: 38px; }
+  .memory-page .memory-stats { margin: 0; }
+  .memory-page .memory-stat { gap: 0; padding: 3px 7px; }
+  .memory-page .memory-stat strong { font-size: 1rem; }
+  .memory-page .memory-status { min-height: 18px; margin: 0; grid-column: 1 / -1; font-size: 0.84rem; }
+  .memory-page .memory-board { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px; }
+  .memory-page .memory-card { aspect-ratio: 7 / 8; }
+  .memory-page .memory-board,
+  .memory-page .memory-print-callout { grid-column: 1 / -1; }
+}
+
 @media (max-width: 760px) {
   .memory-main { padding-top: 57px; }
   .memory-controls { grid-template-columns: 1fr 1fr; }
@@ -466,8 +575,21 @@ body.memory-modal-open { overflow: hidden; }
   .memory-card-front { padding: 5px 5px 8px; }
   .memory-card-back small, .memory-card-front small { display: none; }
   .memory-print-callout { grid-template-columns: 1fr; }
-  .memory-hub-grid { grid-template-columns: 1fr; }
-  .memory-hub-card { min-height: 390px; }
+  .memory-hub-page .memory-main { padding: 76px 0 18px; }
+  .memory-hub-page .memory-hero { padding: 5px 14px 20px; }
+  .memory-hub-page .memory-hero h1 { max-width: 340px; margin: 4px auto 8px; font-size: clamp(2.25rem, 9.5vw, 2.8rem); }
+  .memory-hub-page .memory-hero p:not(.eyebrow) { max-width: 320px; font-size: 0.85rem; line-height: 1.35; }
+  .memory-hub-page .memory-hub-grid { width: min(calc(100% - 32px), 430px); padding-bottom: 18px; }
+  .memory-hub-page .memory-hub-card { height: 250px; min-height: 0; flex-basis: 32%; grid-template-rows: minmax(0, 68%) minmax(0, 32%); aspect-ratio: auto; border-radius: 18px; }
+  .memory-hub-page .memory-hub-card + .memory-hub-card { margin-left: 0; }
+  .memory-hub-page .memory-hub-card:nth-child(1) { transform: rotate(-3deg) scale(.96); }
+  .memory-hub-page .memory-hub-card:nth-child(2) { transform: scale(1.045); }
+  .memory-hub-page .memory-hub-card:nth-child(3) { transform: rotate(3deg) scale(.96); }
+  .memory-hub-page .memory-hub-art { min-height: 0; margin: 9px; overflow: hidden; border-radius: 12px; }
+  .memory-hub-page .memory-hub-art img { width: min(90%, 150px); height: 100%; object-fit: contain; }
+  .memory-hub-page .memory-hub-copy { display: flex; min-height: 0; padding: 8px 10px 14px; flex-direction: column; justify-content: center; text-align: center; }
+  .memory-hub-page .memory-hub-copy h2 { font-size: clamp(1.12rem, 5vw, 1.45rem); line-height: 1; }
+  .memory-hub-page .memory-hub-copy p { font-size: 0.68rem; line-height: 1.25; }
 }
 
 @media (max-width: 440px) {
@@ -492,13 +614,15 @@ body.memory-modal-open { overflow: hidden; }
 @media print {
   * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   body { color: #000 !important; background: #fff !important; }
-  .skip-link, .site-header, .memory-main, .site-footer { display: none !important; }
+  body > :not(.print-deck) { display: none !important; }
+  .skip-link, .site-header, .memory-main, .site-footer, .thumb-control-rail, .ambient-jazz-toggle, .terms-modal, .analytics-consent { display: none !important; }
   .print-deck { display: block !important; }
   .print-deck-header { display: none; }
   .print-grid { display: block; }
   .print-page {
     width: 100%;
     margin: 0;
+    overflow: hidden;
     break-inside: avoid-page;
     page-break-inside: avoid;
   }
@@ -519,16 +643,16 @@ body.memory-modal-open { overflow: hidden; }
   .print-page-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: repeat(4, 2.12in);
-    gap: 0.06in;
+    grid-template-rows: repeat(6, 1.57in);
+    gap: 0.05in;
   }
   .print-memory-card {
     position: relative;
     display: grid;
     grid-template-rows: auto 1fr auto;
     width: 100%;
-    height: 2.12in;
-    padding: 0.07in;
+    height: 1.57in;
+    padding: 0.05in;
     overflow: hidden;
     color: #000;
     background: #fff;

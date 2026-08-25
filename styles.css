@@ -1663,14 +1663,14 @@ summary:focus-visible {
 
 .terms-oracle-brand span {
   font-family: var(--serif);
-  font-size: 1.55rem;
+  font-size: 1.75rem;
   font-weight: 500;
   letter-spacing: 0.24em;
 }
 
 .terms-oracle-brand small {
   margin-top: 5px;
-  font-size: 0.5rem;
+  font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.19em;
   text-transform: uppercase;
@@ -1686,13 +1686,13 @@ summary:focus-visible {
 .terms-dialog-header .eyebrow {
   margin: 0 0 4px;
   color: rgba(248, 239, 217, 0.7);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
 }
 
 .terms-dialog-header h2 {
   margin: 0;
   color: #fff9e9;
-  font-size: clamp(2.15rem, 6vw, 2.85rem);
+  font-size: clamp(2.55rem, 6vw, 3.25rem);
   letter-spacing: -0.03em;
   text-shadow: 0 2px 12px rgba(2, 13, 9, 0.34);
 }
@@ -1701,7 +1701,7 @@ summary:focus-visible {
   margin: 6px 0 0;
   color: #e8c47d;
   font-family: var(--serif);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-style: italic;
   letter-spacing: 0.04em;
 }
@@ -1740,7 +1740,7 @@ summary:focus-visible {
   margin-bottom: 16px;
   color: rgba(28, 43, 35, 0.78);
   font-family: var(--serif);
-  font-size: 1rem;
+  font-size: 1.12rem;
   line-height: 1.48;
   text-align: center;
 }
@@ -1770,15 +1770,18 @@ summary:focus-visible {
 }
 
 .terms-price p {
-  font-size: 1.25rem;
+  font-size: 1.55rem;
 }
 
 .terms-price strong {
   color: var(--forest-700);
-  font-size: 2.2rem;
+  font-size: 2.8rem;
 }
 
+.terms-price small { font-size: 0.96rem; }
+
 .terms-simple-copy > p {
+  font-size: 1.03rem;
   text-align: center;
 }
 
@@ -1791,6 +1794,7 @@ summary:focus-visible {
   background: rgba(255, 253, 248, 0.58);
   border-color: rgba(185, 148, 95, 0.42);
   border-radius: 4px;
+  font-size: 1.02rem;
 }
 
 .terms-dialog-actions {
@@ -1852,12 +1856,12 @@ summary:focus-visible {
   }
 
   .terms-dialog-header h2 {
-    font-size: clamp(1.85rem, 8.5vw, 2.35rem);
+    font-size: clamp(2.1rem, 9vw, 2.6rem);
   }
 
   .terms-oracle-note {
     margin-top: 3px;
-    font-size: 0.78rem;
+    font-size: 0.9rem;
   }
 
   .terms-close {
@@ -1874,7 +1878,7 @@ summary:focus-visible {
 
   .terms-dialog-content > p:first-child {
     margin-bottom: 12px;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .terms-price {
@@ -1891,20 +1895,20 @@ summary:focus-visible {
   }
 
   .terms-price p {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
 
   .terms-price small {
-    font-size: 0.72rem;
+    font-size: 0.82rem;
   }
 
   .terms-price strong {
-    font-size: 1.75rem;
+    font-size: 2.15rem;
   }
 
   .terms-simple-copy > p,
   .terms-consent {
-    font-size: 0.8rem;
+    font-size: 0.88rem;
   }
 
   .terms-links {

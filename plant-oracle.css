@@ -432,3 +432,80 @@
     font-size: 0.55rem;
   }
 }
+
+/* Continue the finished oracle-card atmosphere into the supporting copy on
+   tablet and mobile, where these sections remain part of the experience. */
+@media (max-width: 980px) {
+  .plant-oracle-page main > .oracle-explainer {
+    position: relative;
+    width: min(calc(100% - 28px), 840px);
+    margin: 18px auto;
+    padding: clamp(30px, 7vw, 52px) clamp(22px, 6vw, 46px);
+    gap: 20px;
+    background:
+      radial-gradient(circle at 92% 8%, rgba(179, 145, 70, 0.14), transparent 17rem),
+      linear-gradient(145deg, rgba(255, 251, 239, 0.98), rgba(235, 232, 213, 0.98));
+    border: 1px solid rgba(169, 128, 53, 0.54);
+    border-radius: 24px;
+    box-shadow: 0 18px 46px rgba(26, 49, 38, 0.11);
+    isolation: isolate;
+  }
+
+  .plant-oracle-page main > .oracle-explainer h2 {
+    margin-bottom: 2px;
+    color: #173e30;
+    font-size: clamp(2.25rem, 9vw, 3.75rem);
+    line-height: 0.98;
+  }
+
+  .plant-oracle-page main > .oracle-explainer:not(.oracle-protection-explainer) .eyebrow {
+    color: #48624a;
+  }
+
+  .plant-oracle-page main > .oracle-explainer .prose > p {
+    color: rgba(24, 57, 44, 0.82);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .plant-oracle-page .oracle-disclaimer-note {
+    margin-top: 20px;
+    padding-top: 18px;
+    color: rgba(42, 66, 55, 0.68) !important;
+    font-size: 0.82rem !important;
+    line-height: 1.55 !important;
+    border-top: 1px solid rgba(169, 128, 53, 0.36);
+  }
+
+  .plant-oracle-page main > .oracle-protection-explainer {
+    color: #fff7df;
+    background:
+      radial-gradient(circle at 12% 4%, rgba(237, 198, 109, 0.13), transparent 18rem),
+      linear-gradient(145deg, #264b3b, #102f25 66%, #0b271e);
+    border-color: rgba(225, 184, 88, 0.76);
+    box-shadow: 0 22px 54px rgba(8, 34, 25, 0.25);
+  }
+
+  .plant-oracle-page main > .oracle-protection-explainer::before {
+    display: none;
+  }
+
+  .plant-oracle-page main > .oracle-protection-explainer .eyebrow,
+  .plant-oracle-page main > .oracle-protection-explainer h2 {
+    color: #efd184;
+  }
+
+  .plant-oracle-page main > .oracle-protection-explainer .prose > p {
+    color: rgba(255, 248, 225, 0.88);
+  }
+
+  html[data-theme="dark"] body.plant-oracle-page .plant-oracle-result .button-secondary {
+    color: #f0d38b;
+    background: rgba(5, 38, 29, 0.82);
+    border-color: rgba(230, 190, 95, 0.64);
+  }
+
+  html[data-theme="dark"] body.plant-oracle-page .plant-oracle-result .oracle-result-actions small {
+    color: rgba(245, 232, 197, 0.72);
+  }
+}

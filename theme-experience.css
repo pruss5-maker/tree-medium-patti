@@ -318,8 +318,10 @@ html[data-theme="dark"] .legal-footer {
   }
 
   .thumb-control-rail .menu-toggle::before {
-    width: 38px;
-    height: 38px;
-    background-size: 83px 89px;
+    width: 28px;
+    height: 28px;
+    background-position: -2px -1px;
+    background-size: 61px 66px;
+    filter: saturate(1.12) drop-shadow(0 2px 5px rgba(168, 84, 112, 0.3));
   }
 }

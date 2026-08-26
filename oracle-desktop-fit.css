@@ -44,6 +44,14 @@
 
 /* Keep every drawn oracle card fully visible in a standard desktop viewport. */
 @media (min-width: 981px) {
+  /* Give the printed artwork a hair of breathing room so its top gold rule
+     survives rounded clipping and desktop downscaling. */
+  .oracle-page .oracle-card-raster-face > .oracle-card-raster {
+    inset: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+  }
+
   .oracle-page .oracle-hero {
     min-height: 100svh;
     padding-block: 80px 12px;

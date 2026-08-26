@@ -76,22 +76,25 @@
     image.decoding = "async";
     image.src = source;
 
-    const makeParticle = (inside = false) => ({
-      x: random(-40, width + 40),
-      y: inside ? random(-30, height + 30) : random(-100, -20),
-      size: random(size[0], size[1]),
-      speed: random(speed[0], speed[1]),
-      drift: random(-8, 10),
-      sway: random(12, 38),
-      swaySpeed: random(0.45, 0.9),
-      phase: random(0, Math.PI * 2),
-      rotation: random(0, Math.PI * 2),
-      rotationSpeed: random(-1.8, 1.8),
-      flipPhase: random(0, Math.PI * 2),
-      flipSpeed: random(1.1, 2.2),
-      alpha: random(alpha[0], alpha[1]),
-      sprite: Math.floor(random(0, regions.length)),
-    });
+    const makeParticle = (inside = false) => {
+      const activeSize = typeof size === "function" ? size(width) : size;
+      return {
+        x: random(-40, width + 40),
+        y: inside ? random(-30, height + 30) : random(-100, -20),
+        size: random(activeSize[0], activeSize[1]),
+        speed: random(speed[0], speed[1]),
+        drift: random(-8, 10),
+        sway: random(12, 38),
+        swaySpeed: random(0.45, 0.9),
+        phase: random(0, Math.PI * 2),
+        rotation: random(0, Math.PI * 2),
+        rotationSpeed: random(-1.8, 1.8),
+        flipPhase: random(0, Math.PI * 2),
+        flipSpeed: random(1.1, 2.2),
+        alpha: random(alpha[0], alpha[1]),
+        sprite: Math.floor(random(0, regions.length)),
+      };
+    };
 
     const resize = () => {
       const bounds = canvas.getBoundingClientRect();
@@ -168,6 +171,88 @@
     resume();
   };
 
+  const startRain = ({ canvas, count, speed, length, alpha, isActive }) => {
+    const context = canvas.getContext("2d", { alpha: true });
+    if (!context) return;
+
+    let width = 0;
+    let height = 0;
+    let frame = 0;
+    let previous = 0;
+    let resizeTimer = 0;
+    let drops = [];
+    const random = (minimum, maximum) => minimum + Math.random() * (maximum - minimum);
+
+    const makeDrop = (inside = false) => ({
+      x: random(-30, width + 30),
+      y: inside ? random(-20, height + 20) : random(-100, -15),
+      speed: random(speed[0], speed[1]),
+      length: random(length[0], length[1]),
+      alpha: random(alpha[0], alpha[1]),
+      width: random(0.65, 1.25),
+      wind: random(-6, -2),
+    });
+
+    const resize = () => {
+      const bounds = canvas.getBoundingClientRect();
+      const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+      width = bounds.width;
+      height = bounds.height;
+      canvas.width = Math.max(1, Math.round(width * ratio));
+      canvas.height = Math.max(1, Math.round(height * ratio));
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      drops = Array.from({ length: count(width) }, () => makeDrop(true));
+    };
+
+    const render = (timestamp) => {
+      if (!isActive() || document.hidden) {
+        frame = 0;
+        context.clearRect(0, 0, width, height);
+        return;
+      }
+      if (timestamp - previous < 34) {
+        frame = window.requestAnimationFrame(render);
+        return;
+      }
+      const elapsed = Math.min((timestamp - previous) / 1000 || 0.034, 0.08);
+      previous = timestamp;
+      context.clearRect(0, 0, width, height);
+
+      drops.forEach((drop) => {
+        drop.y += drop.speed * elapsed;
+        drop.x += drop.wind * elapsed;
+        if (drop.y - drop.length > height || drop.x < -40) Object.assign(drop, makeDrop(false));
+
+        const gradient = context.createLinearGradient(drop.x, drop.y - drop.length, drop.x, drop.y);
+        gradient.addColorStop(0, "rgba(180, 205, 214, 0)");
+        gradient.addColorStop(1, `rgba(151, 188, 202, ${drop.alpha})`);
+        context.beginPath();
+        context.moveTo(drop.x - drop.wind * 0.02, drop.y - drop.length);
+        context.lineTo(drop.x, drop.y);
+        context.strokeStyle = gradient;
+        context.lineWidth = drop.width;
+        context.lineCap = "round";
+        context.stroke();
+      });
+      frame = window.requestAnimationFrame(render);
+    };
+
+    const resume = () => {
+      if (!frame && isActive() && !document.hidden) {
+        previous = 0;
+        frame = window.requestAnimationFrame(render);
+      }
+    };
+
+    window.addEventListener("resize", () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => { resize(); resume(); }, 140);
+    }, { passive: true });
+    document.addEventListener("visibilitychange", resume);
+    resize();
+    resume();
+  };
+
   if (nav) {
     const menuPetals = document.createElement("canvas");
     menuPetals.className = "menu-petal-canvas";
@@ -183,7 +268,7 @@
         { x: 308, y: 1012, width: 298, height: 232 },
       ],
       count: (width) => width < 640 ? 16 : 24,
-      size: [18, 42],
+      size: (width) => width < 640 ? [11, 24] : [16, 34],
       speed: [18, 34],
       alpha: [0.45, 0.78],
       isActive: () => body.classList.contains("menu-open"),
@@ -215,5 +300,62 @@
       isActive: () => true,
       flip: true,
     });
+  }
+
+  const oracleHero = document.querySelector(".oracle-page .oracle-hero");
+  if (oracleHero) {
+    const weather = document.createElement("canvas");
+    weather.className = "oracle-atmosphere-canvas";
+    weather.setAttribute("aria-hidden", "true");
+    oracleHero.insertBefore(weather, oracleHero.querySelector(".oracle-layout"));
+
+    if (body.classList.contains("plant-oracle-page")) {
+      weather.classList.add("oracle-blossom-canvas");
+      startFallingSprites({
+        canvas: weather,
+        source: "/assets/cherry-blossom-sprites.png",
+        regions: [
+          { x: 52, y: 18, width: 558, height: 520 },
+          { x: 648, y: 36, width: 570, height: 466 },
+          { x: 18, y: 992, width: 270, height: 256 },
+          { x: 308, y: 1012, width: 298, height: 232 },
+        ],
+        count: (width) => width < 640 ? 14 : 24,
+        size: (width) => width < 640 ? [10, 23] : [14, 30],
+        speed: [10, 23],
+        alpha: [0.32, 0.68],
+        isActive: () => true,
+        tint: "#e7a8bb",
+      });
+    } else if (body.classList.contains("animal-oracle-page")) {
+      weather.classList.add("oracle-rain-canvas");
+      startRain({
+        canvas: weather,
+        count: (width) => width < 640 ? 34 : 58,
+        speed: [125, 230],
+        length: [10, 24],
+        alpha: [0.16, 0.42],
+        isActive: () => true,
+      });
+    } else if (body.classList.contains("tree-oracle-page")) {
+      weather.classList.add("oracle-samara-canvas");
+      startFallingSprites({
+        canvas: weather,
+        source: "/assets/maple-samara-sprites.png",
+        regions: [
+          { x: 0, y: 45, width: 520, height: 305 },
+          { x: 455, y: 18, width: 450, height: 430 },
+          { x: 380, y: 500, width: 525, height: 245 },
+          { x: 0, y: 875, width: 555, height: 370 },
+          { x: 575, y: 870, width: 679, height: 375 },
+        ],
+        count: (width) => width < 640 ? 9 : 16,
+        size: (width) => width < 640 ? [28, 52] : [34, 65],
+        speed: [12, 25],
+        alpha: [0.25, 0.56],
+        isActive: () => true,
+        flip: true,
+      });
+    }
   }
 })();

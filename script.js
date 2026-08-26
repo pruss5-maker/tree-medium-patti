@@ -17,7 +17,7 @@ const termsContinue = document.querySelector("[data-terms-continue]");
 if (!document.querySelector('link[href*="theme-experience.css"]')) {
   const themeStyles = document.createElement("link");
   themeStyles.rel = "stylesheet";
-  themeStyles.href = "/theme-experience.css?v=20260825-1";
+  themeStyles.href = "/theme-experience.css?v=20260825-3";
   document.head.append(themeStyles);
 }
 
@@ -1059,7 +1059,7 @@ startMoss();
 
 if (!document.querySelector('script[data-atmosphere]')) {
   const atmosphereScript = document.createElement("script");
-  atmosphereScript.src = "/atmosphere.js?v=20260825-6";
+  atmosphereScript.src = "/atmosphere.js?v=20260825-9";
   atmosphereScript.async = false;
   atmosphereScript.dataset.atmosphere = "";
   document.head.append(atmosphereScript);

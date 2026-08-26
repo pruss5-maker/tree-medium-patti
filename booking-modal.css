@@ -293,7 +293,7 @@
   }
 }
 
-@media (max-height: 680px) {
+@media (max-height: 760px) {
   .terms-dialog-header {
     padding-top: 10px;
     padding-bottom: 7px;
@@ -347,8 +347,14 @@
   }
 
   .terms-dialog-actions {
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
     padding-top: 8px;
     padding-bottom: 12px;
+  }
+
+  .terms-dialog-actions .button-gold,
+  .terms-dialog-actions .button-secondary {
+    order: initial;
   }
 
   .terms-dialog-actions .button {

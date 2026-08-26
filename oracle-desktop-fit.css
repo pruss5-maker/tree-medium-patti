@@ -110,3 +110,56 @@
     display: none;
   }
 }
+
+/* Keep both spiritual disclaimers together as the final content on oracle pages. */
+.oracle-page .site-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.oracle-page .site-footer .footer-grid {
+  order: 1;
+}
+
+.oracle-page .site-footer .footer-bottom {
+  order: 2;
+}
+
+.oracle-page .site-footer .footer-sanctuary-phrase {
+  order: 3;
+}
+
+.oracle-footer-disclaimer {
+  order: 4;
+  margin: 0 auto;
+  padding: 18px 16px 0;
+  color: inherit;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  text-align: center;
+  border-top: 1px solid rgba(222, 184, 101, 0.28);
+}
+
+.oracle-footer-disclaimer p {
+  margin: 0;
+}
+
+.oracle-footer-disclaimer p + p {
+  margin-top: 5px;
+  color: rgba(246, 220, 153, 0.9);
+  font-weight: 700;
+}
+
+html[data-theme="light"] .oracle-footer-disclaimer p + p {
+  color: #75531b;
+}
+
+@media (max-width: 760px) {
+  .oracle-footer-disclaimer {
+    width: calc(100% - 80px);
+    margin-right: 66px;
+    margin-left: 14px;
+    padding-inline: 8px;
+    font-size: 0.8rem;
+  }
+}

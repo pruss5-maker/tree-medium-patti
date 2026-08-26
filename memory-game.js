@@ -13,6 +13,14 @@ if (gameRoot) {
   const printGrid = document.querySelector("[data-print-grid]");
   const printDeckName = document.querySelector("[data-print-deck-name]");
 
+  if (printGrid && !document.querySelector("[data-memory-print-fold-styles]")) {
+    const printStyles = document.createElement("link");
+    printStyles.rel = "stylesheet";
+    printStyles.href = "memory-print-fold.css?v=20260826-1";
+    printStyles.dataset.memoryPrintFoldStyles = "";
+    document.head.append(printStyles);
+  }
+
   let activeCards = [];
   let firstCard = null;
   let secondCard = null;
@@ -167,19 +175,24 @@ if (gameRoot) {
     if (!deck || !printGrid) return;
     printDeckName.textContent = `${deck.label} Memory Cards`;
     const cards = deck.items.flatMap((item) => [0, 1].map(() => `
-        <article class="print-memory-card">
-          <span class="print-card-brand">KELA</span>
-          <img src="${item.image}" width="640" height="640" alt="" />
-          <strong>${item.name}</strong>
+        <article class="print-fold-card">
+          <section class="print-card-face print-card-front">
+            <span class="print-card-brand">KELA</span>
+            <img src="${item.image}" width="640" height="640" alt="" />
+            <strong>${item.name}</strong>
+          </section>
+          <section class="print-card-face print-card-back" aria-label="Triskelion card back">
+            <img class="print-card-triskele" src="assets/memory-games/printable/triskele-outline.svg" alt="" />
+          </section>
         </article>`));
     const pages = [];
-    const cardsPerSheet = 24;
+    const cardsPerSheet = 12;
     for (let index = 0; index < cards.length; index += cardsPerSheet) {
       pages.push(`
         <section class="print-page">
           <header class="print-page-header">
             <h2>${deck.label} Memory Cards</h2>
-            <p>KELA · Print at 100% · Color · Cut · Mix · Match</p>
+            <p>KELA · Print at 100% · Color · Cut · Fold · Match</p>
           </header>
           <div class="print-page-grid">${cards.slice(index, index + cardsPerSheet).join("")}</div>
         </section>`);

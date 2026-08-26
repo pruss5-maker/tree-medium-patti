@@ -21,6 +21,13 @@ if (!document.querySelector('link[href*="theme-experience.css"]')) {
   document.head.append(themeStyles);
 }
 
+if (!document.querySelector('link[href*="booking-modal.css"]')) {
+  const bookingStyles = document.createElement("link");
+  bookingStyles.rel = "stylesheet";
+  bookingStyles.href = "/booking-modal.css?v=20260825-1";
+  document.head.append(bookingStyles);
+}
+
 document.querySelectorAll("[data-nav]").forEach((menu) => {
   const bookingLink = menu.querySelector(".site-nav-booking");
   let memoryLink = menu.querySelector('a[href^="/memory-games"]');

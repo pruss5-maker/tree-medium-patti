@@ -5,6 +5,11 @@
     ["/plant-oracle", "Free Online Plant Oracle"],
     ["/animal-oracle", "Free Online Animal Oracle"],
   ];
+  const menuOracleRoutes = [
+    ["/animal-oracle", "Animal Oracle"],
+    ["/tree-oracle", "Tree Oracle"],
+    ["/plant-oracle", "Plant Oracle"],
+  ];
   const oracleLabels = new Map(oracleRoutes);
   const routeFor = (anchor) => {
     try {
@@ -46,9 +51,12 @@
     }
 
     let position = heading;
-    oracleRoutes.forEach(([route]) => {
+    menuOracleRoutes.forEach(([route, menuLabel]) => {
       const link = linksByRoute.get(route);
       if (!link) return;
+      link.textContent = menuLabel;
+      link.dataset.oracleMenuChoice = "";
+      link.setAttribute("aria-label", oracleLabels.get(route));
       position.after(link);
       position = link;
     });
@@ -75,8 +83,11 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
-    .site-nav > a[data-free-online-oracle] {
+    .site-nav > a[data-oracle-menu-choice] {
+      margin-left: 12px;
+      padding-left: 17px;
       font-size: clamp(1.25rem, 4.8vw, 1.55rem);
+      border-left: 1px solid rgba(229, 195, 111, 0.48);
     }
     .home-gift-card span {
       display: grid;
@@ -88,7 +99,7 @@
     }
     @media (max-height: 700px) {
       .site-nav:has(.site-nav-oracle-heading) { gap: 9px; padding-top: 78px; padding-bottom: 34px; }
-      .site-nav > a[data-free-online-oracle] { font-size: 1.18rem; }
+      .site-nav > a[data-oracle-menu-choice] { font-size: 1.18rem; }
       .site-nav-oracle-heading { font-size: 0.64rem; }
     }
     @media (max-width: 760px) {

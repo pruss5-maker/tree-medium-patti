@@ -28,6 +28,29 @@ if (!document.querySelector('link[href*="booking-modal.css"]')) {
   document.head.append(bookingStyles);
 }
 
+if (!document.querySelector('link[href*="control-tooltips.css"]')) {
+  const tooltipStyles = document.createElement("link");
+  tooltipStyles.rel = "stylesheet";
+  tooltipStyles.href = "/control-tooltips.css?v=20260825-1";
+  document.head.append(tooltipStyles);
+}
+
+const labelThumbControls = () => {
+  const labels = [
+    [".thumb-control-rail .menu-toggle", "Menu"],
+    [".thumb-control-rail .header-triskele", "Book your session"],
+    [".thumb-control-rail .theme-toggle", "Light / dark mode"],
+  ];
+  labels.forEach(([selector, label]) => {
+    const control = document.querySelector(selector);
+    if (control) control.dataset.tooltip = label;
+  });
+};
+
+const thumbControlObserver = new MutationObserver(labelThumbControls);
+thumbControlObserver.observe(document.body, { childList: true, subtree: true });
+labelThumbControls();
+
 document.querySelectorAll("[data-nav]").forEach((menu) => {
   const bookingLink = menu.querySelector(".site-nav-booking");
   let memoryLink = menu.querySelector('a[href^="/memory-games"]');

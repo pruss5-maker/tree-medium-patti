@@ -1,0 +1,48 @@
+/* Labels open toward the page, away from the screen edge. */
+.thumb-control-rail > [data-tooltip]::after {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 11px);
+  display: block;
+  width: max-content;
+  max-width: min(230px, calc(100vw - 86px));
+  padding: 7px 11px;
+  color: #fff8e8;
+  background: rgba(5, 39, 31, 0.96);
+  border: 1px solid rgba(232, 196, 125, 0.5);
+  border-radius: 999px;
+  box-shadow: 0 7px 22px rgba(3, 18, 13, 0.28);
+  content: attr(data-tooltip);
+  font: 750 0.74rem/1.2 var(--sans, sans-serif);
+  letter-spacing: 0.02em;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(6px, -50%);
+  transition: opacity 160ms ease, transform 160ms ease;
+  white-space: nowrap;
+}
+
+.thumb-control-rail > [data-tooltip]:hover::after,
+.thumb-control-rail > [data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+html[data-theme="light"] .thumb-control-rail > [data-tooltip]::after {
+  color: #173d30;
+  background: rgba(255, 250, 237, 0.98);
+  border-color: rgba(139, 102, 33, 0.5);
+  box-shadow: 0 7px 22px rgba(58, 42, 17, 0.18);
+}
+
+@media (hover: none) {
+  .thumb-control-rail > [data-tooltip]::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thumb-control-rail > [data-tooltip]::after {
+    transition: none;
+  }
+}

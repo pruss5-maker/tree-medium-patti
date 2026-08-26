@@ -6,9 +6,9 @@
     ["/animal-oracle", "Free Online Animal Oracle"],
   ];
   const menuOracleRoutes = [
-    ["/animal-oracle", "Animal Oracle"],
-    ["/tree-oracle", "Tree Oracle"],
-    ["/plant-oracle", "Plant Oracle"],
+    ["/animal-oracle", "Animal"],
+    ["/tree-oracle", "Tree"],
+    ["/plant-oracle", "Plant"],
   ];
   const oracleLabels = new Map(oracleRoutes);
   const routeFor = (anchor) => {

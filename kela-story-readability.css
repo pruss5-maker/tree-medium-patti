@@ -1,0 +1,47 @@
+/* Readable oracle-card typography for the four foundational KELA messages. */
+.patti-kela-story-card {
+  min-height: 440px;
+}
+
+.patti-kela-card-number {
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.patti-kela-story-card .portal-eyebrow {
+  font-size: clamp(0.86rem, 0.9vw, 1rem);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.patti-kela-story-card h3 {
+  margin-bottom: 16px;
+  font-size: clamp(1.9rem, 2.45vw, 2.55rem);
+  font-weight: 800;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.patti-kela-story-card p:last-child {
+  max-width: 29ch;
+  color: #fff9e8;
+  font-size: clamp(1.05rem, 1.08vw, 1.16rem);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .patti-kela-story-card,
+  .patti-kela-story-card:nth-child(even) {
+    min-height: 460px;
+    padding: 38px 24px 30px;
+  }
+
+  .patti-kela-story-card h3 {
+    font-size: clamp(2rem, 8vw, 2.45rem);
+  }
+
+  .patti-kela-story-card p:last-child {
+    font-size: 1.1rem;
+  }
+}

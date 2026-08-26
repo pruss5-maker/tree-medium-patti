@@ -7,8 +7,7 @@ const renderData = renderDeck === "animal"
   : renderDeck === "plant" ? plantGuides[renderIndex] : treeGuides[renderIndex];
 const renderSlug = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const renderDataSlug = renderSlug(renderData.name);
-const renderFrontProtection = `“Dear ${renderData.name}, please protect my mind and energy. Allow only kind thoughts and words to enter my field.”`;
-const renderBackProtection = renderFrontProtection;
+const renderBackProtection = `“Dear ${renderData.name}, please protect my mind and energy. Allow only kind thoughts and words to enter my field.”`;
 const renderArt = renderDeck === "animal"
   ? `assets/animals/cutouts-transparent/${renderDataSlug}.png`
   : renderData.art;
@@ -41,10 +40,6 @@ const renderFront = `
     <h1 class="${renderNameClass}">${renderData.name}</h1>
     <p class="keyword" style="--accent:${renderData.accent}">${renderData.keyword}</p>
     <span class="ornament" aria-hidden="true">◆</span>
-    <div class="front-protection">
-      <strong>PROTECTION INVOCATION</strong>
-      <p class="protection">${renderFrontProtection}</p>
-    </div>
     <div class="cue">${renderCue}</div>
   </section>`;
 

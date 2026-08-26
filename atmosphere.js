@@ -187,7 +187,7 @@
       speed: [18, 34],
       alpha: [0.45, 0.78],
       isActive: () => body.classList.contains("menu-open"),
-      tint: "#d9b65f",
+      tint: "#f2a6bc",
     });
   }
 

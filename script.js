@@ -14,8 +14,16 @@ const termsCloseButtons = document.querySelectorAll("[data-terms-close]");
 const termsConsent = document.querySelector("[data-terms-consent]");
 const termsContinue = document.querySelector("[data-terms-continue]");
 
+if (!document.querySelector('link[href*="theme-experience.css"]')) {
+  const themeStyles = document.createElement("link");
+  themeStyles.rel = "stylesheet";
+  themeStyles.href = "/theme-experience.css?v=20260825-1";
+  document.head.append(themeStyles);
+}
+
 document.querySelectorAll("[data-nav]").forEach((menu) => {
   const bookingLink = menu.querySelector(".site-nav-booking");
+  let memoryLink = menu.querySelector('a[href^="/memory-games"]');
   let pattiLink = menu.querySelector('a[href^="/meet-patti"]');
   let kelaLink = menu.querySelector('a[href^="/meet-kela"]');
 
@@ -33,8 +41,19 @@ document.querySelectorAll("[data-nav]").forEach((menu) => {
     menu.insertBefore(kelaLink, pattiLink);
   }
 
+  if (!memoryLink) {
+    memoryLink = document.createElement("a");
+    memoryLink.href = "/memory-games";
+    memoryLink.textContent = "Memory Games";
+    menu.insertBefore(memoryLink, kelaLink);
+  }
+
   if (/\/meet-kela(?:\.html)?\/?$/.test(window.location.pathname)) {
     kelaLink.setAttribute("aria-current", "page");
+  }
+
+  if (/\/memory-games(?:\.html)?\/?$/.test(window.location.pathname)) {
+    memoryLink.setAttribute("aria-current", "page");
   }
 });
 
@@ -50,7 +69,7 @@ if (header && menuToggle) {
   if (!document.querySelector('link[href*="header-symbols.css"]')) {
     const symbolStyles = document.createElement("link");
     symbolStyles.rel = "stylesheet";
-    symbolStyles.href = "/header-symbols.css?v=20260825-5";
+    symbolStyles.href = "/header-symbols.css?v=20260825-6";
     document.head.append(symbolStyles);
   }
   if (!header.querySelector(".header-triskele")) {
@@ -1010,7 +1029,7 @@ startMoss();
 
 if (!document.querySelector('script[data-atmosphere]')) {
   const atmosphereScript = document.createElement("script");
-  atmosphereScript.src = "/atmosphere.js?v=20260825-5";
+  atmosphereScript.src = "/atmosphere.js?v=20260825-6";
   atmosphereScript.async = false;
   atmosphereScript.dataset.atmosphere = "";
   document.head.append(atmosphereScript);

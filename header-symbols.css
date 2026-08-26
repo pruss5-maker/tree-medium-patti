@@ -57,7 +57,7 @@ html[data-theme="dark"] .header-triskele {
 
 .menu-petal-canvas {
   opacity: 0.9;
-  filter: drop-shadow(0 2px 7px rgba(225, 183, 82, 0.48));
+  filter: drop-shadow(0 2px 7px rgba(212, 103, 140, 0.42));
 }
 
 html[data-theme="light"] body.menu-open .site-nav::before {

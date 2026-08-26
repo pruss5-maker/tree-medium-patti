@@ -1,0 +1,325 @@
+:root {
+  --kela-light-canvas: #f3ecdc;
+  --kela-light-panel: #fbf6e9;
+  --kela-light-ink: #173d30;
+  --kela-dark-canvas: #041f19;
+  --kela-dark-panel: #082d24;
+  --kela-dark-ink: #fff8e8;
+}
+
+/* One clear theme language across mobile and desktop. */
+html[data-theme="light"] body {
+  color: var(--kela-light-ink);
+  background:
+    radial-gradient(circle at 82% 14%, rgba(199, 160, 78, 0.1), transparent 26rem),
+    var(--kela-light-canvas);
+}
+
+html[data-theme="light"] body.menu-open .site-header,
+html[data-theme="light"] body.menu-open .site-header.is-scrolled,
+html[data-theme="light"] body.menu-open .site-nav {
+  --wordmark-gold-1: #d6aa4d;
+  --wordmark-gold-2: #795719;
+  --wordmark-gold-3: #b9852d;
+  color: var(--kela-light-ink);
+  background: #f3ead7;
+  border-color: rgba(125, 87, 27, 0.24);
+}
+
+html[data-theme="light"] body.menu-open .menu-toggle {
+  color: #694b17;
+  background: rgba(255, 250, 237, 0.92);
+  border-color: rgba(139, 102, 33, 0.55);
+}
+
+html[data-theme="light"] .site-footer {
+  color: rgba(23, 61, 48, 0.76);
+  background: #ebe1cc;
+  border-top-color: rgba(126, 88, 27, 0.2);
+}
+
+html[data-theme="light"] .site-footer .footer-wordmark,
+html[data-theme="light"] .site-footer a {
+  color: var(--kela-light-ink);
+}
+
+html[data-theme="light"] .site-footer .footer-sanctuary-phrase {
+  color: #75531b;
+  border-top-color: rgba(126, 88, 27, 0.24);
+}
+
+/* Memory games: cream page and panels, while the playing-card backs stay green. */
+html[data-theme="light"] body.memory-page,
+html[data-theme="light"] body.memory-hub-page {
+  color: var(--kela-light-ink);
+  background:
+    linear-gradient(rgba(247, 240, 221, 0.91), rgba(243, 236, 220, 0.97)),
+    url("assets/plants/chamomile.webp") center / cover fixed;
+}
+
+html[data-theme="light"] .memory-page .site-header.is-scrolled,
+html[data-theme="light"] .memory-hub-page .site-header.is-scrolled {
+  color: var(--kela-light-ink);
+  background: rgba(248, 242, 227, 0.96);
+}
+
+html[data-theme="light"] .memory-hero h1,
+html[data-theme="light"] .memory-hub-copy h2 {
+  color: #76551d;
+}
+
+html[data-theme="light"] .memory-hero p:not(.eyebrow),
+html[data-theme="light"] .memory-hub-copy p,
+html[data-theme="light"] .memory-status {
+  color: rgba(23, 61, 48, 0.76);
+}
+
+html[data-theme="light"] .memory-deck-nav a {
+  color: #674914;
+  border-color: rgba(139, 102, 33, 0.48);
+}
+
+html[data-theme="light"] .memory-deck-nav a[aria-current="page"],
+html[data-theme="light"] .memory-deck-nav a:hover,
+html[data-theme="light"] .memory-deck-nav a:focus-visible {
+  color: #fff9e8;
+  background: #76551d;
+}
+
+html[data-theme="light"] .memory-game-panel,
+html[data-theme="light"] .memory-hub-card {
+  color: var(--kela-light-ink);
+  background:
+    linear-gradient(150deg, rgba(255, 251, 240, 0.98), rgba(235, 224, 199, 0.98));
+  border-color: rgba(166, 121, 38, 0.62);
+  box-shadow: 0 24px 60px rgba(59, 43, 18, 0.16);
+}
+
+html[data-theme="light"] .memory-field span,
+html[data-theme="light"] .memory-stat span {
+  color: #76551d;
+}
+
+html[data-theme="light"] .memory-field select {
+  color: var(--kela-light-ink);
+  background: #fffaf0;
+  border-color: rgba(139, 102, 33, 0.5);
+}
+
+html[data-theme="light"] .memory-stat strong {
+  color: var(--kela-light-ink);
+}
+
+html[data-theme="light"] .memory-stats,
+html[data-theme="light"] .memory-stat + .memory-stat {
+  border-color: rgba(139, 102, 33, 0.24);
+}
+
+html[data-theme="light"] .memory-button.secondary {
+  color: #674914;
+  border-color: rgba(139, 102, 33, 0.5);
+}
+
+/* Meet Patti and Meet KELA sit on the same warm paper canvas in light mode. */
+html[data-theme="light"] body.patti-door-page {
+  color: var(--kela-light-ink);
+  background:
+    linear-gradient(rgba(248, 242, 227, 0.92), rgba(238, 228, 207, 0.97)),
+    url("assets/kela-tree-hero.webp") center / cover fixed;
+}
+
+html[data-theme="light"] .patti-door-page .site-header.is-scrolled {
+  color: var(--kela-light-ink);
+  background: rgba(248, 242, 227, 0.96);
+}
+
+html[data-theme="light"] .patti-profile-card,
+html[data-theme="light"] .patti-kela-time {
+  color: var(--kela-light-ink);
+  background: linear-gradient(145deg, rgba(255, 251, 240, 0.98), rgba(232, 220, 193, 0.98));
+  box-shadow: 0 22px 60px rgba(59, 43, 18, 0.16);
+}
+
+html[data-theme="light"] .patti-profile-card h1,
+html[data-theme="light"] .patti-kela-time-heading h2,
+html[data-theme="light"] .patti-kela-story-heading h2 {
+  color: var(--kela-light-ink);
+}
+
+html[data-theme="light"] .patti-profile-card p,
+html[data-theme="light"] .patti-kela-time-heading > p:last-child,
+html[data-theme="light"] .patti-kela-story-note {
+  color: rgba(23, 61, 48, 0.78);
+}
+
+html[data-theme="light"] .patti-profile-copy .patti-origin-note {
+  color: #29483d;
+  background: rgba(194, 148, 55, 0.11);
+}
+
+html[data-theme="light"] .patti-origin-note strong {
+  color: #8a621c;
+}
+
+html[data-theme="light"] .patti-kela-time-grid article {
+  color: var(--kela-light-ink);
+  background: rgba(255, 251, 240, 0.72);
+  border-color: rgba(166, 121, 38, 0.42);
+}
+
+html[data-theme="light"] .patti-kela-time-grid h3 {
+  color: #76551d;
+}
+
+html[data-theme="light"] .patti-kela-time-grid p {
+  color: rgba(23, 61, 48, 0.76);
+}
+
+/* Dark mode returns to the original rich forest green—not near-black. */
+html[data-theme="dark"] body {
+  color: var(--kela-dark-ink);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(42, 98, 77, 0.18), transparent 34rem),
+    var(--kela-dark-canvas);
+}
+
+html[data-theme="dark"] body.portal-page {
+  background: var(--kela-dark-canvas);
+}
+
+html[data-theme="dark"] .portal-main::before {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(42, 98, 77, 0.2), transparent 34rem),
+    linear-gradient(160deg, #0a382d, #041f19 72%);
+}
+
+html[data-theme="dark"] .portal-samara-canvas {
+  opacity: 0.7;
+}
+
+html[data-theme="dark"] body.portal-page.menu-open .site-header,
+html[data-theme="dark"] body.portal-page.menu-open .site-nav,
+html[data-theme="dark"] body.menu-open .site-header,
+html[data-theme="dark"] body.menu-open .site-nav {
+  background: #05271f;
+}
+
+html[data-theme="dark"] .site-header.is-scrolled,
+html[data-theme="dark"] .portal-page .site-header,
+html[data-theme="dark"] .patti-door-page .site-header,
+html[data-theme="dark"] .memory-page .site-header,
+html[data-theme="dark"] .memory-hub-page .site-header {
+  background: rgba(5, 39, 31, 0.96);
+}
+
+html[data-theme="dark"] body.patti-door-page {
+  background:
+    linear-gradient(rgba(5, 39, 31, 0.84), rgba(4, 31, 25, 0.95)),
+    url("assets/kela-tree-hero.webp") center / cover fixed;
+}
+
+html[data-theme="dark"] .patti-door-card,
+html[data-theme="dark"] .patti-kela-time {
+  background: linear-gradient(145deg, rgba(18, 74, 59, 0.98), rgba(5, 36, 29, 0.99));
+}
+
+html[data-theme="dark"] body.memory-page,
+html[data-theme="dark"] body.memory-hub-page {
+  background:
+    linear-gradient(rgba(5, 49, 39, 0.91), rgba(4, 31, 25, 0.97)),
+    url("assets/plants/chamomile.webp") center / cover fixed;
+}
+
+html[data-theme="dark"] .memory-game-panel,
+html[data-theme="dark"] .memory-hub-card {
+  background: linear-gradient(155deg, rgba(18, 74, 59, 0.98), rgba(5, 36, 29, 0.99));
+}
+
+html[data-theme="dark"] body.legal-page,
+html[data-theme="dark"] .legal-page .legal-header,
+html[data-theme="dark"] .legal-page .legal-main,
+html[data-theme="dark"] .photo-credit-grid article {
+  background: var(--kela-dark-canvas);
+}
+
+html[data-theme="dark"] .oracle-page,
+html[data-theme="dark"] .oracle-page .oracle-hero {
+  background: var(--kela-dark-canvas);
+}
+
+html[data-theme="dark"] .oracle-page .oracle-vignette,
+html[data-theme="dark"] .tree-oracle-page .oracle-vignette {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(64, 112, 92, 0.22), transparent 25rem),
+    linear-gradient(180deg, rgba(8, 55, 43, 0.76), rgba(4, 31, 25, 0.94));
+}
+
+html[data-theme="dark"] body.protection-page,
+html[data-theme="dark"] .protection-intro,
+html[data-theme="dark"] .protection-principles,
+html[data-theme="dark"] .protection-practice,
+html[data-theme="dark"] .protection-videos {
+  color: var(--kela-dark-ink);
+  background: var(--kela-dark-canvas);
+}
+
+html[data-theme="dark"] .protection-intro h2,
+html[data-theme="dark"] .protection-heading h2,
+html[data-theme="dark"] .protection-practice-copy h2,
+html[data-theme="dark"] .protection-heading p:last-child,
+html[data-theme="dark"] .practice-lede,
+html[data-theme="dark"] .protection-steps li {
+  color: var(--kela-dark-ink);
+}
+
+html[data-theme="dark"] .protection-steps li {
+  border-color: rgba(221, 194, 148, 0.24);
+}
+
+html[data-theme="dark"] body.animal-game-page {
+  background: var(--kela-dark-canvas);
+}
+
+html[data-theme="dark"] .site-footer,
+html[data-theme="dark"] .legal-footer {
+  background: #05271f;
+}
+
+/* The cherry blossom is the primary thumb action, just larger than its companions. */
+.thumb-control-rail .menu-toggle {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+}
+
+.thumb-control-rail .menu-toggle::before {
+  width: 41px;
+  height: 41px;
+  background-position: -4px -1px;
+  background-size: 89px 96px;
+}
+
+@media (max-width: 760px) {
+  html[data-theme="light"] body.memory-page,
+  html[data-theme="light"] body.memory-hub-page,
+  html[data-theme="light"] body.patti-door-page,
+  html[data-theme="dark"] body.memory-page,
+  html[data-theme="dark"] body.memory-hub-page,
+  html[data-theme="dark"] body.patti-door-page {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 520px) {
+  .thumb-control-rail .menu-toggle {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+
+  .thumb-control-rail .menu-toggle::before {
+    width: 38px;
+    height: 38px;
+    background-size: 83px 89px;
+  }
+}

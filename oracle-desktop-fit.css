@@ -1,0 +1,41 @@
+/* Keep every drawn oracle card fully visible in a standard desktop viewport. */
+@media (min-width: 981px) {
+  .oracle-page .oracle-hero {
+    min-height: 100svh;
+    padding-block: 80px 12px;
+  }
+
+  .oracle-page .oracle-layout:has(.oracle-card.is-revealed) {
+    height: calc(100svh - 92px);
+    min-height: 0;
+    align-items: center;
+  }
+
+  .oracle-page .oracle-experience:has(.oracle-card.is-revealed) {
+    width: min(100%, 500px, calc(65.637svh - 108px));
+    min-width: 0;
+    max-width: min(100%, 500px, calc(65.637svh - 108px));
+  }
+
+  .animal-oracle-page .oracle-experience:has(.oracle-card.is-revealed) {
+    width: min(100%, 485px, calc(65.637svh - 108px));
+    max-width: min(100%, 485px, calc(65.637svh - 108px));
+  }
+
+  .oracle-page .oracle-result-actions {
+    gap: 12px;
+    justify-content: center;
+    padding-top: 8px;
+  }
+
+  .oracle-page .oracle-result-actions .button {
+    min-height: 44px;
+    padding: 9px 14px;
+  }
+}
+
+@media (min-width: 981px) and (max-height: 820px) {
+  .oracle-page .oracle-result-actions small {
+    display: none;
+  }
+}

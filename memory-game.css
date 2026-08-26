@@ -597,9 +597,9 @@ body.memory-modal-open { overflow: hidden; }
   .memory-page .memory-stat strong { font-size: 1rem; }
   .memory-page .memory-status { min-height: 18px; margin: 0; grid-column: 1 / -1; font-size: 0.84rem; }
   .memory-page .memory-board {
-    width: 100%;
+    width: min(100%, clamp(360px, 53vh, 520px));
     margin-inline: auto;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
   }
   .memory-page .memory-card { aspect-ratio: 7 / 8; }

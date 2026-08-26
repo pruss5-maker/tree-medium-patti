@@ -13,11 +13,11 @@ if (gameRoot) {
   const printGrid = document.querySelector("[data-print-grid]");
   const printDeckName = document.querySelector("[data-print-deck-name]");
 
-  if (printGrid && !document.querySelector("[data-memory-print-fold-styles]")) {
+  if (printGrid && !document.querySelector("[data-memory-print-duplex-styles]")) {
     const printStyles = document.createElement("link");
     printStyles.rel = "stylesheet";
-    printStyles.href = "memory-print-fold.css?v=20260826-1";
-    printStyles.dataset.memoryPrintFoldStyles = "";
+    printStyles.href = "memory-print-duplex.css?v=20260826-1";
+    printStyles.dataset.memoryPrintDuplexStyles = "";
     document.head.append(printStyles);
   }
 
@@ -175,26 +175,29 @@ if (gameRoot) {
     if (!deck || !printGrid) return;
     printDeckName.textContent = `${deck.label} Memory Cards`;
     const cards = deck.items.flatMap((item) => [0, 1].map(() => `
-        <article class="print-fold-card">
-          <section class="print-card-face print-card-front">
-            <span class="print-card-brand">KELA</span>
-            <img src="${item.image}" width="640" height="640" alt="" />
-            <strong>${item.name}</strong>
-          </section>
-          <section class="print-card-face print-card-back" aria-label="Triskelion card back">
-            <img class="print-card-triskele" src="assets/memory-games/printable/triskele-outline.svg" alt="" />
-          </section>
+        <article class="print-memory-card">
+          <span class="print-card-brand">KELA</span>
+          <img src="${item.image}" width="640" height="640" alt="" />
+          <strong>${item.name}</strong>
         </article>`));
     const pages = [];
-    const cardsPerSheet = 12;
+    const cardsPerSheet = 24;
     for (let index = 0; index < cards.length; index += cardsPerSheet) {
+      const backCards = Array.from({ length: cardsPerSheet }, () => `
+        <article class="print-card-back-sheet" aria-label="Triskelion card back">
+          <img class="print-card-triskele" src="assets/memory-games/printable/triskele-outline.svg" alt="" />
+        </article>`).join("");
       pages.push(`
-        <section class="print-page">
+        <section class="print-page print-duplex-front">
           <header class="print-page-header">
             <h2>${deck.label} Memory Cards</h2>
-            <p>KELA · Print at 100% · Color · Cut · Fold · Match</p>
+            <p>KELA · Double-sided · Flip on long edge · Color · Cut · Match</p>
           </header>
           <div class="print-page-grid">${cards.slice(index, index + cardsPerSheet).join("")}</div>
+        </section>
+        <section class="print-page print-duplex-back">
+          <header class="print-page-header" aria-hidden="true"><h2>Card Backs</h2></header>
+          <div class="print-page-grid">${backCards}</div>
         </section>`);
     }
     printGrid.innerHTML = pages.join("");

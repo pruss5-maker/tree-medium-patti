@@ -1,0 +1,25 @@
+/* Low-ink triskelion backs for true double-sided memory-card printing. */
+@media print {
+  .print-duplex-back .print-page-header {
+    visibility: hidden;
+  }
+
+  .print-card-back-sheet {
+    display: grid;
+    width: 100%;
+    height: 1.57in;
+    overflow: hidden;
+    place-items: center;
+    background: #fff;
+    border: 1px dashed #555;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-card-triskele {
+    display: block;
+    width: min(96%, 1.48in);
+    height: min(96%, 1.48in);
+    object-fit: contain;
+  }
+}

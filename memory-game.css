@@ -546,6 +546,25 @@ body.memory-modal-open { overflow: hidden; }
 }
 
 @media (min-width: 761px) {
+  .memory-hub-page .memory-hub-grid {
+    width: min(calc(100% - 48px), 720px);
+  }
+  .memory-hub-page .memory-hub-card {
+    height: 360px;
+    flex-basis: 33%;
+    grid-template-rows: minmax(0, 62%) minmax(0, 38%);
+  }
+  .memory-hub-page .memory-hub-copy {
+    padding: 10px 14px 18px;
+  }
+  .memory-hub-page .memory-hub-copy h2 {
+    font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+    line-height: 1.02;
+  }
+  .memory-hub-page .memory-hub-copy p {
+    font-size: 0.9rem;
+    line-height: 1.28;
+  }
   .memory-page .site-header {
     min-height: 58px;
     padding-block: 6px;

@@ -17,11 +17,11 @@ body.portal-page {
 }
 
 html[data-theme="light"] .home-main > .portal-samara-canvas {
-  opacity: 0.14;
+  opacity: 0.22;
 }
 
 html[data-theme="dark"] .home-main > .portal-samara-canvas {
-  opacity: 0.2;
+  opacity: 0.27;
 }
 
 .home-booking-hero {

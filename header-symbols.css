@@ -64,6 +64,12 @@ html[data-theme="light"] body.menu-open .site-nav::before {
   opacity: 0.28;
 }
 
+html[data-theme="light"] body.portal-page.menu-open .site-nav::before {
+  opacity: 0.42;
+  filter: sepia(1) saturate(1.2) hue-rotate(354deg) brightness(0.55) contrast(1.5) drop-shadow(0 0 14px rgba(126, 88, 27, 0.2));
+  mix-blend-mode: multiply;
+}
+
 .menu-toggle::before {
   animation: kela-cherry-float 3.2s ease-in-out infinite;
 }

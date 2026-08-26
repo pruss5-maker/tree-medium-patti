@@ -50,7 +50,7 @@ if (header && menuToggle) {
   if (!document.querySelector('link[href*="header-symbols.css"]')) {
     const symbolStyles = document.createElement("link");
     symbolStyles.rel = "stylesheet";
-    symbolStyles.href = "/header-symbols.css?v=20260825-4";
+    symbolStyles.href = "/header-symbols.css?v=20260825-5";
     document.head.append(symbolStyles);
   }
   if (!header.querySelector(".header-triskele")) {

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="theme-color" content="#0b3b2d" />
+    <title>Patti Studio | KELA</title>
+    <link rel="icon" href="assets/kela-mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=20260827-1" />
+    <link rel="stylesheet" href="patti-studio.css?v=20260826-2" />
+    <script src="patti-studio.js?v=20260826-3" defer></script>
+  </head>
+  <body class="patti-studio-page">
+    <main class="patti-studio-shell">
+      <section class="patti-studio-card" aria-labelledby="patti-studio-title">
+        <p class="patti-studio-mark">KELA<small>Messages from the Trees</small></p>
+        <div data-patti-signed-out>
+          <p class="eyebrow">Private creator access</p>
+          <h1 id="patti-studio-title">Patti Studio</h1>
+          <p class="patti-studio-intro">
+            Sign in on this browser to unlock fresh Oracle draws for recording. Everyone visiting the public Oracles will continue receiving one daily card.
+          </p>
+          <form class="patti-studio-login" data-patti-login>
+            <label for="patti-passcode">Studio passcode</label>
+            <input id="patti-passcode" name="passcode" type="password" autocomplete="current-password" required data-patti-passcode />
+            <button type="submit">Open Patti Studio</button>
+          </form>
+        </div>
+
+        <div data-patti-signed-in hidden>
+          <p class="eyebrow">Private creator access</p>
+          <h1>Patti Studio is open</h1>
+          <p class="patti-studio-intro">
+            Draw freely for a recording, or choose any exact card by name from your private library below.
+          </p>
+          <p class="patti-studio-section-label">Fresh recording draw</p>
+          <nav class="patti-studio-decks" aria-label="Patti Studio Oracles">
+            <a class="patti-studio-animal" href="/animal-oracle">Animal Oracle</a>
+            <a class="patti-studio-tree" href="/tree-oracle">Tree Oracle</a>
+            <a class="patti-studio-plant" href="/plant-oracle">Plant Oracle</a>
+          </nav>
+          <section class="patti-studio-library" aria-labelledby="patti-card-library-title">
+            <p class="patti-studio-section-label">Choose the exact card</p>
+            <h2 id="patti-card-library-title">Your complete Oracle library</h2>
+            <p>Tap any name to open that card. Tap the card itself to turn between its portrait and meaning.</p>
+            <div class="patti-studio-library-groups" data-patti-card-library></div>
+          </section>
+          <button class="patti-studio-logout" type="button" data-patti-logout>Sign out this browser</button>
+        </div>
+        <p class="patti-studio-status" role="status" aria-live="polite" data-patti-status></p>
+      </section>
+    </main>
+  </body>
+</html>

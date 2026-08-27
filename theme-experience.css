@@ -223,6 +223,110 @@ html[data-theme="dark"] .patti-kela-time {
   background: linear-gradient(145deg, rgba(18, 74, 59, 0.98), rgba(5, 36, 29, 0.99));
 }
 
+/* Let Patti's falling maple samaras glow through her profile panel. */
+.meet-patti-page .patti-door-main {
+  position: relative;
+  isolation: isolate;
+}
+
+.meet-patti-page .portal-samara-canvas {
+  z-index: 0;
+  opacity: 0.88;
+}
+
+.meet-patti-page .patti-profile-card {
+  z-index: 1;
+  background: linear-gradient(145deg, rgba(18, 74, 59, 0.78), rgba(5, 36, 29, 0.84));
+  backdrop-filter: blur(1.5px);
+}
+
+html[data-theme="light"] .meet-patti-page .patti-profile-card {
+  background: linear-gradient(145deg, rgba(255, 251, 240, 0.84), rgba(232, 220, 193, 0.78));
+}
+
+html[data-theme="dark"] .meet-patti-page .patti-profile-card {
+  background: linear-gradient(145deg, rgba(18, 74, 59, 0.76), rgba(5, 36, 29, 0.82));
+}
+
+.meet-patti-page .patti-purpose-card {
+  z-index: 1;
+  display: grid;
+  padding: clamp(34px, 5vw, 64px);
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(30px, 5vw, 68px);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(229, 186, 95, 0.12), transparent 22rem),
+    linear-gradient(145deg, rgba(18, 74, 59, 0.9), rgba(5, 36, 29, 0.94));
+  backdrop-filter: blur(1.5px);
+}
+
+.patti-purpose-heading {
+  position: relative;
+  z-index: 2;
+}
+
+.patti-purpose-heading h2 {
+  max-width: 8ch;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  text-wrap: balance;
+}
+
+.patti-purpose-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.patti-purpose-copy p {
+  max-width: 66ch;
+  margin: 0;
+  color: rgba(255, 249, 232, 0.84);
+  font-family: var(--serif, Georgia, serif);
+  font-size: clamp(1.02rem, 1.25vw, 1.15rem);
+  line-height: 1.72;
+}
+
+.patti-purpose-copy p + p {
+  margin-top: 20px;
+}
+
+.patti-purpose-copy .patti-booking-button {
+  margin-top: 28px;
+}
+
+html[data-theme="light"] .meet-patti-page .patti-purpose-card {
+  color: var(--kela-light-ink);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(194, 148, 55, 0.12), transparent 22rem),
+    linear-gradient(145deg, rgba(255, 251, 240, 0.94), rgba(232, 220, 193, 0.9));
+  box-shadow: 0 22px 60px rgba(59, 43, 18, 0.16);
+}
+
+html[data-theme="light"] .patti-purpose-heading h2 {
+  color: var(--kela-light-ink);
+}
+
+html[data-theme="light"] .patti-purpose-copy p {
+  color: rgba(23, 61, 48, 0.8);
+}
+
+@media (max-width: 760px) {
+  .meet-patti-page .patti-purpose-card {
+    padding: 38px 28px 42px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .patti-purpose-heading h2 {
+    max-width: 10ch;
+    font-size: clamp(2.7rem, 12vw, 3.8rem);
+  }
+
+  .patti-purpose-copy p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
 html[data-theme="dark"] body.memory-page,
 html[data-theme="dark"] body.memory-hub-page {
   background:

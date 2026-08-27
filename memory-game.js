@@ -60,6 +60,9 @@ if (gameRoot) {
     if (!winModal || winModal.hidden) return;
     winModal.hidden = true;
     document.body.classList.remove("memory-modal-open");
+    if (window.location.hash === "#found-you") {
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    }
   };
 
   const showWinningGuide = (item) => {
@@ -120,8 +123,22 @@ if (gameRoot) {
     updateTimer();
     statusOutput.textContent = `You found all ${matches} pairs in ${moves} moves. ${winningItem.name} is your winning ${deck.label.toLowerCase()}!`;
     gameRoot.classList.add("is-complete");
+    window.KelaCompanions?.rememberFound?.({
+      deck: deckKey,
+      slug: winningItem.slug,
+      name: winningItem.name,
+      image: winningItem.image,
+    });
     window.clearTimeout(winTimerId);
     winTimerId = window.setTimeout(() => showWinningGuide(winningItem), 560);
+  };
+
+  const reopenFoundGuide = () => {
+    if (window.location.hash !== "#found-you") return;
+    const savedGuide = window.KelaCompanions?.getFound?.(deckKey);
+    const foundItem = deck?.items.find((item) => item.slug === savedGuide?.slug);
+    if (!foundItem) return;
+    window.requestAnimationFrame(() => showWinningGuide(foundItem));
   };
 
   const hideUnmatched = () => {
@@ -240,6 +257,8 @@ if (gameRoot) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !winModal?.hidden) closeWinningGuide();
   });
+  window.addEventListener("hashchange", reopenFoundGuide);
   renderPrintDeck();
   newGame();
+  reopenFoundGuide();
 }

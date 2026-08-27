@@ -3,222 +3,222 @@ const animalGuides = [
     name: "Blue Owl",
     art: "assets/animals/blue-owl.webp",
     isolatedArt: "assets/animals/blue-owl-cutout-v1.webp",
-    keyword: "Quiet confirmation",
+    keyword: "Listen Before Looking",
     accent: "#86b8d8",
     message:
-      "The Blue Owl arrives when part of you already knows. You do not need to force an answer tonight. Make enough quiet to hear the wisdom that has been waiting beneath the noise.",
+      "Owl's facial disk directs sound toward ears placed at different heights, while soft feather edges quiet its flight. Blue Owl asks you to receive before you pursue. Close your eyes for three breaths. Name the truth you can hear when you stop searching for proof.",
     echo:
-      "If an owl begins appearing—in a toy, picture, conversation, book, dream, song, or beside a tree—pause. Its return may be confirmation that your quiet knowing deserves your trust.",
+      "If Blue Owl finds you in a picture, dream, story, sound, or beside a tree, pause. Repeat the truth you named. Let the encounter confirm listening, not fear.",
   },
   {
     name: "Octopus",
     art: "assets/animals/octopus.webp",
-    keyword: "Many paths",
+    keyword: "Distributed Intelligence",
     accent: "#ad83bc",
     message:
-      "Octopus reminds you that flexibility is a form of intelligence. One route closing does not mean the journey has ended. You may be ready to loosen your grip and work with more than one possibility.",
+      "An octopus carries much of its nervous system through its arms and survives without a shell through intelligence, camouflage, and flexible movement. Your answer may not come from one central plan. Sketch three possible routes with your hands. Test the smallest one today.",
     echo:
-      "If an octopus finds you through a picture, toy, menu, conversation, pattern, or unexpected reference, let it confirm that another route is available. You are allowed to adapt without abandoning yourself.",
+      "If Octopus finds you through an image, object, conversation, or unexpected reference, ask which unused route has just opened. Adaptation is not self-abandonment.",
   },
   {
     name: "Tiger",
     art: "assets/animals/tiger.webp",
-    keyword: "Focused courage",
+    keyword: "Gathered Power",
     accent: "#d79a55",
     message:
-      "Tiger does not scatter its power. It gathers, watches, and moves when the moment is right. Your confirmation may be asking for one brave, deliberate step instead of ten anxious ones.",
+      "Tiger is an ambush hunter: it relies on camouflage, patience, and one concentrated movement rather than constant pursuit. Gather your energy around one target. Write the next deliberate step in five words or fewer, then do only that before expanding the plan.",
     echo:
-      "When tiger stripes, images, names, toys, or stories begin crossing your path, pause. Tiger may be confirming that you have enough strength for the next clear action.",
+      "When Tiger's stripes, name, image, or story crosses your path, return to the one target you chose. Let it confirm concentration rather than force.",
   },
   {
     name: "Parrot",
     art: "assets/animals/parrot.webp",
-    keyword: "The repeated word",
+    keyword: "Speak to Belong",
     accent: "#79ad83",
     message:
-      "Parrot symbolizes communication, repetition, and authentic expression. Notice the words or ideas that keep returning; they may be guiding you toward what needs to be heard or spoken.",
+      "Wild parrots learn signature contact calls and use them to recognize and address one another. Voice is part of how they stay connected. Say one sentence you have edited down to keep the peace. Speak it kindly to the person who actually needs to hear it.",
     echo:
-      "If parrots appear—or the same unusual words keep arriving through different people and places—receive the repetition as confirmation. Notice what is being echoed and what you are ready to say.",
+      "If Parrot appears, or the same unusual words repeat through different places, ask what honest sentence wants relationship rather than performance.",
   },
   {
     name: "Fox",
     art: "assets/animals/fox.webp",
-    keyword: "Wise discernment",
+    keyword: "Adaptive Discernment",
     accent: "#c8794f",
     message:
-      "Fox knows that the straight path is not always the wisest path. Look again. A subtle opening, clever adjustment, or quiet boundary may carry you farther than pushing harder.",
+      "Fox can hear prey beneath grass or snow, alter its route, and cache extra food for later. Discernment listens for what is hidden and protects what will be needed. Stop pushing the obvious path. Name one quieter route and one resource you need to preserve.",
     echo:
-      "When a fox appears in art, language, a logo, a story, a toy, or the landscape, pause. Its appearance may confirm that you are seeing the hidden path more clearly than you realize.",
+      "When Fox appears in art, language, story, or landscape, listen again before moving. Let the encounter confirm a wise adjustment already forming.",
   },
   {
     name: "Bunny Rabbit",
     art: "assets/animals/bunny-rabbit.webp",
-    keyword: "Tender readiness",
+    keyword: "Regulated Readiness",
     accent: "#d7b6aa",
     message:
-      "Bunny Rabbit brings alertness without hardness. A gentle opening is still an opening. You can move toward what is new while staying close to the ground and kind to your nervous system.",
+      "Rabbit's wide field of vision, sensitive ears, stillness, and sudden zigzag movement all serve awareness. Readiness does not require living in panic. Look around the room, exhale longer than you inhale, then take one gentle step toward what is new.",
     echo:
-      "If rabbits hop into your day through nature, a child’s toy, a book, a picture, or a passing phrase, let their arrival confirm that a new beginning can be approached softly.",
+      "If Bunny Rabbit finds you in nature, a toy, book, picture, or phrase, pause and soften your breath. Let it confirm that alertness can remain gentle.",
   },
   {
     name: "Mole",
     art: "assets/animals/mole.webp",
-    keyword: "The unseen work",
+    keyword: "Trust What You Can Touch",
     accent: "#9b876e",
     message:
-      "Mole works below the surface, where progress cannot always be witnessed. Something important may be taking root before it becomes visible. Darkness is not proof that nothing is happening.",
+      "Moles navigate dark tunnels through exquisitely sensitive touch organs on the nose. They do not wait for visibility to make contact with what is real. Put your hands on the ground, a table, or your work. Complete one physical task that needs no audience.",
     echo:
-      "If a mole, burrow, tunnel, mound, or underground image catches your attention, pause. It may confirm that the work you cannot yet show is still real and still moving.",
+      "If Mole, a tunnel, mound, or underground image catches your attention, touch what is actually in front of you. Let it confirm the unseen work your hands already know.",
   },
   {
     name: "Turtle",
     art: "assets/animals/turtle.webp",
-    keyword: "Right timing",
+    keyword: "Carry Your Center",
     accent: "#719b7b",
     message:
-      "Turtle carries home and direction together. Slow does not mean stuck. Protect what is tender, keep your pace honest, and let steadiness become its own kind of progress.",
+      "A turtle's shell is living skeleton—ribs and vertebrae joined into protection it cannot simply leave behind. Turtle teaches embodied safety, not hiding. Slow one task to a pace your body can stay present for. Protect the pace and finish one honest portion.",
     echo:
-      "When a turtle appears in conversation, jewelry, a picture, a toy, a dream, or near water, receive it as confirmation that your pace does not need to match anyone else’s.",
+      "When Turtle appears in conversation, jewelry, image, dream, or near water, return to your own pace. Let it confirm that protection can travel with progress.",
   },
   {
     name: "Hummingbird",
     art: "assets/animals/hummingbird.webp",
-    keyword: "Small joy",
+    keyword: "Joy and Restoration",
     accent: "#6ab3a9",
     message:
-      "Hummingbird finds nourishment in precise, shining moments. You do not need a perfect life to receive real sweetness. Follow the small thing that brings your spirit back into the room.",
+      "Hummingbird can hover, reverse, and move in nearly every direction, yet its intense metabolism also requires torpor to conserve energy. Joy is fuel, and rest protects the ability to receive it. Choose one small sweetness today and schedule one real recovery period beside it.",
     echo:
-      "If a hummingbird flashes through your day—in nature, an ornament, a picture, a gift, or someone’s words—pause. Its arrival may confirm that joy is not a distraction from your path; it is fuel for it.",
+      "If Hummingbird flashes through your day, receive the joy and check the recovery. Let it confirm that sweetness and rest belong to the same rhythm.",
   },
   {
     name: "Bear",
     art: "assets/animals/bear.webp",
-    keyword: "Sacred boundaries",
+    keyword: "Seasonal Power",
     accent: "#9c765b",
     message:
-      "Bear knows when to stand tall and when to retreat into rest. Protecting your inner sanctuary is not selfish. A strong boundary may be the kindness your whole life needs.",
+      "Bear responds to winter scarcity by slowing breath and activity in the den, then returns when the season changes. Power includes knowing which season you are in. Write either ACT or REST at the top of a page. Choose one behavior that honors the honest answer.",
     echo:
-      "When a bear appears through a story, logo, stuffed animal, conversation, dream, or woodland sign, let it confirm your permission to rest, protect, or say a grounded no.",
+      "When Bear appears through a story, dream, sign, or woodland encounter, ask again: Is this my season to act or restore? Let the answer set the boundary.",
   },
   {
     name: "Deer",
     art: "assets/animals/deer.webp",
-    keyword: "Soft strength",
+    keyword: "Sensitive Renewal",
     accent: "#b79a71",
     message:
-      "Deer notices what others rush past. Sensitivity is not weakness; it is information. Move gently enough to hear what your body and surroundings have already been telling you.",
+      "Deer uses wide ears and keen senses to read its surroundings, while antlers are released and grown anew each year. Sensitivity and renewal belong together. Listen for one signal your body has repeated. Release one old crown, role, or expectation that keeps you from responding.",
     echo:
-      "If deer begin appearing in the landscape, a picture, clothing, conversation, or dream, pause. Their presence may confirm that your softness is helping you navigate wisely.",
+      "If Deer appears in the landscape, image, clothing, conversation, or dream, notice the repeated body signal. Let Deer confirm that release can be a form of strength.",
   },
   {
     name: "Crow",
     art: "assets/animals/crow.webp",
-    keyword: "Confirmation is coming",
+    keyword: "Remember the Signal",
     accent: "#7f819a",
     message:
-      "Crow is your confirmation animal for today. It may show up when you need reassurance that you are moving in the right direction. You do not need to search for Crow. Let Crow find you.",
+      "Crow recognizes faces, links them with experience, and shares important information socially. Crow is still your confirmation animal for today—but give the signal something clear to remember. Write one honest question. Do not search for Crow. Let Crow find you, then return to the question.",
     echo:
-      "Crow may appear as a living bird, its call, a black feather, a picture, logo, toy, book, dream, or someone unexpectedly mentioning a crow. When Crow shows up, pause and remember the path you asked about today. Receive the timing as the confirmation you were asking for.",
+      "Crow may arrive as a living bird, call, feather, picture, logo, toy, book, dream, or unexpected mention. When Crow finds you, pause and reread your question. Receive the timing without forcing a yes or no.",
   },
   {
     name: "Whale",
     art: "assets/animals/whale.webp",
-    keyword: "The deeper voice",
+    keyword: "Deep Breath, Far Voice",
     accent: "#6e9bb2",
     message:
-      "Whale carries a voice across enormous distances. Beneath surface noise, a deeper truth is sounding through you. Give it enough space to become a clear note.",
+      "Whales return consciously to the surface for air, dive into depths, and carry sound across miles of water. Depth and expression both depend on breath. Take three slow breaths. Write the truth beneath the surface noise, then speak one clear sentence to someone who can receive it.",
     echo:
-      "If whales surface through a documentary, song, conversation, artwork, toy, or dream, receive their arrival as confirmation to listen beneath the obvious and honor your deeper voice.",
+      "If Whale surfaces through a documentary, song, art, toy, conversation, or dream, take a full breath before interpreting it. Let it confirm the deeper voice you chose to express.",
   },
   {
     name: "Frog",
     art: "assets/animals/frog.webp",
-    keyword: "Crossing seasons",
+    keyword: "Change Your Breathing",
     accent: "#75a765",
     message:
-      "Frog belongs to water and land. You are allowed to be between worlds while a transition completes. What feels unfamiliar may simply be the next environment teaching you how to breathe.",
+      "Frog changes body and habitat through metamorphosis, and its permeable skin makes the surrounding environment part of every breath. Transition is not only internal; conditions matter. Name the next form you are entering and change one condition around you to help it live.",
     echo:
-      "When frogs, lily pads, rainy-night calls, green figures, or frog references appear, pause. Frog may be confirming that you are crossing a real threshold, even if you have not fully arrived.",
+      "When Frog, lily pads, rain calls, or green figures appear, check the conditions around your change. Let Frog confirm the threshold and your responsibility to support it.",
   },
   {
     name: "Spider",
     art: "assets/animals/spider.webp",
-    keyword: "Intentional weaving",
+    keyword: "Read the Vibration",
     accent: "#a38b71",
     message:
-      "Spider creates through patient connection. Each choice is a strand, and the pattern becomes visible over time. You do not need to weave everything today—only the next honest thread.",
+      "Spider makes different silks for different purposes and reads information through vibration in the web. Not every tremor requires the same response. Draw the pattern around your question. Mark the strand carrying the strongest signal and take the next action only on that thread.",
     echo:
-      "If spiders, webs, woven patterns, or web-like language begin appearing, pause. Their presence may confirm that your small choices are forming something larger and more coherent.",
+      "If Spider, webs, woven patterns, or web language appears, ask which strand is actually moving. Let it confirm the connection that deserves attention now.",
   },
   {
     name: "Horse",
     art: "assets/animals/horse.webp",
-    keyword: "Directed momentum",
+    keyword: "Directed Momentum",
     accent: "#b08766",
     message:
-      "Horse carries freedom through movement, relationship, and direction. Your energy may be ready to travel, but it needs a path worthy of its strength.",
+      "Horses move through the day while grazing, form stable social bonds, and read subtle shifts in posture and expression. Movement is healthiest when direction and relationship remain connected. Name where you are going, who can travel beside you, and the first ten-minute move.",
     echo:
-      "When horses appear in a field, film, conversation, logo, toy, or dream, let their arrival confirm that momentum is returning. Choose where you want that energy to carry you.",
+      "When Horse appears in a field, film, logo, toy, conversation, or dream, name the destination before increasing speed. Let it confirm directed momentum.",
   },
   {
     name: "Elephant",
     art: "assets/animals/elephant.webp",
-    keyword: "Remembered strength",
+    keyword: "Collective Memory",
     accent: "#8d9694",
     message:
-      "Elephant remembers the path and the ones who walked it together. You may already possess the experience, support, or wisdom needed for this moment. Remember what has carried you before.",
+      "Elephant family groups are guided by experienced matriarchs who make decisions and steady the herd. Wisdom is carried through relationship, not stored for one body alone. Contact one elder, trusted friend, or keeper of shared memory. Ask the question you do not need to carry alone.",
     echo:
-      "If elephants arrive through a figurine, pattern, gift, book, conversation, or dream, pause. Their presence may confirm that an old strength or trusted connection is still available to you.",
+      "If Elephant arrives through a figure, pattern, book, gift, conversation, or dream, remember your living council. Let it confirm that help and history remain available.",
   },
   {
     name: "Moth",
     art: "assets/animals/moth.webp",
-    keyword: "Discerned intuition",
+    keyword: "Choose True Light",
     accent: "#bcae83",
     message:
-      "Moth is drawn by light, yet not every brightness is meant to guide you. Let intuition and discernment travel together. The right light will not require you to abandon yourself.",
+      "Artificial light can pull moths away from feeding, breeding, and the darkness their lives require. Brightness is not the same as guidance. Turn off one false light—a notification, comparison, demand, or performance. Notice what quieter direction becomes visible.",
     echo:
-      "When moths, winged night shapes, lamps, fabric patterns, or moonlit images begin appearing, pause. Moth may be confirming the direction of your attention while asking you to choose your light carefully.",
+      "When Moth, winged night shapes, lamps, or moonlit images appear, ask what has captured your attention. Let Moth confirm the need to choose your light deliberately.",
   },
   {
     name: "Bee",
     art: "assets/animals/bee.webp",
-    keyword: "Meaningful belonging",
+    keyword: "Share the Direction",
     accent: "#d1ad55",
     message:
-      "Bee brings individual purpose into a living community. Your contribution matters, but you were never meant to carry the whole hive alone. Let giving and receiving become reciprocal.",
+      "A honeybee returns from a rich flower patch and dances the direction and distance for the colony. Nourishment becomes more powerful when its location is shared. Tell one person where you found help, beauty, work, or relief. Then ask what direction they can share with you.",
     echo:
-      "If bees, honeycomb, buzzing, bee jewelry, logos, or conversation begin following you, pause. Their presence may confirm that the right work and the right community are trying to meet.",
+      "If Bee, honeycomb, buzzing, jewelry, or a bee image follows you, ask what useful direction wants to be shared. Let Bee confirm reciprocal belonging.",
   },
   {
     name: "Dolphin",
     art: "assets/animals/dolphin.webp",
-    keyword: "Playful connection",
+    keyword: "Named Connection",
     accent: "#61a9bc",
     message:
-      "Dolphin moves through intelligence, relationship, and play. Lightness is not always avoidance. Sometimes it is the doorway that lets communication and possibility move again.",
+      "Dolphins learn individual signature whistles that help them recognize one another and keep the group connected. Connection becomes safer when identity and need are clear. Say your name, your real need, and one invitation: “Can we talk, help, rest, or play together?”",
     echo:
-      "When dolphins surface in media, a conversation, a toy, a logo, a dream, or near water, receive their appearance as confirmation that joy and honest connection can help open the way.",
+      "When Dolphin surfaces in media, conversation, a toy, logo, dream, or near water, name the connection you need. Let it confirm that clear contact can include play.",
   },
   {
     name: "Snake",
     art: "assets/animals/snake.webp",
-    keyword: "Necessary renewal",
+    keyword: "Friction for Renewal",
     accent: "#78965f",
     message:
-      "Snake cannot keep a skin it has outgrown. Release can feel vulnerable before it feels freeing. What no longer fits may be ready to leave without becoming an enemy.",
+      "Snake grows a new layer beneath the old, then uses moisture and rough surfaces to loosen and turn the outgrown skin away. Renewal needs support and useful friction. Name what no longer fits. Choose the person, place, deadline, or boundary that will help you release it.",
     echo:
-      "If snakes, shed skins, winding patterns, jewelry, stories, or unexpected references appear, pause. Snake may be confirming that a cycle of renewal has already begun.",
+      "If Snake, shed skin, winding patterns, jewelry, or a sudden reference appears, identify the support helping you release. Let it confirm renewal already underway.",
   },
   {
     name: "Dragonfly",
     art: "assets/animals/dragonfly.webp",
-    keyword: "A clearer angle",
+    keyword: "Enter a New Element",
     accent: "#78b7ae",
     message:
-      "Dragonfly changes direction in an instant and catches light from more than one angle. The truth may not be hidden; you may simply need to view it from another position.",
+      "Dragonfly begins as an aquatic nymph, then emerges winged for life in the air. Its change is not a better version of the same environment; it is entry into another element. Move your question to a new place, medium, or viewpoint. Make one action the old setting could not hold.",
     echo:
-      "When dragonflies, iridescent wings, delicate jewelry, pictures, or conversation begin appearing, pause. Their arrival may confirm that a shift in perspective is already bringing clarity.",
+      "When Dragonfly, iridescent wings, jewelry, pictures, or conversation appears, change your angle physically. Let it confirm that a new element is available.",
   },
 ];
 
@@ -332,6 +332,8 @@ const secureRandomIndex = (length) => {
 const randomGuideIndex = () => secureRandomIndex(animalGuides.length);
 const randomColorIndex = () => secureRandomIndex(animalCardColors.length);
 const slugify = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const animalProtectionInvocation = (guide) =>
+  `Cover your eyes and close your mind. Tune into ${guide.name} and its energy. When you feel its presence, ask out loud and in your mind: “Dear ${guide.name}, I can feel your presence within me. Please be the guardian of my mind. Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter my field. Amen.”`;
 
 const preloadGuideCard = (index) => {
   const guide = animalGuides[index];
@@ -346,7 +348,7 @@ const preloadGuideCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260825-11`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260826-7`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -400,8 +402,8 @@ const fillGuide = (index, colorIndex) => {
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260825-11`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260825-11`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260826-7`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260826-7`;
   if (animalCardFront) {
     if (animalCardFront.getAttribute("src") !== cardFrontSrc) animalCardFront.src = cardFrontSrc;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;
@@ -422,8 +424,7 @@ const fillGuide = (index, colorIndex) => {
   if (guideKeywordBack) guideKeywordBack.textContent = guide.keyword;
   if (guideMessage) guideMessage.textContent = guide.message;
   if (guideWatch) {
-    guideWatch.textContent =
-      `Tune into ${guide.name}. Ask ${guide.name} to protect your mind and energy today.`;
+    guideWatch.textContent = animalProtectionInvocation(guide);
   }
 };
 
@@ -518,7 +519,7 @@ const copyGuideText = async () => {
     `${guide.name} — ${guide.keyword}`,
     cardColor ? `Today's card color: ${cardColor.name}` : "",
     guide.message,
-    `Protection & confirmation: Ask ${guide.name} to protect your mind and energy. Watch for ${guide.name} to begin showing up as confirmation.`,
+    `Protection & confirmation: ${animalProtectionInvocation(guide)}`,
     window.location.href,
   ].filter(Boolean).join("\n\n");
 
@@ -579,6 +580,7 @@ const requestedCardSlug = slugify(previewParams.get("card") || "");
 const requestedCardIndex = animalGuides.findIndex((guide) => slugify(guide.name) === requestedCardSlug);
 if (oracle && isLocalPreview && requestedCardIndex >= 0) {
   showGuide(requestedCardIndex, { focus: false, save: false, colorIndex: previewColorIndex });
+  if (previewParams.get("side") === "meaning") setAnimalFace(true);
 } else if (
   oracle
   && isLocalPreview

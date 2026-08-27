@@ -206,8 +206,12 @@ html[data-theme="dark"] .oracle-atmosphere-canvas { opacity: 0.62; }
   .animal-oracle-page .oracle-experience:has(.oracle-card.is-revealed),
   .tree-oracle-page .oracle-experience:has(.oracle-card.is-revealed),
   .plant-oracle-page .oracle-experience:has(.oracle-card.is-revealed) {
-    width: min(calc(100vw - 12px), 620px);
-    max-width: 620px;
+    /* Stay inside the mobile shell and reserve enough vertical room for the
+       fixed header plus the result actions. The old viewport-width value was
+       wider than its parent, shifting every revealed card toward the right
+       edge and making the bottom flip cue appear cropped/off-center. */
+    width: min(100%, 620px, calc(65.637svh - 88px));
+    max-width: min(100%, 620px, calc(65.637svh - 88px));
     padding: 4px;
   }
 
@@ -316,13 +320,13 @@ html[data-theme="dark"] .oracle-atmosphere-canvas { opacity: 0.62; }
 
   .tree-oracle-page .oracle-experience:has(.oracle-card.is-revealed),
   .plant-oracle-page .oracle-experience:has(.oracle-card.is-revealed) {
-    width: min(calc(100vw - 10px), calc(69.672svh - 46px));
-    max-width: min(calc(100vw - 10px), calc(69.672svh - 46px));
+    width: min(100%, calc(65.637svh - 46px));
+    max-width: min(100%, calc(65.637svh - 46px));
   }
 
   .animal-oracle-page .oracle-experience:has(.oracle-card.is-revealed) {
-    width: min(calc(100vw - 10px), calc(65.637svh - 43px));
-    max-width: min(calc(100vw - 10px), calc(65.637svh - 43px));
+    width: min(100%, calc(65.637svh - 46px));
+    max-width: min(100%, calc(65.637svh - 46px));
   }
 
   .animal-oracle-page .animal-oracle-result .oracle-result-actions,

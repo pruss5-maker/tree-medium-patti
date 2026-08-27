@@ -1,123 +1,123 @@
 const plantGuides = [
   {
     name: "Yarrow", botanical: "Achillea millefolium", art: "assets/plants/yarrow.webp",
-    keyword: "Sacred Boundaries", accent: "#b6a36c",
-    message: "Yarrow has long stood at the threshold between tenderness and protection. It arrives when your sensitivity needs a clear edge—not a wall, but a living boundary that lets care move without letting every energy enter.",
-    practice: "Imagine a soft, luminous boundary around you: discerning, breathable, and wholly yours.",
+    keyword: "Many Parts, One Boundary", accent: "#b6a36c",
+    message: "Yarrow gathers many tiny flower heads into one protective, level crown. It teaches that sensitivity becomes strength when every part agrees on the boundary. Draw a circle on paper. Write what belongs inside your field and what must remain outside.",
+    practice: "Draw one circle. Place what nourishes you inside it and what drains or harms you outside it. Say aloud: My care has a clear edge.",
   },
   {
     name: "Lavender", botanical: "Lavandula angustifolia", art: "assets/plants/lavender.webp",
-    keyword: "Peaceful Clearing", accent: "#8875a8",
-    message: "Lavender carries the memory of washing, soothing, and making a place ready. Let its purple hush clear the inner room without dimming your voice. Peace can be both gentle and quietly resistant.",
-    practice: "Let each breath wash one layer of noise from your inner space until your own signal feels clear.",
+    keyword: "Heavenly Protection", accent: "#8875a8",
+    message: "Lavender holds the frequency of the heavenly realms in its potent scent. Let its fragrance remind you: you are just as potent, and you are protected.",
+    practice: "Breathe in lavender or imagine its scent. Say aloud: I am potent. I am protected. My mind is my sanctuary.",
   },
   {
     name: "Hibiscus", botanical: "Hibiscus rosa-sinensis", art: "assets/plants/hibiscus.webp",
-    keyword: "Radiant Presence", accent: "#bc3f49",
-    message: "Hibiscus opens boldly and does not apologize for its brief, brilliant bloom. It asks you to inhabit the beauty of this moment before it changes. Presence—not permanence—is what makes radiance real.",
-    practice: "Picture one vivid bloom at your heart and let yourself be fully here for three slow breaths.",
+    keyword: "Fully Here", accent: "#bc3f49",
+    message: "A hibiscus flower may open for only one day, yet the plant keeps offering bloom after bloom. It does not confuse brief with unimportant. Choose one thing that matters today. Give it your full color and attention before this day closes.",
+    practice: "Choose one person, task, or pleasure. Put your phone away and meet it fully for ten minutes.",
   },
   {
     name: "Comfrey", botanical: "Symphytum officinale", art: "assets/plants/comfrey.webp",
-    keyword: "Grow Together", accent: "#6f765f",
-    message: "Comfrey's old name carries the idea of growing together. It appears when scattered pieces are ready to belong to one life again. Integration does not erase the break; it gives every piece a place in the whole.",
-    practice: "Bring two separated parts of yourself into the same inner room and let them rest without argument.",
+    keyword: "Return to Wholeness", accent: "#6f765f",
+    message: "Comfrey's name means to grow together, and even a root piece left in the soil can begin again. Repair does not require pretending the break never happened. Gather one scattered piece of your life—a call, appointment, object, or promise—and return it to the whole.",
+    practice: "Choose one loose end and give it a real place: schedule it, mend it, answer it, or release it.",
   },
   {
     name: "Chamomile", botanical: "Matricaria chamomilla", art: "assets/plants/chamomile.webp",
-    keyword: "Gentle Resilience", accent: "#c7a955",
-    message: "Chamomile meets pressure with softness that is not weakness. Its small bright flowers invite patience in adversity and remind you that gentleness can endure what force cannot. Rest may be part of your strength today.",
-    practice: "Unclench your jaw and shoulders. Ask where a gentler response could carry you farther.",
+    keyword: "Rest Is Preparation", accent: "#c7a955",
+    message: "Chamomile is a modest annual that makes many small flower heads from one season of growth. It reminds you that rest is not the opposite of becoming; it is part of how the next response is prepared. Unclench your jaw and protect ten quiet minutes before you answer the pressure.",
+    practice: "Set a ten-minute timer. Rest without solving. When it ends, choose the gentlest useful response.",
   },
   {
     name: "Calendula", botanical: "Calendula officinalis", art: "assets/plants/calendula.webp",
-    keyword: "Returning Light", accent: "#d58532",
-    message: "Calendula holds sunlight close to the earth. It comes when joy feels distant, offering a modest, persistent brightness rather than forced positivity. Follow the smallest warm thing; light often returns by degrees.",
-    practice: "Recall one honest spark of warmth from today and let it widen without asking it to solve everything.",
+    keyword: "Make Room for More Light", accent: "#d58532",
+    message: "Calendula can bloom from summer into fall, and removing finished flowers encourages more to open. It teaches that honoring an ending can make room for returning light. Remove one expired task, object, or obligation today. Leave the new space open long enough to feel it.",
+    practice: "Clear one thing that is truly finished. Say aloud: I release what has bloomed so the next light has room.",
   },
   {
     name: "Plantain", botanical: "Plantago major", art: "assets/plants/plantain.webp",
-    keyword: "Grounded Repair", accent: "#658259",
-    message: "Broadleaf plantain thrives where feet, wheels, and weather press the ground. Often overlooked, it teaches the dignity of ordinary repair. What restores you may be close, humble, and already growing underfoot.",
-    practice: "Feel the support beneath your feet and name one simple act that would help you mend today.",
+    keyword: "Repair Under Pressure", accent: "#658259",
+    message: "Plantain keeps its leaves low in a basal rosette and survives on paths, roadsides, and compacted ground. Pressure does not make its work less worthy. Put both feet down. Choose one plain repair—water, food, sleep, a bandage, or an honest message—and do it before seeking a grand answer.",
+    practice: "Feel the ground beneath both feet. Complete one humble act of repair within the next hour.",
   },
   {
     name: "Sunflower", botanical: "Helianthus annuus", art: "assets/plants/sunflower.webp",
-    keyword: "Turn Toward Light", accent: "#d39b26",
-    message: "Sunflower offers its whole face to illumination. Its message is not to deny the shadow, but to choose the direction that helps you grow. Orient yourself toward what is honest, nourishing, and alive.",
-    practice: "Turn your attention toward one source of real light in your life and notice your body respond.",
+    keyword: "Choose Your Dawn", accent: "#d39b26",
+    message: "Young sunflowers track the sun; mature flower heads settle facing east, warming early and welcoming more pollinators. Growth needs movement, but maturity needs direction. Before tomorrow's noise begins, choose the one action your morning will face.",
+    practice: "Write tomorrow's first meaningful action tonight. Put it where you will see it at dawn.",
   },
   {
     name: "Rosemary", botanical: "Salvia rosmarinus", art: "assets/plants/rosemary.webp",
-    keyword: "Remember Yourself", accent: "#53786b",
-    message: "Rosemary has traveled through ceremonies of remembrance and fidelity. It calls you back to the promise beneath distraction: the person you meant to be, the love you meant to tend, the truth you do not want to forget.",
-    practice: "Name one promise worthy of remembrance and breathe it back into the center of your day.",
+    keyword: "Remember the Promise", accent: "#53786b",
+    message: "Rosemary stays aromatic through dry ground and has carried the meaning of remembrance for centuries. Pressure can reveal what is essential instead of erasing it. Name one promise you do not want distraction to take from you. Complete one action that proves you remember.",
+    practice: "Say one promise aloud, then do its smallest visible action before the day ends.",
   },
   {
     name: "Garden Sage", botanical: "Salvia officinalis", art: "assets/plants/garden-sage.webp",
-    keyword: "Wise Discernment", accent: "#75836d",
-    message: "Garden sage asks for wisdom that can be used, not merely admired. Step back from urgency. Separate what you know, what you fear, and what you are assuming; the next clear choice may then become quiet and obvious.",
-    practice: "Ask: What do I know, what am I assuming, and what still needs time? Listen without rushing.",
+    keyword: "Wisdom That Saves", accent: "#75836d",
+    message: "Sage's pale, softly haired leaves help it live with heat and dryness. Its name, Salvia, comes from a root meaning to save or heal. Useful wisdom conserves your life-force. Divide a page into Fact, Fear, and Assumption. Make your next choice from the Fact column.",
+    practice: "Write three headings: Fact, Fear, Assumption. Sort the thought, then choose from what is actually known.",
   },
   {
     name: "Mugwort", botanical: "Artemisia vulgaris", art: "assets/plants/mugwort.webp",
-    keyword: "Dream Threshold", accent: "#79758d",
-    message: "Mugwort stands at the imaginative threshold between waking attention and dream. It invites you to notice symbols without forcing them into certainty. Let mystery remain spacious enough to reveal its own pattern.",
-    practice: "Hold one image from a dream or daydream in your mind. Ask what feeling it carries, not what it predicts.",
+    keyword: "The Hidden Underside", accent: "#79758d",
+    message: "Mugwort shows green above and a woolly silver underside, while unseen rhizomes travel below the ground. It asks you to turn the image over before calling it a message. Write one dream symbol and the feeling beneath it. Do not predict; notice what is already moving under the surface.",
+    practice: "Write one dream image, then finish: Beneath this image, I feel… Let the feeling be enough for today.",
   },
   {
     name: "Rose", botanical: "Rosa damascena", art: "assets/plants/rose.webp",
-    keyword: "Open Heart, Clear Thorns", accent: "#ad6a75",
-    message: "Rose holds tenderness and protection on the same stem. Its open center does not require the thorns to disappear. Love can be generous while keeping a clear boundary around what is intimate and true.",
-    practice: "Breathe into your heart. Let one petal open as one thorn quietly guards what matters.",
+    keyword: "Tenderness With Protection", accent: "#ad6a75",
+    message: "Rose carries fragrant petals, protective prickles, and nourishing hips on one living body. Tenderness and defense are not opposites. Write one wholehearted yes and one necessary no. Speak both without apology so your love has a shape it can safely inhabit.",
+    practice: "Say aloud: My yes is ___. My no is ___. Let both sentences protect what you love.",
   },
   {
     name: "Dandelion", botanical: "Taraxacum officinale", art: "assets/plants/dandelion.webp",
-    keyword: "Unapologetic Hope", accent: "#bd972c",
-    message: "Dandelion turns disturbed ground into a place for gold, then releases its wishes to the wind. It asks you to persist without waiting for perfect conditions—and to let go when the next journey is ready.",
-    practice: "Name one hope hardy enough for imperfect ground, then release how it must arrive.",
+    keyword: "Root and Release", accent: "#bd972c",
+    message: "Dandelion survives harsh ground through a deep taproot, then sends parachute seeds far beyond itself. It knows when to anchor and when to release. Write one hope you will root through daily care. Beneath it, cross out one rule about exactly how that hope must arrive.",
+    practice: "Choose one daily root for your hope, then release one demand about the route it must take.",
   },
   {
     name: "Stinging Nettle", botanical: "Urtica dioica", art: "assets/plants/stinging-nettle.webp",
-    keyword: "Protective Fire", accent: "#4e7854",
-    message: "Nettle's sting is a boundary you can feel. Behind it lives vigor, usefulness, and shelter for other beings. Your protective fire is not proof that you are difficult; it may be intelligence guarding what still needs care.",
-    practice: "Notice where your body says no. Honor the information before deciding what action it asks of you.",
+    keyword: "Boundary With Purpose", accent: "#4e7854",
+    message: "Nettle's hollow stinging hairs make contact unmistakable, while the plant still feeds and shelters other lives. A boundary is not your whole identity; it protects what you are here to nourish. Name one no, then finish the sentence: This no protects my ability to…",
+    practice: "Write: No to ___. This protects my ability to ___. Let the purpose guide how firmly you speak.",
   },
   {
     name: "Peppermint", botanical: "Mentha × piperita", art: "assets/plants/peppermint.webp",
-    keyword: "Fresh Current", accent: "#4d8b73",
-    message: "Peppermint arrives like an open window. It clears stale momentum and welcomes a fresh current through mind and spirit. You do not need an entirely new life—only enough space for the next clean breath.",
-    practice: "Imagine cool green air moving through you, making room for one clear and immediate next step.",
+    keyword: "Cooling Clarity", accent: "#4d8b73",
+    message: "Peppermint's menthol activates the body's cold-sensing pathway, creating a cooling signal before the temperature itself changes. Not every urgent feeling requires an urgent act. Take three slow breaths, cool the response, then name the next useful step in one sentence.",
+    practice: "Pause for three breaths. Say: I can feel urgency without obeying it. Choose one cool, useful action.",
   },
   {
     name: "Basil", botanical: "Ocimum basilicum", art: "assets/plants/basil.webp",
-    keyword: "Blessed Abundance", accent: "#47794c",
-    message: "Basil has long belonged to gardens, kitchens, offerings, and thresholds. It reminds you that abundance is something tended and shared. Bless what already nourishes you, then make room for enough to circulate.",
-    practice: "Offer gratitude for one sustaining thing, then imagine its goodness moving outward through your hands.",
+    keyword: "Tended Abundance", accent: "#47794c",
+    message: "Pinching basil's growing centers encourages the plant to branch and become fuller. Abundance is shaped by attention, not endless accumulation. Choose what you want to grow. Tend it with one precise action, then share one leaf of its goodness with another person.",
+    practice: "Tend one sustaining thing for ten minutes, then share a useful piece of it with someone else.",
   },
   {
     name: "Echinacea", botanical: "Echinacea purpurea", art: "assets/plants/echinacea.webp",
-    keyword: "Enduring Strength", accent: "#9a667f",
-    message: "Echinacea holds a strong center while its petals soften outward. It invites strength that is rooted, relational, and unafraid of tenderness. Return to your center before deciding what deserves your energy.",
-    practice: "Picture a steady cone of light at your center with soft petals opening around it.",
+    keyword: "Strong Center", accent: "#9a667f",
+    message: "Echinacea is named for its hedgehog-like, spiny center, where many small florets feed pollinators before the seed head feeds birds. A strong center can serve more than itself. Place a hand at your center. Decide where your energy can create nourishment and where it cannot.",
+    practice: "Place a hand over your center. Name one worthy recipient of your energy and one place you will conserve it.",
   },
   {
     name: "Jasmine", botanical: "Jasminum officinale", art: "assets/plants/jasmine.webp",
-    keyword: "Heavenly Joy", accent: "#8d8d67",
-    message: "Jasmine's small pale flowers release a presence larger than their size. It carries an old association with heavenly happiness and loving devotion. Let joy be subtle, fragrant, and powerful enough to change the room.",
-    practice: "Invite one quiet joy into awareness and let it expand beyond the space you think it deserves.",
+    keyword: "Devotion to Yourself", accent: "#8d8d67",
+    message: "Jasmine has long been woven into offerings, adornment, love, and devotion. Its evening fragrance can change the atmosphere around it. Jasmine is asking you to turn that devotion toward yourself. Choose one generous act of care—a warm bath, your favorite sugar scrub, fresh sheets—and keep the appointment.",
+    practice: "Create one unhurried care ritual: a warm bath, a gentle sugar scrub that agrees with your skin, fresh sheets, body lotion, or ten phone-free minutes. Choose what genuinely restores you, and do not rush it.",
   },
   {
     name: "Lemon Balm", botanical: "Melissa officinalis", art: "assets/plants/lemon-balm.webp",
-    keyword: "Heart's Return", accent: "#6f8b5e",
-    message: "Lemon balm has long been associated with bees, gladness, and lifting the heart. It comes as a gentle return rather than a demand to cheer up. Follow what helps your spirit remember its natural warmth.",
-    practice: "Place a hand over your heart and welcome one small sweetness without needing to earn it.",
+    keyword: "Let Warmth Spread", accent: "#6f8b5e",
+    message: "Lemon balm offers lemon-scented leaves, tiny flowers bees love, and rhizomes that keep spreading once it is established. Warmth often returns through something small and repeated. Choose one five-minute act that lifts your heart, then place it on tomorrow's calendar too.",
+    practice: "Do one five-minute kindness for your nervous system. Schedule the same small kindness for tomorrow.",
   },
   {
     name: "Red Clover", botanical: "Trifolium pratense", art: "assets/plants/red-clover.webp",
     keyword: "Reciprocal Plenty", accent: "#a65372",
-    message: "Red clover feeds the soil while feeding pollinators, making abundance a relationship rather than a possession. It asks where giving and receiving can enrich the same ground. Plenty deepens when the whole field can flourish.",
-    practice: "Picture a shared field. Ask what you can offer freely and what support you are ready to receive.",
+    message: "Red clover partners with soil bacteria to make nitrogen available and offers nectar when allowed to flower. Its abundance comes through relationship: root, microbe, bloom, pollinator, field. Give one useful thing today and make one clear request for support. Let plenty move both ways.",
+    practice: "Offer one useful gift and ask for one needed form of support. Practice being part of the exchange.",
   },
 ];
 
@@ -172,7 +172,7 @@ const preloadPlantCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260825-11`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260827-1`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -217,7 +217,8 @@ const randomPlantIndex = () => {
   return value[0] % plantGuides.length;
 };
 
-const protectionText = (plant) => `Ask your ${plant.name} plant to protect your mind and energy in meditation. ${plant.practice}`;
+const protectionText = (plant) =>
+  `Cover your eyes and close your mind. Tune into ${plant.name} and its energy. When you feel its presence, ask out loud and in your mind: “Dear ${plant.name}, I can feel your presence within me. Please be the guardian of my mind. Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter my field. Amen.”`;
 
 const updatePlantSeo = (plant) => {
   const slug = slugify(plant.name);
@@ -243,8 +244,8 @@ const fillPlant = (index) => {
   oracleCard.style.setProperty("--plant-card-color", plantCardColors[index] || plantCardColors[0]);
   updatePlantSeo(plant);
   const cardAssetBase = `assets/oracle-cards/plant/${slugify(plant.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260825-11`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260825-11`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-1`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-1`;
   if (plantCardFront) {
     if (plantCardFront.getAttribute("src") !== cardFrontSrc) plantCardFront.src = cardFrontSrc;
     plantCardFront.alt = `${plant.name} KELA Plant Oracle card`;
@@ -349,7 +350,9 @@ plantFlip?.addEventListener("keydown", (event) => {
 
 const isLocalPreview = ["", "localhost", "127.0.0.1"].includes(window.location.hostname);
 if (previewTools && isLocalPreview) previewTools.hidden = false;
-previewNext?.addEventListener("click", () => showPlant(activePlantIndex < 0 ? 0 : (activePlantIndex + 1) % plantGuides.length, { focus: false, save: false }));
+previewNext?.addEventListener("click", () => {
+  showPlant(activePlantIndex < 0 ? 0 : (activePlantIndex + 1) % plantGuides.length, { focus: false, save: false });
+});
 
 const previewParams = new URLSearchParams(window.location.search);
 const requestedPreview = Number.parseInt(previewParams.get("plant"), 10);

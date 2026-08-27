@@ -42,6 +42,221 @@
   line-height: 1.2;
 }
 
+/* The unopened cards are true deck covers built from the same physical masters
+   as the finished oracle cards, with one unmistakable guide for each kingdom. */
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-art {
+  object-position: center;
+  filter: none;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-back::after {
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(4, 26, 19, 0.02), rgba(4, 26, 19, 0.08)),
+    radial-gradient(circle at 50% 42%, rgba(246, 218, 150, 0.08), transparent 34%);
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-back-copy,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-card-back-copy {
+  justify-content: flex-start;
+  padding: 8.5% 15% 8%;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-brand,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-card-brand {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 0;
+  color: #f6dfa5;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: 0 2px 14px rgba(2, 20, 15, 0.62);
+  backdrop-filter: none;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-brand p,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-card-brand p {
+  margin-bottom: 5px;
+  font-size: clamp(1.75rem, 3.3vw, 2.35rem);
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-brand small,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-card-brand small {
+  color: #e7bd67;
+  font-size: clamp(0.57rem, 1vw, 0.72rem);
+}
+
+.oracle-deck-portrait {
+  position: absolute;
+  top: 23.5%;
+  left: 18.5%;
+  z-index: 2;
+  width: 63%;
+  height: 29%;
+  overflow: hidden;
+  background: rgba(8, 39, 29, 0.58);
+  border: 1px solid rgba(232, 194, 111, 0.9);
+  border-radius: 17%;
+  box-shadow:
+    inset 0 0 24px rgba(3, 22, 16, 0.3),
+    0 8px 22px rgba(3, 22, 16, 0.24);
+}
+
+.oracle-deck-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.oracle-deck-portrait-animal {
+  top: 22%;
+  height: 31%;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.oracle-deck-portrait-animal img {
+  object-fit: contain;
+  filter: drop-shadow(0 12px 16px rgba(1, 16, 30, 0.34));
+  transform: scale(1.07);
+}
+
+.oracle-deck-portrait-tree img {
+  object-position: center 45%;
+  filter: saturate(1.08) contrast(1.03) brightness(0.91);
+}
+
+.oracle-deck-portrait-plant img {
+  object-position: center 48%;
+  filter: saturate(1.08) contrast(1.03) brightness(0.93);
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-ritual,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-ritual {
+  position: absolute;
+  top: 56%;
+  left: 13%;
+  z-index: 3;
+  display: flex;
+  width: 74%;
+  height: 32%;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  color: #f5dda2;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-ritual .oracle-mini-label,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-ritual .oracle-mini-label {
+  margin-bottom: 5px;
+  color: #e7bd67;
+  font-size: clamp(0.56rem, 0.9vw, 0.69rem);
+  letter-spacing: 0.14em;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-ritual h2,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-ritual h2 {
+  max-width: 100%;
+  margin: 0 auto 7px;
+  color: #f5dda2;
+  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+  line-height: 0.98;
+  text-shadow: 0 2px 13px rgba(2, 20, 15, 0.52);
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-ritual > p:not(.oracle-mini-label, .oracle-status),
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-ritual > p:not(.oracle-mini-label, .oracle-status) {
+  max-width: 100%;
+  margin: 0 auto 8px;
+  color: rgba(255, 245, 218, 0.88);
+  font-size: clamp(0.7rem, 1.15vw, 0.86rem);
+  line-height: 1.32;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-reveal,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-reveal {
+  order: initial;
+  width: 100%;
+  min-height: 44px;
+  margin-top: auto;
+  padding: 9px 12px;
+  color: #10291f;
+  background: #e5c58b;
+  border: 1px solid #efd9aa;
+  border-radius: 3px;
+  box-shadow: 0 8px 20px rgba(2, 20, 15, 0.22);
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-ritual > small,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-ritual > small {
+  display: none;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-status {
+  min-height: 0;
+  margin: 3px 0 0;
+}
+
+/* Every deck keeps its lockup below the etched top rule and lets the action
+   read as part of the physical card instead of a separate web panel. */
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-brand {
+  transform: translateY(26px);
+}
+
+.oracle-page {
+  --oracle-cover-button-top: rgba(17, 61, 46, 0.94);
+  --oracle-cover-button-bottom: rgba(7, 40, 30, 0.98);
+  --oracle-cover-button-hover-top: rgba(27, 78, 59, 0.98);
+  --oracle-cover-button-hover-bottom: rgba(9, 46, 35, 0.99);
+}
+
+.animal-oracle-page {
+  --oracle-cover-button-top: rgba(8, 53, 76, 0.96);
+  --oracle-cover-button-bottom: rgba(3, 34, 52, 0.99);
+  --oracle-cover-button-hover-top: rgba(13, 70, 98, 0.98);
+  --oracle-cover-button-hover-bottom: rgba(4, 42, 63, 0.99);
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-reveal {
+  width: 92%;
+  min-height: 46px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #f2d58f;
+  background:
+    radial-gradient(circle at 50% 0, rgba(224, 180, 83, 0.12), transparent 74%),
+    linear-gradient(180deg, var(--oracle-cover-button-top), var(--oracle-cover-button-bottom));
+  border: 1px solid rgba(226, 184, 88, 0.9);
+  border-radius: 999px;
+  box-shadow:
+    inset 0 0 0 3px rgba(240, 208, 128, 0.1),
+    0 8px 18px rgba(2, 20, 15, 0.24);
+  letter-spacing: 0.1em;
+  text-shadow: 0 1px 0 rgba(1, 18, 13, 0.72);
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-reveal:hover,
+.oracle-page .oracle-card:not(.is-revealed) .oracle-reveal:focus-visible {
+  color: #fff0ba;
+  background:
+    radial-gradient(circle at 50% 0, rgba(232, 191, 96, 0.2), transparent 76%),
+    linear-gradient(180deg, var(--oracle-cover-button-hover-top), var(--oracle-cover-button-hover-bottom));
+  border-color: #f0cf7e;
+  box-shadow:
+    inset 0 0 0 3px rgba(248, 221, 151, 0.16),
+    0 10px 22px rgba(2, 20, 15, 0.3);
+}
+
 /* Keep every drawn oracle card fully visible in a standard desktop viewport. */
 @media (min-width: 981px) {
   /* Give the printed artwork a hair of breathing room so its top gold rule

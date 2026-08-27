@@ -564,6 +564,23 @@ html[data-theme="dark"] body.meet-kela-page .site-header {
   padding: 112px 0 70px;
 }
 
+.meet-kela-page .patti-door-main {
+  position: relative;
+  isolation: isolate;
+}
+
+.meet-kela-page .kela-maple-leaf-canvas {
+  z-index: 0;
+  width: 100vw;
+  opacity: 0.92;
+  filter: drop-shadow(0 7px 9px rgba(37, 11, 15, 0.28));
+}
+
+.meet-kela-page .patti-door-main > section {
+  position: relative;
+  z-index: 1;
+}
+
 .patti-door-card {
   position: relative;
   overflow: hidden;
@@ -1073,6 +1090,156 @@ html[data-theme="dark"] body.meet-kela-page .site-header {
 
 html[data-theme="light"] .kela-living-heading h2 { color: #173d30; }
 html[data-theme="light"] .kela-living-heading > p:last-child { color: rgba(23, 61, 48, 0.76); }
+
+@media (min-width: 981px) {
+  .meet-kela-page .patti-door-main {
+    width: min(calc(100% - 72px), 1220px);
+    gap: clamp(54px, 6vw, 86px);
+    padding: 132px 0 104px;
+  }
+
+  .meet-kela-page .patti-kela-card {
+    min-height: 570px;
+    padding: clamp(48px, 5vw, 70px);
+    grid-template-columns: minmax(360px, 0.92fr) minmax(0, 1.08fr);
+    gap: clamp(46px, 5vw, 74px);
+    background:
+      radial-gradient(circle at 86% 14%, rgba(196, 88, 57, 0.14), transparent 22rem),
+      linear-gradient(145deg, rgba(21, 57, 43, 0.96), rgba(6, 30, 24, 0.985));
+    border: 2px solid rgba(226, 177, 77, 0.96);
+    border-radius: 36px;
+    box-shadow:
+      0 40px 90px rgba(18, 6, 10, 0.44),
+      0 0 0 1px rgba(255, 225, 146, 0.14),
+      inset 0 0 74px rgba(181, 67, 46, 0.08);
+  }
+
+  .meet-kela-page .patti-kela-card::after {
+    inset: 11px;
+    border-color: rgba(247, 214, 132, 0.5);
+    border-radius: 25px;
+  }
+
+  .meet-kela-page .patti-kela-card::before {
+    position: absolute;
+    right: 5%;
+    bottom: -19%;
+    width: 340px;
+    aspect-ratio: 1;
+    content: "";
+    opacity: 0.07;
+    background: url("assets/kela-mark.svg") center / contain no-repeat;
+    pointer-events: none;
+  }
+
+  .meet-kela-page .patti-kela-juniper {
+    min-height: 420px;
+    border: 2px solid rgba(236, 190, 91, 0.92);
+    border-radius: 25px;
+    box-shadow:
+      0 28px 58px rgba(0, 0, 0, 0.4),
+      0 0 0 7px rgba(236, 190, 91, 0.08);
+  }
+
+  .meet-kela-page .patti-kela-juniper img {
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+  }
+
+  .meet-kela-page .patti-kela-copy {
+    padding: 26px 0;
+  }
+
+  .meet-kela-page .patti-kela-copy::before {
+    display: block;
+    width: 92px;
+    height: 1px;
+    margin-bottom: 26px;
+    content: "";
+    background: linear-gradient(90deg, #e5ba62, transparent);
+    box-shadow: 34px 0 0 rgba(229, 186, 98, 0.36);
+  }
+
+  .meet-kela-page .patti-door-card .patti-kela-copy h1 {
+    font-size: clamp(3.6rem, 5.1vw, 5.2rem);
+  }
+
+  .meet-kela-page .patti-kela-copy > p:not(.portal-eyebrow) {
+    max-width: 60ch;
+    font-size: 1.08rem;
+    line-height: 1.72;
+  }
+
+  .meet-kela-page .kela-living-messages,
+  html[data-theme="dark"] .meet-kela-page .kela-living-messages {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .meet-kela-page .kela-living-heading {
+    padding: 0 28px;
+    text-shadow: 0 4px 24px rgba(12, 4, 7, 0.82);
+  }
+
+  .meet-kela-page .kela-origin-story,
+  html[data-theme="dark"] .meet-kela-page .kela-origin-story {
+    position: relative;
+    max-width: 1040px;
+    min-height: 460px;
+    margin: clamp(92px, 10vw, 132px) auto 0;
+    padding: 96px clamp(58px, 6vw, 86px) 68px;
+    overflow: hidden;
+    grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+    align-items: center;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(202, 87, 55, 0.18), transparent 23rem),
+      linear-gradient(148deg, rgba(47, 34, 37, 0.975), rgba(17, 28, 25, 0.99));
+    border: 2px solid rgba(226, 177, 77, 0.94);
+    border-radius: 34px;
+    box-shadow:
+      0 38px 82px rgba(18, 6, 10, 0.46),
+      inset 0 0 68px rgba(172, 62, 44, 0.08);
+  }
+
+  .meet-kela-page .kela-origin-story::before {
+    position: absolute;
+    inset: 11px;
+    z-index: 0;
+    content: "";
+    pointer-events: none;
+    border: 1px solid rgba(247, 214, 132, 0.46);
+    border-radius: 23px;
+  }
+
+  .meet-kela-page .kela-origin-story::after {
+    position: absolute;
+    right: -48px;
+    bottom: -92px;
+    width: 330px;
+    aspect-ratio: 1;
+    z-index: 0;
+    content: "";
+    opacity: 0.08;
+    background: url("assets/kela-mark.svg") center / contain no-repeat;
+    pointer-events: none;
+  }
+
+  .meet-kela-page .kela-origin-story > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .meet-kela-page .kela-origin-story header::before {
+    display: block;
+    width: 78px;
+    height: 1px;
+    margin-bottom: 25px;
+    content: "";
+    background: linear-gradient(90deg, #e5ba62, transparent);
+  }
+}
 
 .patti-door-card h1,
 .patti-door-card h2 {

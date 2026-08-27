@@ -2248,7 +2248,26 @@ summary:focus-visible {
   backdrop-filter: blur(12px);
 }
 
+.oracle-companions.has-two-rows {
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 30px;
+}
+
+.oracle-companion-row {
+  display: flex;
+  gap: inherit;
+  align-items: flex-end;
+}
+
+.oracle-companions.has-two-rows .oracle-companion-row-memory {
+  width: 100%;
+  padding-top: 7px;
+  border-top: 1px solid rgba(168, 119, 35, 0.28);
+}
+
 .oracle-companion {
+  position: relative;
   display: grid;
   gap: 4px;
   justify-items: center;
@@ -2281,6 +2300,40 @@ summary:focus-visible {
   width: 88%;
   height: 88%;
   object-fit: contain;
+}
+
+.oracle-companion-memory-found .oracle-companion-picture {
+  background: radial-gradient(circle at 50% 38%, #fffdf4 0 48%, #e4ecd9 100%);
+  border-color: #6f8d58;
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 248, 218, 0.95),
+    0 0 0 1px rgba(177, 129, 42, 0.62),
+    0 5px 14px rgba(27, 49, 37, 0.2);
+}
+
+.oracle-companion-memory-found .oracle-companion-picture img,
+.oracle-companion-memory-found.oracle-companion-animal .oracle-companion-picture img {
+  width: 84%;
+  height: 84%;
+  object-fit: contain;
+}
+
+.oracle-companion-memory-found::after {
+  position: absolute;
+  top: -3px;
+  right: 1px;
+  display: grid;
+  width: 17px;
+  height: 17px;
+  place-items: center;
+  color: #fff7cf;
+  background: #537043;
+  border: 1px solid #e4c56f;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(20, 47, 32, 0.3);
+  content: "✦";
+  font-size: 9px;
+  line-height: 1;
 }
 
 .oracle-companion-name {
@@ -3404,7 +3457,8 @@ summary:focus-visible {
 .thumb-control-rail {
   position: fixed;
   right: max(18px, env(safe-area-inset-right));
-  bottom: max(18px, env(safe-area-inset-bottom));
+  top: max(84px, calc(env(safe-area-inset-top) + 68px));
+  bottom: auto;
   z-index: 90;
   display: flex;
   flex-direction: column;
@@ -3723,7 +3777,8 @@ html[data-theme="dark"] .oracle-page .eyebrow {
 @media (max-width: 760px) {
   .thumb-control-rail {
     right: max(12px, env(safe-area-inset-right));
-    bottom: max(12px, env(safe-area-inset-bottom));
+    top: max(68px, calc(env(safe-area-inset-top) + 58px));
+    bottom: auto;
     gap: 8px;
   }
 }

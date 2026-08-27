@@ -1,3 +1,17 @@
+/* Cookie-free, aggregate page-view analytics for public production pages. */
+(() => {
+  if (["", "localhost", "127.0.0.1"].includes(window.location.hostname)) return;
+  if (document.querySelector("script[data-kela-vercel-analytics]")) return;
+  window.va = window.va || function vercelAnalyticsQueue() {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
+  const analytics = document.createElement("script");
+  analytics.defer = true;
+  analytics.dataset.kelaVercelAnalytics = "true";
+  analytics.src = "/_vercel/insights/script.js";
+  document.head.append(analytics);
+})();
+
 const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-nav]");
@@ -113,6 +127,7 @@ if (header && menuToggle) {
 
 window.KelaCompanions = (() => {
   const companionStorageKey = "kela-oracle-companions-v1";
+  const memoryFoundStorageKey = "kela-memory-found-companions-v1";
   const companionDeckOrder = ["tree", "plant", "animal"];
 
   const companionDateKey = () => {
@@ -131,14 +146,71 @@ window.KelaCompanions = (() => {
     }
   };
 
+  const readMemoryFound = () => {
+    try {
+      const saved = JSON.parse(window.localStorage.getItem(memoryFoundStorageKey));
+      return saved && typeof saved === "object" ? saved : {};
+    } catch {
+      return {};
+    }
+  };
+
+  const companionLink = (companion, source) => {
+    const link = document.createElement("a");
+    const picture = document.createElement("span");
+    const image = document.createElement("img");
+    const name = document.createElement("span");
+    const isMemoryFound = source === "memory";
+
+    link.className = `oracle-companion oracle-companion-${companion.deck}${isMemoryFound ? " oracle-companion-memory-found" : ""}`;
+    link.href = companion.href;
+    link.setAttribute(
+      "aria-label",
+      isMemoryFound
+        ? `Reopen ${companion.name}, the ${companion.deck} memory card that found you`
+        : `Return to your ${companion.name} ${companion.deck} card`,
+    );
+    if (isMemoryFound) link.title = `${companion.name} found you in the ${companion.deck} memory game`;
+    picture.className = "oracle-companion-picture";
+    image.src = companion.image.startsWith("/")
+      ? companion.image
+      : `/${companion.image.replace(/^\.?\/+/, "")}`;
+    image.alt = "";
+    image.width = 72;
+    image.height = 72;
+    image.decoding = "async";
+    name.className = "oracle-companion-name";
+    name.textContent = companion.name;
+    picture.append(image);
+    link.append(picture, name);
+    return link;
+  };
+
+  const appendCompanionRow = (tray, companions, source) => {
+    if (!companions.length) return;
+    const row = document.createElement("div");
+    row.className = `oracle-companion-row oracle-companion-row-${source}`;
+    row.setAttribute("role", "group");
+    row.setAttribute(
+      "aria-label",
+      source === "memory" ? "Cards that found you in the memory games" : "Today's Oracle companions",
+    );
+    companions.forEach((companion) => row.append(companionLink(companion, source)));
+    tray.append(row);
+  };
+
   const renderCompanions = () => {
     const savedCompanions = readCompanions();
-    const companions = companionDeckOrder
+    const oracleCompanions = companionDeckOrder
       .map((deck) => savedCompanions[deck])
+      .filter((companion) => companion?.name && companion?.image && companion?.href);
+    const savedMemoryFound = readMemoryFound();
+    const memoryFoundCompanions = companionDeckOrder
+      .map((deck) => savedMemoryFound[deck])
       .filter((companion) => companion?.name && companion?.image && companion?.href);
     let companionTray = document.querySelector("[data-oracle-companions]");
 
-    if (!companions.length) {
+    if (!oracleCompanions.length && !memoryFoundCompanions.length) {
       companionTray?.remove();
       return;
     }
@@ -147,35 +219,18 @@ window.KelaCompanions = (() => {
       companionTray = document.createElement("nav");
       companionTray.className = "oracle-companions";
       companionTray.dataset.oracleCompanions = "";
-      companionTray.setAttribute("aria-label", "Your oracle companions for today");
       companionTray.setAttribute("aria-live", "polite");
       document.body.append(companionTray);
     }
 
+    companionTray.setAttribute("aria-label", "Your Oracle and memory game companions");
+    companionTray.classList.toggle(
+      "has-two-rows",
+      Boolean(oracleCompanions.length && memoryFoundCompanions.length),
+    );
     companionTray.replaceChildren();
-    companions.forEach((companion) => {
-      const link = document.createElement("a");
-      const picture = document.createElement("span");
-      const image = document.createElement("img");
-      const name = document.createElement("span");
-
-      link.className = `oracle-companion oracle-companion-${companion.deck}`;
-      link.href = companion.href;
-      link.setAttribute("aria-label", `Return to your ${companion.name} ${companion.deck} card`);
-      picture.className = "oracle-companion-picture";
-      image.src = companion.image.startsWith("/")
-        ? companion.image
-        : `/${companion.image.replace(/^\.?\/+/, "")}`;
-      image.alt = "";
-      image.width = 72;
-      image.height = 72;
-      image.decoding = "async";
-      name.className = "oracle-companion-name";
-      name.textContent = companion.name;
-      picture.append(image);
-      link.append(picture, name);
-      companionTray.append(link);
-    });
+    appendCompanionRow(companionTray, oracleCompanions, "oracle");
+    appendCompanionRow(companionTray, memoryFoundCompanions, "memory");
   };
 
   const remember = (companion) => {
@@ -193,8 +248,73 @@ window.KelaCompanions = (() => {
     renderCompanions();
   };
 
+  const forget = (deck) => {
+    if (!companionDeckOrder.includes(deck)) return;
+    const companions = readCompanions();
+    if (!companions[deck]) return;
+    delete companions[deck];
+    try {
+      window.localStorage.setItem(
+        companionStorageKey,
+        JSON.stringify({ date: companionDateKey(), companions }),
+      );
+    } catch {
+      return;
+    }
+    renderCompanions();
+  };
+
+  const rememberFound = (companion) => {
+    if (
+      !companionDeckOrder.includes(companion?.deck)
+      || !companion?.slug
+      || !companion?.name
+      || !companion?.image
+    ) return;
+    const companions = readMemoryFound();
+    companions[companion.deck] = {
+      ...companion,
+      href: `/${companion.deck}-memory-game#found-you`,
+    };
+    try {
+      window.localStorage.setItem(memoryFoundStorageKey, JSON.stringify(companions));
+    } catch {
+      return;
+    }
+    renderCompanions();
+  };
+
+  const getFound = (deck) => readMemoryFound()[deck] || null;
+
   renderCompanions();
-  return { remember, refresh: renderCompanions };
+  return { remember, forget, rememberFound, getFound, refresh: renderCompanions };
+})();
+
+// A reset link clears only the daily draw belonging to the Oracle page that
+// opens it. The query is immediately removed so refreshing cannot reset again.
+(() => {
+  const deck = document.body.classList.contains("animal-oracle-page")
+    ? { name: "animal", storageKey: "kela-animal-guide-v1" }
+    : document.body.classList.contains("plant-oracle-page")
+      ? { name: "plant", storageKey: "kela-plant-oracle-v1" }
+      : document.body.classList.contains("tree-oracle-page")
+        ? { name: "tree", storageKey: "kela-tree-oracle-v1" }
+        : null;
+  if (!deck) return;
+
+  const url = new URL(window.location.href);
+  const requestedReset = url.searchParams.get("reset");
+  if (requestedReset !== "1" && requestedReset !== deck.name) return;
+
+  try {
+    window.localStorage.removeItem(deck.storageKey);
+    window.KelaCompanions?.forget(deck.name);
+  } catch {
+    // The clean URL still loads the unopened deck when storage is unavailable.
+  }
+
+  url.searchParams.delete("reset");
+  window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
 })();
 
 let termsPreviousFocus = null;
@@ -1059,7 +1179,7 @@ startMoss();
 
 if (!document.querySelector('script[data-atmosphere]')) {
   const atmosphereScript = document.createElement("script");
-  atmosphereScript.src = "/atmosphere.js?v=20260825-9";
+  atmosphereScript.src = "/atmosphere.js?v=20260826-1";
   atmosphereScript.async = false;
   atmosphereScript.dataset.atmosphere = "";
   document.head.append(atmosphereScript);

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Draw one free Tree Oracle card online from KELA's original 12-card deck. Meet the tree calling to you and reveal its reflection for today."
+      content="Draw one free Tree Oracle card online from KELA's original 13 card deck. Meet the tree calling to you and reveal its reflection for today."
     />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#10231c" />
@@ -32,14 +32,17 @@
     <link rel="icon" href="assets/kela-mark.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preload" href="assets/tree-photos/madrona.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="styles.css?v=20260825-26" />
-    <link rel="stylesheet" href="oracle-card-display.css?v=20260825-7" />
-    <link rel="stylesheet" href="oracle-desktop-fit.css?v=20260825-4" />
+    <link rel="stylesheet" href="styles.css?v=20260827-1" />
+    <link rel="stylesheet" href="oracle-card-display.css?v=20260826-8" />
+    <link rel="stylesheet" href="oracle-kingdom-switcher.css?v=20260827-1" />
+    <link rel="stylesheet" href="oracle-desktop-fit.css?v=20260826-3" />
+    <link rel="stylesheet" href="patti-studio.css?v=20260826-1" />
     <script src="atmosphere.js?v=20260825-9" data-atmosphere defer></script>
-    <script src="script.js?v=20260825-25" defer></script>
+    <script src="script.js?v=20260827-1" defer></script>
     <script src="free-online-oracle-labels.js?v=20260825-1" defer></script>
     <script src="ux-observer.js?v=20260825-2" data-clarity-project-id="" defer></script>
-    <script src="tree-oracle.js?v=20260825-11" defer></script>
+    <script src="tree-oracle.js?v=20260826-13" defer></script>
+    <script src="patti-oracle-access.js?v=20260826-1" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -49,7 +52,7 @@
             "@id": "https://treemedium.vercel.app/tree-oracle#webpage",
             "url": "https://treemedium.vercel.app/tree-oracle",
             "name": "Free Tree Oracle Card Online | KELA",
-            "description": "Draw one free Tree Oracle card online from KELA's original 12-card deck. No signup is required.",
+            "description": "Draw one free Tree Oracle card online from KELA's original 13 card deck. No signup is required.",
             "isPartOf": { "@id": "https://treemedium.vercel.app/#website" },
             "primaryImageOfPage": { "@type": "ImageObject", "url": "https://treemedium.vercel.app/assets/social/kela-tree-oracle-social.jpg", "width": 1200, "height": 630 },
             "inLanguage": "en-US"
@@ -139,9 +142,9 @@
               <div class="oracle-card-back">
                 <img
                   class="oracle-card-art"
-                  src="assets/tree-photos/banyan.webp"
-                  width="720"
-                  height="1080"
+                  src="assets/oracle-cards/masters/tree-card-master-v5-chamomile.png"
+                  width="1122"
+                  height="1402"
                   alt=""
                   aria-hidden="true"
                 />
@@ -149,6 +152,10 @@
                   <div class="oracle-card-brand">
                     <p>KELA</p>
                     <small>Messages from the Trees</small>
+                  </div>
+
+                  <div class="oracle-deck-portrait oracle-deck-portrait-tree" aria-hidden="true">
+                    <img src="assets/tree-photos/oak.webp" alt="" />
                   </div>
 
                   <div class="oracle-ritual" data-tree-oracle-ritual>
@@ -229,7 +236,7 @@
                       </div>
 
                       <section class="oracle-quick-prompt">
-                        <p class="oracle-mini-label">Protection &amp; confirmation</p>
+                        <p class="oracle-mini-label">Protection invocation</p>
                         <p data-tree-watch></p>
                       </section>
 
@@ -252,12 +259,27 @@
             </div>
 
             <div class="oracle-preview-tools" data-tree-preview-tools hidden>
-              <p><strong>Local preview:</strong> cycle through all 12 working tree cards.</p>
+              <p><strong>Local preview:</strong> cycle through all 13 working tree cards.</p>
               <button class="text-link oracle-preview-next" type="button" data-tree-preview-next>
                 Show the next tree
               </button>
             </div>
           </div>
+
+          <nav class="oracle-kingdom-switcher" aria-label="Continue with the Animal or Plant Oracle">
+            <p class="oracle-kingdom-kicker">Continue with nature</p>
+            <div class="oracle-kingdom-links">
+              <a class="oracle-kingdom-link oracle-kingdom-animal" href="/animal-oracle">
+                <img src="assets/oracle-cards/animal/blue-owl-front.webp?v=20260826-6" width="850" height="1295" alt="Blue Owl Animal Oracle card" />
+                <span><strong>Animal</strong><small>Oracle</small></span>
+              </a>
+              <a class="oracle-kingdom-link oracle-kingdom-plant" href="/plant-oracle">
+                <img src="assets/oracle-cards/plant/hibiscus-front.webp?v=20260826-6" width="850" height="1295" alt="Hibiscus Plant Oracle card" />
+                <span><strong>Plant</strong><small>Oracle</small></span>
+              </a>
+            </div>
+            <p class="oracle-kingdom-field-line">Tune into what you love. Speak life back into your field.</p>
+          </nav>
         </div>
       </section>
 
@@ -287,14 +309,18 @@
         </div>
         <div class="prose">
           <p>
-            Close your eyes, take one steady breath, and tune into the guide that found you. Each
-            animal, tree, or plant offers one suggested spiritual meaning: the central quality named
-            on its card. Hold that single quality as a clear place for your attention to return.
+            Cover your eyes and close your mind. Tune into the guide that found you and its energy.
+            Each animal, tree, or plant offers one suggested spiritual meaning. Hold that quality as
+            a clear place for your attention to return. In KELA’s spiritual language, each time you
+            tune in meditatively to a tree, plant, animal—or any living presence you love—you are
+            speaking life back into your field.
           </p>
           <p>
-            This is a KELA protection invocation: a deliberate spiritual boundary for your attention.
-            Speak: “Dear [guide], please
-            protect my mind and energy. Allow only kind thoughts and words to enter my field.”
+            When you feel its presence, ask out loud and in your mind. Each card addresses the guide
+            by name. Tree Oracle cards include the word “Tree,” such as “Dear Olive Tree.” Speak:
+            “Dear [guide], I can feel your presence within me. Please be the guardian of my mind.
+            Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter
+            my field. Amen.”
           </p>
         </div>
       </section>

@@ -276,27 +276,37 @@
     });
   }
 
-  if (body.classList.contains("portal-page")) {
-    const portalMain = document.querySelector(".portal-main");
+  const hasPortalSamaras = body.classList.contains("portal-page");
+  const hasPattiSamaras = body.classList.contains("meet-patti-page");
+  const hasKelaMapleLeaves = body.classList.contains("meet-kela-page");
+
+  if (hasPortalSamaras || hasPattiSamaras || hasKelaMapleLeaves) {
+    const portalMain = document.querySelector(hasPortalSamaras ? ".portal-main" : ".patti-door-main");
     if (!portalMain) return;
     const samaras = document.createElement("canvas");
-    samaras.className = "portal-samara-canvas";
+    samaras.className = hasKelaMapleLeaves ? "portal-samara-canvas kela-maple-leaf-canvas" : "portal-samara-canvas";
     samaras.setAttribute("aria-hidden", "true");
     portalMain.prepend(samaras);
     startFallingSprites({
       canvas: samaras,
-      source: "/assets/maple-samara-sprites.png",
-      regions: [
-        { x: 0, y: 45, width: 520, height: 305 },
-        { x: 455, y: 18, width: 450, height: 430 },
-        { x: 380, y: 500, width: 525, height: 245 },
-        { x: 0, y: 875, width: 555, height: 370 },
-        { x: 575, y: 870, width: 679, height: 375 },
-      ],
-      count: (width) => width < 640 ? 10 : 16,
-      size: [38, 72],
-      speed: [14, 28],
-      alpha: [0.2, 0.48],
+      source: hasKelaMapleLeaves ? "/assets/red-maple-leaf-sprites.svg" : "/assets/maple-samara-sprites.png",
+      regions: hasKelaMapleLeaves
+        ? [
+            { x: 0, y: 0, width: 300, height: 300 },
+            { x: 300, y: 0, width: 300, height: 300 },
+            { x: 600, y: 0, width: 300, height: 300 },
+          ]
+        : [
+            { x: 0, y: 45, width: 520, height: 305 },
+            { x: 455, y: 18, width: 450, height: 430 },
+            { x: 380, y: 500, width: 525, height: 245 },
+            { x: 0, y: 875, width: 555, height: 370 },
+            { x: 575, y: 870, width: 679, height: 375 },
+          ],
+      count: (width) => width < 640 ? (hasKelaMapleLeaves ? 9 : hasPattiSamaras ? 14 : 10) : (hasKelaMapleLeaves ? 18 : hasPattiSamaras ? 22 : 16),
+      size: hasKelaMapleLeaves ? [38, 74] : hasPattiSamaras ? [34, 66] : [38, 72],
+      speed: hasKelaMapleLeaves ? [11, 23] : [14, 28],
+      alpha: hasKelaMapleLeaves ? [0.32, 0.7] : hasPattiSamaras ? [0.34, 0.68] : [0.2, 0.48],
       isActive: () => true,
       flip: true,
     });

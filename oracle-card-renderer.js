@@ -7,7 +7,8 @@ const renderData = renderDeck === "animal"
   : renderDeck === "plant" ? plantGuides[renderIndex] : treeGuides[renderIndex];
 const renderSlug = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const renderDataSlug = renderSlug(renderData.name);
-const renderBackProtection = `“Dear ${renderData.name}, please protect my mind and energy. Allow only kind thoughts and words to enter my field.”`;
+const renderGuideName = renderDeck === "tree" ? `${renderData.name} Tree` : renderData.name;
+const renderBackProtection = `“Dear ${renderGuideName}, I can feel your presence within me. Please be the guardian of my mind. Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter my field. Amen.”`;
 const renderArt = renderDeck === "animal"
   ? `assets/animals/cutouts-transparent/${renderDataSlug}.png`
   : renderData.art;
@@ -47,13 +48,20 @@ const renderBack = `
   <img class="master" src="${document.body.dataset.master}" alt="">
   ${renderBrand(`${renderDeck.toUpperCase()} ORACLE · MEANING CARD`)}
   <section class="back-copy${renderMessageClass}">
-    <h1 class="${renderNameClass}">${renderData.name}</h1>
-    ${renderBotanical}
-    <p class="keyword" style="--accent:${renderData.accent}">${renderData.keyword}</p>
+    <section class="back-guide-intro">
+      <div class="back-guide-art ${renderDeck}" aria-hidden="true">
+        <img src="${renderArt}" alt="">
+      </div>
+      <div class="back-guide-text">
+        <h1 class="${renderNameClass}">${renderData.name}</h1>
+        ${renderBotanical}
+        <p class="keyword" style="--accent:${renderData.accent}">${renderData.keyword}</p>
+      </div>
+    </section>
     <span class="ornament" aria-hidden="true">◆</span>
     <p class="message">${renderData.message}</p>
     <div class="protection-box">
-      <strong>PROTECTION &amp; CONFIRMATION</strong>
+      <strong>PROTECTION INVOCATION</strong>
       <p>${renderBackProtection}</p>
     </div>
     <div class="cue">${renderBackCue}</div>

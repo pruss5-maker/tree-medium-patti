@@ -11,6 +11,7 @@
     ["/plant-oracle", "Plant"],
   ];
   const oracleLabels = new Map(oracleRoutes);
+  const shortOracleLabels = new Map(menuOracleRoutes);
   const routeFor = (anchor) => {
     try {
       return new URL(anchor.getAttribute("href"), window.location.origin).pathname
@@ -27,7 +28,11 @@
     const cardLabel = anchor.matches(".home-gift-card, .portal-oracle-choice")
       ? anchor.querySelector(":scope > span")
       : null;
-    if (cardLabel) cardLabel.textContent = label;
+    if (cardLabel) {
+      cardLabel.textContent = anchor.matches(".home-gift-card")
+        ? shortOracleLabels.get(routeFor(anchor))
+        : label;
+    }
     else if (anchor.childElementCount === 0) anchor.textContent = label;
     anchor.dataset.freeOnlineOracle = "";
   });
@@ -63,7 +68,7 @@
   });
 
   document.querySelectorAll(".home-gifts-heading .home-eyebrow").forEach((heading) => {
-    heading.textContent = "Free Online Oracles: Tree · Plant · Animal";
+    heading.textContent = "Free Online Oracle Cards";
   });
   document.querySelectorAll('[aria-label="Choose a free oracle deck"]').forEach((chooser) => {
     chooser.setAttribute("aria-label", "Choose a free online oracle: Tree, Plant, or Animal");
@@ -89,21 +94,10 @@
       font-size: clamp(1.25rem, 4.8vw, 1.55rem);
       border-left: 1px solid rgba(229, 195, 111, 0.48);
     }
-    .home-gift-card span {
-      display: grid;
-      min-height: 48px;
-      line-height: 1.15;
-      border-radius: 15px;
-      place-items: center;
-      text-wrap: balance;
-    }
     @media (max-height: 700px) {
       .site-nav:has(.site-nav-oracle-heading) { gap: 9px; padding-top: 78px; padding-bottom: 34px; }
       .site-nav > a[data-oracle-menu-choice] { font-size: 1.18rem; }
       .site-nav-oracle-heading { font-size: 0.64rem; }
-    }
-    @media (max-width: 760px) {
-      .home-gift-card span { min-height: 40px; font-size: clamp(0.48rem, 2.1vw, 0.64rem); }
     }
   `;
   document.head.append(labelStyles);

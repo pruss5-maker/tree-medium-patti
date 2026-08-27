@@ -117,7 +117,7 @@ body {
   top: 350px;
   left: 205px;
   width: 712px;
-  height: 350px;
+  height: 450px;
 }
 
 .art-area.animal img {
@@ -129,43 +129,45 @@ body {
   object-fit: contain;
   filter: none;
   mix-blend-mode: normal;
-  transform: scale(0.96);
+  transform: scale(1.08);
 }
 
 .canvas[data-slug="blue-owl"] .art-area.animal img {
-  transform: scale(1.03);
+  transform: scale(1.17);
 }
 
-/* Center each visible silhouette rather than its uneven transparent image canvas. */
-.canvas[data-slug="bear"] { --animal-art-x: -31.8px; --animal-art-y: 42.2px; }
-.canvas[data-slug="bee"] { --animal-art-x: 2.4px; --animal-art-y: -22.3px; }
-.canvas[data-slug="blue-owl"] { --animal-art-x: 7.2px; --animal-art-y: -12.9px; }
-.canvas[data-slug="bunny-rabbit"] { --animal-art-x: 5.2px; --animal-art-y: 27.5px; }
-.canvas[data-slug="crow"] { --animal-art-x: 25.2px; --animal-art-y: 24.7px; }
-.canvas[data-slug="deer"] { --animal-art-x: 9px; --animal-art-y: 51.7px; }
-.canvas[data-slug="dolphin"] { --animal-art-x: 29.9px; --animal-art-y: -6.6px; }
-.canvas[data-slug="dragonfly"] { --animal-art-x: 61.7px; --animal-art-y: 28.5px; }
-.canvas[data-slug="elephant"] { --animal-art-x: 0.5px; --animal-art-y: 17.1px; }
-.canvas[data-slug="fox"] { --animal-art-x: -11.9px; --animal-art-y: 9px; }
-.canvas[data-slug="frog"] { --animal-art-x: -23.7px; --animal-art-y: -19px; }
-.canvas[data-slug="horse"] { --animal-art-x: -11.4px; --animal-art-y: 22.8px; }
-.canvas[data-slug="hummingbird"] { --animal-art-x: 12.8px; --animal-art-y: -10.4px; }
-.canvas[data-slug="mole"] { --animal-art-x: -1.4px; --animal-art-y: -36.1px; }
-.canvas[data-slug="moth"] { --animal-art-x: 15.7px; --animal-art-y: 7.1px; }
-.canvas[data-slug="octopus"] { --animal-art-x: 11.9px; --animal-art-y: -19px; }
-.canvas[data-slug="parrot"] { --animal-art-x: -33.2px; --animal-art-y: 11.4px; }
-.canvas[data-slug="snake"] { --animal-art-x: -23.3px; --animal-art-y: 44.6px; }
-.canvas[data-slug="spider"] { --animal-art-x: 28.5px; --animal-art-y: -12.8px; }
-.canvas[data-slug="tiger"] { --animal-art-x: -9px; --animal-art-y: -10px; }
-.canvas[data-slug="turtle"] { --animal-art-x: 0; --animal-art-y: -75.9px; }
-.canvas[data-slug="whale"] { --animal-art-x: -27.5px; --animal-art-y: 3.8px; }
+/* Center the animal's visual weight, not the transparent canvas or an isolated
+   whisker, wingtip, tail, or tentacle. These offsets use each cutout's alpha
+   centroid, with a small edge-safe correction for the dragonfly's long body. */
+.canvas[data-slug="bear"] { --animal-art-x: -24.3px; --animal-art-y: 30.2px; }
+.canvas[data-slug="bee"] { --animal-art-x: -4.7px; --animal-art-y: -20.6px; }
+.canvas[data-slug="blue-owl"] { --animal-art-x: 11px; --animal-art-y: -31.2px; }
+.canvas[data-slug="bunny-rabbit"] { --animal-art-x: 23.7px; --animal-art-y: 7.3px; }
+.canvas[data-slug="crow"] { --animal-art-x: 40.5px; --animal-art-y: 27.2px; }
+.canvas[data-slug="deer"] { --animal-art-x: 3.7px; --animal-art-y: 42.8px; }
+.canvas[data-slug="dolphin"] { --animal-art-x: 34.9px; --animal-art-y: -14.2px; }
+.canvas[data-slug="dragonfly"] { --animal-art-x: 59.7px; --animal-art-y: 80px; }
+.canvas[data-slug="elephant"] { --animal-art-x: -2px; --animal-art-y: 5.5px; }
+.canvas[data-slug="fox"] { --animal-art-x: 6.9px; --animal-art-y: -23.3px; }
+.canvas[data-slug="frog"] { --animal-art-x: -31.1px; --animal-art-y: -36.3px; }
+.canvas[data-slug="horse"] { --animal-art-x: -21.9px; --animal-art-y: 24.7px; }
+.canvas[data-slug="hummingbird"] { --animal-art-x: -6.7px; --animal-art-y: -2.8px; }
+.canvas[data-slug="mole"] { --animal-art-x: -3.5px; --animal-art-y: -40.3px; }
+.canvas[data-slug="moth"] { --animal-art-x: 21.7px; --animal-art-y: 46.4px; }
+.canvas[data-slug="octopus"] { --animal-art-x: -7.6px; --animal-art-y: -43.7px; }
+.canvas[data-slug="parrot"] { --animal-art-x: -46px; --animal-art-y: 16.7px; }
+.canvas[data-slug="snake"] { --animal-art-x: -16.6px; --animal-art-y: 38.3px; }
+.canvas[data-slug="spider"] { --animal-art-x: 22px; --animal-art-y: -16.6px; }
+.canvas[data-slug="tiger"] { --animal-art-x: 12.8px; --animal-art-y: -10.3px; }
+.canvas[data-slug="turtle"] { --animal-art-x: 0.7px; --animal-art-y: -38.1px; }
+.canvas[data-slug="whale"] { --animal-art-x: -38px; --animal-art-y: -16.1px; }
 
 .art-area.tree,
 .art-area.plant {
   top: 350px;
   left: 205px;
   width: 712px;
-  height: 300px;
+  height: 500px;
   background: #173528;
   border: 2px solid rgba(226, 185, 105, 0.9);
   border-radius: 42px;
@@ -189,12 +191,12 @@ body {
 }
 
 .animal.front .front-copy {
-  top: 710px;
+  top: 820px;
 }
 
 .tree.front .front-copy,
 .plant.front .front-copy {
-  top: 660px;
+  top: 870px;
 }
 
 h1 {
@@ -306,7 +308,7 @@ h1.long-name {
 
 .animal.front .cue {
   position: absolute;
-  top: 502px;
+  top: 376px;
   left: 54px;
   margin-top: 0;
 }
@@ -319,15 +321,15 @@ h1.long-name {
 .tree.front .cue,
 .plant.front .cue {
   position: absolute;
-  top: 472px;
+  top: 262px;
   left: 54px;
   margin-top: 0;
 }
 
 .back-copy {
   top: 320px;
-  left: 201px;
-  width: 720px;
+  left: 230px;
+  width: 662px;
   text-align: center;
 }
 
@@ -335,35 +337,100 @@ h1.long-name {
   top: 380px;
 }
 
+.back-guide-intro {
+  display: grid;
+  min-height: 150px;
+  margin-bottom: 2px;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+}
+
+.back-guide-art {
+  display: flex;
+  width: 142px;
+  height: 142px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 39, 29, 0.56);
+  border: 2px solid rgba(226, 185, 105, 0.9);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 22px rgba(4, 24, 18, 0.28),
+    0 7px 20px rgba(4, 24, 18, 0.22);
+}
+
+.back-guide-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.back-guide-art.animal {
+  overflow: visible;
+  background: radial-gradient(circle, rgba(232, 197, 119, 0.1), transparent 68%);
+  border-color: rgba(227, 185, 102, 0.72);
+}
+
+.back-guide-art.animal img {
+  width: 126px;
+  height: 126px;
+  object-fit: contain;
+  filter:
+    brightness(1.34)
+    contrast(1.08)
+    drop-shadow(0 7px 9px rgba(1, 16, 30, 0.3));
+}
+
+.back-guide-art.tree img,
+.back-guide-art.plant img {
+  filter: saturate(1.08) contrast(1.03) brightness(0.94);
+}
+
+.back-guide-text {
+  min-width: 0;
+  text-align: left;
+}
+
 .back-copy h1 {
-  font-size: 82px;
+  font-size: 66px;
+  line-height: 0.96;
 }
 
 .back-copy h1.long-name {
-  font-size: 68px;
+  font-size: 54px;
+}
+
+.back-copy .back-guide-text .botanical,
+.back-copy .back-guide-text .keyword {
+  font-size: 28px;
+  line-height: 1.08;
 }
 
 .back-copy .message {
   display: flex;
-  min-height: 320px;
-  margin: 12px 0 0;
+  min-height: 300px;
+  margin: 10px 0 0;
   align-items: center;
   justify-content: center;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 45px;
-  line-height: 1.25;
+  font-size: 42px;
+  line-height: 1.17;
   text-align: center;
 }
 
 .back-copy.long-message .message {
-  font-size: 40px;
-  line-height: 1.24;
+  font-size: 38px;
+  line-height: 1.13;
 }
 
 .protection-box {
   position: relative;
-  padding: 16px 18px 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 14px 0;
   color: var(--ink);
   background: transparent;
   border: 0;
@@ -387,10 +454,10 @@ h1.long-name {
 
 .protection-box strong {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   color: var(--gold);
   font-family: Arial, sans-serif;
-  font-size: 32px;
+  font-size: 30px;
   letter-spacing: 0.12em;
 }
 
@@ -398,8 +465,8 @@ h1.long-name {
   margin: 0;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 40px;
-  line-height: 1.2;
+  font-size: 38px;
+  line-height: 1.1;
   text-align: center;
 }
 
@@ -412,12 +479,12 @@ h1.long-name {
 
 .tree.back .back-copy,
 .plant.back .back-copy {
-  top: 340px;
+  top: 320px;
 }
 
 .tree.back .back-copy .message,
 .plant.back .back-copy .message {
-  min-height: 310px;
+  min-height: 285px;
 }
 
 .animal.back .back-copy .cue,
@@ -432,14 +499,14 @@ h1.long-name {
 }
 
 .tree.back .back-copy .cue {
-  top: 761px;
+  top: 810px;
 }
 
 .plant.back .back-copy .cue {
-  top: 761px;
+  top: 810px;
 }
 
 .plant.back .protection-box p {
-  font-size: 40px;
-  line-height: 1.2;
+  font-size: 38px;
+  line-height: 1.1;
 }

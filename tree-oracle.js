@@ -6,10 +6,10 @@ const treeGuides = [
     keyword: "Inner Vision",
     accent: "#a2769f",
     message:
-      "Madrona sheds what has grown too tight, revealing luminous color beneath. Its clear presence invites your inner sight to soften open and notice the images, patterns, and quiet knowing already moving through you.",
+      "Madrona grows throughout Orcas Island. Patti feels its presence like the vortex energy of Sedona. Place both feet on the ground. Take three slow breaths. Feel into Madrona and ask it to protect your mind and your energy. Notice which thoughts become quieter.",
     attunement:
-      "Rest your gaze on the places where Madrona's bark opens. Breathe slowly and imagine one old layer loosening from your inner sight.",
-    question: "What am I ready to see now that I could not see before?",
+      "Place one hand on your heart and one on your forehead. Say aloud: Madrona, protect my mind and my energy. Take three slow breaths.",
+    question: "What thought can I release from my field today?",
   },
   {
     name: "Neem",
@@ -18,130 +18,142 @@ const treeGuides = [
     keyword: "Sacred Clearing",
     accent: "#71965f",
     message:
-      "Neem arrives like clean air in an overfilled room. Clear the stale habits, borrowed worries, and noise that cloud your energy so your own signal becomes easier to hear.",
+      "Neem allows you to clear what does not belong in your mind or energy. In India, it has long been honored as a sacred and purifying tree. Open a door or window. Say aloud: Neem Tree, remove what is unkind, false, or not mine. Leave only what helps life grow.",
     attunement:
-      "With each exhale, name one thing you can set down for today. Leave a little unfilled space and notice what returns to it.",
-    question: "What can I release so my own energy has room to move?",
+      "Sweep your hands slowly from your head toward the ground. Say: Neem Tree, clear my mind and my energy. Leave only what is kind, true, and mine.",
+    question: "What thought or energy am I ready to clear from my field?",
   },
   {
     name: "Baobab",
     botanical: "Adansonia digitata",
     art: "assets/tree-photos/baobab.webp",
-    keyword: "Ancestral Memory",
+    keyword: "Stored Wisdom",
     accent: "#b98b56",
     message:
-      "Baobab holds the shape of deep time. Its vast trunk calls you to remember the strength, stories, and unfinished wisdom that traveled here before you—while choosing consciously what you will carry forward.",
+      "Baobab allows you to feel the wisdom already stored within you. It holds life through dry seasons and has given food, fiber, shelter, and gathering places across generations. Place both hands over your belly. Name three strengths that have carried you here.",
     attunement:
-      "Place both feet on the ground. Remember one person, place, or teaching that helped make your life possible, and offer a quiet thank-you.",
-    question: "Which inheritance strengthens me, and which one is mine to transform?",
+      "Place both hands over your belly. Say: Baobab Tree, awaken the wisdom already stored within me. Take three slow breaths and receive the first strength that returns.",
+    question: "What wisdom within me is ready to be remembered?",
   },
   {
     name: "Banyan",
     botanical: "Ficus benghalensis",
     art: "assets/tree-photos/banyan.webp",
-    keyword: "Living Connection",
+    keyword: "Rooted Support",
     accent: "#74855d",
     message:
-      "Banyan becomes a grove without ceasing to be one being. It reminds you that life is a network: every act of attention travels through roots, relationships, and places you may never see.",
+      "Banyan allows you to receive support without losing yourself. Its branches send roots toward the earth until one tree becomes a whole grove and a place of gathering. Write down the names of three people, places, or practices that give your life another place to stand.",
     attunement:
-      "Picture one thread running from you to someone who sustains you, then outward to the wider living world. Let yourself receive as well as send.",
-    question: "Where is the network of life already holding me?",
+      "Touch the ground with one hand and your heart with the other. Say: Banyan Tree, show me the support already reaching toward me. Help me receive it.",
+    question: "Where is life offering me another root of support?",
   },
   {
     name: "Willow",
     botanical: "Salix babylonica",
     art: "assets/tree-photos/willow.webp",
-    keyword: "Let It Move",
+    keyword: "Merciful Release",
     accent: "#6f9890",
     message:
-      "Willow bends toward the water without losing its roots. It calls emotion back into motion, asking you to feel what is present without building a permanent home inside the feeling.",
+      "Willow allows your feelings to move without carrying you away. Its flexible branches bend, and in Chinese Buddhism it is held with Guanyin, the presence of compassion and mercy. Place one hand on your heart. Name the feeling and say: I can feel this, bless it, and let it move.",
     attunement:
-      "Let your shoulders drop. Imagine the feeling moving like water beneath Willow—seen, honored, and allowed to continue on its way.",
-    question: "What feeling needs movement rather than an answer?",
+      "Let your arms hang softly and sway for three breaths. Say: Willow Tree, hold me in compassion while this feeling moves through and away from me.",
+    question: "What feeling is asking to be released with mercy?",
   },
   {
     name: "Cedar",
     botanical: "Thuja plicata",
     art: "assets/tree-photos/cedar.webp",
-    keyword: "Protected Presence",
+    keyword: "Sacred Shelter",
     accent: "#486f5f",
     message:
-      "Cedar gathers the forest into shelter. Its presence asks for a boundary that is alive rather than rigid: strong enough to protect your attention, spacious enough to let love and truth pass through.",
+      "Cedar allows you to create protection that serves life. Western redcedar is deeply honored by Pacific Northwest Indigenous peoples as a Tree of Life, offering shelter, clothing, vessels, and passage. Stand at a doorway. Name what may enter your field and what must remain outside.",
     attunement:
-      "Imagine Cedar's canopy around you. Name what is welcome in this space, then name what must remain outside it today.",
-    question: "What boundary would let my spirit feel safe enough to open?",
+      "Place one hand on your heart and one on the doorway. Say: Cedar Tree, guard this threshold. Let love enter and let harm remain outside.",
+    question: "What does my sacred shelter welcome, and what does it refuse?",
   },
   {
     name: "Oak",
     botanical: "Quercus robur",
     art: "assets/tree-photos/oak.webp",
-    keyword: "Steady Power",
+    keyword: "Strength That Shelters",
     accent: "#9a794c",
     message:
-      "Oak does not rush to prove its strength. It grows power ring by ring, calling you back to the promise you can keep through changing weather—not only in a burst of inspiration.",
+      "Oak allows you to feel strength as a sacred responsibility. Long honored as a tree of powerful gods, an old oak also shelters thousands of lives within its roots, bark, branches, and hollows. Stand tall. Choose one person or living thing your strength can protect today.",
     attunement:
-      "Press your feet gently into the earth. Choose one small action you can repeat, and let consistency be the source of its power.",
-    question: "What deserves my steady devotion now?",
+      "Plant your feet wide. Say: Oak Tree, make my strength steady and let it become shelter. Take one protective action before the day ends.",
+    question: "Who or what becomes safer because I am standing here?",
   },
   {
     name: "Birch",
     botanical: "Betula pendula",
     art: "assets/tree-photos/birch.webp",
-    keyword: "Begin Again",
+    keyword: "Clean Beginning",
     accent: "#a3a878",
     message:
-      "Birch brings light into places that have been cleared. Its pale bark and open crown call you toward the tender beginning—the first honest mark on a new page, made before certainty arrives.",
+      "Birch allows you to enter a new beginning with a clear mind. Its bright bark and broom-making branches have long accompanied seasonal thresholds and the sweeping away of what is finished. Clear one doorway, one page, or one small space. Say: Birch Tree, help me begin cleanly.",
     attunement:
-      "Take one fresh breath and imagine a blank page before you. Name the smallest beginning that would make the page real.",
-    question: "If I did not have to begin perfectly, where would I begin?",
+      "Sweep your hands outward from your heart. Say: Birch Tree, clear the old path from my mind and show me the first clean step into the new.",
+    question: "What can I begin once I stop carrying the finished season?",
   },
   {
     name: "Redwood",
     botanical: "Sequoia sempervirens",
     art: "assets/tree-photos/redwood.webp",
-    keyword: "The Long View",
+    keyword: "Rise Together",
     accent: "#677f79",
     message:
-      "Redwood lifts your attention beyond the urgency of a single day. What feels enormous from the forest floor may become one moment in a much longer becoming. Stand tall enough inside yourself to see farther.",
+      "Redwood allows you to rise without standing alone. The tallest trees on Earth hold themselves through wide, intertwined roots, receive summer water from fog, and can send up new life after injury. Reach both arms upward. Name the person or presence whose support you are ready to receive.",
     attunement:
-      "Imagine your awareness traveling from Redwood's roots to its highest branches. Look back at this moment from one year in the future.",
-    question: "What changes when I choose from the long view?",
+      "Reach upward, then widen your stance. Say: Redwood Tree, connect me to the support beneath and around me. Help me rise with the grove.",
+    question: "What support will I allow myself to receive as I rise?",
   },
   {
     name: "Olive",
     botanical: "Olea europaea",
     art: "assets/tree-photos/olive.webp",
-    keyword: "Make Peace",
+    keyword: "Truthful Peace",
     accent: "#8f8c69",
     message:
-      "Olive carries peace as a living practice, not passive agreement. Its ancient, twisting form asks where reconciliation is possible—and where peace begins by ending the argument inside your own heart.",
+      "Olive allows you to make peace without abandoning your truth. Its branch has carried the meaning of peace, restored life, and sacred honor across thousands of years. Place one hand on your throat and one on your heart. Speak the truth once, then choose the peaceful action that keeps it true.",
     attunement:
-      "Bring one conflict to mind without rehearsing either side. Ask what a peaceful next gesture could be while keeping your truth intact.",
-    question: "What would peace ask of me without asking me to abandon myself?",
+      "Place one hand on your throat and one on your heart. Say: Olive Tree, let my peace be honest and my truth be peaceful. Receive the next action.",
+    question: "What peaceful choice allows my truth to remain whole?",
   },
   {
     name: "Ginkgo",
     botanical: "Ginkgo biloba",
     art: "assets/tree-photos/ginkgo.webp",
-    keyword: "Enduring Light",
+    keyword: "True Aim",
     accent: "#c7a33c",
     message:
-      "Ginkgo has met many changing worlds and still opens its fan-shaped leaves to the light. It calls forward the part of you that can adapt without forgetting its original pattern.",
+      "Ginkgo allows you to see your target and gives you the strength to shoot your arrow toward the goal you set for yourself. Write down one goal. Circle it. Take one real action toward it today.",
     attunement:
-      "Recall one change you once thought you could not survive. Notice the strength that experience has already placed in your hands.",
-    question: "What essential part of me remains, even as everything changes?",
+      "Read your goal aloud. Close your eyes and see it as the target. Ask Ginkgo for clear aim and strength. Choose the first action and begin.",
+    question: "What one action will move me toward my target today?",
   },
   {
     name: "Jacaranda",
     botanical: "Jacaranda mimosifolia",
     art: "assets/tree-photos/jacaranda.webp",
-    keyword: "Creative Opening",
+    keyword: "Visible Beauty",
     accent: "#8f77ae",
     message:
-      "Jacaranda blooms in a color that seems borrowed from a dream. It calls the unexpressed image, phrase, movement, or possibility out of hiding and asks you to give beauty a form it can enter.",
+      "Jacaranda allows the beauty within you to become visible before you feel complete. Its violet flowers can fill bare-looking branches and transform the whole space around them. Choose one idea you have kept hidden. Give it a visible form today—one sentence, sketch, sound, or movement.",
     attunement:
-      "Notice the first color, image, or phrase that comes to you. Do not explain it. Give it five minutes of shape, sound, or movement.",
-    question: "What wants to be created through me before I understand it?",
+      "Close your eyes and picture violet light moving from your heart into your hands. Say: Jacaranda Tree, help the beauty within me become visible.",
+    question: "What beauty within me is ready to be seen?",
+  },
+  {
+    name: "Maple",
+    botanical: "Acer macrophyllum",
+    art: "assets/tree-photos/maple.webp",
+    keyword: "Pure Reflection",
+    accent: "#b98246",
+    message:
+      "Maple trees allow you to see yourself as a pure reflection of Source. Look into a mirror. Meet your own eyes. Say aloud: I am a pure reflection of Source. Name one kind and encouraging truth about yourself.",
+    attunement:
+      "Look into your eyes and repeat: I am a pure reflection of Source. Say one loving truth about yourself three times.",
+    question: "What loving truth will I reflect back to myself today?",
   },
 ];
 
@@ -230,6 +242,8 @@ const randomTreeIndex = () => {
 };
 
 const slugify = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const treeProtectionInvocation = (tree) =>
+  `Cover your eyes and close your mind. Tune into ${tree.name} Tree and its energy. When you feel its presence, ask out loud and in your mind: “Dear ${tree.name} Tree, I can feel your presence within me. Please be the guardian of my mind. Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter my field. Amen.”`;
 
 const preloadTreeCard = (index) => {
   const tree = treeGuides[index];
@@ -244,7 +258,7 @@ const preloadTreeCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260825-11`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260826-13`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -292,8 +306,8 @@ const fillTree = (index) => {
   oracleCard.style.setProperty("--guide-accent", tree.accent);
   updateTreeSeo(tree);
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260825-11`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260825-11`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260826-13`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260826-13`;
   if (treeCardFront) {
     if (treeCardFront.getAttribute("src") !== cardFrontSrc) treeCardFront.src = cardFrontSrc;
     treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;
@@ -314,8 +328,7 @@ const fillTree = (index) => {
   if (treeKeywordBack) treeKeywordBack.textContent = tree.keyword;
   if (treeMessage) treeMessage.textContent = tree.message;
   if (treeWatch) {
-    treeWatch.textContent =
-      `Tune into ${tree.name}. Ask ${tree.name} to protect your mind and energy today.`;
+    treeWatch.textContent = treeProtectionInvocation(tree);
   }
 };
 
@@ -404,7 +417,7 @@ const shareTree = async () => {
   const text = [
     `${tree.name} — ${tree.keyword}`,
     tree.message,
-    `Protection & confirmation: Ask ${tree.name} to protect your mind and energy. Watch for ${tree.name} to begin showing up as confirmation.`,
+    `Protection & confirmation: ${treeProtectionInvocation(tree)}`,
     window.location.href,
   ].filter(Boolean).join("\n\n");
 
@@ -444,6 +457,7 @@ const requestedCardSlug = slugify(previewParams.get("card") || "");
 const requestedCardIndex = treeGuides.findIndex((tree) => slugify(tree.name) === requestedCardSlug);
 if (oracle && isLocalPreview && requestedCardIndex >= 0) {
   showTree(requestedCardIndex, { focus: false, save: false });
+  if (previewParams.get("side") === "meaning") setTreeFace(true);
 } else if (
   oracle
   && isLocalPreview

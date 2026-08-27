@@ -172,7 +172,7 @@ const preloadPlantCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260827-1`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260827-3`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -244,8 +244,8 @@ const fillPlant = (index) => {
   oracleCard.style.setProperty("--plant-card-color", plantCardColors[index] || plantCardColors[0]);
   updatePlantSeo(plant);
   const cardAssetBase = `assets/oracle-cards/plant/${slugify(plant.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-1`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-1`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-3`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-3`;
   if (plantCardFront) {
     if (plantCardFront.getAttribute("src") !== cardFrontSrc) plantCardFront.src = cardFrontSrc;
     plantCardFront.alt = `${plant.name} KELA Plant Oracle card`;

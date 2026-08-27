@@ -43,6 +43,65 @@ body {
   --gold: #e3b966;
 }
 
+/* The Oracle front is the living presence itself: one real photograph and one name. */
+.front-photo {
+  position: absolute;
+  top: 107px;
+  left: 136px;
+  z-index: 1;
+  width: 850px;
+  height: 1295px;
+  overflow: hidden;
+  background: #10271d;
+}
+
+.front-photo::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, transparent 58%, rgba(5, 17, 12, 0.1) 70%, rgba(4, 14, 10, 0.76) 100%),
+    linear-gradient(90deg, rgba(4, 14, 10, 0.08), transparent 18% 82%, rgba(4, 14, 10, 0.08));
+  pointer-events: none;
+}
+
+.front-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.canvas[data-slug="parrot"] .front-photo img {
+  transform: scale(1.38);
+  transform-origin: 52% 35%;
+}
+
+.canvas[data-slug="tiger"] .front-photo img,
+.canvas[data-slug="horse"] .front-photo img {
+  object-position: 10% center;
+}
+
+.front-name {
+  position: absolute;
+  bottom: 68px;
+  left: 136px;
+  z-index: 2;
+  width: 850px;
+  color: #fffaf0;
+  text-align: center;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.88), 0 1px 3px rgba(0, 0, 0, 0.95);
+}
+
+.front-name h1 {
+  color: inherit;
+  font-size: 84px;
+  letter-spacing: -0.025em;
+}
+
+.front-name h1.long-name {
+  font-size: 70px;
+}
+
 .master {
   position: absolute;
   inset: 0;

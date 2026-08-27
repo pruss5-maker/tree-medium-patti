@@ -258,7 +258,7 @@ const preloadTreeCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260826-13`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260827-3`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -306,8 +306,8 @@ const fillTree = (index) => {
   oracleCard.style.setProperty("--guide-accent", tree.accent);
   updateTreeSeo(tree);
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260826-13`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260826-13`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-3`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-3`;
   if (treeCardFront) {
     if (treeCardFront.getAttribute("src") !== cardFrontSrc) treeCardFront.src = cardFrontSrc;
     treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;

@@ -348,7 +348,7 @@ const preloadGuideCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260826-7`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260827-3`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -369,7 +369,7 @@ const updateGuideSeo = (guide, cardColor) => {
   const cardUrl = new URL(seoUrl);
   cardUrl.searchParams.set("color", colorSlug);
   const description = `${guide.name} Animal Oracle card — ${guide.keyword}. Read its original KELA message and protection prompt.`;
-  const imageLabel = `${guide.name} — ${guide.keyword}, a KELA Animal Oracle card with a pencil illustration and a spiritual protection message.`;
+  const imageLabel = `${guide.name} — ${guide.keyword}, a KELA Animal Oracle card with a full-bleed wildlife photograph and a spiritual protection message.`;
 
   oracleCard.dataset.guideSlug = slug;
   oracleCard.dataset.cardColor = colorSlug;
@@ -402,8 +402,8 @@ const fillGuide = (index, colorIndex) => {
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260826-7`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260826-7`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-3`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-3`;
   if (animalCardFront) {
     if (animalCardFront.getAttribute("src") !== cardFrontSrc) animalCardFront.src = cardFrontSrc;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;
@@ -436,8 +436,8 @@ const commitAnimalFace = (showMeaning) => {
   animalFlip.setAttribute(
     "aria-label",
     guide
-      ? `${guide.name} Animal Oracle card — ${showMeaning ? "show its illustration" : "reveal its meaning"}`
-      : showMeaning ? "Show the animal illustration" : "Reveal this animal's meaning",
+      ? `${guide.name} Animal Oracle card — ${showMeaning ? "show the animal" : "reveal its meaning"}`
+      : showMeaning ? "Show the animal" : "Reveal this animal's meaning",
   );
   animalFlipFront?.setAttribute("aria-hidden", String(showMeaning));
   animalFlipBack?.setAttribute("aria-hidden", String(!showMeaning));

@@ -9,9 +9,10 @@ const renderSlug = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, 
 const renderDataSlug = renderSlug(renderData.name);
 const renderGuideName = renderDeck === "tree" ? `${renderData.name} Tree` : renderData.name;
 const renderBackProtection = `“Dear ${renderGuideName}, I can feel your presence within me. Please be the guardian of my mind. Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter my field. Amen.”`;
-const renderArt = renderDeck === "animal"
+const renderBackArt = renderDeck === "animal"
   ? `assets/animals/cutouts-transparent/${renderDataSlug}.png`
   : renderData.art;
+const renderFrontArt = renderDeck === "animal" ? `assets/animal-photos/${renderDataSlug}.webp` : renderData.art;
 const renderBotanical = renderDeck !== "animal" ? `<p class="botanical"><em>${renderData.botanical}</em></p>` : "";
 const renderDeckName = renderDeck === "animal"
   ? "ANIMAL ORACLE · CARD OF THE DAY"
@@ -32,16 +33,11 @@ const renderBrand = (label) => `
   </header>`;
 
 const renderFront = `
-  <img class="master" src="${document.body.dataset.master}" alt="">
-  ${renderBrand(renderDeckName)}
-  <section class="art-area ${renderDeck}">
-    <img src="${renderArt}" alt="">
+  <section class="front-photo ${renderDeck}">
+    <img src="${renderFrontArt}" alt="">
   </section>
-  <section class="front-copy">
+  <section class="front-name">
     <h1 class="${renderNameClass}">${renderData.name}</h1>
-    <p class="keyword" style="--accent:${renderData.accent}">${renderData.keyword}</p>
-    <span class="ornament" aria-hidden="true">◆</span>
-    <div class="cue">${renderCue}</div>
   </section>`;
 
 const renderBack = `
@@ -50,7 +46,7 @@ const renderBack = `
   <section class="back-copy${renderMessageClass}">
     <section class="back-guide-intro">
       <div class="back-guide-art ${renderDeck}" aria-hidden="true">
-        <img src="${renderArt}" alt="">
+        <img src="${renderBackArt}" alt="">
       </div>
       <div class="back-guide-text">
         <h1 class="${renderNameClass}">${renderData.name}</h1>

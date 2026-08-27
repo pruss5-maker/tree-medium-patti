@@ -51,13 +51,21 @@ if (!document.querySelector('link[href*="control-tooltips.css"]')) {
 
 const labelThumbControls = () => {
   const labels = [
-    [".thumb-control-rail .menu-toggle", "Menu"],
-    [".thumb-control-rail .header-triskele", "Book your session"],
-    [".thumb-control-rail .theme-toggle", "Light / dark mode"],
+    [".thumb-control-rail .menu-toggle", "Menu", "Menu"],
+    [".thumb-control-rail .header-triskele", "Book your session", "Book"],
+    [".thumb-control-rail .ambient-jazz-toggle", null, "Volume"],
+    [".thumb-control-rail .theme-toggle", "Light / dark mode", "Mode"],
   ];
-  labels.forEach(([selector, label]) => {
+  labels.forEach(([selector, tooltip, shortLabel]) => {
     const control = document.querySelector(selector);
-    if (control) control.dataset.tooltip = label;
+    if (!control) return;
+    if (tooltip) control.dataset.tooltip = tooltip;
+    if (control.querySelector(".thumb-control-label")) return;
+    const visibleLabel = document.createElement("span");
+    visibleLabel.className = "thumb-control-label";
+    visibleLabel.setAttribute("aria-hidden", "true");
+    visibleLabel.textContent = shortLabel;
+    control.append(visibleLabel);
   });
 };
 

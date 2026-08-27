@@ -3457,12 +3457,12 @@ summary:focus-visible {
 .thumb-control-rail {
   position: fixed;
   right: max(18px, env(safe-area-inset-right));
-  top: max(84px, calc(env(safe-area-inset-top) + 68px));
+  top: max(12px, calc(env(safe-area-inset-top) + 8px));
   bottom: auto;
   z-index: 90;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 17px;
   align-items: center;
 }
 
@@ -3474,6 +3474,38 @@ summary:focus-visible {
 .thumb-control-rail .header-triskele { order: 2; }
 .thumb-control-rail .ambient-jazz-toggle { order: 3; }
 .thumb-control-rail .theme-toggle { order: 4; }
+
+.thumb-control-rail .thumb-control-label,
+.thumb-control-rail .menu-toggle .thumb-control-label {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  display: block;
+  width: max-content;
+  max-width: 68px;
+  padding: 1px 5px 2px;
+  color: #674a17;
+  background: rgba(250, 244, 229, 0.94);
+  border: 1px solid rgba(139, 102, 33, 0.28);
+  border-radius: 999px;
+  box-shadow: 0 2px 7px rgba(58, 42, 17, 0.14);
+  font-family: var(--sans);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.075em;
+  line-height: 1.15;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+html[data-theme="dark"] .thumb-control-rail .thumb-control-label {
+  color: #ead08a;
+  background: rgba(2, 18, 13, 0.94);
+  border-color: rgba(220, 180, 84, 0.38);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.34);
+}
 
 .theme-toggle {
   display: grid;
@@ -3777,9 +3809,9 @@ html[data-theme="dark"] .oracle-page .eyebrow {
 @media (max-width: 760px) {
   .thumb-control-rail {
     right: max(12px, env(safe-area-inset-right));
-    top: max(68px, calc(env(safe-area-inset-top) + 58px));
+    top: max(8px, calc(env(safe-area-inset-top) + 6px));
     bottom: auto;
-    gap: 8px;
+    gap: 15px;
   }
 }
 

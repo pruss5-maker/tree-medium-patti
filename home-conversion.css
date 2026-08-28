@@ -309,31 +309,6 @@ html[data-theme="dark"] .home-main > .portal-samara-canvas {
   box-shadow: 0 25px 58px rgba(0, 0, 0, 0.42);
 }
 
-.home-gift-card span {
-  position: absolute;
-  right: 18%;
-  bottom: 7.1%;
-  left: 18%;
-  display: grid;
-  min-height: 34px;
-  padding: 4px 3px;
-  color: #fff4c8;
-  background: #173528;
-  border: 0;
-  border-radius: 0;
-  font-size: clamp(0.65rem, 1.2vw, 0.84rem);
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  line-height: 1;
-  place-items: center;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.home-gift-animal span {
-  background: #06334b;
-}
-
 .home-gift-card:hover,
 .home-gift-card:focus-visible {
   z-index: 5;
@@ -790,16 +765,6 @@ html[data-theme="dark"] .home-sanctuary-line {
   .home-gift-card img {
     border-radius: 15px;
     box-shadow: 0 17px 38px rgba(0, 0, 0, 0.38);
-  }
-
-  .home-gift-card span {
-    right: 15%;
-    bottom: 6.8%;
-    left: 15%;
-    min-height: 24px;
-    padding: 3px 2px;
-    font-size: clamp(0.54rem, 2.25vw, 0.68rem);
-    letter-spacing: 0.12em;
   }
 
   .home-memory-gift {

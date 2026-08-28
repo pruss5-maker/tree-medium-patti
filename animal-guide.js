@@ -348,7 +348,7 @@ const preloadGuideCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260827-5`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260827-6`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -402,8 +402,8 @@ const fillGuide = (index, colorIndex) => {
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-5`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-5`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-6`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-6`;
   if (animalCardFront) {
     if (animalCardFront.getAttribute("src") !== cardFrontSrc) animalCardFront.src = cardFrontSrc;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;
@@ -578,7 +578,19 @@ const previewColorIndex = requestedColorBySlug >= 0
   : randomColorIndex();
 const requestedCardSlug = slugify(previewParams.get("card") || "");
 const requestedCardIndex = animalGuides.findIndex((guide) => slugify(guide.name) === requestedCardSlug);
-if (oracle && isLocalPreview && requestedCardIndex >= 0) {
+const requestedFoundSlug = slugify(previewParams.get("found") || "");
+const savedFoundGuide = window.KelaCompanions?.getFound?.("animal");
+const requestedFoundIndex = savedFoundGuide?.slug === requestedFoundSlug
+  ? animalGuides.findIndex((guide) => slugify(guide.name) === requestedFoundSlug)
+  : -1;
+if (oracle && requestedFoundIndex >= 0) {
+  showGuide(requestedFoundIndex, {
+    focus: false,
+    save: false,
+    colorIndex: requestedFoundIndex % animalCardColors.length,
+  });
+  if (status) status.textContent = `${animalGuides[requestedFoundIndex].name} found you in the memory game.`;
+} else if (oracle && isLocalPreview && requestedCardIndex >= 0) {
   showGuide(requestedCardIndex, { focus: false, save: false, colorIndex: previewColorIndex });
   if (previewParams.get("side") === "meaning") setAnimalFace(true);
 } else if (

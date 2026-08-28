@@ -71,7 +71,8 @@ if (gameRoot) {
     winImage.src = item.image;
     winImage.alt = `${item.name} coloring outline`;
     winInvocation.textContent = `“Dear ${item.name}, please protect my mind and energy from any unkind thoughts or energies. Allow only kind thoughts and words to enter my field.”`;
-    winOracle.href = `/${deckKey}-oracle`;
+    winOracle.href = `/${deckKey}-oracle?found=${encodeURIComponent(item.slug)}`;
+    winOracle.textContent = `See the ${item.name} Oracle card`;
     winModal.hidden = false;
     document.body.classList.add("memory-modal-open");
     gameRoot.querySelector("[data-memory-win-close]")?.focus();

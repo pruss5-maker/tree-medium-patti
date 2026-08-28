@@ -358,8 +358,16 @@ const previewParams = new URLSearchParams(window.location.search);
 const requestedPreview = Number.parseInt(previewParams.get("plant"), 10);
 const requestedCardSlug = slugify(previewParams.get("card") || "");
 const requestedCardIndex = plantGuides.findIndex((plant) => slugify(plant.name) === requestedCardSlug);
+const requestedFoundSlug = slugify(previewParams.get("found") || "");
+const savedFoundPlant = window.KelaCompanions?.getFound?.("plant");
+const requestedFoundIndex = savedFoundPlant?.slug === requestedFoundSlug
+  ? plantGuides.findIndex((plant) => slugify(plant.name) === requestedFoundSlug)
+  : -1;
 
-if (oracle && isLocalPreview && requestedCardIndex >= 0) {
+if (oracle && requestedFoundIndex >= 0) {
+  showPlant(requestedFoundIndex, { focus: false, save: false });
+  if (status) status.textContent = `${plantGuides[requestedFoundIndex].name} found you in the memory game.`;
+} else if (oracle && isLocalPreview && requestedCardIndex >= 0) {
   showPlant(requestedCardIndex, { focus: false, save: false });
   if (previewParams.get("side") === "meaning") setPlantFace(true);
 } else if (oracle && isLocalPreview && Number.isInteger(requestedPreview) && requestedPreview >= 0 && requestedPreview < plantGuides.length) {

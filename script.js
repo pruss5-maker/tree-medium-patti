@@ -173,11 +173,13 @@ window.KelaCompanions = (() => {
     const isMemoryFound = source === "memory";
 
     link.className = `oracle-companion oracle-companion-${companion.deck}${isMemoryFound ? " oracle-companion-memory-found" : ""}`;
-    link.href = companion.href;
+    link.href = isMemoryFound
+      ? `/${companion.deck}-oracle?found=${encodeURIComponent(companion.slug)}`
+      : companion.href;
     link.setAttribute(
       "aria-label",
       isMemoryFound
-        ? `Reopen ${companion.name}, the ${companion.deck} memory card that found you`
+        ? `Open the ${companion.name} ${companion.deck} Oracle card that found you`
         : `Return to your ${companion.name} ${companion.deck} card`,
     );
     if (isMemoryFound) link.title = `${companion.name} found you in the ${companion.deck} memory game`;
@@ -217,7 +219,11 @@ window.KelaCompanions = (() => {
     const savedMemoryFound = readMemoryFound();
     const memoryFoundCompanions = companionDeckOrder
       .map((deck) => savedMemoryFound[deck])
-      .filter((companion) => companion?.name && companion?.image && companion?.href);
+      .filter((companion) => {
+        if (!companion?.name || !companion?.image || !companion?.href) return false;
+        const oracleCompanion = savedCompanions[companion.deck];
+        return oracleCompanion?.name?.trim().toLowerCase() !== companion.name.trim().toLowerCase();
+      });
     let companionTray = document.querySelector("[data-oracle-companions]");
 
     if (!oracleCompanions.length && !memoryFoundCompanions.length) {
@@ -284,7 +290,7 @@ window.KelaCompanions = (() => {
     const companions = readMemoryFound();
     companions[companion.deck] = {
       ...companion,
-      href: `/${companion.deck}-memory-game#found-you`,
+      href: `/${companion.deck}-oracle?found=${encodeURIComponent(companion.slug)}`,
     };
     try {
       window.localStorage.setItem(memoryFoundStorageKey, JSON.stringify(companions));

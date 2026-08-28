@@ -455,7 +455,15 @@ const previewParams = new URLSearchParams(window.location.search);
 const requestedPreview = Number.parseInt(previewParams.get("tree"), 10);
 const requestedCardSlug = slugify(previewParams.get("card") || "");
 const requestedCardIndex = treeGuides.findIndex((tree) => slugify(tree.name) === requestedCardSlug);
-if (oracle && isLocalPreview && requestedCardIndex >= 0) {
+const requestedFoundSlug = slugify(previewParams.get("found") || "");
+const savedFoundTree = window.KelaCompanions?.getFound?.("tree");
+const requestedFoundIndex = savedFoundTree?.slug === requestedFoundSlug
+  ? treeGuides.findIndex((tree) => slugify(tree.name) === requestedFoundSlug)
+  : -1;
+if (oracle && requestedFoundIndex >= 0) {
+  showTree(requestedFoundIndex, { focus: false, save: false });
+  if (status) status.textContent = `${treeGuides[requestedFoundIndex].name} found you in the memory game.`;
+} else if (oracle && isLocalPreview && requestedCardIndex >= 0) {
   showTree(requestedCardIndex, { focus: false, save: false });
   if (previewParams.get("side") === "meaning") setTreeFace(true);
 } else if (

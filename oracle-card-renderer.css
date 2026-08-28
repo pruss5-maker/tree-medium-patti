@@ -81,6 +81,19 @@ body {
   object-position: 10% center;
 }
 
+.canvas[data-slug="deer"] .front-photo img {
+  object-position: 40% center;
+}
+
+.canvas[data-slug="dolphin"] .front-photo img {
+  object-position: 65% center;
+}
+
+.canvas[data-slug="elephant"] .front-photo img,
+.canvas[data-slug="whale"] .front-photo img {
+  object-position: 27% center;
+}
+
 .front-name {
   position: absolute;
   bottom: 68px;

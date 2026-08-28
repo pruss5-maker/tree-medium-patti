@@ -78,6 +78,7 @@ document.querySelectorAll("[data-nav]").forEach((menu) => {
   let memoryLink = menu.querySelector('a[href^="/memory-games"]');
   let pattiLink = menu.querySelector('a[href^="/meet-patti"]');
   let kelaLink = menu.querySelector('a[href^="/meet-kela"]');
+  const plantOracleLink = menu.querySelector('a[href^="/plant-oracle"]');
 
   if (!pattiLink) {
     pattiLink = document.createElement("a");
@@ -97,7 +98,8 @@ document.querySelectorAll("[data-nav]").forEach((menu) => {
     memoryLink = document.createElement("a");
     memoryLink.href = "/memory-games";
     memoryLink.textContent = "Memory Games";
-    menu.insertBefore(memoryLink, kelaLink);
+    if (plantOracleLink) plantOracleLink.after(memoryLink);
+    else menu.insertBefore(memoryLink, kelaLink);
   }
 
   if (/\/meet-kela(?:\.html)?\/?$/.test(window.location.pathname)) {

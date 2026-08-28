@@ -83,10 +83,10 @@
       z-index: 1;
       display: block;
       margin: 3px 0 -3px;
-      color: #e5c36f;
-      font: 900 0.72rem/1.2 var(--sans, sans-serif);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+      color: inherit;
+      font: 400 1.7rem/1.2 var(--serif, Georgia, serif);
+      letter-spacing: 0;
+      text-transform: none;
     }
     .site-nav > a[data-oracle-menu-choice] {
       margin-left: 12px;
@@ -97,7 +97,6 @@
     @media (max-height: 700px) {
       .site-nav:has(.site-nav-oracle-heading) { gap: 9px; padding-top: 78px; padding-bottom: 34px; }
       .site-nav > a[data-oracle-menu-choice] { font-size: 1.18rem; }
-      .site-nav-oracle-heading { font-size: 0.64rem; }
     }
   `;
   document.head.append(labelStyles);

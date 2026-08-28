@@ -247,7 +247,6 @@ if (gameRoot) {
     });
   };
 
-  pairSelect.querySelector('[value="all"]').textContent = `Full deck · ${deck.items.length} pairs`;
   pairSelect.addEventListener("change", newGame);
   resetButton.addEventListener("click", newGame);
   winAgain?.addEventListener("click", newGame);

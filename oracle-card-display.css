@@ -89,6 +89,62 @@ html[data-theme="dark"] .oracle-atmosphere-canvas { opacity: 0.62; }
   transform: none;
 }
 
+/* Keep one calm, explicit action visible on every finished oracle-card front. */
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face > .animal-flip-front-copy,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face > .plant-flip-front-copy,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face > .tree-flip-front-copy {
+  position: absolute;
+  inset: auto 0 8px;
+  z-index: 3;
+  display: flex;
+  min-height: 0;
+  padding: 0;
+  justify-content: center;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face > .animal-flip-front-copy h2,
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face > .animal-flip-front-copy .oracle-keyword,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face > .plant-flip-front-copy h2,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face > .plant-flip-front-copy .oracle-keyword,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face > .tree-flip-front-copy h2,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face > .tree-flip-front-copy .oracle-keyword {
+  display: none;
+}
+
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face .animal-flip-cue,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face .tree-flip-cue,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face .tree-flip-cue {
+  display: inline-flex;
+  width: fit-content;
+  padding: 5px 10px;
+  margin: 0;
+  align-items: center;
+  gap: 6px;
+  color: #fff8e9;
+  background: rgba(7, 30, 24, 0.76);
+  border: 1px solid rgba(239, 208, 135, 0.82);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(2, 16, 12, 0.22);
+  font-size: clamp(0.5rem, 1.8vw, 0.62rem);
+  letter-spacing: 0.11em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  backdrop-filter: blur(7px);
+}
+
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face .animal-flip-cue::before,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face .tree-flip-cue::before,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face .tree-flip-cue::before {
+  content: "↻";
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 0.8;
+}
+
 /* Keep the oracle experience comfortably inside the first viewport. */
 @media (min-width: 981px) {
   .oracle-page .site-header,
@@ -193,25 +249,17 @@ html[data-theme="dark"] .oracle-atmosphere-canvas { opacity: 0.62; }
     gap: 10px;
   }
 
-  .oracle-layout:has(.oracle-card.is-revealed) .oracle-intro .oracle-lede,
-  .oracle-layout:has(.oracle-card.is-revealed) .oracle-intro .oracle-naming {
+  .oracle-layout:has(.oracle-card.is-revealed) .oracle-intro {
     display: none;
-  }
-
-  .oracle-layout:has(.oracle-card.is-revealed) .oracle-intro h1 {
-    margin: 0;
-    font-size: clamp(2.45rem, 11vw, 3.35rem);
   }
 
   .animal-oracle-page .oracle-experience:has(.oracle-card.is-revealed),
   .tree-oracle-page .oracle-experience:has(.oracle-card.is-revealed),
   .plant-oracle-page .oracle-experience:has(.oracle-card.is-revealed) {
-    /* Stay inside the mobile shell and reserve enough vertical room for the
-       fixed header plus the result actions. The old viewport-width value was
-       wider than its parent, shifting every revealed card toward the right
-       edge and making the bottom flip cue appear cropped/off-center. */
-    width: min(100%, 620px, calc(65.637svh - 88px));
-    max-width: min(100%, 620px, calc(65.637svh - 88px));
+    /* Let the revealed physical card become the mobile screen's main event
+       while keeping its controls above the fold. */
+    width: min(100%, 620px, calc(65.637svh - 72px));
+    max-width: min(100%, 620px, calc(65.637svh - 72px));
     padding: 4px;
   }
 

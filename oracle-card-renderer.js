@@ -12,7 +12,9 @@ const renderBackProtection = `“Dear ${renderGuideName}, I can feel your presen
 const renderBackArt = renderDeck === "animal"
   ? `assets/animals/cutouts-transparent/${renderDataSlug}.png`
   : renderData.art;
-const renderFrontArt = renderDeck === "animal" ? `assets/animal-photos/${renderDataSlug}.webp` : renderData.art;
+const renderFrontArt = renderDeck === "animal"
+  ? `assets/animal-photos/${renderDataSlug === "crow" ? "crow-card-v2" : renderDataSlug}.webp`
+  : renderData.art;
 const renderBotanical = renderDeck !== "animal" ? `<p class="botanical"><em>${renderData.botanical}</em></p>` : "";
 const renderDeckName = renderDeck === "animal"
   ? "ANIMAL ORACLE · CARD OF THE DAY"

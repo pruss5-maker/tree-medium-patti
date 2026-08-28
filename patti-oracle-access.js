@@ -22,8 +22,9 @@
       const studioTools = document.createElement("div");
       studioTools.className = "patti-oracle-tools";
       studioTools.innerHTML = `
+        <span class="patti-oracle-label">Patti preview</span>
         <button class="patti-oracle-redraw" type="button" data-patti-redraw>
-          Draw another ${deck.name}
+          Preview another ${deck.name}
         </button>
         <a href="/patti-studio">Patti Studio</a>
       `;

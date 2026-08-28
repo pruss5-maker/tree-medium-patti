@@ -265,6 +265,16 @@
   gap: 8px;
 }
 
+.patti-oracle-label {
+  width: 100%;
+  color: var(--forest-600);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .patti-oracle-redraw {
   min-height: 42px;
   padding: 8px 18px;

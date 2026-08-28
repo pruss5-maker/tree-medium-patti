@@ -13,12 +13,12 @@ const animalGuides = [
   {
     name: "Octopus",
     art: "assets/animals/octopus.webp",
-    keyword: "Distributed Intelligence",
+    keyword: "More Than One Way",
     accent: "#ad83bc",
     message:
-      "An octopus carries much of its nervous system through its arms and survives without a shell through intelligence, camouflage, and flexible movement. Your answer may not come from one central plan. Sketch three possible routes with your hands. Test the smallest one today.",
+      "Octopus survives without a shell by changing color, shape, and direction. Its wisdom is flexibility: one blocked path does not mean you are stuck. Write down three ways you could move forward. Choose the smallest, safest one and test it today.",
     echo:
-      "If Octopus finds you through an image, object, conversation, or unexpected reference, ask which unused route has just opened. Adaptation is not self-abandonment.",
+      "If Octopus finds you through an image, object, conversation, or unexpected reference, stop searching for one perfect plan. Ask: What other way is available?",
   },
   {
     name: "Tiger",
@@ -33,27 +33,27 @@ const animalGuides = [
   {
     name: "Parrot",
     art: "assets/animals/parrot.webp",
-    keyword: "Speak to Belong",
+    keyword: "Kindness Comes Back",
     accent: "#79ad83",
     message:
-      "Wild parrots learn signature contact calls and use them to recognize and address one another. Voice is part of how they stay connected. Say one sentence you have edited down to keep the peace. Speak it kindly to the person who actually needs to hear it.",
+      "Parrots are social, sensitive beings who respond to patience, trust, and gentle attention. Offer that kindness to yourself. Name one thing you have judged yourself for. Speak to yourself as you would to someone you love, forgive yourself for being human, and take one gentle step forward.",
     echo:
-      "If Parrot appears, or the same unusual words repeat through different places, ask what honest sentence wants relationship rather than performance.",
+      "If Parrot appears through a living bird, voice, image, story, or dream, let it remind you to soften your inner voice. Ask: What would forgiveness let me do next?",
   },
   {
     name: "Fox",
     art: "assets/animals/fox.webp",
-    keyword: "Adaptive Discernment",
+    keyword: "Choose the Wiser Path",
     accent: "#c8794f",
     message:
-      "Fox can hear prey beneath grass or snow, alter its route, and cache extra food for later. Discernment listens for what is hidden and protects what will be needed. Stop pushing the obvious path. Name one quieter route and one resource you need to preserve.",
+      "Fox listens beneath grass and snow, changes course quickly, and saves food for later. Fox reminds you that wisdom may be quiet. Stop forcing the obvious route. Name one gentler path and one resource—time, money, or energy—you need to protect. Choose accordingly.",
     echo:
-      "When Fox appears in art, language, story, or landscape, listen again before moving. Let the encounter confirm a wise adjustment already forming.",
+      "When Fox appears in art, language, story, or landscape, pause before moving. Ask which choice protects your energy and still leads you forward.",
   },
   {
     name: "Bunny Rabbit",
     art: "assets/animals/bunny-rabbit.webp",
-    keyword: "Regulated Readiness",
+    keyword: "Gentle Readiness",
     accent: "#d7b6aa",
     message:
       "Rabbit's wide field of vision, sensitive ears, stillness, and sudden zigzag movement all serve awareness. Readiness does not require living in panic. Look around the room, exhale longer than you inhale, then take one gentle step toward what is new.",
@@ -113,12 +113,12 @@ const animalGuides = [
   {
     name: "Crow",
     art: "assets/animals/crow.webp",
-    keyword: "Remember the Signal",
+    keyword: "Notice What Returns",
     accent: "#7f819a",
     message:
-      "Crow recognizes faces, links them with experience, and shares important information socially. Crow is still your confirmation animal for today, but give the signal something clear to remember. Write one honest question. Do not search for Crow. Let Crow find you, then return to the question.",
+      "Crows remember faces and share what they learn. Crow asks you to notice what keeps returning. Write one question you need clarity on, then stop chasing the answer. If Crow appears again, pause. Notice the thought or feeling present in that exact moment. That is what needs your attention.",
     echo:
-      "Crow may arrive as a living bird, call, feather, picture, logo, toy, book, dream, or unexpected mention. When Crow finds you, pause and reread your question. Receive the timing without forcing a yes or no.",
+      "Crow may return as a living bird, call, feather, picture, logo, toy, book, dream, or unexpected mention. Do not force the appearance into yes or no. Notice what repeated, what you were thinking, and what feels ready to be understood.",
   },
   {
     name: "Whale",
@@ -133,22 +133,22 @@ const animalGuides = [
   {
     name: "Frog",
     art: "assets/animals/frog.webp",
-    keyword: "Change Your Breathing",
+    keyword: "Make Room for Change",
     accent: "#75a765",
     message:
-      "Frog changes body and habitat through metamorphosis, and its permeable skin makes the surrounding environment part of every breath. Transition is not only internal; conditions matter. Name the next form you are entering and change one condition around you to help it live.",
+      "Frog transforms from tadpole to adult and is deeply affected by the conditions around it. Your change needs support, not pressure. Name the next version of yourself you are growing into. Change one part of your environment today so that version has room to live.",
     echo:
-      "When Frog, lily pads, rain calls, or green figures appear, check the conditions around your change. Let Frog confirm the threshold and your responsibility to support it.",
+      "When Frog, lily pads, rain calls, or green figures appear, ask whether your surroundings support the change you want. Adjust one condition with care.",
   },
   {
     name: "Spider",
     art: "assets/animals/spider.webp",
-    keyword: "Read the Vibration",
+    keyword: "Follow the Strongest Thread",
     accent: "#a38b71",
     message:
-      "Spider makes different silks for different purposes and reads information through vibration in the web. Not every tremor requires the same response. Draw the pattern around your question. Mark the strand carrying the strongest signal and take the next action only on that thread.",
+      "Spider builds a web from many strands and feels which one is moving. Not every concern deserves equal attention. Write down the three things pulling at you. Circle the one that matters most today, and take one action on that thread before touching the others.",
     echo:
-      "If Spider, webs, woven patterns, or web language appears, ask which strand is actually moving. Let it confirm the connection that deserves attention now.",
+      "If Spider, webs, woven patterns, or web language appears, ask: Which one concern truly needs me now? Give that thread your attention.",
   },
   {
     name: "Horse",
@@ -193,32 +193,32 @@ const animalGuides = [
   {
     name: "Dolphin",
     art: "assets/animals/dolphin.webp",
-    keyword: "Named Connection",
+    keyword: "Ask Clearly",
     accent: "#61a9bc",
     message:
-      "Dolphins learn individual signature whistles that help them recognize one another and keep the group connected. Connection becomes safer when identity and need are clear. Say your name, your real need, and one invitation: “Can we talk, help, rest, or play together?”",
+      "Dolphins use signature whistles to recognize one another and stay connected. You do not have to hide what you need. Tell one trusted person: “I need…” Then make one clear invitation: Can we talk, rest, work, or play together?",
     echo:
-      "When Dolphin surfaces in media, conversation, a toy, logo, dream, or near water, name the connection you need. Let it confirm that clear contact can include play.",
+      "When Dolphin surfaces in media, conversation, a toy, logo, dream, or near water, ask yourself what connection you need and make one clear invitation.",
   },
   {
     name: "Snake",
     art: "assets/animals/snake.webp",
-    keyword: "Friction for Renewal",
+    keyword: "Shed What No Longer Fits",
     accent: "#78965f",
     message:
-      "Snake grows a new layer beneath the old, then uses moisture and rough surfaces to loosen and turn the outgrown skin away. Renewal needs support and useful friction. Name what no longer fits. Choose the person, place, deadline, or boundary that will help you release it.",
+      "Snake forms new skin beneath the old, then uses moisture and rough surfaces to help shed it. You are allowed to outgrow what once protected you. Name one role, habit, or belief that no longer fits. Choose one boundary or act of support that helps you release it.",
     echo:
-      "If Snake, shed skin, winding patterns, jewelry, or a sudden reference appears, identify the support helping you release. Let it confirm renewal already underway.",
+      "If Snake, shed skin, winding patterns, jewelry, or a sudden reference appears, ask what you are ready to stop carrying and what support will help you let go.",
   },
   {
     name: "Dragonfly",
     art: "assets/animals/dragonfly.webp",
-    keyword: "Enter a New Element",
+    keyword: "Change Your View",
     accent: "#78b7ae",
     message:
-      "Dragonfly begins as an aquatic nymph, then emerges winged for life in the air. Its change is not a better version of the same environment; it is entry into another element. Move your question to a new place, medium, or viewpoint. Make one action the old setting could not hold.",
+      "Dragonfly begins in water and later rises into air. Some changes need a new viewpoint, not more effort in the old place. Take your question somewhere different—a walk, another room, or paper instead of a screen. From that new place, choose one next step.",
     echo:
-      "When Dragonfly, iridescent wings, jewelry, pictures, or conversation appears, change your angle physically. Let it confirm that a new element is available.",
+      "When Dragonfly, iridescent wings, jewelry, pictures, or conversation appears, change your physical viewpoint and ask what becomes possible from here.",
   },
 ];
 
@@ -348,7 +348,7 @@ const preloadGuideCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260827-4`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260827-5`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -402,8 +402,8 @@ const fillGuide = (index, colorIndex) => {
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-4`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-4`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-5`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-5`;
   if (animalCardFront) {
     if (animalCardFront.getAttribute("src") !== cardFrontSrc) animalCardFront.src = cardFrontSrc;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;

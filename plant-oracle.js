@@ -7,12 +7,12 @@ const plantGuides = [
   },
   {
     name: "Lavender", botanical: "Lavandula angustifolia", art: "assets/plants/lavender.webp",
-    keyword: "Heavenly Protection", accent: "#8875a8",
-    message: "Lavender holds the frequency of the heavenly realms in its potent scent. Let its fragrance remind you: you are just as potent, and you are protected.",
-    practice: "Breathe in lavender or imagine its scent. Say aloud: I am potent. I am protected. My mind is my sanctuary.",
+    keyword: "Peace Is Protection", accent: "#8875a8",
+    message: "Lavender's fragrance has long marked cleansing, rest, and devotion. Lavender reminds you that peace is something you can protect. Take three slow breaths. Notice what disturbs your inner quiet, then choose one boundary that makes room for calm.",
+    practice: "Breathe in lavender or imagine its scent. Say: Peace belongs in my body and my home. Set one gentle boundary today.",
   },
   {
-    name: "Hibiscus", botanical: "Hibiscus rosa-sinensis", art: "assets/plants/hibiscus.webp",
+    name: "Hibiscus", botanical: "Hibiscus rosa-sinensis", art: "assets/plants/hibiscus-real-saadtitan12-v1.webp",
     keyword: "Fully Here", accent: "#bc3f49",
     message: "A hibiscus flower may open for only one day, yet the plant keeps offering bloom after bloom. It does not confuse brief with unimportant. Choose one thing that matters today. Give it your full color and attention before this day closes.",
     practice: "Choose one person, task, or pleasure. Put your phone away and meet it fully for ten minutes.",
@@ -172,7 +172,7 @@ const preloadPlantCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260827-4`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260827-5`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -244,8 +244,8 @@ const fillPlant = (index) => {
   oracleCard.style.setProperty("--plant-card-color", plantCardColors[index] || plantCardColors[0]);
   updatePlantSeo(plant);
   const cardAssetBase = `assets/oracle-cards/plant/${slugify(plant.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-4`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-4`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-5`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-5`;
   if (plantCardFront) {
     if (plantCardFront.getAttribute("src") !== cardFrontSrc) plantCardFront.src = cardFrontSrc;
     plantCardFront.alt = `${plant.name} KELA Plant Oracle card`;

@@ -138,7 +138,7 @@ const treeGuides = [
     keyword: "Visible Beauty",
     accent: "#8f77ae",
     message:
-      "Jacaranda allows the beauty within you to become visible before you feel complete. Its violet flowers can fill bare-looking branches and transform the whole space around them. Choose one idea you have kept hidden. Give it a visible form today—one sentence, sketch, sound, or movement.",
+      "Jacaranda allows the beauty within you to become visible before you feel complete. Its violet flowers can fill bare-looking branches and transform the whole space around them. Choose one idea you have kept hidden. Give it a visible form today: one sentence, sketch, sound, or movement.",
     attunement:
       "Close your eyes and picture violet light moving from your heart into your hands. Say: Jacaranda Tree, help the beauty within me become visible.",
     question: "What beauty within me is ready to be seen?",
@@ -258,7 +258,7 @@ const preloadTreeCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260827-3`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260827-4`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -275,8 +275,8 @@ const setMetaContent = (selector, content) => {
 const updateTreeSeo = (tree) => {
   const slug = slugify(tree.name);
   const cardUrl = new URL("/tree-oracle", window.location.origin);
-  const description = `${tree.name} Tree Oracle card — ${tree.keyword}. Read its original KELA message and protection prompt.`;
-  const imageLabel = `${tree.name} — ${tree.keyword}, a KELA Tree Oracle card with a tree photograph and a spiritual protection message.`;
+  const description = `${tree.name} Tree Oracle card: ${tree.keyword}. Read its original KELA message and protection prompt.`;
+  const imageLabel = `${tree.name}: ${tree.keyword}, a KELA Tree Oracle card with a tree photograph and a spiritual protection message.`;
 
   oracleCard.dataset.treeSlug = slug;
   oracleCard.dataset.cardUrl = cardUrl.href;
@@ -285,7 +285,7 @@ const updateTreeSeo = (tree) => {
   cardSeoDescription?.setAttribute("content", description);
   cardSeoUrl?.setAttribute("href", cardUrl.href);
   if (cardSeoCaption) cardSeoCaption.textContent = imageLabel;
-  if (treeArt) treeArt.title = `${tree.name} Tree Oracle card — ${tree.keyword}`;
+  if (treeArt) treeArt.title = `${tree.name} Tree Oracle card: ${tree.keyword}`;
 
   document.title = `${tree.name} Tree Oracle Card Meaning | KELA`;
   setMetaContent('meta[name="description"]', description);
@@ -306,8 +306,8 @@ const fillTree = (index) => {
   oracleCard.style.setProperty("--guide-accent", tree.accent);
   updateTreeSeo(tree);
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-3`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-3`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-4`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-4`;
   if (treeCardFront) {
     if (treeCardFront.getAttribute("src") !== cardFrontSrc) treeCardFront.src = cardFrontSrc;
     treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;
@@ -340,7 +340,7 @@ const commitTreeFace = (showMeaning) => {
   treeFlip.setAttribute(
     "aria-label",
     tree
-      ? `${tree.name} Tree Oracle card — ${showMeaning ? "show its photograph" : "reveal its meaning"}`
+      ? `${tree.name} Tree Oracle card: ${showMeaning ? "show its photograph" : "reveal its meaning"}`
       : showMeaning ? "Show the tree photograph" : "Reveal this tree's meaning",
   );
   treeFlipFront?.setAttribute("aria-hidden", String(showMeaning));
@@ -415,7 +415,7 @@ const shareTree = async () => {
   const tree = treeGuides[activeTreeIndex];
   if (!tree || !shareButton) return;
   const text = [
-    `${tree.name} — ${tree.keyword}`,
+    `${tree.name}: ${tree.keyword}`,
     tree.message,
     `Protection & confirmation: ${treeProtectionInvocation(tree)}`,
     window.location.href,

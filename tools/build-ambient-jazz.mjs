@@ -175,7 +175,7 @@ const project = `<?xml version="1.0"?>
     <ControllerRackView width="350" x="680" y="530" maximized="0" height="200" visible="0" minimized="0"/>
     <pianoroll width="640" x="5" y="5" maximized="0" height="480" visible="0" minimized="0"/>
     <automationeditor width="640" x="5" y="5" maximized="0" height="400" visible="0" minimized="0"/>
-    <projectnotes width="640" x="700" y="10" maximized="0" height="400" visible="0" minimized="0"><![CDATA[Woodland Afterglow — an original instrumental jazz loop composed for KELA. No third-party recordings or samples.]]></projectnotes>
+    <projectnotes width="640" x="700" y="10" maximized="0" height="400" visible="0" minimized="0"><![CDATA[Woodland Afterglow: an original instrumental jazz loop composed for KELA. No third-party recordings or samples.]]></projectnotes>
     <timeline lp1pos="${progression.length * ticksPerBar}" lp0pos="0" lpstate="1"/>
     <controllers/>
   </song>

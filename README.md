@@ -1,4 +1,4 @@
-# KELA — Messages from the Trees
+# KELA | Messages from the Trees
 
 The first website for Tree Medium Patti and the Kela Tree Message service.
 

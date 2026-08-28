@@ -76,7 +76,7 @@ const animalGuides = [
     keyword: "Carry Your Center",
     accent: "#719b7b",
     message:
-      "A turtle's shell is living skeleton—ribs and vertebrae joined into protection it cannot simply leave behind. Turtle teaches embodied safety, not hiding. Slow one task to a pace your body can stay present for. Protect the pace and finish one honest portion.",
+      "A turtle's shell is a living skeleton, with ribs and vertebrae joined into protection it cannot simply leave behind. Turtle teaches embodied safety, not hiding. Slow one task to a pace your body can stay present for. Protect the pace and finish one honest portion.",
     echo:
       "When Turtle appears in conversation, jewelry, image, dream, or near water, return to your own pace. Let it confirm that protection can travel with progress.",
   },
@@ -116,7 +116,7 @@ const animalGuides = [
     keyword: "Remember the Signal",
     accent: "#7f819a",
     message:
-      "Crow recognizes faces, links them with experience, and shares important information socially. Crow is still your confirmation animal for today—but give the signal something clear to remember. Write one honest question. Do not search for Crow. Let Crow find you, then return to the question.",
+      "Crow recognizes faces, links them with experience, and shares important information socially. Crow is still your confirmation animal for today, but give the signal something clear to remember. Write one honest question. Do not search for Crow. Let Crow find you, then return to the question.",
     echo:
       "Crow may arrive as a living bird, call, feather, picture, logo, toy, book, dream, or unexpected mention. When Crow finds you, pause and reread your question. Receive the timing without forcing a yes or no.",
   },
@@ -176,7 +176,7 @@ const animalGuides = [
     keyword: "Choose True Light",
     accent: "#bcae83",
     message:
-      "Artificial light can pull moths away from feeding, breeding, and the darkness their lives require. Brightness is not the same as guidance. Turn off one false light—a notification, comparison, demand, or performance. Notice what quieter direction becomes visible.",
+      "Artificial light can pull moths away from feeding, breeding, and the darkness their lives require. Brightness is not the same as guidance. Turn off one false light, such as a notification, comparison, demand, or performance. Notice what quieter direction becomes visible.",
     echo:
       "When Moth, winged night shapes, lamps, or moonlit images appear, ask what has captured your attention. Let Moth confirm the need to choose your light deliberately.",
   },
@@ -348,7 +348,7 @@ const preloadGuideCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260827-3`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260827-4`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -368,8 +368,8 @@ const updateGuideSeo = (guide, cardColor) => {
   const seoUrl = new URL("/animal-oracle", window.location.origin);
   const cardUrl = new URL(seoUrl);
   cardUrl.searchParams.set("color", colorSlug);
-  const description = `${guide.name} Animal Oracle card — ${guide.keyword}. Read its original KELA message and protection prompt.`;
-  const imageLabel = `${guide.name} — ${guide.keyword}, a KELA Animal Oracle card with a full-bleed wildlife photograph and a spiritual protection message.`;
+  const description = `${guide.name} Animal Oracle card: ${guide.keyword}. Read its original KELA message and protection prompt.`;
+  const imageLabel = `${guide.name}: ${guide.keyword}, a KELA Animal Oracle card with a full-bleed wildlife photograph and a spiritual protection message.`;
 
   oracleCard.dataset.guideSlug = slug;
   oracleCard.dataset.cardColor = colorSlug;
@@ -379,7 +379,7 @@ const updateGuideSeo = (guide, cardColor) => {
   cardSeoDescription?.setAttribute("content", description);
   cardSeoUrl?.setAttribute("href", seoUrl.href);
   if (cardSeoCaption) cardSeoCaption.textContent = imageLabel;
-  if (guideGlyph) guideGlyph.title = `${guide.name} Animal Oracle card — ${guide.keyword}`;
+  if (guideGlyph) guideGlyph.title = `${guide.name} Animal Oracle card: ${guide.keyword}`;
 
   document.title = `${guide.name} Animal Oracle Card Meaning | KELA`;
   setMetaContent('meta[name="description"]', description);
@@ -402,8 +402,8 @@ const fillGuide = (index, colorIndex) => {
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-3`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-3`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-4`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-4`;
   if (animalCardFront) {
     if (animalCardFront.getAttribute("src") !== cardFrontSrc) animalCardFront.src = cardFrontSrc;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;
@@ -436,7 +436,7 @@ const commitAnimalFace = (showMeaning) => {
   animalFlip.setAttribute(
     "aria-label",
     guide
-      ? `${guide.name} Animal Oracle card — ${showMeaning ? "show the animal" : "reveal its meaning"}`
+      ? `${guide.name} Animal Oracle card: ${showMeaning ? "show the animal" : "reveal its meaning"}`
       : showMeaning ? "Show the animal" : "Reveal this animal's meaning",
   );
   animalFlipFront?.setAttribute("aria-hidden", String(showMeaning));
@@ -516,7 +516,7 @@ const copyGuideText = async () => {
   if (!guide || !shareButton) return;
   const cardColor = animalCardColors[activeColorIndex];
   const text = [
-    `${guide.name} — ${guide.keyword}`,
+    `${guide.name}: ${guide.keyword}`,
     cardColor ? `Today's card color: ${cardColor.name}` : "",
     guide.message,
     `Protection & confirmation: ${animalProtectionInvocation(guide)}`,

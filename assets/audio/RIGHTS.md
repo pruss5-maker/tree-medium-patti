@@ -1,4 +1,4 @@
-# Woodland Afterglow — rights record
+# Woodland Afterglow: rights record
 
 `Woodland Afterglow` is an original instrumental composition created for the KELA website on
 August 25, 2026. Its arrangement and note data are stored in `woodland-afterglow.mmp` and generated

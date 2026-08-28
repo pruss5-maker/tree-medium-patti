@@ -175,7 +175,7 @@ html[data-theme="light"] .patti-kela-time-grid p {
   color: rgba(23, 61, 48, 0.76);
 }
 
-/* Dark mode returns to the original rich forest green—not near-black. */
+/* Dark mode returns to the original rich forest green, not near-black. */
 html[data-theme="dark"] body {
   color: var(--kela-dark-ink);
   background:

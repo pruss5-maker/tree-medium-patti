@@ -20,7 +20,7 @@ const plantGuides = [
   {
     name: "Comfrey", botanical: "Symphytum officinale", art: "assets/plants/comfrey.webp",
     keyword: "Return to Wholeness", accent: "#6f765f",
-    message: "Comfrey's name means to grow together, and even a root piece left in the soil can begin again. Repair does not require pretending the break never happened. Gather one scattered piece of your life—a call, appointment, object, or promise—and return it to the whole.",
+    message: "Comfrey's name means to grow together, and even a root piece left in the soil can begin again. Repair does not require pretending the break never happened. Gather one scattered piece of your life, such as a call, appointment, object, or promise, and return it to the whole.",
     practice: "Choose one loose end and give it a real place: schedule it, mend it, answer it, or release it.",
   },
   {
@@ -38,7 +38,7 @@ const plantGuides = [
   {
     name: "Plantain", botanical: "Plantago major", art: "assets/plants/plantain.webp",
     keyword: "Repair Under Pressure", accent: "#658259",
-    message: "Plantain keeps its leaves low in a basal rosette and survives on paths, roadsides, and compacted ground. Pressure does not make its work less worthy. Put both feet down. Choose one plain repair—water, food, sleep, a bandage, or an honest message—and do it before seeking a grand answer.",
+    message: "Plantain keeps its leaves low in a basal rosette and survives on paths, roadsides, and compacted ground. Pressure does not make its work less worthy. Put both feet down. Choose one plain repair, such as water, food, sleep, a bandage, or an honest message, and do it before seeking a grand answer.",
     practice: "Feel the ground beneath both feet. Complete one humble act of repair within the next hour.",
   },
   {
@@ -104,7 +104,7 @@ const plantGuides = [
   {
     name: "Jasmine", botanical: "Jasminum officinale", art: "assets/plants/jasmine.webp",
     keyword: "Devotion to Yourself", accent: "#8d8d67",
-    message: "Jasmine has long been woven into offerings, adornment, love, and devotion. Its evening fragrance can change the atmosphere around it. Jasmine is asking you to turn that devotion toward yourself. Choose one generous act of care—a warm bath, your favorite sugar scrub, fresh sheets—and keep the appointment.",
+    message: "Jasmine has long been woven into offerings, adornment, love, and devotion. Its evening fragrance can change the atmosphere around it. Jasmine is asking you to turn that devotion toward yourself. Choose one generous act of care, such as a warm bath, your favorite sugar scrub, or fresh sheets, and keep the appointment.",
     practice: "Create one unhurried care ritual: a warm bath, a gentle sugar scrub that agrees with your skin, fresh sheets, body lotion, or ten phone-free minutes. Choose what genuinely restores you, and do not rush it.",
   },
   {
@@ -172,7 +172,7 @@ const preloadPlantCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260827-3`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260827-4`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -223,11 +223,11 @@ const protectionText = (plant) =>
 const updatePlantSeo = (plant) => {
   const slug = slugify(plant.name);
   const cardUrl = new URL("/plant-oracle", window.location.origin);
-  const description = `${plant.name} Plant Oracle card — ${plant.keyword}. Read its original KELA meaning and meditation prompt.`;
+  const description = `${plant.name} Plant Oracle card: ${plant.keyword}. Read its original KELA meaning and meditation prompt.`;
   oracleCard.dataset.plantSlug = slug;
   plantFlip.dataset.plantSlug = slug;
-  plantFlip.setAttribute("aria-label", `${plant.name} Plant Oracle card — reveal its meaning`);
-  if (plantCaption) plantCaption.textContent = `${plant.name} — ${plant.keyword}, a KELA Plant Oracle card.`;
+  plantFlip.setAttribute("aria-label", `${plant.name} Plant Oracle card: reveal its meaning`);
+  if (plantCaption) plantCaption.textContent = `${plant.name}: ${plant.keyword}, a KELA Plant Oracle card.`;
   document.title = `${plant.name} Plant Oracle Card Meaning | KELA`;
   document.querySelector('meta[name="description"]')?.setAttribute("content", description);
   document.querySelector('meta[property="og:title"]')?.setAttribute("content", `${plant.name} Plant Oracle Card | KELA`);
@@ -244,8 +244,8 @@ const fillPlant = (index) => {
   oracleCard.style.setProperty("--plant-card-color", plantCardColors[index] || plantCardColors[0]);
   updatePlantSeo(plant);
   const cardAssetBase = `assets/oracle-cards/plant/${slugify(plant.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-3`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-3`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-4`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-4`;
   if (plantCardFront) {
     if (plantCardFront.getAttribute("src") !== cardFrontSrc) plantCardFront.src = cardFrontSrc;
     plantCardFront.alt = `${plant.name} KELA Plant Oracle card`;
@@ -259,7 +259,7 @@ const fillPlant = (index) => {
   plantBotanical.textContent = plant.botanical;
   plantArt.src = plant.art;
   plantArt.alt = `Botanical portrait of ${plant.name}`;
-  plantArt.title = `${plant.name} Plant Oracle card — ${plant.keyword}`;
+  plantArt.title = `${plant.name} Plant Oracle card: ${plant.keyword}`;
   plantWatermark.src = plant.art;
   plantKeyword.textContent = plant.keyword;
   plantKeywordBack.textContent = plant.keyword;
@@ -271,7 +271,7 @@ const commitPlantFace = (showMeaning) => {
   const plant = plantGuides[activePlantIndex];
   plantFlip.classList.toggle("is-flipped", showMeaning);
   plantFlip.setAttribute("aria-pressed", String(showMeaning));
-  plantFlip.setAttribute("aria-label", plant ? `${plant.name} Plant Oracle card — ${showMeaning ? "show its portrait" : "reveal its meaning"}` : "Reveal this plant's meaning");
+  plantFlip.setAttribute("aria-label", plant ? `${plant.name} Plant Oracle card: ${showMeaning ? "show its portrait" : "reveal its meaning"}` : "Reveal this plant's meaning");
   plantFlipFront.setAttribute("aria-hidden", String(showMeaning));
   plantFlipBack.setAttribute("aria-hidden", String(!showMeaning));
 };
@@ -328,7 +328,7 @@ const beginReveal = () => {
 const sharePlant = async () => {
   const plant = plantGuides[activePlantIndex];
   if (!plant || !shareButton) return;
-  const text = [`${plant.name} — ${plant.keyword}`, plant.message, `Meditation & protection: ${protectionText(plant)}`, window.location.href].join("\n\n");
+  const text = [`${plant.name}: ${plant.keyword}`, plant.message, `Meditation & protection: ${protectionText(plant)}`, window.location.href].join("\n\n");
   try {
     if (navigator.share) return await navigator.share({ title: `My KELA plant: ${plant.name}`, text, url: window.location.href });
     await navigator.clipboard.writeText(text);

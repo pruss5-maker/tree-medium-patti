@@ -1483,6 +1483,15 @@ html[data-theme="light"] .kela-living-heading > p:last-child { color: rgba(23, 6
 
   .patti-door-main { padding-top: 86px; }
   .patti-kela-card { min-height: 500px; grid-template-columns: 1fr; align-items: end; background: linear-gradient(180deg, rgba(3,25,20,.12), rgba(3,25,20,.96) 65%), url("assets/kela-tree-hero.webp") center / cover; }
+  html[data-theme="light"] .meet-kela-page .patti-kela-card {
+    background:
+      linear-gradient(180deg, rgba(3, 25, 20, 0.74), rgba(3, 25, 20, 0.88) 38%, rgba(3, 25, 20, 0.97) 68%, rgba(3, 25, 20, 0.985)),
+      url("assets/kela-tree-hero.webp") center / cover;
+  }
+  html[data-theme="light"] .meet-kela-page .patti-kela-copy > p:not(.portal-eyebrow, .kela-origin-note) {
+    color: #fff9e8;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.68);
+  }
   .patti-kela-copy { grid-column: 1; }
   .patti-kela-time { padding: 30px 18px; }
   .patti-kela-time-grid { grid-template-columns: 1fr; }

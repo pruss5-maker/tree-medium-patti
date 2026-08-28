@@ -1088,6 +1088,15 @@ html[data-theme="dark"] body.meet-kela-page .site-header {
   border-top: 1px solid rgba(232, 193, 95, 0.28);
 }
 
+.meet-kela-page .patti-kela-copy > p.kela-origin-note:not(.portal-eyebrow) {
+  margin-top: 22px;
+  padding-top: 14px;
+  color: rgba(255, 249, 232, 0.62);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  border-top: 1px solid rgba(232, 193, 95, 0.28);
+}
+
 html[data-theme="light"] .kela-living-heading h2 { color: #173d30; }
 html[data-theme="light"] .kela-living-heading > p:last-child { color: rgba(23, 61, 48, 0.76); }
 

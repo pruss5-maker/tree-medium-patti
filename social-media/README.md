@@ -17,7 +17,7 @@ the layouts and motion can be completed while the final palette is still being t
 - **Website link preview:** 1200 × 630. Continue using the existing Open Graph images in
   `assets/social/`.
 
-The `samples/` folder contains feed and vertical masters for Blue Owl and Madrona.
+The `samples/` folder contains feed and vertical masters for Owl and Madrona.
 
 The private `preview.html` library contains all 54 finished 1080 × 1920 Reel cards. These use the
 same rendered physical-card faces as the live decks. Every social card leads with the sanctuary
@@ -31,7 +31,7 @@ Use one restrained 7 to 9 second loop:
 1. The empty card rests in soft light for one second.
 2. The animal or tree eases into view with one living detail: a blink, breath, feather shift, leaf
    movement, light change, or subtle camera drift.
-3. The name and short phrase appear: for example, “Blue Owl: Quiet confirmation.”
+3. The name and short phrase appear: for example, “Owl: Quiet confirmation.”
 4. The closing frame reads “Take your free daily draw” with the short KELA URL.
 5. Hold the closing frame long enough to read, then return to the opening without a hard cut.
 

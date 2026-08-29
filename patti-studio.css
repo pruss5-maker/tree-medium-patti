@@ -156,7 +156,7 @@
 
 .patti-studio-animal { --studio-image: url("assets/animals/blue-owl-cutout-v1.webp"); background-color: #07354d; }
 .patti-studio-tree { --studio-image: url("assets/tree-photos/oak.webp"); }
-.patti-studio-plant { --studio-image: url("assets/plants/chamomile.webp"); }
+.patti-studio-plant { --studio-image: url("assets/plants/chamomile.webp?v=20260828-2"); }
 
 .patti-studio-library {
   padding-top: 32px;

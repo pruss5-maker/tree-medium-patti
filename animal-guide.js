@@ -1,14 +1,15 @@
 const animalGuides = [
   {
-    name: "Blue Owl",
+    name: "Owl",
+    assetSlug: "blue-owl",
     art: "assets/animals/blue-owl.webp",
     isolatedArt: "assets/animals/blue-owl-cutout-v1.webp",
     keyword: "Listen Before Looking",
     accent: "#86b8d8",
     message:
-      "Owl's facial disk directs sound toward ears placed at different heights, while soft feather edges quiet its flight. Blue Owl asks you to receive before you pursue. Close your eyes for three breaths. Name the truth you can hear when you stop searching for proof.",
+      "Owl's facial disk directs sound toward ears placed at different heights, while soft feather edges quiet its flight. Owl asks you to receive before you pursue. Close your eyes for three breaths. Name the truth you can hear when you stop searching for proof.",
     echo:
-      "If Blue Owl finds you in a picture, dream, story, sound, or beside a tree, pause. Repeat the truth you named. Let the encounter confirm listening, not fear.",
+      "If Owl finds you in a picture, dream, story, sound, or beside a tree, pause. Repeat the truth you named. Let the encounter confirm listening, not fear.",
   },
   {
     name: "Octopus",
@@ -332,13 +333,14 @@ const secureRandomIndex = (length) => {
 const randomGuideIndex = () => secureRandomIndex(animalGuides.length);
 const randomColorIndex = () => secureRandomIndex(animalCardColors.length);
 const slugify = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const guideAssetSlug = (guide) => guide.assetSlug || slugify(guide.name);
 const animalProtectionInvocation = (guide) =>
   `Cover your eyes and close your mind. Tune into ${guide.name} and its energy. When you feel its presence, ask out loud and in your mind: “Dear ${guide.name}, I can feel your presence within me. Please be the guardian of my mind. Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter my field. Amen.”`;
 
 const preloadGuideCard = (index) => {
   const guide = animalGuides[index];
   if (!guide) return Promise.resolve();
-  const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
+  const cardAssetBase = `assets/oracle-cards/animal/${guideAssetSlug(guide)}`;
   const preloadFace = (image, side) => new Promise((resolve) => {
     if (!image) return resolve();
     const finish = () => {
@@ -363,7 +365,7 @@ const setMetaContent = (selector, content) => {
 };
 
 const updateGuideSeo = (guide, cardColor) => {
-  const slug = slugify(guide.name);
+  const slug = guideAssetSlug(guide);
   const colorSlug = slugify(cardColor.name);
   const seoUrl = new URL("/animal-oracle", window.location.origin);
   const cardUrl = new URL(seoUrl);
@@ -401,7 +403,7 @@ const fillGuide = (index, colorIndex) => {
   activeColorIndex = animalCardColors.indexOf(cardColor);
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
   updateGuideSeo(guide, cardColor);
-  const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
+  const cardAssetBase = `assets/oracle-cards/animal/${guideAssetSlug(guide)}`;
   const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260828-1`;
   const cardBackSrc = `${cardAssetBase}-back.webp?v=20260828-1`;
   if (animalCardFront) {
@@ -577,11 +579,15 @@ const previewColorIndex = requestedColorBySlug >= 0
   ? requestedColor
   : randomColorIndex();
 const requestedCardSlug = slugify(previewParams.get("card") || "");
-const requestedCardIndex = animalGuides.findIndex((guide) => slugify(guide.name) === requestedCardSlug);
+const requestedCardIndex = animalGuides.findIndex((guide) =>
+  guideAssetSlug(guide) === requestedCardSlug || slugify(guide.name) === requestedCardSlug
+);
 const requestedFoundSlug = slugify(previewParams.get("found") || "");
 const savedFoundGuide = window.KelaCompanions?.getFound?.("animal");
 const requestedFoundIndex = savedFoundGuide?.slug === requestedFoundSlug
-  ? animalGuides.findIndex((guide) => slugify(guide.name) === requestedFoundSlug)
+  ? animalGuides.findIndex((guide) =>
+      guideAssetSlug(guide) === requestedFoundSlug || slugify(guide.name) === requestedFoundSlug
+    )
   : -1;
 if (oracle && requestedFoundIndex >= 0) {
   showGuide(requestedFoundIndex, {

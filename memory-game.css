@@ -13,14 +13,14 @@ body.memory-hub-page {
   color: var(--memory-cream);
   background:
     linear-gradient(rgba(5, 31, 26, 0.9), rgba(4, 24, 21, 0.96)),
-    url("assets/plants/chamomile.webp") center / cover fixed;
+    url("assets/plants/chamomile.webp?v=20260828-2") center / cover fixed;
 }
 
 html[data-theme="dark"] body.memory-page,
 html[data-theme="dark"] body.memory-hub-page {
   background:
     linear-gradient(rgba(1, 13, 10, 0.95), rgba(1, 9, 7, 0.98)),
-    url("assets/plants/chamomile.webp") center / cover fixed;
+    url("assets/plants/chamomile.webp?v=20260828-2") center / cover fixed;
 }
 
 html[data-theme="dark"] .memory-page .site-header,

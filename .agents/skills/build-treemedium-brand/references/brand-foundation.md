@@ -120,15 +120,15 @@ visitor wonders if they are on the right path, ask whether their deepest thought
 then invite them to reveal the spirit animal ready to show up—and keep showing up—as confirmation
 along their path.
 
-The working 22 are Blue Owl, Octopus, Tiger, Parrot, Fox, Bunny Rabbit, Mole, Turtle, Hummingbird,
+The working 22 are Owl, Octopus, Tiger, Parrot, Fox, Bunny Rabbit, Mole, Turtle, Hummingbird,
 Bear, Deer, Crow, Whale, Frog, Spider, Horse, Elephant, Moth, Bee, Dolphin, Snake, and Dragonfly.
-Blue Owl is rooted in Patti's lived experience of owl figures, toys, images, and encounters arriving
+Owl is rooted in Patti's lived experience of owl figures, toys, images, and encounters arriving
 when she needs confirmation. All card meanings and artwork remain working drafts until Patti reviews
 them. Patti approved the reviewed Spirit Animal experience for public launch on August 23, 2026.
 
 The working animal artwork is a cohesive set of rudimentary graphite pencil studies on warm ivory paper:
 simple, recognizable animals with imperfect hand-drawn contour lines and sparse crosshatching. The
-Blue Owl alone carries a faint dusty-blue pencil wash. Avoid emoji, polished clip art, card labels,
+Owl alone carries a faint dusty-blue pencil wash. Avoid emoji, polished clip art, card labels,
 and busy scenery; the animal should feel like a quiet drawing found in a naturalist's field journal.
 The interactive experience is centered around a recognizable portrait oracle-card deck rather than
 an arched panel. Its original KELA card back uses a living tree, mirrored roots, deep spruce, warm

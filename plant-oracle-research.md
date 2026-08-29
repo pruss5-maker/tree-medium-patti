@@ -27,4 +27,4 @@ The card copy is original KELA reflection inspired by plant history, symbolism, 
 
 ## Artwork provenance
 
-The 20 botanical portraits were generated with OpenAI image generation in default mode, then optimized to 720×1080 WebP. The shared prompt requested a botanically recognizable single plant, vertical 2:3 composition, naturalistic botanical photography with a restrained vintage-plate texture, woodland-garden atmosphere, accurate plant colors, no text, no border, and no watermark.
+Launch history: the first 20 botanical portraits were generated with OpenAI image generation. During the full photo-provenance audit on August 28, 2026, all 19 generated portraits still in use were replaced with clearly licensed real plant photographs. Hibiscus had already been replaced with a real photograph. The public Photo Credits page records the photographer, source, and reuse license for every Plant Oracle image.

@@ -5,7 +5,7 @@ window.KelaMemoryDecks = {
     accent: "#0b4960",
     prompt: "Find the matching animal.",
     items: [
-      ["Blue Owl", "blue-owl"], ["Octopus", "octopus"], ["Tiger", "tiger"],
+      ["Owl", "blue-owl"], ["Octopus", "octopus"], ["Tiger", "tiger"],
       ["Parrot", "parrot"], ["Fox", "fox"], ["Bunny Rabbit", "bunny-rabbit"],
       ["Mole", "mole"], ["Turtle", "turtle"], ["Hummingbird", "hummingbird"],
       ["Bear", "bear"], ["Deer", "deer"], ["Crow", "crow"], ["Whale", "whale"],

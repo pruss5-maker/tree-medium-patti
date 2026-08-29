@@ -6,7 +6,7 @@ const renderData = renderDeck === "animal"
   ? animalGuides[renderIndex]
   : renderDeck === "plant" ? plantGuides[renderIndex] : treeGuides[renderIndex];
 const renderSlug = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-const renderDataSlug = renderSlug(renderData.name);
+const renderDataSlug = renderData.assetSlug || renderSlug(renderData.name);
 const renderGuideName = renderDeck === "tree" ? `${renderData.name} Tree` : renderData.name;
 const renderBackProtection = `“Dear ${renderGuideName}, I can feel your presence within me. Please be the guardian of my mind. Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter my field. Amen.”`;
 const renderBackArt = renderDeck === "animal"
@@ -67,7 +67,7 @@ const renderBack = `
 
 const canvas = document.querySelector("[data-canvas]");
 canvas.className = `canvas ${renderDeck} ${renderSide}`;
-canvas.dataset.slug = renderSlug(renderData.name);
+canvas.dataset.slug = renderDataSlug;
 canvas.innerHTML = renderSide === "front" ? renderFront : renderBack;
 
 Promise.all(Array.from(document.images).map((image) => image.decode().catch(() => undefined))).then(() => {

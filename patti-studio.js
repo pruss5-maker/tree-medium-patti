@@ -13,7 +13,7 @@ const studioDeckCatalog = [
     storageKey: "kela-animal-guide-v1",
     href: "/animal-oracle",
     names: [
-      "Blue Owl", "Octopus", "Tiger", "Parrot", "Fox", "Bunny Rabbit", "Mole", "Turtle",
+      "Owl", "Octopus", "Tiger", "Parrot", "Fox", "Bunny Rabbit", "Mole", "Turtle",
       "Hummingbird", "Bear", "Deer", "Crow", "Whale", "Frog", "Spider", "Horse", "Elephant",
       "Moth", "Bee", "Dolphin", "Snake", "Dragonfly",
     ],

@@ -26,7 +26,7 @@
   const BEST_KEY = "kela-animal-bug-quest-best";
 
   const guides = [
-    ["Blue Owl", "blue-owl"],
+    ["Owl", "blue-owl"],
     ["Octopus", "octopus"],
     ["Tiger", "tiger"],
     ["Parrot", "parrot"],

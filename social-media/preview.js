@@ -4,7 +4,7 @@ const socialDecks = [
     deck: "animal",
     title: "Animal Oracle",
     cards: [
-      ["Blue Owl", "blue-owl"], ["Octopus", "octopus"], ["Tiger", "tiger"],
+      ["Owl", "blue-owl"], ["Octopus", "octopus"], ["Tiger", "tiger"],
       ["Parrot", "parrot"], ["Fox", "fox"], ["Bunny Rabbit", "bunny-rabbit"],
       ["Mole", "mole"], ["Turtle", "turtle"], ["Hummingbird", "hummingbird"],
       ["Bear", "bear"], ["Deer", "deer"], ["Crow", "crow"], ["Whale", "whale"],

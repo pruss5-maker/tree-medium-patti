@@ -9,7 +9,7 @@
 .plant-oracle-page .plant-oracle-hero .oracle-forest {
   background:
     linear-gradient(90deg, rgba(10, 30, 22, 0.8), rgba(10, 30, 22, 0.28)),
-    url("assets/plants/lavender.webp") center 43% / cover;
+    url("assets/plants/lavender.webp?v=20260828-2") center 43% / cover;
   opacity: 0.46;
 }
 

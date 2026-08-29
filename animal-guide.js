@@ -183,12 +183,12 @@ const animalGuides = [
   {
     name: "Bee",
     art: "assets/animals/bee.webp",
-    keyword: "Share the Direction",
+    keyword: "Meaningful Belonging",
     accent: "#d1ad55",
     message:
-      "A honeybee returns from a rich flower patch and dances the direction and distance for the colony. Nourishment becomes more powerful when its location is shared. Tell one person where you found help, beauty, work, or relief. Then ask what direction they can share with you.",
+      "Bee carries one small offering back to the hive, where many small offerings become nourishment. Your part does not have to be enormous to matter. Offer the gift that is yours, and let yourself receive support from the community you help create.",
     echo:
-      "If Bee, honeycomb, buzzing, jewelry, or a bee image follows you, ask what useful direction wants to be shared. Let Bee confirm reciprocal belonging.",
+      "When Bee, honeycomb, buzzing, jewelry, or a bee image follows you, ask where your gifts and presence are meant to contribute. Let Bee remind you that belonging is built through shared care.",
   },
   {
     name: "Dolphin",
@@ -348,7 +348,7 @@ const preloadGuideCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260827-6`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260828-1`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -402,8 +402,8 @@ const fillGuide = (index, colorIndex) => {
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${slugify(guide.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-6`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-6`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260828-1`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260828-1`;
   if (animalCardFront) {
     if (animalCardFront.getAttribute("src") !== cardFrontSrc) animalCardFront.src = cardFrontSrc;
     animalCardFront.alt = `${guide.name} KELA Animal Oracle card`;

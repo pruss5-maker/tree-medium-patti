@@ -6,7 +6,7 @@ const treeGuides = [
     keyword: "Inner Vision",
     accent: "#a2769f",
     message:
-      "Madrona grows throughout Orcas Island. Patti feels its presence like the vortex energy of Sedona. Place both feet on the ground. Take three slow breaths. Feel into Madrona and ask it to protect your mind and your energy. Notice which thoughts become quieter.",
+      "Madrona grows throughout Orcas Island, where its presence can feel like the vortex energy of Sedona. Place both feet on the ground. Take three slow breaths. Feel into Madrona and ask it to protect your mind and your energy. Notice which thoughts become quieter.",
     attunement:
       "Place one hand on your heart and one on your forehead. Say aloud: Madrona, protect my mind and my energy. Take three slow breaths.",
     question: "What thought can I release from my field today?",
@@ -258,7 +258,7 @@ const preloadTreeCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260827-4`;
+    image.src = `${cardAssetBase}-${side}.webp?v=20260828-1`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -306,8 +306,8 @@ const fillTree = (index) => {
   oracleCard.style.setProperty("--guide-accent", tree.accent);
   updateTreeSeo(tree);
   const cardAssetBase = `assets/oracle-cards/tree/${slugify(tree.name)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260827-4`;
-  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260827-4`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260828-1`;
+  const cardBackSrc = `${cardAssetBase}-back.webp?v=20260828-1`;
   if (treeCardFront) {
     if (treeCardFront.getAttribute("src") !== cardFrontSrc) treeCardFront.src = cardFrontSrc;
     treeCardFront.alt = `${tree.name} KELA Tree Oracle card`;

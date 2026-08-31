@@ -277,16 +277,16 @@
   border: 0;
 }
 
-.plant-oracle-page .oracle-card-raster-face::before,
-.plant-oracle-page .oracle-card-raster-face::after {
+.plant-oracle-page .oracle-card-raster-face:not(.plant-flip-back)::before,
+.plant-oracle-page .oracle-card-raster-face:not(.plant-flip-back)::after {
   display: none;
 }
 
-.plant-oracle-page .oracle-card-raster-face > :not(.oracle-card-raster) {
+.plant-oracle-page .oracle-card-raster-face:not(.plant-flip-back) > :not(.oracle-card-raster) {
   display: none;
 }
 
-.plant-oracle-page .oracle-card-raster-face > .oracle-card-raster {
+.plant-oracle-page .oracle-card-raster-face:not(.plant-flip-back) > .oracle-card-raster {
   position: absolute;
   inset: 0;
   display: block;
@@ -298,6 +298,84 @@
   filter: none;
   opacity: 1;
   transform: none;
+}
+
+.plant-oracle-page .plant-flip-back.oracle-card-raster-face > .oracle-card-raster {
+  display: none;
+}
+
+.plant-oracle-page .plant-flip-back.oracle-card-raster-face {
+  padding: clamp(68px, 13%, 84px) clamp(26px, 7%, 36px) clamp(22px, 5%, 30px);
+  color: var(--forest-900, #173028);
+  background:
+    radial-gradient(circle at 50% 6%, rgba(189, 198, 178, 0.34), transparent 16rem),
+    linear-gradient(165deg, #fbf6ea 0%, #f3ead8 58%, #e8dcc6 100%);
+  border: 1px solid rgba(185, 148, 95, 0.28);
+}
+
+/* Meaning face matches the readable tree/willow spa card: dark ink on linen. */
+.plant-oracle-page .plant-flip-back,
+.plant-oracle-page .plant-flip-back.oracle-card-raster-face {
+  color: var(--forest-900, #173028);
+  background:
+    radial-gradient(circle at 50% 6%, rgba(189, 198, 178, 0.34), transparent 16rem),
+    linear-gradient(165deg, #fbf6ea 0%, #f3ead8 58%, #e8dcc6 100%);
+  border: 1px solid rgba(185, 148, 95, 0.28);
+}
+
+.plant-oracle-page .plant-flip-back h2,
+.plant-oracle-page .plant-flip-back .oracle-message p,
+.plant-oracle-page .plant-flip-back .oracle-quick-prompt > p:last-child,
+.plant-oracle-page .plant-flip-back .oracle-keyword {
+  color: var(--forest-900, #173028);
+}
+
+.plant-oracle-page .plant-flip-back .oracle-mini-label,
+.plant-oracle-page .plant-flip-back .tree-botanical,
+.plant-oracle-page .plant-flip-back .oracle-result-kicker {
+  color: #6f7d62;
+}
+
+.plant-oracle-page .plant-flip-back .oracle-message p {
+  max-width: 28ch;
+  margin-inline: auto;
+  font-family: var(--serif, Georgia, serif);
+  font-size: clamp(1.12rem, 3.4vw, 1.42rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.plant-oracle-page .plant-flip-back .oracle-quick-prompt {
+  background: rgba(255, 252, 245, 0.55);
+  border: 0;
+  border-top: 1px solid rgba(127, 142, 112, 0.28);
+  border-radius: 0;
+}
+
+.plant-oracle-page .plant-flip-back .oracle-face-brand {
+  color: #6b5428;
+}
+
+.plant-oracle-page .plant-flip-back .oracle-face-brand span {
+  font-size: clamp(0.98rem, 3.2vw, 1.28rem);
+}
+
+.plant-oracle-page .plant-flip-back .oracle-face-brand small {
+  font-size: clamp(0.34rem, 1vw, 0.44rem);
+  text-align: center;
+}
+
+.plant-oracle-page .plant-meaning-watermark {
+  filter: grayscale(1) sepia(0.32) contrast(0.84);
+  mix-blend-mode: multiply;
+  opacity: 0.12;
+}
+
+.plant-oracle-page .plant-flip-back .tree-flip-cue {
+  color: #173028;
+  background: transparent;
+  border: 1px solid rgba(139, 102, 33, 0.38);
+  box-shadow: none;
 }
 
 .plant-oracle-page .plant-gallery .tree-gallery-link {

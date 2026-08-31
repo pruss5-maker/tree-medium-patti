@@ -6,7 +6,7 @@ const treeGuides = [
     keyword: "Inner Vision",
     accent: "#a2769f",
     message:
-      "Madrona grows throughout Orcas Island, where its presence can feel like the vortex energy of Sedona. Place both feet on the ground. Take three slow breaths. Feel into Madrona and ask it to protect your mind and your energy. Notice which thoughts become quieter.",
+      "Stand still until the inner picture becomes clear. Ask Madrona to quiet the thoughts that cloud it.",
     attunement:
       "Place one hand on your heart and one on your forehead. Say aloud: Madrona, protect my mind and my energy. Take three slow breaths.",
     question: "What thought can I release from my field today?",
@@ -18,7 +18,7 @@ const treeGuides = [
     keyword: "Sacred Clearing",
     accent: "#71965f",
     message:
-      "Neem allows you to clear what does not belong in your mind or energy. In India, it has long been honored as a sacred and purifying tree. Open a door or window. Say aloud: Neem Tree, remove what is unkind, false, or not mine. Leave only what helps life grow.",
+      "Let what is unkind or not yours leave. Keep only what helps life grow.",
     attunement:
       "Sweep your hands slowly from your head toward the ground. Say: Neem Tree, clear my mind and my energy. Leave only what is kind, true, and mine.",
     question: "What thought or energy am I ready to clear from my field?",
@@ -30,7 +30,7 @@ const treeGuides = [
     keyword: "Stored Wisdom",
     accent: "#b98b56",
     message:
-      "Baobab allows you to feel the wisdom already stored within you. It holds life through dry seasons and has given food, fiber, shelter, and gathering places across generations. Place both hands over your belly. Name three strengths that have carried you here.",
+      "The wisdom that carried you here is still inside you. Remember one strength.",
     attunement:
       "Place both hands over your belly. Say: Baobab Tree, awaken the wisdom already stored within me. Take three slow breaths and receive the first strength that returns.",
     question: "What wisdom within me is ready to be remembered?",
@@ -42,7 +42,7 @@ const treeGuides = [
     keyword: "Rooted Support",
     accent: "#74855d",
     message:
-      "Banyan allows you to receive support without losing yourself. Its branches send roots toward the earth until one tree becomes a whole grove and a place of gathering. Write down the names of three people, places, or practices that give your life another place to stand.",
+      "You can receive support without losing yourself. Let another root find the ground.",
     attunement:
       "Touch the ground with one hand and your heart with the other. Say: Banyan Tree, show me the support already reaching toward me. Help me receive it.",
     question: "Where is life offering me another root of support?",
@@ -54,7 +54,7 @@ const treeGuides = [
     keyword: "Merciful Release",
     accent: "#6f9890",
     message:
-      "Willow allows your feelings to move without carrying you away. Its flexible branches bend, and in Chinese Buddhism it is held with Guanyin, the presence of compassion and mercy. Place one hand on your heart. Name the feeling and say: I can feel this, bless it, and let it move.",
+      "Feel what is here, bless it, and let it move. Mercy is a way of releasing.",
     attunement:
       "Let your arms hang softly and sway for three breaths. Say: Willow Tree, hold me in compassion while this feeling moves through and away from me.",
     question: "What feeling is asking to be released with mercy?",
@@ -66,7 +66,7 @@ const treeGuides = [
     keyword: "Sacred Shelter",
     accent: "#486f5f",
     message:
-      "Cedar allows you to create protection that serves life. Western redcedar is deeply honored by Pacific Northwest Indigenous peoples as a Tree of Life, offering shelter, clothing, vessels, and passage. Stand at a doorway. Name what may enter your field and what must remain outside.",
+      "Decide what may enter your field, and what must remain outside.",
     attunement:
       "Place one hand on your heart and one on the doorway. Say: Cedar Tree, guard this threshold. Let love enter and let harm remain outside.",
     question: "What does my sacred shelter welcome, and what does it refuse?",
@@ -78,7 +78,7 @@ const treeGuides = [
     keyword: "Strength That Shelters",
     accent: "#9a794c",
     message:
-      "Oak allows you to feel strength as a sacred responsibility. Long honored as a tree of powerful gods, an old oak also shelters thousands of lives within its roots, bark, branches, and hollows. Stand tall. Choose one person or living thing your strength can protect today.",
+      "Your strength is for shelter, not display. Stand for one living thing today.",
     attunement:
       "Plant your feet wide. Say: Oak Tree, make my strength steady and let it become shelter. Take one protective action before the day ends.",
     question: "Who or what becomes safer because I am standing here?",
@@ -90,7 +90,7 @@ const treeGuides = [
     keyword: "Clean Beginning",
     accent: "#a3a878",
     message:
-      "Birch allows you to enter a new beginning with a clear mind. Its bright bark and broom-making branches have long accompanied seasonal thresholds and the sweeping away of what is finished. Clear one doorway, one page, or one small space. Say: Birch Tree, help me begin cleanly.",
+      "Sweep the finished season away. Begin with a clear mind.",
     attunement:
       "Sweep your hands outward from your heart. Say: Birch Tree, clear the old path from my mind and show me the first clean step into the new.",
     question: "What can I begin once I stop carrying the finished season?",
@@ -102,7 +102,7 @@ const treeGuides = [
     keyword: "Rise Together",
     accent: "#677f79",
     message:
-      "Redwood allows you to rise without standing alone. The tallest trees on Earth hold themselves through wide, intertwined roots, receive summer water from fog, and can send up new life after injury. Reach both arms upward. Name the person or presence whose support you are ready to receive.",
+      "You do not have to rise alone. Receive the grove around you.",
     attunement:
       "Reach upward, then widen your stance. Say: Redwood Tree, connect me to the support beneath and around me. Help me rise with the grove.",
     question: "What support will I allow myself to receive as I rise?",
@@ -114,7 +114,7 @@ const treeGuides = [
     keyword: "Truthful Peace",
     accent: "#8f8c69",
     message:
-      "Olive allows you to make peace without abandoning your truth. Its branch has carried the meaning of peace, restored life, and sacred honor across thousands of years. Place one hand on your throat and one on your heart. Speak the truth once, then choose the peaceful action that keeps it true.",
+      "Keep the peace that still tells the truth.",
     attunement:
       "Place one hand on your throat and one on your heart. Say: Olive Tree, let my peace be honest and my truth be peaceful. Receive the next action.",
     question: "What peaceful choice allows my truth to remain whole?",
@@ -126,7 +126,7 @@ const treeGuides = [
     keyword: "True Aim",
     accent: "#c7a33c",
     message:
-      "Ginkgo allows you to see your target and gives you the strength to shoot your arrow toward the goal you set for yourself. Write down one goal. Circle it. Take one real action toward it today.",
+      "See the target. Take one real action toward it.",
     attunement:
       "Read your goal aloud. Close your eyes and see it as the target. Ask Ginkgo for clear aim and strength. Choose the first action and begin.",
     question: "What one action will move me toward my target today?",
@@ -138,7 +138,7 @@ const treeGuides = [
     keyword: "Visible Beauty",
     accent: "#8f77ae",
     message:
-      "Jacaranda allows the beauty within you to become visible before you feel complete. Its violet flowers can fill bare-looking branches and transform the whole space around them. Choose one idea you have kept hidden. Give it a visible form today: one sentence, sketch, sound, or movement.",
+      "Let what is beautiful in you become visible, even before you feel complete.",
     attunement:
       "Close your eyes and picture violet light moving from your heart into your hands. Say: Jacaranda Tree, help the beauty within me become visible.",
     question: "What beauty within me is ready to be seen?",
@@ -150,7 +150,7 @@ const treeGuides = [
     keyword: "Pure Reflection",
     accent: "#b98246",
     message:
-      "Maple trees allow you to see yourself as a pure reflection of Source. Look into a mirror. Meet your own eyes. Say aloud: I am a pure reflection of Source. Name one kind and encouraging truth about yourself.",
+      "Meet your own eyes. You are a pure reflection of Source.",
     attunement:
       "Look into your eyes and repeat: I am a pure reflection of Source. Say one loving truth about yourself three times.",
     question: "What loving truth will I reflect back to myself today?",
@@ -171,6 +171,7 @@ const treeNameBack = document.querySelector("[data-tree-name-back]");
 const treeBotanical = document.querySelector("[data-tree-botanical]");
 const treeArt = document.querySelector("[data-tree-art]");
 const treeWatermark = document.querySelector("[data-tree-watermark]");
+const treeTattoo = document.querySelector("[data-tree-tattoo]");
 const treeCardFront = document.querySelector("[data-tree-card-front]");
 const treeCardBack = document.querySelector("[data-tree-card-back]");
 const treeKeyword = document.querySelector("[data-tree-keyword]");
@@ -243,7 +244,7 @@ const randomTreeIndex = () => {
 
 const slugify = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const treeProtectionInvocation = (tree) =>
-  `Cover your eyes and close your mind. Tune into ${tree.name} Tree and its energy. When you feel its presence, ask out loud and in your mind: “Dear ${tree.name} Tree, I can feel your presence within me. Please be the guardian of my mind. Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter my field. Amen.”`;
+  `“Dear ${tree.name} Tree, please protect my mind. Only let kind thoughts enter my field.”`;
 
 const preloadTreeCard = (index) => {
   const tree = treeGuides[index];
@@ -324,6 +325,11 @@ const fillTree = (index) => {
     treeArt.alt = `Photograph of a ${tree.name} tree`;
   }
   if (treeWatermark) treeWatermark.src = tree.art;
+  if (treeTattoo) {
+    treeTattoo.hidden = false;
+    treeTattoo.onerror = () => { treeTattoo.hidden = true; };
+    treeTattoo.src = `assets/oracle-cards/tattoos/tree/${slugify(tree.name)}.webp?v=20260830-tattoo2`;
+  }
   if (treeKeyword) treeKeyword.textContent = tree.keyword;
   if (treeKeywordBack) treeKeywordBack.textContent = tree.keyword;
   if (treeMessage) treeMessage.textContent = tree.message;

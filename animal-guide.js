@@ -7,9 +7,9 @@ const animalGuides = [
     keyword: "Listen Before Looking",
     accent: "#86b8d8",
     message:
-      "Owl's facial disk directs sound toward ears placed at different heights, while soft feather edges quiet its flight. Owl asks you to receive before you pursue. Close your eyes for three breaths. Name the truth you can hear when you stop searching for proof.",
+      "Receive before you look for proof. The truth is already speaking.",
     echo:
-      "If Owl finds you in a picture, dream, story, sound, or beside a tree, pause. Repeat the truth you named. Let the encounter confirm listening, not fear.",
+      "When Owl returns, pause and listen. Let it confirm hearing, not fear.",
   },
   {
     name: "Octopus",
@@ -17,9 +17,9 @@ const animalGuides = [
     keyword: "More Than One Way",
     accent: "#ad83bc",
     message:
-      "Octopus survives without a shell by changing color, shape, and direction. Its wisdom is flexibility: one blocked path does not mean you are stuck. Write down three ways you could move forward. Choose the smallest, safest one and test it today.",
+      "You are not stuck. Another way is already here.",
     echo:
-      "If Octopus finds you through an image, object, conversation, or unexpected reference, stop searching for one perfect plan. Ask: What other way is available?",
+      "When Octopus returns, ask what other way is available.",
   },
   {
     name: "Tiger",
@@ -27,9 +27,9 @@ const animalGuides = [
     keyword: "Gathered Power",
     accent: "#d79a55",
     message:
-      "Tiger is an ambush hunter: it relies on camouflage, patience, and one concentrated movement rather than constant pursuit. Gather your energy around one target. Write the next deliberate step in five words or fewer, then do only that before expanding the plan.",
+      "Hold your energy for one true move. Strength is quieter than chase.",
     echo:
-      "When Tiger's stripes, name, image, or story crosses your path, return to the one target you chose. Let it confirm concentration rather than force.",
+      "When Tiger returns, go back to the one thing that matters.",
   },
   {
     name: "Parrot",
@@ -37,9 +37,9 @@ const animalGuides = [
     keyword: "Kindness Comes Back",
     accent: "#79ad83",
     message:
-      "Parrots are social, sensitive beings who respond to patience, trust, and gentle attention. Offer that kindness to yourself. Name one thing you have judged yourself for. Speak to yourself as you would to someone you love, forgive yourself for being human, and take one gentle step forward.",
+      "Speak to yourself as you would to someone you love.",
     echo:
-      "If Parrot appears through a living bird, voice, image, story, or dream, let it remind you to soften your inner voice. Ask: What would forgiveness let me do next?",
+      "When Parrot returns, soften the inner voice.",
   },
   {
     name: "Fox",
@@ -47,9 +47,9 @@ const animalGuides = [
     keyword: "Choose the Wiser Path",
     accent: "#c8794f",
     message:
-      "Fox listens beneath grass and snow, changes course quickly, and saves food for later. Fox reminds you that wisdom may be quiet. Stop forcing the obvious route. Name one gentler path and one resource—time, money, or energy—you need to protect. Choose accordingly.",
+      "The wiser path is often the quieter one. Protect your energy as you move.",
     echo:
-      "When Fox appears in art, language, story, or landscape, pause before moving. Ask which choice protects your energy and still leads you forward.",
+      "When Fox returns, pause before forcing the obvious route.",
   },
   {
     name: "Bunny Rabbit",
@@ -57,9 +57,9 @@ const animalGuides = [
     keyword: "Gentle Readiness",
     accent: "#d7b6aa",
     message:
-      "Rabbit's wide field of vision, sensitive ears, stillness, and sudden zigzag movement all serve awareness. Readiness does not require living in panic. Look around the room, exhale longer than you inhale, then take one gentle step toward what is new.",
+      "Stay ready without living in panic. Softness can still be alert.",
     echo:
-      "If Bunny Rabbit finds you in nature, a toy, book, picture, or phrase, pause and soften your breath. Let it confirm that alertness can remain gentle.",
+      "When Bunny Rabbit returns, soften your breath and stay gentle.",
   },
   {
     name: "Mole",
@@ -67,9 +67,9 @@ const animalGuides = [
     keyword: "Trust What You Can Touch",
     accent: "#9b876e",
     message:
-      "Moles navigate dark tunnels through exquisitely sensitive touch organs on the nose. They do not wait for visibility to make contact with what is real. Put your hands on the ground, a table, or your work. Complete one physical task that needs no audience.",
+      "You do not need to see everything. Trust what your hands already know.",
     echo:
-      "If Mole, a tunnel, mound, or underground image catches your attention, touch what is actually in front of you. Let it confirm the unseen work your hands already know.",
+      "When Mole returns, touch what is actually in front of you.",
   },
   {
     name: "Turtle",
@@ -77,9 +77,9 @@ const animalGuides = [
     keyword: "Carry Your Center",
     accent: "#719b7b",
     message:
-      "A turtle's shell is a living skeleton, with ribs and vertebrae joined into protection it cannot simply leave behind. Turtle teaches embodied safety, not hiding. Slow one task to a pace your body can stay present for. Protect the pace and finish one honest portion.",
+      "Take your safety with you. Slow is still progress.",
     echo:
-      "When Turtle appears in conversation, jewelry, image, dream, or near water, return to your own pace. Let it confirm that protection can travel with progress.",
+      "When Turtle returns, return to your own pace.",
   },
   {
     name: "Hummingbird",
@@ -87,9 +87,9 @@ const animalGuides = [
     keyword: "Joy and Restoration",
     accent: "#6ab3a9",
     message:
-      "Hummingbird can hover, reverse, and move in nearly every direction, yet its intense metabolism also requires torpor to conserve energy. Joy is fuel, and rest protects the ability to receive it. Choose one small sweetness today and schedule one real recovery period beside it.",
+      "Joy is fuel. Rest keeps you able to receive it.",
     echo:
-      "If Hummingbird flashes through your day, receive the joy and check the recovery. Let it confirm that sweetness and rest belong to the same rhythm.",
+      "When Hummingbird returns, receive the joy and protect the rest.",
   },
   {
     name: "Bear",
@@ -97,9 +97,9 @@ const animalGuides = [
     keyword: "Seasonal Power",
     accent: "#9c765b",
     message:
-      "Bear responds to winter scarcity by slowing breath and activity in the den, then returns when the season changes. Power includes knowing which season you are in. Write either ACT or REST at the top of a page. Choose one behavior that honors the honest answer.",
+      "Honor the season you are in. Rest and action both hold power.",
     echo:
-      "When Bear appears through a story, dream, sign, or woodland encounter, ask again: Is this my season to act or restore? Let the answer set the boundary.",
+      "When Bear returns, ask whether this is a season to act or restore.",
   },
   {
     name: "Deer",
@@ -107,9 +107,9 @@ const animalGuides = [
     keyword: "Sensitive Renewal",
     accent: "#b79a71",
     message:
-      "Deer uses wide ears and keen senses to read its surroundings, while antlers are released and grown anew each year. Sensitivity and renewal belong together. Listen for one signal your body has repeated. Release one old crown, role, or expectation that keeps you from responding.",
+      "Your sensitivity is strength. Release what no longer fits so you can hear.",
     echo:
-      "If Deer appears in the landscape, image, clothing, conversation, or dream, notice the repeated body signal. Let Deer confirm that release can be a form of strength.",
+      "When Deer returns, notice what your body has been repeating.",
   },
   {
     name: "Crow",
@@ -117,9 +117,9 @@ const animalGuides = [
     keyword: "Notice What Returns",
     accent: "#7f819a",
     message:
-      "Crows remember faces and share what they learn. Crow asks you to notice what keeps returning. Write one question you need clarity on, then stop chasing the answer. If Crow appears again, pause. Notice the thought or feeling present in that exact moment. That is what needs your attention.",
+      "What keeps returning is asking for your attention.",
     echo:
-      "Crow may return as a living bird, call, feather, picture, logo, toy, book, dream, or unexpected mention. Do not force the appearance into yes or no. Notice what repeated, what you were thinking, and what feels ready to be understood.",
+      "When Crow returns, notice the thought present in that exact moment.",
   },
   {
     name: "Whale",
@@ -127,9 +127,9 @@ const animalGuides = [
     keyword: "Deep Breath, Far Voice",
     accent: "#6e9bb2",
     message:
-      "Whales return consciously to the surface for air, dive into depths, and carry sound across miles of water. Depth and expression both depend on breath. Take three slow breaths. Write the truth beneath the surface noise, then speak one clear sentence to someone who can receive it.",
+      "Breathe, then speak the deeper truth.",
     echo:
-      "If Whale surfaces through a documentary, song, art, toy, conversation, or dream, take a full breath before interpreting it. Let it confirm the deeper voice you chose to express.",
+      "When Whale returns, take a full breath before you answer.",
   },
   {
     name: "Frog",
@@ -137,9 +137,9 @@ const animalGuides = [
     keyword: "Make Room for Change",
     accent: "#75a765",
     message:
-      "Frog transforms from tadpole to adult and is deeply affected by the conditions around it. Your change needs support, not pressure. Name the next version of yourself you are growing into. Change one part of your environment today so that version has room to live.",
+      "Change needs room, not pressure. Adjust what surrounds you.",
     echo:
-      "When Frog, lily pads, rain calls, or green figures appear, ask whether your surroundings support the change you want. Adjust one condition with care.",
+      "When Frog returns, ask whether your surroundings support the change.",
   },
   {
     name: "Spider",
@@ -147,9 +147,9 @@ const animalGuides = [
     keyword: "Follow the Strongest Thread",
     accent: "#a38b71",
     message:
-      "Spider builds a web from many strands and feels which one is moving. Not every concern deserves equal attention. Write down the three things pulling at you. Circle the one that matters most today, and take one action on that thread before touching the others.",
+      "Not every pull deserves you. Follow the one thread that matters today.",
     echo:
-      "If Spider, webs, woven patterns, or web language appears, ask: Which one concern truly needs me now? Give that thread your attention.",
+      "When Spider returns, give the strongest thread your attention.",
   },
   {
     name: "Horse",
@@ -157,9 +157,9 @@ const animalGuides = [
     keyword: "Directed Momentum",
     accent: "#b08766",
     message:
-      "Horses move through the day while grazing, form stable social bonds, and read subtle shifts in posture and expression. Movement is healthiest when direction and relationship remain connected. Name where you are going, who can travel beside you, and the first ten-minute move.",
+      "Move with a destination, and with someone who can travel beside you.",
     echo:
-      "When Horse appears in a field, film, logo, toy, conversation, or dream, name the destination before increasing speed. Let it confirm directed momentum.",
+      "When Horse returns, name the destination before you speed up.",
   },
   {
     name: "Elephant",
@@ -167,9 +167,9 @@ const animalGuides = [
     keyword: "Collective Memory",
     accent: "#8d9694",
     message:
-      "Elephant family groups are guided by experienced matriarchs who make decisions and steady the herd. Wisdom is carried through relationship, not stored for one body alone. Contact one elder, trusted friend, or keeper of shared memory. Ask the question you do not need to carry alone.",
+      "You do not have to remember alone. Ask the ones who still hold the story.",
     echo:
-      "If Elephant arrives through a figure, pattern, book, gift, conversation, or dream, remember your living council. Let it confirm that help and history remain available.",
+      "When Elephant returns, remember your living council.",
   },
   {
     name: "Moth",
@@ -177,19 +177,19 @@ const animalGuides = [
     keyword: "Choose True Light",
     accent: "#bcae83",
     message:
-      "Artificial light can pull moths away from feeding, breeding, and the darkness their lives require. Brightness is not the same as guidance. Turn off one false light, such as a notification, comparison, demand, or performance. Notice what quieter direction becomes visible.",
+      "Brightness is not the same as guidance. Turn toward the quieter light.",
     echo:
-      "When Moth, winged night shapes, lamps, or moonlit images appear, ask what has captured your attention. Let Moth confirm the need to choose your light deliberately.",
+      "When Moth returns, ask what has captured your attention.",
   },
   {
     name: "Bee",
     art: "assets/animals/bee.webp",
-    keyword: "Meaningful Belonging",
+    keyword: "Follow What Is Sweet",
     accent: "#d1ad55",
     message:
-      "Bee carries one small offering back to the hive, where many small offerings become nourishment. Your part does not have to be enormous to matter. Offer the gift that is yours, and let yourself receive support from the community you help create.",
+      "Follow the sweetness, not the noise. The right work has a scent.",
     echo:
-      "When Bee, honeycomb, buzzing, jewelry, or a bee image follows you, ask where your gifts and presence are meant to contribute. Let Bee remind you that belonging is built through shared care.",
+      "When Bee returns, notice what actually feels sweet.",
   },
   {
     name: "Dolphin",
@@ -197,9 +197,9 @@ const animalGuides = [
     keyword: "Ask Clearly",
     accent: "#61a9bc",
     message:
-      "Dolphins use signature whistles to recognize one another and stay connected. You do not have to hide what you need. Tell one trusted person: “I need…” Then make one clear invitation: Can we talk, rest, work, or play together?",
+      "Name what you need. A clear invitation is a form of love.",
     echo:
-      "When Dolphin surfaces in media, conversation, a toy, logo, dream, or near water, ask yourself what connection you need and make one clear invitation.",
+      "When Dolphin returns, make one clear invitation.",
   },
   {
     name: "Snake",
@@ -207,9 +207,9 @@ const animalGuides = [
     keyword: "Shed What No Longer Fits",
     accent: "#78965f",
     message:
-      "Snake forms new skin beneath the old, then uses moisture and rough surfaces to help shed it. You are allowed to outgrow what once protected you. Name one role, habit, or belief that no longer fits. Choose one boundary or act of support that helps you release it.",
+      "You are allowed to outgrow what once protected you.",
     echo:
-      "If Snake, shed skin, winding patterns, jewelry, or a sudden reference appears, ask what you are ready to stop carrying and what support will help you let go.",
+      "When Snake returns, ask what you are ready to stop carrying.",
   },
   {
     name: "Dragonfly",
@@ -217,9 +217,9 @@ const animalGuides = [
     keyword: "Change Your View",
     accent: "#78b7ae",
     message:
-      "Dragonfly begins in water and later rises into air. Some changes need a new viewpoint, not more effort in the old place. Take your question somewhere different—a walk, another room, or paper instead of a screen. From that new place, choose one next step.",
+      "Some answers need a new place to stand, not more effort in the old one.",
     echo:
-      "When Dragonfly, iridescent wings, jewelry, pictures, or conversation appears, change your physical viewpoint and ask what becomes possible from here.",
+      "When Dragonfly returns, change your view before you push harder.",
   },
 ];
 
@@ -237,6 +237,7 @@ const guideNameBack = document.querySelector("[data-guide-name-back]");
 const guideGlyph = document.querySelector("[data-guide-glyph]");
 const guideGlyphEcho = document.querySelector("[data-guide-glyph-echo]");
 const guideGlyphBack = document.querySelector("[data-guide-glyph-back]");
+const guideTattoo = document.querySelector("[data-guide-tattoo]");
 const animalCardFront = document.querySelector("[data-animal-card-front]");
 const animalCardBack = document.querySelector("[data-animal-card-back]");
 const guideKeyword = document.querySelector("[data-guide-keyword]");
@@ -335,7 +336,7 @@ const randomColorIndex = () => secureRandomIndex(animalCardColors.length);
 const slugify = (value) => value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const guideAssetSlug = (guide) => guide.assetSlug || slugify(guide.name);
 const animalProtectionInvocation = (guide) =>
-  `Cover your eyes and close your mind. Tune into ${guide.name} and its energy. When you feel its presence, ask out loud and in your mind: “Dear ${guide.name}, I can feel your presence within me. Please be the guardian of my mind. Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter my field. Amen.”`;
+  `“Dear ${guide.name}, please protect my mind. Only let kind thoughts enter my field.”`;
 
 const preloadGuideCard = (index) => {
   const guide = animalGuides[index];
@@ -350,7 +351,7 @@ const preloadGuideCard = (index) => {
     };
     image.addEventListener("load", finish);
     image.addEventListener("error", finish);
-    image.src = `${cardAssetBase}-${side}.webp?v=20260828-1`;
+    image.src = `${cardAssetBase}-${side}.webp?v=${side === "front" ? "20260830-center" : "20260828-1"}`;
     if (image.complete && image.naturalWidth > 0) finish();
   });
   return Promise.all([
@@ -404,7 +405,7 @@ const fillGuide = (index, colorIndex) => {
   oracleCard.style.setProperty("--guide-accent", cardColor.value);
   updateGuideSeo(guide, cardColor);
   const cardAssetBase = `assets/oracle-cards/animal/${guideAssetSlug(guide)}`;
-  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260828-1`;
+  const cardFrontSrc = `${cardAssetBase}-front.webp?v=20260830-center`;
   const cardBackSrc = `${cardAssetBase}-back.webp?v=20260828-1`;
   if (animalCardFront) {
     if (animalCardFront.getAttribute("src") !== cardFrontSrc) animalCardFront.src = cardFrontSrc;
@@ -422,6 +423,11 @@ const fillGuide = (index, colorIndex) => {
   }
   if (guideGlyphEcho) guideGlyphEcho.src = guide.isolatedArt || guide.art;
   if (guideGlyphBack) guideGlyphBack.src = guide.art;
+  if (guideTattoo) {
+    guideTattoo.hidden = false;
+    guideTattoo.onerror = () => { guideTattoo.hidden = true; };
+    guideTattoo.src = `assets/oracle-cards/tattoos/animal/${guideAssetSlug(guide)}.webp?v=20260830-tattoo2`;
+  }
   if (guideKeyword) guideKeyword.textContent = guide.keyword;
   if (guideKeywordBack) guideKeywordBack.textContent = guide.keyword;
   if (guideMessage) guideMessage.textContent = guide.message;

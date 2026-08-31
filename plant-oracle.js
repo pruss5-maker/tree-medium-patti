@@ -2,121 +2,121 @@ const plantGuides = [
   {
     name: "Yarrow", botanical: "Achillea millefolium", art: "assets/plants/yarrow.webp",
     keyword: "Sacred Boundaries", accent: "#b6a36c",
-    message: "Long associated with tending wounds, Yarrow carries the spiritual medicine of sacred boundaries. Your sensitivity is a gift, but it does not require unlimited access to you. Gather your energy, seal the places where it has been leaking, and let your care have a clear edge.",
+    message: "Your sensitivity is a gift. It does not require unlimited access to you.",
     practice: "Draw a circle. Place what nourishes you inside it and what drains you outside it. Say: My sensitivity is protected. My care has a clear edge.",
   },
   {
     name: "Lavender", botanical: "Lavandula angustifolia", art: "assets/plants/lavender.webp",
     keyword: "Heavenly Protection", accent: "#8875a8",
-    message: "Lavender carries a potent fragrance long associated with cleansing, calm, and devotion. Its message is that peace is not passive. Peace is a protective frequency. You are just as potent as the lavender and worthy of guarding the quiet within you.",
+    message: "Peace is not passive. It is a way of guarding the quiet within you.",
     practice: "Breathe in lavender or imagine its scent. Say: Peace fills my body and surrounds my mind. I am potent, peaceful, and protected.",
   },
   {
     name: "Hibiscus", botanical: "Hibiscus rosa-sinensis", art: "assets/plants/hibiscus-real-saadtitan12-v1.webp",
     keyword: "Radiant Life Force", accent: "#bc3f49",
-    message: "Hibiscus carries the spiritual medicine of radiant life force. Its vivid bloom asks you to stop dimming your desire, beauty, or creative fire so others can remain comfortable. What is alive within you deserves color, expression, and room to be fully seen.",
+    message: "Stop dimming what is alive in you. Your color is allowed.",
     practice: "Place a hand over your heart. Ask: What wants to come alive through me today? Give the answer one visible expression.",
   },
   {
     name: "Comfrey", botanical: "Symphytum officinale", art: "assets/plants/comfrey.webp",
     keyword: "Return to Wholeness", accent: "#6f765f",
-    message: "Comfrey has long carried names connected with knitting together and repair. Spiritually, it calls the scattered pieces of you home. Wholeness does not mean the break never happened. It means every part of your story is welcomed back into the life you are becoming.",
+    message: "Call the scattered pieces home. Wholeness welcomes every part of the story.",
     practice: "Call one separated part of yourself home. Say: Nothing true within me is abandoned. I am returning to wholeness.",
   },
   {
     name: "Chamomile", botanical: "Matricaria chamomilla", art: "assets/plants/chamomile.webp",
     keyword: "Gentle Strength", accent: "#c7a955",
-    message: "Chamomile has long been reached for when the body and spirit need soothing. Its spiritual medicine is gentle strength. You do not have to answer life from agitation. Let the inner disturbance settle so the quiet wisdom beneath it can finally be heard.",
+    message: "You do not have to answer from agitation. Let the quiet wisdom rise.",
     practice: "Unclench your jaw and take three slow breaths. Say: Softness is not weakness. I can become calm before I respond.",
   },
   {
     name: "Calendula", botanical: "Calendula officinalis", art: "assets/plants/calendula.webp",
     keyword: "Light in Tender Places", accent: "#d58532",
-    message: "Calendula has long been associated with tending tender skin and minor wounds. Spiritually, it brings warmth to the places in you that still feel raw, overlooked, or unworthy of care. Healing begins when you stop abandoning the tender place and let light meet it gently.",
+    message: "Do not abandon the raw place. Let light meet it gently.",
     practice: "Place your hand near the place that feels tender. Say: I will not abandon this part of me. Light and loving attention are welcome here.",
   },
   {
     name: "Plantain", botanical: "Plantago major", art: "assets/plants/plantain.webp",
     keyword: "Draw Out What Does Not Belong", accent: "#658259",
-    message: "Plantain has long been valued as a humble plant of soothing and repair. Spiritually, it helps draw out the irritation, judgment, and energy that do not belong in your field. Medicine may be growing in an overlooked place, including the ordinary wisdom already within you.",
+    message: "Release the irritation that is not yours. Simple medicine is already near.",
     practice: "Feel both feet on the ground. Say: I release what does not belong to me. I trust the simple medicine already within reach.",
   },
   {
     name: "Sunflower", botanical: "Helianthus annuus", art: "assets/plants/sunflower.webp",
     keyword: "Receive the Light", accent: "#d39b26",
-    message: "Sunflower carries nourishment while continually orienting itself toward light. Spiritually, it teaches receptive confidence. You do not have to chase every source of approval. Turn toward what is life giving and allow warmth, encouragement, and divine light to reach you.",
+    message: "Turn toward what is life-giving. You do not have to chase approval.",
     practice: "Face the morning light or imagine it above you. Say: I turn toward what nourishes me. I allow myself to receive.",
   },
   {
     name: "Rosemary", botanical: "Salvia rosmarinus", art: "assets/plants/rosemary.webp",
     keyword: "Remember Yourself", accent: "#53786b",
-    message: "Rosemary has carried the medicine of remembrance for centuries. Spiritually, it calls you back from distraction, grief, and the identities others placed upon you. Beneath everything you have been asked to become, your original promise is still waiting to be remembered.",
+    message: "Beneath every role, your original promise is still waiting.",
     practice: "Say your name aloud, then finish: I remember that I am here to ___. Complete one small action that honors the answer.",
   },
   {
     name: "Garden Sage", botanical: "Salvia officinalis", art: "assets/plants/garden-sage.webp",
     keyword: "Sacred Discernment", accent: "#75836d",
-    message: "Garden Sage has long been associated with wise care, clearing, and a strong voice. Its spiritual medicine is discernment. Not every thought is truth and not every fear is prophecy. Clear the inner room so your own knowing can speak without competing with inherited noise.",
+    message: "Not every thought is truth. Clear the room so your knowing can speak.",
     practice: "Write three headings: Truth, Fear, Inherited Belief. Sort the thought, then choose from what your clearest self knows.",
   },
   {
     name: "Mugwort", botanical: "Artemisia vulgaris", art: "assets/plants/mugwort.webp",
     keyword: "Dream Threshold", accent: "#79758d",
-    message: "Mugwort has long stood at the threshold of ritual, dream, and intuition. It invites you to listen beneath the literal image without turning every symbol into a prediction. Something within you is speaking in feeling, memory, and metaphor. Meet it with curiosity instead of fear.",
+    message: "Listen beneath the image. Meet it with curiosity, not fear.",
     practice: "Write one dream image, then finish: Beneath this image, I feel... Let the feeling be the message for today.",
   },
   {
     name: "Rose", botanical: "Rosa damascena", art: "assets/plants/rose.webp",
     keyword: "Open Heart, Clear Thorns", accent: "#ad6a75",
-    message: "Rose has long carried the medicines of love, beauty, grief, and protection. Spiritually, it teaches that an open heart still needs clear thorns. Your tenderness is sacred. Give it a safe shape by honoring both the wholehearted yes and the necessary no within you.",
+    message: "Keep the heart open and the thorns clear. Yes and no both belong.",
     practice: "Say aloud: My loving yes is ___. My protective no is ___. Both belong to the wisdom of my heart.",
   },
   {
     name: "Dandelion", botanical: "Taraxacum officinale", art: "assets/plants/dandelion.webp",
     keyword: "Root and Release", accent: "#bd972c",
-    message: "Dandelion carries the medicine of movement, release, and persistent life. Spiritually, it asks you to root deeply in your purpose while loosening your demand to control the path. Your wish needs faithful care, but it also needs enough freedom to travel farther than you planned.",
+    message: "Root in your purpose, then let the path travel farther than you planned.",
     practice: "Name one daily action that roots your hope. Then say: I release my demand to control exactly how this arrives.",
   },
   {
     name: "Stinging Nettle", botanical: "Urtica dioica", art: "assets/plants/stinging-nettle.webp",
     keyword: "Protective Fire", accent: "#4e7854",
-    message: "Stinging Nettle is both nourishing and fiercely protective. Its spiritual medicine is the fire that rises when your life force has been crossed. Anger is not always an enemy. Listen for the boundary hidden inside it, then use that fire to protect what you are here to nourish.",
+    message: "Anger can be a boundary speaking. Use the fire to protect what you nourish.",
     practice: "Finish: My anger is showing me that ___. I now protect ___. Let the message become a clear boundary rather than a lasting burn.",
   },
   {
     name: "Peppermint", botanical: "Mentha × piperita", art: "assets/plants/peppermint.webp",
     keyword: "Cooling Clarity", accent: "#4d8b73",
-    message: "Peppermint has long been turned to for digestive ease and its unmistakable cooling presence. Spiritually, it clears heat from crowded thoughts. Not every urgent feeling requires an urgent act. Let the inner air cool before deciding which thought deserves your energy.",
+    message: "Let the inner heat cool before you decide.",
     practice: "Take three slow breaths. Say: I can feel urgency without obeying it. My mind is clear enough to choose one useful step.",
   },
   {
     name: "Basil", botanical: "Ocimum basilicum", art: "assets/plants/basil.webp",
     keyword: "Blessed Abundance", accent: "#47794c",
-    message: "Basil has long brought fragrance, nourishment, and blessing into kitchens and homes. Its spiritual medicine is abundance shaped by devotion. What you consistently tend gathers life around it. Bless what is already growing before asking the universe to send you more.",
+    message: "Bless what is already growing before asking for more.",
     practice: "Place your hands around something you are nurturing. Say: I bless what is growing here. May this abundance nourish more than me.",
   },
   {
     name: "Echinacea", botanical: "Echinacea purpurea", art: "assets/plants/echinacea.webp",
     keyword: "Intelligent Protection", accent: "#9a667f",
-    message: "Echinacea has long been associated with supporting the body's defenses. Spiritually, it awakens the inner guardian who knows what belongs in your field and what does not. You do not need to harden against life. Welcome what strengthens you, refuse what drains you, and call your energy home.",
+    message: "Welcome what strengthens you. Release what is not yours.",
     practice: "Place one hand over your heart and one over your center. Say: I welcome what strengthens me. I release what is not mine. My field protects its peace.",
   },
   {
     name: "Jasmine", botanical: "Jasminum officinale", art: "assets/plants/jasmine.webp",
     keyword: "Sacred Pleasure", accent: "#8d8d67",
-    message: "Jasmine has long been woven into love, beauty, offering, and devotion. Its spiritual medicine is sacred pleasure. You were not created only to endure, produce, and recover. Beauty can restore your field. Let receiving something lovely become part of your devotion to yourself.",
+    message: "You were not made only to endure. Beauty can restore you.",
     practice: "Choose one unhurried pleasure that truly restores you. Receive it without earning it, explaining it, or rushing through it.",
   },
   {
     name: "Lemon Balm", botanical: "Melissa officinalis", art: "assets/plants/lemon-balm.webp",
     keyword: "The Heart's Return", accent: "#6f8b5e",
-    message: "Lemon Balm has long been turned to for gentle rest, ease, and comfort. Spiritually, it signals the heart returning after a season of strain. Joy may not arrive as a thunderbolt. Welcome the small warmth, the unexpected smile, and the quiet desire to participate in life again.",
+    message: "Joy may return as a small warmth. Make room for it.",
     practice: "Notice one small thing that warms your heart. Say: I do not have to force joy. I make room for its gentle return.",
   },
   {
     name: "Red Clover", botanical: "Trifolium pratense", art: "assets/plants/red-clover.webp",
     keyword: "Sacred Replenishment", accent: "#a65372",
-    message: "Red Clover carries the medicine of replenishment through relationship. It reminds you that receiving support is not weakness and giving until you are empty is not sacred. Healthy abundance moves in a living circle. Let yourself be nourished as deeply as you nourish others.",
+    message: "Receiving support is not weakness. Stay inside the circle of care.",
     practice: "Offer one sincere gift and make one clear request for support. Say: I belong within the circle of care, not outside it.",
   },
 ];
@@ -135,6 +135,7 @@ const plantNameBack = document.querySelector("[data-plant-name-back]");
 const plantBotanical = document.querySelector("[data-plant-botanical]");
 const plantArt = document.querySelector("[data-plant-art]");
 const plantWatermark = document.querySelector("[data-plant-watermark]");
+const plantTattoo = document.querySelector("[data-plant-tattoo]");
 const plantKeyword = document.querySelector("[data-plant-keyword]");
 const plantKeywordBack = document.querySelector("[data-plant-keyword-back]");
 const plantMessage = document.querySelector("[data-plant-message]");
@@ -219,7 +220,7 @@ const randomPlantIndex = () => {
 };
 
 const protectionText = (plant) =>
-  `Cover your eyes and close your mind. Tune into ${plant.name} and its energy. When you feel its presence, ask out loud and in your mind: “Dear ${plant.name}, I can feel your presence within me. Please be the guardian of my mind. Please protect my thoughts and energy. Only allow kind and encouraging thoughts to enter my field. Amen.”`;
+  `“Dear ${plant.name}, please protect my mind. Only let kind thoughts enter my field.”`;
 
 const updatePlantSeo = (plant) => {
   const slug = slugify(plant.name);
@@ -262,6 +263,11 @@ const fillPlant = (index) => {
   plantArt.alt = `Botanical portrait of ${plant.name}`;
   plantArt.title = `${plant.name} Plant Oracle card: ${plant.keyword}`;
   plantWatermark.src = plantArtUrl(plant);
+  if (plantTattoo) {
+    plantTattoo.hidden = false;
+    plantTattoo.onerror = () => { plantTattoo.hidden = true; };
+    plantTattoo.src = `assets/oracle-cards/tattoos/plant/${slugify(plant.name)}.webp?v=20260830-tattoo2`;
+  }
   plantKeyword.textContent = plant.keyword;
   plantKeywordBack.textContent = plant.keyword;
   plantMessage.textContent = plant.message;

@@ -31,7 +31,7 @@ const termsContinue = document.querySelector("[data-terms-continue]");
 if (!document.querySelector('link[href*="theme-experience.css"]')) {
   const themeStyles = document.createElement("link");
   themeStyles.rel = "stylesheet";
-  themeStyles.href = "/theme-experience.css?v=20260825-3";
+  themeStyles.href = "/theme-experience.css?v=20260830-spa";
   document.head.append(themeStyles);
 }
 
@@ -115,7 +115,7 @@ document.querySelectorAll(".site-footer, .legal-footer").forEach((footer) => {
   if (footer.querySelector(".footer-sanctuary-phrase")) return;
   const phrase = document.createElement("p");
   phrase.className = "footer-sanctuary-phrase";
-  phrase.textContent = "The mind should be a sanctuary, and less like a battlefield.";
+  phrase.textContent = "Your mind should be a sanctuary, not a battlefield.";
   footer.append(phrase);
 });
 

@@ -48,7 +48,7 @@ html[data-theme="light"] .site-footer .footer-sanctuary-phrase {
   border-top-color: rgba(126, 88, 27, 0.24);
 }
 
-/* Memory games: cream page and panels, while the playing-card backs stay green. */
+/* Memory games: cream spa page. Card backs use linen, not billiard felt. */
 html[data-theme="light"] body.memory-page,
 html[data-theme="light"] body.memory-hub-page {
   color: var(--kela-light-ink);
@@ -330,13 +330,13 @@ html[data-theme="light"] .patti-purpose-copy p {
 html[data-theme="dark"] body.memory-page,
 html[data-theme="dark"] body.memory-hub-page {
   background:
-    linear-gradient(rgba(5, 49, 39, 0.91), rgba(4, 31, 25, 0.97)),
+    linear-gradient(rgba(32, 24, 18, 0.94), rgba(22, 17, 13, 0.97)),
     url("assets/plants/chamomile.webp?v=20260828-2") center / cover fixed;
 }
 
 html[data-theme="dark"] .memory-game-panel,
 html[data-theme="dark"] .memory-hub-card {
-  background: linear-gradient(155deg, rgba(18, 74, 59, 0.98), rgba(5, 36, 29, 0.99));
+  background: linear-gradient(155deg, rgba(58, 45, 34, 0.98), rgba(32, 24, 18, 0.99));
 }
 
 html[data-theme="dark"] body.legal-page,

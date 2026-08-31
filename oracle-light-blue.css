@@ -1,0 +1,632 @@
+/* Texture + text only: leather grain and copy, no foil, flowers, or portraits. */
+
+.oracle-page {
+  --kela-leather: #b0d0e2;
+  --kela-leather-ink: #02080d;
+  --kela-leather-muted: #122433;
+  --kela-leather-image: url("assets/oracle-cards/masters/kela-leather-light-blue.webp?v=20260830-blue2");
+  --kela-card-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --kela-card-name: clamp(1.95rem, 6.2vw, 2.7rem);
+  --kela-card-keyword: clamp(1.02rem, 2.7vw, 1.22rem);
+  --kela-card-botanical: clamp(0.68rem, 1.7vw, 0.82rem);
+  --kela-card-message: clamp(1.18rem, 3.2vw, 1.48rem);
+  --kela-card-request: clamp(1.02rem, 2.8vw, 1.26rem);
+  --kela-card-label: clamp(0.58rem, 1.6vw, 0.7rem);
+  --kela-card-cue: clamp(0.5rem, 1.4vw, 0.6rem);
+}
+
+.oracle-page .oracle-experience::before,
+.oracle-page .oracle-experience::after {
+  display: none;
+}
+
+.oracle-page .oracle-card-back {
+  background: var(--kela-leather-image) center / cover;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) {
+  border: 0;
+  box-shadow: 0 24px 54px rgba(48, 78, 98, 0.18);
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-art,
+.oracle-page .oracle-deck-portrait,
+.plant-oracle-page .oracle-deck-portrait {
+  display: none;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-back::before,
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-back::after,
+.plant-oracle-page .plant-oracle-card .oracle-card-back::after {
+  display: none;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-back-copy,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-card-back-copy {
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 12% 11% 10%;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-brand,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-card-brand,
+.plant-oracle-page .plant-oracle-card .oracle-card-brand,
+.plant-oracle-page .oracle-card-brand {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 0;
+  color: var(--kela-leather-ink);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  transform: none;
+  text-shadow: none;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-brand p,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-card-brand p,
+.plant-oracle-page .plant-oracle-card .oracle-card-brand p {
+  margin-bottom: 6px;
+  color: var(--kela-leather-ink);
+  font-weight: 700;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-card-brand small,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-card-brand small,
+.plant-oracle-page .plant-oracle-card .oracle-card-brand small {
+  color: var(--kela-leather-muted);
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-ritual,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-ritual,
+.plant-oracle-page .plant-oracle-card .oracle-ritual {
+  position: static;
+  top: auto;
+  left: auto;
+  z-index: 3;
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex: 1;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--kela-leather-ink);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-ritual .oracle-mini-label,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-ritual .oracle-mini-label,
+.plant-oracle-page .plant-oracle-card .oracle-ritual .oracle-mini-label {
+  color: var(--kela-leather-muted);
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-ritual h2,
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-ritual h2,
+.plant-oracle-page .plant-oracle-card .oracle-ritual h2 {
+  color: var(--kela-leather-ink);
+  font-size: clamp(1.9rem, 4.4vw, 2.6rem);
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-ritual > p:not(.oracle-mini-label, .oracle-status),
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) .oracle-ritual > p:not(.oracle-mini-label, .oracle-status),
+.plant-oracle-page .plant-oracle-card .oracle-ritual > p:not(.oracle-mini-label, .oracle-status) {
+  color: var(--kela-leather-ink);
+  font-size: clamp(0.92rem, 1.7vw, 1.12rem);
+  font-weight: 600;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-reveal,
+.oracle-page .oracle-card:not(.is-revealed) .oracle-reveal:hover,
+.oracle-page .oracle-card:not(.is-revealed) .oracle-reveal:focus-visible,
+.plant-oracle-page .plant-oracle-card .oracle-reveal,
+.plant-oracle-page .plant-oracle-card .oracle-reveal:hover,
+.plant-oracle-page .plant-oracle-card .oracle-reveal:focus-visible {
+  color: var(--kela-leather-ink);
+  background: transparent;
+  border: 1px solid rgba(28, 51, 68, 0.38);
+  border-radius: 999px;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.oracle-page .oracle-card:not(.is-revealed) .oracle-ritual > small,
+.plant-oracle-page .plant-oracle-card .oracle-ritual > small {
+  display: none;
+}
+
+.oracle-page .oracle-status {
+  color: var(--kela-leather-ink);
+}
+
+.plant-oracle-page .plant-oracle-card:not(.is-revealed) {
+  background: var(--kela-leather-image) center / cover;
+  box-shadow: 0 24px 54px rgba(48, 78, 98, 0.18);
+}
+
+/* Listening: same grain, only the words. */
+.oracle-listening-signal {
+  color: var(--kela-leather-ink);
+  background: rgba(176, 208, 226, 0.28);
+}
+
+.oracle-listening-rings {
+  display: none;
+}
+
+.oracle-listening-signal p {
+  color: var(--kela-leather-ink);
+}
+
+.oracle-listening-signal small {
+  color: var(--kela-leather-muted);
+}
+
+.oracle-card.is-listening .oracle-ritual {
+  box-shadow: none;
+}
+
+/* Meaning backs: leather + words, no paper inset or watermark. */
+.animal-flip-back.oracle-card-raster-face,
+.tree-flip-back.oracle-card-raster-face,
+.plant-flip-back.oracle-card-raster-face,
+.plant-oracle-page .plant-flip-back,
+.plant-oracle-page .plant-flip-back.oracle-card-raster-face {
+  color: var(--kela-leather-ink);
+  background: var(--kela-leather-image) center / cover;
+  border: 0;
+}
+
+.animal-flip-back::before,
+.tree-flip-back::before,
+.plant-flip-back::before,
+.animal-flip-back::after,
+.tree-flip-back::after,
+.plant-flip-back::after,
+.animal-flip-back.oracle-card-raster-face::after,
+.tree-flip-back.oracle-card-raster-face::after,
+.plant-flip-back.oracle-card-raster-face::after,
+.plant-oracle-page .plant-flip-back::after {
+  display: none;
+}
+
+.animal-meaning-watermark,
+.tree-meaning-watermark,
+.plant-meaning-watermark {
+  display: none;
+}
+
+.animal-flip-back .oracle-face-brand,
+.tree-flip-back .oracle-face-brand,
+.plant-flip-back .oracle-face-brand,
+.plant-oracle-page .plant-flip-back .oracle-face-brand {
+  color: var(--kela-leather-ink);
+}
+
+.animal-flip-back .oracle-face-brand span,
+.tree-flip-back .oracle-face-brand span,
+.plant-flip-back .oracle-face-brand span,
+.plant-oracle-page .plant-flip-back .oracle-face-brand span {
+  font-size: clamp(1.2rem, 3.8vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.animal-flip-back .oracle-face-brand small,
+.tree-flip-back .oracle-face-brand small,
+.plant-flip-back .oracle-face-brand small,
+.plant-oracle-page .plant-flip-back .oracle-face-brand small {
+  font-size: clamp(0.52rem, 1.6vw, 0.7rem);
+  font-weight: 800;
+}
+
+.animal-flip-back .oracle-face-brand::after,
+.tree-flip-back .oracle-face-brand::after,
+.plant-flip-back .oracle-face-brand::after {
+  display: none;
+}
+
+.animal-flip-back-heading,
+.tree-flip-back-heading,
+.plant-oracle-page .plant-flip-back .tree-flip-back-heading {
+  border-bottom: 0;
+}
+
+.animal-flip-back h2,
+.tree-flip-back h2,
+.plant-oracle-page .plant-flip-back h2,
+.animal-oracle-page .animal-flip-back-heading h2,
+.tree-oracle-page .tree-flip-back-heading h2,
+.plant-oracle-page .plant-flip-back.oracle-card-raster-face h2,
+.animal-oracle-page .animal-flip-back .oracle-message p,
+.tree-oracle-page .tree-flip-back .oracle-message p,
+.plant-oracle-page .plant-flip-back .oracle-message p,
+.plant-oracle-page .plant-flip-back .oracle-keyword {
+  color: var(--kela-leather-ink);
+  text-shadow: none;
+}
+
+.animal-flip-back-heading h2,
+.tree-flip-back-heading h2,
+.plant-oracle-page .plant-flip-back h2,
+.plant-oracle-page .plant-flip-back.oracle-card-raster-face h2,
+.plant-oracle-page .plant-flip-card[data-plant-slug="stinging-nettle"] h2,
+.plant-oracle-page .plant-flip-card[data-plant-slug="lemon-balm"] h2,
+.plant-oracle-page .plant-flip-card[data-plant-slug="red-clover"] h2 {
+  font-family: var(--kela-card-serif);
+  font-size: var(--kela-card-name);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+}
+
+.animal-oracle-page .animal-flip-back .oracle-message p,
+.tree-oracle-page .tree-flip-back .oracle-message p,
+.plant-oracle-page .plant-flip-back .oracle-message p,
+.plant-oracle-page .plant-flip-back.oracle-card-raster-face .oracle-message p {
+  max-width: 24ch;
+  font-family: var(--kela-card-serif);
+  font-size: var(--kela-card-message);
+  font-weight: 700;
+  line-height: 1.28;
+  color: var(--kela-leather-ink);
+  text-shadow: none;
+}
+
+.animal-oracle-page .animal-flip-back .oracle-mini-label,
+.tree-oracle-page .tree-flip-back .oracle-mini-label,
+.plant-oracle-page .plant-flip-back .oracle-mini-label,
+.plant-oracle-page .plant-flip-back .tree-botanical,
+.plant-oracle-page .plant-flip-back .oracle-result-kicker,
+.animal-oracle-page .animal-flip-back .oracle-keyword,
+.tree-oracle-page .tree-flip-back .oracle-keyword,
+.plant-oracle-page .plant-flip-back .oracle-keyword,
+.tree-oracle-page .tree-flip-back .tree-botanical,
+.tree-flip-back .tree-botanical {
+  color: var(--kela-leather-muted);
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.animal-oracle-page .animal-flip-back .oracle-keyword,
+.tree-oracle-page .tree-flip-back .oracle-keyword,
+.plant-oracle-page .plant-flip-back .oracle-keyword {
+  font-family: var(--kela-card-serif);
+  font-size: var(--kela-card-keyword);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--kela-leather-ink);
+}
+
+.tree-oracle-page .tree-flip-back .tree-botanical,
+.plant-oracle-page .plant-flip-back .tree-botanical {
+  font-family: var(--kela-card-serif);
+  font-size: var(--kela-card-botanical);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.animal-oracle-page .animal-flip-back .oracle-mini-label,
+.tree-oracle-page .tree-flip-back .oracle-mini-label,
+.plant-oracle-page .plant-flip-back .oracle-mini-label,
+.plant-oracle-page .plant-flip-back .oracle-result-kicker {
+  font-family: var(--kela-card-serif);
+  font-size: var(--kela-card-label);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.animal-oracle-page .animal-flip-back .oracle-quick-prompt,
+.tree-oracle-page .tree-flip-back .oracle-quick-prompt,
+.plant-oracle-page .plant-flip-back .oracle-quick-prompt {
+  background: transparent;
+  border: 0;
+}
+
+.animal-oracle-page .animal-flip-back .oracle-quick-prompt > p:last-child,
+.tree-oracle-page .tree-flip-back .oracle-quick-prompt > p:last-child,
+.plant-oracle-page .plant-flip-back .oracle-quick-prompt > p:last-child {
+  color: var(--kela-leather-ink);
+  font-family: var(--kela-card-serif);
+  font-size: var(--kela-card-request);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.32;
+  text-shadow: none;
+}
+
+.plant-oracle-page .plant-flip-back .tree-flip-cue,
+.animal-oracle-page .animal-flip-back .animal-flip-cue,
+.tree-oracle-page .tree-flip-back .tree-flip-cue {
+  color: var(--kela-leather-muted);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font-family: var(--kela-card-serif);
+  font-size: var(--kela-card-cue);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.plant-oracle-page .plant-flip-back .tree-flip-back-heading,
+.plant-oracle-page .plant-flip-back .oracle-message,
+.plant-oracle-page .plant-flip-back .oracle-quick-prompt,
+.plant-oracle-page .plant-flip-back .tree-flip-cue {
+  position: relative;
+  z-index: 3;
+}
+
+/* Kingdom switcher stays a quiet side path, not a second card. */
+.oracle-layout:has(.oracle-card.is-revealed) > .oracle-kingdom-switcher {
+  color: var(--kela-leather-ink);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.oracle-kingdom-kicker {
+  color: var(--kela-leather-muted);
+}
+
+.oracle-kingdom-link {
+  color: var(--kela-leather-ink);
+  background: transparent;
+  border: 0;
+}
+
+.oracle-kingdom-link img {
+  border-color: rgba(28, 51, 68, 0.16);
+  box-shadow: none;
+}
+
+.oracle-kingdom-link strong {
+  color: var(--kela-leather-ink);
+}
+
+.oracle-kingdom-link small {
+  color: var(--kela-leather-muted);
+}
+
+.oracle-kingdom-link:hover,
+.oracle-kingdom-link:focus-visible {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.oracle-kingdom-field-line {
+  color: rgba(28, 51, 68, 0.72);
+}
+
+/* Meaning-back stack: tight type, cue fully inside the card. */
+.animal-flip-back.oracle-card-raster-face,
+.tree-flip-back.oracle-card-raster-face,
+.plant-oracle-page .plant-flip-back,
+.plant-oracle-page .plant-flip-back.oracle-card-raster-face {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8.5% 10% 11%;
+  gap: 0.22rem;
+  overflow: hidden;
+}
+
+.animal-flip-back .oracle-face-brand,
+.tree-flip-back .oracle-face-brand,
+.plant-flip-back .oracle-face-brand,
+.plant-oracle-page .plant-flip-back .oracle-face-brand {
+  position: relative;
+  top: auto;
+  right: auto;
+  left: auto;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 0 0.7rem;
+  padding: 0;
+}
+
+.animal-flip-back-heading,
+.tree-flip-back-heading,
+.plant-flip-back .tree-flip-back-heading,
+.plant-oracle-page .plant-flip-back .tree-flip-back-heading {
+  position: relative;
+  z-index: 3;
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-align: center;
+}
+
+.oracle-tattoo {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  z-index: 1;
+  width: min(92%, 26rem);
+  height: auto;
+  max-height: 52%;
+  margin: 0;
+  object-fit: contain;
+  background: none;
+  opacity: 0.16;
+  transform: translateX(-50%) rotate(-1.5deg);
+  pointer-events: none;
+}
+
+.plant-oracle-page .plant-flip-card[data-plant-slug="peppermint"] .oracle-tattoo {
+  opacity: 0.12;
+}
+
+.animal-flip-back-heading h2,
+.tree-flip-back-heading h2,
+.plant-oracle-page .plant-flip-back h2,
+.plant-oracle-page .plant-flip-back.oracle-card-raster-face h2 {
+  margin: 0 0 0.1em;
+  font-family: var(--kela-card-serif);
+  font-weight: 700;
+  color: var(--kela-leather-ink);
+  text-shadow: none;
+}
+
+.animal-flip-back .oracle-keyword,
+.tree-flip-back .oracle-keyword,
+.tree-flip-back .tree-botanical,
+.plant-oracle-page .plant-flip-back .oracle-keyword,
+.plant-oracle-page .plant-flip-back .tree-botanical {
+  margin: 0.08em 0 0;
+}
+
+.animal-oracle-page .animal-flip-back .oracle-message,
+.tree-oracle-page .tree-flip-back .oracle-message,
+.plant-oracle-page .plant-flip-back .oracle-message {
+  position: relative;
+  z-index: 3;
+  flex: 0 0 auto;
+  display: block;
+  width: 100%;
+  padding: 0.62rem 0 0;
+  margin: 0;
+  text-align: center;
+}
+
+.animal-oracle-page .animal-flip-back .oracle-message p,
+.tree-oracle-page .tree-flip-back .oracle-message p,
+.plant-oracle-page .plant-flip-back .oracle-message p,
+.plant-oracle-page .plant-flip-back.oracle-card-raster-face .oracle-message p {
+  margin: 0;
+}
+
+.animal-oracle-page .animal-flip-back .oracle-quick-prompt,
+.tree-oracle-page .tree-flip-back .oracle-quick-prompt,
+.plant-oracle-page .plant-flip-back .oracle-quick-prompt {
+  position: relative;
+  z-index: 3;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 30ch;
+  padding: 0.55rem 0 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.animal-oracle-page .animal-flip-back .oracle-mini-label,
+.tree-oracle-page .tree-flip-back .oracle-mini-label,
+.plant-oracle-page .plant-flip-back .oracle-mini-label {
+  margin: 0 0 0.28em;
+}
+
+.plant-oracle-page .plant-flip-back .tree-flip-cue,
+.animal-oracle-page .animal-flip-back .animal-flip-cue,
+.tree-oracle-page .tree-flip-back .tree-flip-cue {
+  position: relative;
+  z-index: 3;
+  flex: 0 0 auto;
+  margin: 0.7rem auto 0;
+  padding: 0;
+}
+
+@media (min-width: 761px) {
+  .plant-oracle-page .plant-flip-back,
+  .plant-oracle-page .plant-flip-back.oracle-card-raster-face {
+    padding: 8.5% 10% 11%;
+  }
+}
+
+@media (max-height: 760px) {
+  .plant-oracle-page .plant-flip-back,
+  .plant-oracle-page .plant-flip-back.oracle-card-raster-face {
+    padding: 16% 8% 10%;
+  }
+
+  .plant-oracle-page .plant-flip-back .oracle-message p,
+  .plant-oracle-page .plant-flip-back.oracle-card-raster-face .oracle-message p {
+    font-size: var(--kela-card-message);
+    line-height: 1.28;
+  }
+
+  .plant-oracle-page .plant-flip-back .oracle-quick-prompt > p:last-child {
+    font-size: var(--kela-card-request);
+    line-height: 1.32;
+  }
+}
+
+/* Front lockup: smaller leather-etched KELA on the photograph. */
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face > .oracle-face-brand,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face > .oracle-face-brand,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face > .oracle-face-brand {
+  position: absolute;
+  top: 4%;
+  right: 10%;
+  left: 10%;
+  z-index: 4;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15em;
+  pointer-events: none;
+}
+
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face > .oracle-face-brand::after,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face > .oracle-face-brand::after,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face > .oracle-face-brand::after {
+  display: none;
+}
+
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face > .oracle-face-brand span,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face > .oracle-face-brand span,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face > .oracle-face-brand span,
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face > .oracle-face-brand small,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face > .oracle-face-brand small,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face > .oracle-face-brand small {
+  color: #d4eaf4;
+  background:
+    linear-gradient(180deg, rgba(212, 234, 244, 0.5), rgba(176, 208, 226, 0.35)),
+    var(--kela-leather-image) center / 160% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter:
+    brightness(1.22)
+    contrast(1.12)
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.35))
+    drop-shadow(0 0 2px rgba(8, 20, 32, 0.9))
+    drop-shadow(0 2px 8px rgba(8, 20, 32, 0.45));
+}
+
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face > .oracle-face-brand span,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face > .oracle-face-brand span,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face > .oracle-face-brand span {
+  font-size: clamp(1.12rem, 3.6vw, 1.48rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+.animal-oracle-page .animal-flip-front.oracle-card-raster-face > .oracle-face-brand small,
+.tree-oracle-page .tree-flip-front.oracle-card-raster-face > .oracle-face-brand small,
+.plant-oracle-page .plant-flip-front.oracle-card-raster-face > .oracle-face-brand small {
+  margin-top: 0.28em;
+  font-size: clamp(0.4rem, 1.25vw, 0.52rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
+}

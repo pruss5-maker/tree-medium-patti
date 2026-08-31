@@ -86,7 +86,8 @@ body {
 }
 
 .canvas[data-slug="dolphin"] .front-photo img {
-  object-position: 65% center;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .canvas[data-slug="elephant"] .front-photo img,

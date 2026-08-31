@@ -6,7 +6,6 @@ if (gameRoot) {
   const board = gameRoot.querySelector("[data-memory-board]");
   const movesOutput = gameRoot.querySelector("[data-memory-moves]");
   const matchesOutput = gameRoot.querySelector("[data-memory-matches]");
-  const timerOutput = gameRoot.querySelector("[data-memory-time]");
   const statusOutput = gameRoot.querySelector("[data-memory-status]");
   const pairSelect = gameRoot.querySelector("[data-memory-pairs]");
   const resetButton = gameRoot.querySelector("[data-memory-reset]");
@@ -27,8 +26,6 @@ if (gameRoot) {
   let moves = 0;
   let matches = 0;
   let locked = false;
-  let startedAt = 0;
-  let timerId = 0;
   let winTimerId = 0;
 
   gameRoot.insertAdjacentHTML("beforeend", `
@@ -39,7 +36,7 @@ if (gameRoot) {
         <p class="memory-win-eyebrow" data-memory-win-eyebrow>Your winning ${deck?.label || "nature"} guide</p>
         <div class="memory-win-art"><img data-memory-win-image width="640" height="640" alt="" /></div>
         <h2 id="memory-win-title" data-memory-win-title></h2>
-        <p class="memory-win-label">KELA protection invocation</p>
+        <p class="memory-win-label">A quiet request</p>
         <blockquote id="memory-win-invocation" data-memory-win-invocation></blockquote>
         <p class="memory-win-woven">Woven together across the Earth and beyond.</p>
         <div class="memory-win-actions">
@@ -70,7 +67,7 @@ if (gameRoot) {
     winTitle.textContent = `${item.name} found you!`;
     winImage.src = item.image;
     winImage.alt = `${item.name} coloring outline`;
-    winInvocation.textContent = `“Dear ${item.name}, please protect my mind and energy from any unkind thoughts or energies. Allow only kind thoughts and words to enter my field.”`;
+    winInvocation.textContent = `“Dear ${item.name}, please protect my mind. Only let kind thoughts enter my field.”`;
     winOracle.href = `/${deckKey}-oracle?found=${encodeURIComponent(item.slug)}`;
     winOracle.textContent = `See the ${item.name} Oracle card`;
     winModal.hidden = false;
@@ -90,22 +87,6 @@ if (gameRoot) {
     return copy;
   };
 
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    return `${minutes}:${String(seconds % 60).padStart(2, "0")}`;
-  };
-
-  const updateTimer = () => {
-    if (!startedAt) return;
-    timerOutput.textContent = formatTime(Math.floor((Date.now() - startedAt) / 1000));
-  };
-
-  const startTimer = () => {
-    if (startedAt) return;
-    startedAt = Date.now();
-    timerId = window.setInterval(updateTimer, 1000);
-  };
-
   const cardMarkup = (item) => `
     <button class="memory-card" type="button" data-memory-card data-slug="${item.slug}" aria-label="Hidden memory card">
       <span class="memory-card-inner">
@@ -120,8 +101,6 @@ if (gameRoot) {
     </button>`;
 
   const finishGame = (winningItem) => {
-    window.clearInterval(timerId);
-    updateTimer();
     statusOutput.textContent = `You found all ${matches} pairs in ${moves} moves. ${winningItem.name} is your winning ${deck.label.toLowerCase()}!`;
     gameRoot.classList.add("is-complete");
     window.KelaCompanions?.rememberFound?.({
@@ -154,7 +133,6 @@ if (gameRoot) {
 
   const chooseCard = (card) => {
     if (locked || card.classList.contains("is-flipped") || card.classList.contains("is-matched")) return;
-    startTimer();
     card.classList.add("is-flipped");
     const item = activeCards.find((entry) => entry.slug === card.dataset.slug);
     card.setAttribute("aria-label", item ? `${item.name} card` : "Revealed memory card");
@@ -223,7 +201,6 @@ if (gameRoot) {
 
   const newGame = () => {
     if (!deck || !board) return;
-    window.clearInterval(timerId);
     window.clearTimeout(winTimerId);
     closeWinningGuide();
     const requestedPairs = pairSelect.value === "all" ? deck.items.length : Number.parseInt(pairSelect.value, 10);
@@ -236,16 +213,17 @@ if (gameRoot) {
     moves = 0;
     matches = 0;
     locked = false;
-    startedAt = 0;
-    timerId = 0;
     movesOutput.textContent = "0";
     matchesOutput.textContent = "0";
-    timerOutput.textContent = "0:00";
     statusOutput.textContent = deck.prompt;
     gameRoot.classList.remove("is-complete");
     board.querySelectorAll("[data-memory-card]").forEach((card) => {
       card.addEventListener("click", () => chooseCard(card));
     });
+    if (["127.0.0.1", "localhost"].includes(window.location.hostname)
+        && new URLSearchParams(window.location.search).has("shownames")) {
+      board.querySelectorAll("[data-memory-card]").forEach((card) => card.classList.add("is-flipped"));
+    }
   };
 
   pairSelect.addEventListener("change", newGame);

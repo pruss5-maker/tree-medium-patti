@@ -18,7 +18,7 @@ const socialLabels = {
 };
 const socialDataSlug = socialData.assetSlug || socialSlug(socialData.name);
 const socialCardFace = `assets/oracle-cards/${socialDeck}/${socialDataSlug}-front.webp?v=20260828-2`;
-const socialProtection = `Your mind deserves to be a sanctuary. Tune into ${socialData.name} and hold one spiritual meaning: ${socialData.keyword}. “Dear ${socialData.name}, please protect my mind and energy. Allow only kind thoughts and words to enter my field.”`;
+const socialProtection = `Your mind deserves to be a sanctuary. Tune into ${socialData.name} and hold one spiritual meaning: ${socialData.keyword}. “Dear ${socialData.name}, please protect my mind. Only let kind thoughts enter my field.”`;
 const canvas = document.querySelector("[data-social-canvas]");
 
 canvas.className = `social-canvas ${socialDeck}`;

@@ -4,8 +4,8 @@
 
 ## Primary pages
 
-- [Free Online Oracle Cards](https://treemedium.vercel.app/): Draw a free animal, tree, or plant oracle card online with no signup; an original nature-based alternative to tarot.
-- [Meet Tree Medium Patti](https://treemedium.vercel.app/meet-patti): Patti's story, the KELA presence, private Tree Messages, and booking.
+- [Meet Tree Medium Patti](https://treemedium.vercel.app/): Patti's story, private Tree Messages, and booking.
+- [Free Online Oracle Cards](https://treemedium.vercel.app/animal-oracle): Draw a free animal, tree, or plant oracle card online with no signup; an original nature-based alternative to tarot.
 
 ## Interactive experiences
 

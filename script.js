@@ -76,16 +76,27 @@ labelThumbControls();
 document.querySelectorAll("[data-nav]").forEach((menu) => {
   const bookingLink = menu.querySelector(".site-nav-booking");
   let memoryLink = menu.querySelector('a[href^="/memory-games"]');
-  let pattiLink = menu.querySelector('a[href^="/meet-patti"]');
+  let pattiLink = [...menu.querySelectorAll("a")].find((link) => {
+    const href = link.getAttribute("href") || "";
+    return href.startsWith("/meet-patti") || link.textContent.trim() === "Meet Patti";
+  });
   let kelaLink = menu.querySelector('a[href^="/meet-kela"]');
   const plantOracleLink = menu.querySelector('a[href^="/plant-oracle"]');
 
   if (!pattiLink) {
     pattiLink = document.createElement("a");
-    pattiLink.href = "/meet-patti";
     pattiLink.textContent = "Meet Patti";
     menu.insertBefore(pattiLink, bookingLink);
   }
+  pattiLink.href = "/";
+
+  [...menu.querySelectorAll("a")].forEach((link) => {
+    if (link === pattiLink) return;
+    const href = link.getAttribute("href") || "";
+    if ((href === "/" || href === "/index.html") && link.textContent.trim() === "Home") {
+      link.remove();
+    }
+  });
 
   if (!kelaLink) {
     kelaLink = document.createElement("a");
@@ -101,6 +112,10 @@ document.querySelectorAll("[data-nav]").forEach((menu) => {
     if (plantOracleLink) plantOracleLink.after(memoryLink);
     else menu.insertBefore(memoryLink, kelaLink);
   }
+
+  const onPattiHome = /^\/(?:index\.html)?$/.test(window.location.pathname)
+    || /\/meet-patti(?:\.html)?\/?$/.test(window.location.pathname);
+  if (onPattiHome) pattiLink.setAttribute("aria-current", "page");
 
   if (/\/meet-kela(?:\.html)?\/?$/.test(window.location.pathname)) {
     kelaLink.setAttribute("aria-current", "page");

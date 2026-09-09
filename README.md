@@ -10,7 +10,7 @@ From this directory, run:
 python3 -m http.server 4173
 ```
 
-Then visit `http://localhost:4173`.
+Then visit `http://localhost:4173`. The homepage is Meet Patti.
 
 Working oracle previews:
 

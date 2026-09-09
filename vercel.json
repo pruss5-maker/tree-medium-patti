@@ -8,7 +8,12 @@
     },
     {
       "source": "/tree-medium-patti",
-      "destination": "/meet-patti",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/meet-patti",
+      "destination": "/",
       "permanent": true
     }
   ],

@@ -4,3 +4,6 @@
 
 # Local image-generation source sheets; optimized web cards live in assets/animals/.
 assets/animal-pencil-sheet-*.png
+
+# Uncompressed local audio renders; the web-ready Ogg and MP3 files are tracked.
+assets/audio/*.wav

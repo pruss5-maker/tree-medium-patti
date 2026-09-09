@@ -1,4 +1,20 @@
-# Woodland Afterglow: rights record
+# Tree Medium music: rights record
+
+## Mercer Grove Swing
+
+`Mercer Grove Swing` is an original instrumental composition created for the Tree Medium website
+on September 9, 2026. Its composition, arrangement, synthesis, and render source are stored in
+`tools/render-mercer-grove-swing.mjs`.
+
+Every sound is generated from project-authored synthesis. The recording contains no imported
+performances, recordings, loops, or samples.
+
+- Track title: `Mercer Grove Swing`
+- Website artist credit: `Tree Medium`
+- Duration: approximately 1 minute 17 seconds
+- Website formats: Ogg Vorbis and MP3
+
+## Woodland Afterglow
 
 `Woodland Afterglow` is an original instrumental composition created for the KELA website on
 August 25, 2026. Its arrangement and note data are stored in `woodland-afterglow.mmp` and generated

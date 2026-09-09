@@ -1,15 +1,15 @@
 {
   "reviewIntervalHours": 12,
-  "lastReviewed": "2026-08-25",
+  "lastReviewed": "2026-09-09",
   "tracks": [
     {
-      "id": "woodland-afterglow",
-      "title": "Woodland Afterglow",
+      "id": "mercer-grove-swing",
+      "title": "Mercer Grove Swing",
       "status": "cleared",
-      "rightsBasis": "Original KELA composition rendered entirely with LMMS built-in synthesis; no third-party recordings or samples.",
+      "rightsBasis": "Original Tree Medium composition rendered entirely from project-authored synthesis; no third-party recordings, performances, loops, or samples.",
       "sources": [
-        { "src": "/assets/audio/woodland-afterglow.ogg", "type": "audio/ogg" },
-        { "src": "/assets/audio/woodland-afterglow.mp3", "type": "audio/mpeg" }
+        { "src": "/assets/audio/mercer-grove-swing.ogg", "type": "audio/ogg" },
+        { "src": "/assets/audio/mercer-grove-swing.mp3", "type": "audio/mpeg" }
       ]
     }
   ]

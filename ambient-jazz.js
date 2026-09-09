@@ -1,17 +1,17 @@
 (() => {
   const preferenceKey = "kela-ambient-jazz-muted-v1";
   const positionKey = "kela-ambient-jazz-position-v1";
-  const rightsKey = "kela-ambient-jazz-rights-v1";
+  const rightsKey = "kela-ambient-jazz-rights-v2";
   const rightsUrl = "/assets/audio/music-rights.json";
   const twelveHours = 12 * 60 * 60 * 1000;
   const listeningVolume = 0.42;
   const fallbackTrack = {
-    id: "woodland-afterglow",
-    title: "Woodland Afterglow",
+    id: "mercer-grove-swing",
+    title: "Mercer Grove Swing",
     status: "cleared",
     sources: [
-      { src: "/assets/audio/woodland-afterglow.ogg", type: "audio/ogg" },
-      { src: "/assets/audio/woodland-afterglow.mp3", type: "audio/mpeg" },
+      { src: "/assets/audio/mercer-grove-swing.ogg", type: "audio/ogg" },
+      { src: "/assets/audio/mercer-grove-swing.mp3", type: "audio/mpeg" },
     ],
   };
 

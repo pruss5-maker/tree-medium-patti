@@ -1,6 +1,6 @@
 # KELA | Messages from the Trees
 
-The first website for Tree Medium Patti and the Kela Tree Message service.
+The first website for Tree Medium Patti and her Tree Medium reading and coaching service.
 
 ## Preview locally
 
@@ -51,8 +51,10 @@ before the customer can continue to Stripe. Permanent versions are available in 
 
 ## Current confirmed offer
 
-`Your Tree Message` is $149 and includes a locally selected tree visit, Patti's prepared message, a
-tree photograph when conditions allow, and a private 45-minute live video conversation.
+`Tree Medium reading and coaching` is $44 and includes messages from the trees and coaching from
+Patti during a private 45-minute Zoom call. If the client cannot attend, Patti emails a private
+recorded YouTube link. Refunds are available only when the client cancels at least 24 hours before
+the scheduled appointment.
 
 The generated woodland hero image is an original draft asset created for this project. Replace it
 with Patti's photography if a future reference better represents the practice.

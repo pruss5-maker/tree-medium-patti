@@ -38,7 +38,7 @@ if (!document.querySelector('link[href*="theme-experience.css"]')) {
 if (!document.querySelector('link[href*="booking-modal.css"]')) {
   const bookingStyles = document.createElement("link");
   bookingStyles.rel = "stylesheet";
-  bookingStyles.href = "/booking-modal.css?v=20260825-1";
+  bookingStyles.href = "/booking-modal.css?v=20260915-1";
   document.head.append(bookingStyles);
 }
 

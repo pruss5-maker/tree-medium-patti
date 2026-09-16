@@ -1,4 +1,12 @@
 /* Readable oracle-card typography for the four foundational KELA messages. */
+
+.kela-origin-story .kela-scripture p {
+  text-wrap: pretty;
+}
+
+.kela-origin-story > div > p {
+  text-wrap: pretty;
+}
 .patti-kela-story-card {
   min-height: 440px;
 }

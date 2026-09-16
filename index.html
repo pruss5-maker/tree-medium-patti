@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Meet Tree Medium Patti and book a private Tree Message: a prepared message from one living tree, shared in a 45-minute Zoom conversation." />
+    <meta name="description" content="Meet Tree Medium Patti and book a private 45-minute Tree Medium reading and coaching session with messages from the trees." />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#082b24" />
     <link rel="canonical" href="https://treemedium.vercel.app/" />
@@ -11,7 +11,7 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Tree Medium Patti | KELA" />
-    <meta property="og:description" content="Meet Patti, a Tree Medium. She visits one living tree for you, listens for its message, and shares it in a private Zoom session." />
+    <meta property="og:description" content="Book a 45-minute Zoom reading with Tree Medium Patti for messages from the trees and guidance for moving forward with them." />
     <meta property="og:image" content="https://treemedium.vercel.app/assets/social/kela-tree-readings-social.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://treemedium.vercel.app/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Tree Medium Patti | KELA" />
-    <meta name="twitter:description" content="Meet Patti and book a private Tree Message from one living tree." />
+    <meta name="twitter:description" content="Meet Patti and book a private Tree Medium reading and coaching session." />
     <meta name="twitter:image" content="https://treemedium.vercel.app/assets/social/kela-tree-readings-social.jpg" />
     <meta name="twitter:image:alt" content="Tree Medium Patti and a living tree" />
     <title>Tree Medium Patti | KELA</title>
@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="styles.css?v=20260827-2" />
     <link rel="stylesheet" href="portal.css?v=20260909-1" />
     <link rel="stylesheet" href="header-symbols.css?v=20260825-6" />
-    <link rel="stylesheet" href="booking-modal.css?v=20260825-3" />
+    <link rel="stylesheet" href="booking-modal.css?v=20260915-1" />
     <link rel="stylesheet" href="theme-experience.css?v=20260828-2" />
     <script src="script.js?v=20260909-home" defer></script>
     <script src="free-online-oracle-labels.js?v=20260827-1" defer></script>
@@ -44,7 +44,7 @@
             "name": "KELA | Messages from the Trees",
             "alternateName": ["KELA", "Tree Medium Patti"],
             "url": "https://treemedium.vercel.app/",
-            "description": "Private Tree Message sessions with Tree Medium Patti, plus free online animal, tree, and plant oracle cards from KELA.",
+            "description": "Private Tree Medium reading and coaching sessions with Patti, plus free online animal, tree, and plant oracle cards from KELA.",
             "publisher": { "@id": "https://treemedium.vercel.app/#organization" },
             "inLanguage": "en-US"
           },
@@ -74,7 +74,7 @@
             "name": "Tree Medium Patti",
             "alternateName": "Patti",
             "jobTitle": "Tree Medium and spiritual guide",
-            "description": "Creator of KELA, Messages from the Trees, and provider of private Tree Message readings.",
+            "description": "Creator of KELA, Messages from the Trees, and provider of private Tree Medium reading and coaching sessions.",
             "url": "https://treemedium.vercel.app/",
             "image": "https://treemedium.vercel.app/assets/patti-portrait.webp",
             "worksFor": { "@id": "https://treemedium.vercel.app/#organization" }
@@ -82,13 +82,13 @@
           {
             "@type": "Service",
             "@id": "https://treemedium.vercel.app/#tree-message-session",
-            "name": "Your Tree Message",
-            "serviceType": "Private reflective Tree Message session",
-            "description": "Patti visits one living tree selected for the client, prepares its message, and shares it in a private 45-minute Zoom conversation.",
+            "name": "Tree Medium Reading and Coaching",
+            "serviceType": "Private Tree Medium reading and coaching session",
+            "description": "In a private 45-minute Zoom session, Patti shares messages from the trees, coaches the client on developing their own connection as a tree medium, and offers guidance for moving forward in life with the trees.",
             "provider": { "@id": "https://treemedium.vercel.app/#patti" },
             "offers": {
               "@type": "Offer",
-              "price": "149",
+              "price": "44",
               "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
               "url": "https://treemedium.vercel.app/#booking-terms"
@@ -135,7 +135,7 @@
           <p>I listen to trees as living spiritual presences with something to say, not as scenery or symbols.</p>
           <p class="patti-origin-note"><strong>In 2024,</strong> I tuned into my skills when my husband pointed out my unique ability to receive and communicate messages with the trees. His recognition helped me trust what had been asking for my attention.</p>
           <p>My path has always centered care: I served for three years as a licensed massage therapist and for eight years as a newborn hearing screening coordinator. Today, I serve Spirit as a Tree Medium, helping people protect their minds with mechanisms KELA stands by.</p>
-          <p>For each private reading, I visit one living tree for one person, enter Spirit Mode, listen for the words, images, and impressions that arrive, and prepare the message to share live with you.</p>
+          <p>For each private reading, I enter Spirit Mode, listen for the words, images, and impressions that arrive from the trees, and prepare the messages to share live with you.</p>
           <p>This is a reflective spiritual practice, offered with care and without promises of fixed predictions or guaranteed outcomes.</p>
         </div>
       </section>
@@ -161,7 +161,7 @@
             This is why I listen to the trees: to help create room inside you to breathe, receive
             what is meant for you, and meet what wants to come next.
           </p>
-          <button class="patti-booking-button" type="button" data-terms-open>Book Your Tree Message</button>
+          <button class="patti-booking-button" type="button" data-terms-open>Book Now · $44</button>
         </div>
       </section>
     </main>
@@ -182,25 +182,26 @@
             <div class="terms-oracle-brand" aria-hidden="true"><span>KELA</span><small>Messages from the Trees</small></div>
             <img class="terms-oracle-mark" src="assets/kela-mark.svg" alt="" width="64" height="64" />
             <p class="eyebrow">Book with Patti</p>
-            <h2 id="terms-title">Your Tree Message</h2>
-            <p class="terms-oracle-note">A living tree selected for you</p>
+            <h2 id="terms-title">Tree Medium Reading &amp; Coaching</h2>
+            <p class="terms-oracle-note">Messages from the trees for your journey</p>
           </div>
           <button class="terms-close" type="button" data-terms-close aria-label="Close booking terms"><span aria-hidden="true">&times;</span></button>
         </header>
         <div class="terms-dialog-content">
-          <p id="terms-intro">Patti visits one living tree for you, prepares its message, and shares it with you in a private 45-minute Zoom conversation.</p>
-          <div class="terms-price" aria-label="Your Tree Message price: 149 dollars">
-            <div><p>Your Tree Message</p><small>Prepared tree message · 45-minute private Zoom conversation</small></div><strong>$149</strong>
+          <p id="terms-intro">Bring your biggest questions to a private 45-minute Zoom call. Patti shares what comes through from the trees, coaches you on developing your own connection as a tree medium, and helps you move forward in life with the trees.</p>
+          <div class="terms-price" aria-label="Tree Medium reading and coaching price: 44 dollars">
+            <div><p>Tree Medium reading and coaching</p><small>Messages from the trees · 45-minute private Zoom</small></div><strong>$44</strong>
           </div>
           <div class="terms-simple-copy">
             <p>Secure payment is handled by Stripe. After payment, you’ll choose your appointment time.</p>
+            <p>If you cannot attend the Zoom, Patti will email you a private recorded YouTube link. Refunds are available only for cancellations made at least 24 hours before your appointment.</p>
             <div class="terms-links"><a href="/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a><a href="/privacy" target="_blank" rel="noopener">Privacy Notice</a></div>
           </div>
           <label class="terms-consent" for="terms-consent"><input id="terms-consent" type="checkbox" data-terms-consent /><span>I have read and agree to the Terms &amp; Conditions.</span></label>
         </div>
         <footer class="terms-dialog-actions">
           <button class="button button-secondary" type="button" data-terms-close>Not yet</button>
-          <a class="button button-gold is-disabled" href="https://buy.stripe.com/5kQ28rb0D0xx1RzfSqc7u04" aria-disabled="true" tabindex="-1" data-terms-continue>Continue to Payment</a>
+          <a class="button button-gold is-disabled" href="https://buy.stripe.com/28E5kDecPeon1Rz6hQc7u05" aria-disabled="true" tabindex="-1" data-terms-continue>Continue to Payment · $44</a>
         </footer>
       </section>
     </div>

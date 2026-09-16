@@ -1072,20 +1072,104 @@ html[data-theme="dark"] body.meet-kela-page .site-header {
   line-height: 0.96;
 }
 
+.kela-origin-story .portal-eyebrow {
+  color: #f3d681;
+  letter-spacing: 0.14em;
+}
+
 .kela-origin-story > div > p {
   margin: 0;
-  color: rgba(255, 249, 232, 0.82);
-  font-size: 1rem;
-  line-height: 1.68;
+  color: rgba(255, 249, 232, 0.86);
+  font-size: 1.05rem;
+  line-height: 1.72;
 }
 
 .kela-origin-story > div > p + p { margin-top: 18px; }
 
+.kela-qela-word {
+  color: #f0cc72;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.kela-qela-word [lang="he"] {
+  padding-inline: 0.18em;
+  font-size: 1.12em;
+  font-weight: 600;
+}
+
+.kela-scripture {
+  margin: 22px 0 6px;
+  padding: 18px 0 18px 1.1rem;
+  color: #fff4d4;
+  background: transparent;
+  border: 0;
+  border-left: 2px solid rgba(240, 204, 114, 0.72);
+}
+
+.kela-scripture p {
+  margin: 0;
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: clamp(1.12rem, 2.1vw, 1.38rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.kela-scripture cite {
+  display: block;
+  margin-top: 10px;
+  color: rgba(243, 214, 129, 0.72);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .kela-origin-story .kela-origin-note {
+  margin-top: 22px;
   padding-top: 14px;
   color: rgba(255, 249, 232, 0.56);
   font-size: 0.78rem;
+  line-height: 1.55;
   border-top: 1px solid rgba(232, 193, 95, 0.28);
+}
+
+html[data-theme="light"] .kela-origin-story {
+  color: #173d30;
+  background: linear-gradient(145deg, rgba(255, 251, 240, 0.96), rgba(232, 220, 193, 0.94));
+  border-color: rgba(166, 121, 38, 0.42);
+}
+
+html[data-theme="light"] .kela-origin-story h2 {
+  color: #173d30;
+}
+
+html[data-theme="light"] .kela-origin-story .portal-eyebrow {
+  color: #8a621c;
+}
+
+html[data-theme="light"] .kela-origin-story > div > p {
+  color: rgba(23, 61, 48, 0.84);
+}
+
+html[data-theme="light"] .kela-qela-word {
+  color: #8a621c;
+}
+
+html[data-theme="light"] .kela-scripture {
+  color: #173d30;
+  border-left-color: rgba(138, 98, 28, 0.55);
+}
+
+html[data-theme="light"] .kela-scripture cite {
+  color: #8a621c;
+}
+
+html[data-theme="light"] .kela-origin-story .kela-origin-note {
+  color: rgba(23, 61, 48, 0.58);
+  border-top-color: rgba(166, 121, 38, 0.28);
 }
 
 .meet-kela-page .patti-kela-copy > p.kela-origin-note:not(.portal-eyebrow) {
@@ -1201,7 +1285,7 @@ html[data-theme="light"] .kela-living-heading > p:last-child { color: rgba(23, 6
     padding: 96px clamp(58px, 6vw, 86px) 68px;
     overflow: hidden;
     grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
-    align-items: center;
+    align-items: start;
     background:
       radial-gradient(circle at 12% 8%, rgba(202, 87, 55, 0.18), transparent 23rem),
       linear-gradient(148deg, rgba(47, 34, 37, 0.975), rgba(17, 28, 25, 0.99));

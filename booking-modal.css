@@ -67,7 +67,7 @@
   min-height: 0;
   margin-inline: 14px;
   padding: 20px 20px 14px;
-  overflow: hidden;
+  overflow-y: auto;
   overscroll-behavior: contain;
 }
 
@@ -105,6 +105,10 @@
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.48;
+}
+
+.terms-simple-copy > p + p {
+  margin-top: 10px;
 }
 
 .terms-links {
@@ -208,7 +212,7 @@
   .terms-dialog-content {
     margin-inline: 10px;
     padding: 15px 16px 11px;
-    overflow: hidden;
+    overflow-y: auto;
   }
 
   .terms-dialog-content > p:first-child {

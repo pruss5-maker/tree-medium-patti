@@ -7,3 +7,22 @@ assets/animal-pencil-sheet-*.png
 
 # Uncompressed local audio renders; the web-ready Ogg and MP3 files are tracked.
 assets/audio/*.wav
+
+# Design sources kept on disk. The deployed site uses the smaller web-ready files.
+assets/oracle-cards/masters/*.png
+assets/kela-tree-hero-source.png
+assets/memory-games/masters/
+assets/magnolia-watercolor-sprites.png
+assets/magnolia-watercolor-open.png
+assets/magnolia-watercolor-bud.png
+assets/magnolia-watercolor-pair.png
+assets/audio/woodland-afterglow.mp3
+assets/audio/woodland-afterglow.ogg
+assets/audio/woodland-afterglow.mmp
+assets/trees/
+assets/animals/cutouts/
+assets/plants/hibiscus.webp
+assets/oracle-cards/animal/blue-owl-front-home-v2.webp
+assets/products/
+downloads/
+social-media/samples/

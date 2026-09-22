@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /social-media/
+Disallow: /patti-studio
 
 Sitemap: https://treemedium.vercel.app/sitemap.xml

@@ -53,9 +53,9 @@
           <a href="/plant-oracle">Plant Oracle</a>
           <a href="/memory-games">Memory Games</a>
           <a href="/meet-kela" aria-current="page">Meet KELA</a>
-          <button class="site-nav-booking" type="button" data-terms-open>Book with Patti</button>
+          <button class="site-nav-booking" type="button" data-terms-open>Book with Patti · $44</button>
         </nav>
-        <button class="header-triskele" type="button" data-terms-open aria-label="Book with Patti"></button>
+        <button class="header-triskele" type="button" data-terms-open aria-label="Book with Patti, 44 dollars"></button>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span class="sr-only">Open navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
       </div>
     </header>
@@ -155,9 +155,20 @@
           <button class="terms-close" type="button" data-terms-close aria-label="Close booking terms"><span aria-hidden="true">&times;</span></button>
         </header>
         <div class="terms-dialog-content">
-          <p id="terms-intro">Bring your biggest questions to a private 45-minute Zoom call. Patti shares what comes through from the trees, coaches you on developing your own connection as a tree medium, and helps you move forward in life with the trees.</p>
-          <div class="terms-price" aria-label="Tree Medium reading and coaching price: 44 dollars"><div><p>Tree Medium reading and coaching</p><small>Messages from the trees · 45-minute private Zoom</small></div><strong>$44</strong></div>
-          <div class="terms-simple-copy"><p>Secure payment is handled by Stripe. After payment, you’ll choose your appointment time.</p><p>If you cannot attend the Zoom, Patti will email you a private recorded YouTube link. Refunds are available only for cancellations made at least 24 hours before your appointment.</p><div class="terms-links"><a href="/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a><a href="/privacy" target="_blank" rel="noopener">Privacy Notice</a></div></div>
+          <p id="terms-intro">Patti emails you a private recorded YouTube link, about 5–7 minutes, with what comes through from the trees. You should receive that reading in 1–3 business days.</p>
+          <div class="terms-price" aria-label="Tree Medium reading and coaching price: 44 dollars"><div><p>Tree Medium reading and coaching</p><small>5–7 minute private YouTube reading · optional phone call</small></div><strong>$44</strong></div>
+          <div class="terms-simple-copy"><p>Your name is sent to Patti before payment. Secure payment is handled by Stripe.</p><p>Refunds are available when you cancel by email at least 24 hours before a scheduled phone call, or before the reading is emailed if you did not ask for a call.</p><div class="terms-links"><a href="/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a><a href="/privacy" target="_blank" rel="noopener">Privacy Notice</a></div></div>
+          <div class="booking-intake">
+            <div class="booking-name">
+              <label class="booking-field">First name<input data-booking-first autocomplete="given-name" maxlength="30" /></label>
+              <label class="booking-field">Last initial<input data-booking-initial maxlength="1" autocapitalize="characters" /></label>
+            </div>
+            <p class="booking-example">Example: John S.</p>
+            <label class="booking-call"><input type="checkbox" data-booking-call /><span>Check this box if you would like a phone call with Patti after you review the reading, to go over the results and how to connect more with the trees and spirits.</span></label>
+            <label class="booking-field" data-booking-phone-field hidden>Phone number<input type="tel" data-booking-phone autocomplete="tel" inputmode="tel" maxlength="24" disabled /></label>
+            <p class="booking-status" data-booking-status role="status"></p>
+            <label class="booking-honey" aria-hidden="true">Company<input data-booking-honey tabindex="-1" autocomplete="off" /></label>
+          </div>
           <label class="terms-consent" for="kela-terms-consent"><input id="kela-terms-consent" type="checkbox" data-terms-consent /><span>I have read and agree to the Terms &amp; Conditions.</span></label>
         </div>
         <footer class="terms-dialog-actions"><button class="button button-secondary" type="button" data-terms-close>Not yet</button><a class="button button-gold is-disabled" href="https://buy.stripe.com/28E5kDecPeon1Rz6hQc7u05" aria-disabled="true" tabindex="-1" data-terms-continue>Continue to Payment · $44</a></footer>

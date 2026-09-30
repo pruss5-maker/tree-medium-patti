@@ -289,6 +289,17 @@ html[data-theme="dark"] .meet-patti-page .patti-profile-card {
   margin-top: 20px;
 }
 
+.patti-purpose-copy a {
+  color: inherit;
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+
+.patti-quiet-door {
+  margin-top: 16px;
+  font-style: italic;
+}
+
 .patti-purpose-copy .patti-booking-button {
   margin-top: 28px;
 }

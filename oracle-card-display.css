@@ -519,6 +519,23 @@ html[data-theme="dark"] .oracle-web-only {
   letter-spacing: 0.16em;
 }
 
+.oracle-play-note {
+  margin: 22px 0 0;
+  text-align: left;
+}
+
+.oracle-play-note a {
+  color: var(--forest-700, #31584a);
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.footer-use-note {
+  color: rgba(251, 248, 239, 0.62);
+  font-size: 0.82rem;
+}
+
 .oracle-page .text-link-light {
   color: var(--forest-700, #31584a);
 }

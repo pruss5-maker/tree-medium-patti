@@ -27,6 +27,14 @@ const termsOpenButtons = document.querySelectorAll("[data-terms-open]");
 const termsCloseButtons = document.querySelectorAll("[data-terms-close]");
 const termsConsent = document.querySelector("[data-terms-consent]");
 const termsContinue = document.querySelector("[data-terms-continue]");
+const bookingFirst = document.querySelector("[data-booking-first]");
+const bookingInitial = document.querySelector("[data-booking-initial]");
+const bookingCall = document.querySelector("[data-booking-call]");
+const bookingPhoneField = document.querySelector("[data-booking-phone-field]");
+const bookingPhone = document.querySelector("[data-booking-phone]");
+const bookingStatus = document.querySelector("[data-booking-status]");
+const bookingHoney = document.querySelector("[data-booking-honey]");
+const paymentUrl = "https://buy.stripe.com/28E5kDecPeon1Rz6hQc7u05";
 
 if (!document.querySelector('link[href*="theme-experience.css"]')) {
   const themeStyles = document.createElement("link");
@@ -145,7 +153,7 @@ if (header && menuToggle) {
     const triskele = document.createElement("a");
     triskele.className = "header-triskele";
     triskele.href = "/#booking-terms";
-    triskele.setAttribute("aria-label", "Book with Patti");
+    triskele.setAttribute("aria-label", "Book with Patti, 44 dollars");
     menuToggle.before(triskele);
   }
 }
@@ -351,12 +359,54 @@ window.KelaCompanions = (() => {
 let termsPreviousFocus = null;
 let scrollSettledTimer = 0;
 
+const cleanBookingText = (value) => value.trim().replace(/\s+/g, " ");
+
+const bookingIsReady = () => {
+  if (!termsConsent?.checked || !bookingFirst || !bookingInitial) return false;
+  const firstName = cleanBookingText(bookingFirst.value);
+  const lastInitial = cleanBookingText(bookingInitial.value).replace(/\.$/, "");
+  const phoneDigits = (bookingPhone?.value || "").replace(/\D/g, "");
+  const phoneReady = !bookingCall?.checked || (phoneDigits.length >= 10 && phoneDigits.length <= 15);
+  return /^[\p{L}][\p{L}'’.\- ]{0,29}$/u.test(firstName)
+    && /^[\p{L}]$/u.test(lastInitial)
+    && phoneReady;
+};
+
+const setBookingStatus = (message, isError = false) => {
+  if (!bookingStatus) return;
+  bookingStatus.textContent = message;
+  bookingStatus.classList.toggle("is-error", isError);
+};
+
 const setTermsConsentState = () => {
   if (!termsConsent || !termsContinue) return;
-  const isAgreed = termsConsent.checked;
+  const isAgreed = bookingIsReady() && termsContinue.dataset.sending !== "true";
   termsContinue.classList.toggle("is-disabled", !isAgreed);
   termsContinue.setAttribute("aria-disabled", String(!isAgreed));
   termsContinue.tabIndex = isAgreed ? 0 : -1;
+};
+
+const syncBookingPhone = () => {
+  const showPhone = Boolean(bookingCall?.checked);
+  if (bookingPhoneField) bookingPhoneField.hidden = !showPhone;
+  if (bookingPhone) {
+    bookingPhone.disabled = !showPhone;
+    if (!showPhone) bookingPhone.value = "";
+  }
+  setTermsConsentState();
+};
+
+const resetBookingForm = () => {
+  if (bookingFirst) bookingFirst.value = "";
+  if (bookingInitial) bookingInitial.value = "";
+  if (bookingCall) bookingCall.checked = false;
+  if (bookingHoney) bookingHoney.value = "";
+  if (termsContinue) {
+    delete termsContinue.dataset.sending;
+    termsContinue.textContent = "Continue to Payment · $44";
+  }
+  syncBookingPhone();
+  setBookingStatus("");
 };
 
 const openTerms = () => {
@@ -364,7 +414,7 @@ const openTerms = () => {
   closeMenu();
   termsPreviousFocus = document.activeElement;
   termsConsent.checked = false;
-  setTermsConsentState();
+  resetBookingForm();
   termsModal.hidden = false;
   document.body.classList.add("terms-open");
   window.requestAnimationFrame(() => termsDialog.focus());
@@ -391,7 +441,7 @@ const trapTermsFocus = (event) => {
   if (event.key !== "Tab" || !termsDialog || termsModal?.hidden) return;
   const focusable = Array.from(
     termsDialog.querySelectorAll(
-      'a[href]:not([tabindex="-1"]), button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      'a[href]:not([tabindex="-1"]), button:not([disabled]), input:not([disabled]):not([data-booking-honey]), [tabindex]:not([tabindex="-1"])',
     ),
   );
   if (!focusable.length) return;
@@ -409,8 +459,68 @@ const trapTermsFocus = (event) => {
 termsOpenButtons.forEach((button) => button.addEventListener("click", openTerms));
 termsCloseButtons.forEach((button) => button.addEventListener("click", closeTerms));
 termsConsent?.addEventListener("change", setTermsConsentState);
-termsContinue?.addEventListener("click", (event) => {
-  if (!termsConsent?.checked) event.preventDefault();
+[bookingFirst, bookingInitial, bookingPhone].forEach((field) => {
+  field?.addEventListener("input", () => {
+    setBookingStatus("");
+    setTermsConsentState();
+  });
+});
+bookingCall?.addEventListener("change", () => {
+  setBookingStatus("");
+  syncBookingPhone();
+});
+termsContinue?.addEventListener("click", async (event) => {
+  event.preventDefault();
+  if (!bookingIsReady() || termsContinue.dataset.sending === "true") {
+    setBookingStatus("Add your name, the call choice, and your agreement before payment.", true);
+    return;
+  }
+  const firstName = cleanBookingText(bookingFirst.value);
+  const lastInitial = cleanBookingText(bookingInitial.value).replace(/\.$/, "").toLocaleUpperCase("en-US");
+  const wantsCall = Boolean(bookingCall?.checked);
+  const displayName = `${firstName} ${lastInitial}.`;
+  const phone = wantsCall ? bookingPhone.value.trim() : "";
+  termsContinue.dataset.sending = "true";
+  termsContinue.textContent = "Sending your details…";
+  setTermsConsentState();
+  setBookingStatus("");
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/treemedium@proton.me", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        name: displayName,
+        phone: phone || "Not requested",
+        message: [
+          `Name: ${displayName}`,
+          `Phone call after the reading: ${wantsCall ? "Yes" : "No"}`,
+          `Phone: ${phone || "Not requested"}`,
+          "They continued from the website to the $44 payment page.",
+          "The reading is a private YouTube video to be emailed within 1–3 business days.",
+        ].join("\n"),
+        _subject: `Tree Medium booking: ${displayName}`,
+        _template: "table",
+        _captcha: "false",
+        _honey: bookingHoney?.value || "",
+      }),
+    });
+    const result = await response.json().catch(() => ({}));
+    const accepted = response.ok && String(result.success) === "true";
+    if (!accepted) {
+      const detail = String(result.message || "");
+      if (/activat/i.test(detail)) {
+        throw new Error("The booking email needs one confirmation in Patti’s inbox before payment can open.");
+      }
+      throw new Error("Your details could not be sent to Patti. Payment has not opened.");
+    }
+    window.location.assign(`${paymentUrl}?client_reference_id=${encodeURIComponent(displayName)}`);
+  } catch (error) {
+    delete termsContinue.dataset.sending;
+    termsContinue.textContent = "Continue to Payment · $44";
+    setTermsConsentState();
+    const offline = error instanceof TypeError;
+    setBookingStatus(offline ? "Your details could not be sent to Patti. Payment has not opened." : (error.message || "Your details could not be sent to Patti. Payment has not opened."), true);
+  }
 });
 termsDialog?.addEventListener("keydown", trapTermsFocus);
 

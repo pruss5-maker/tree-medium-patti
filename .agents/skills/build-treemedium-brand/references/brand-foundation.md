@@ -10,7 +10,7 @@
 - Core belief: the mind should feel more like a sanctuary and less like a battlefield
 - Kela: the name the trees collectively gave Patti for their shared spiritual presence
 - Public contact email: `treemedium@proton.me`
-- Public checkout URL: `https://buy.stripe.com/5kQ28rb0D0xx1RzfSqc7u04`
+- Public checkout URL: `https://buy.stripe.com/28E5kDecPeon1Rz6hQc7u05`
 - Scheduling URL: `https://calendly.com/pruss5/30min`
 - Project root: `/home/koreypatti/treemedium`
 - Image-reference folder (`icr`): `/home/koreypatti/image_content_references`
@@ -30,23 +30,23 @@ photography have been confirmed yet. Never invent them.
 
 ## Confirmed Service
 
-`Your Tree Message` is the one initial service and costs $149. Patti selects and physically visits a
-living tree locally on the client's behalf, enters Spirit Mode with the tree as a spiritual tuning
-fork, receives and prepares its message, and then reviews the reading with the client in a private
-45-minute live video conversation. The experience includes a photograph of the tree when conditions
-allow. The client does not attend the tree visit and does not select a requested tree or destination.
+`Tree Medium reading and coaching` is the confirmed service and costs $44. Patti emails a private
+recorded YouTube link, about 5–7 minutes, within 1–3 business days. Before payment, the booking
+window collects a first name and last initial, plus a phone number only if the client asks for a
+call after reviewing the reading. The website emails those details to `treemedium@proton.me`.
+There is no question field and no Calendly step. The Stripe checkout description should match this
+offer.
 
-Keep the `$149` price off the public marketing pages. Reveal it in the booking flow before payment,
-with clear pricing and payment details available before the client commits.
+Show `$44` on every public booking control and inside the booking window before payment.
 
 Use only one Stripe booking button on the public website. Keep it visible in the fixed top navigation
-as `Book with Patti`; it opens the required policy-consent window before continuing to Stripe.
+as `Book with Patti · $44`; it opens the required policy-consent window before continuing to Stripe.
 
 ## Positioning
 
 Use this as the working positioning statement until the user revises it:
 
-> Tree Medium Patti visits a living tree specifically for each client, receives its message through Kela, and shares grounded spiritual guidance to help the client reflect, protect their inner space, and find a way forward.
+> Tree Medium Patti listens with the trees, shares their message in a private session, and helps the client protect their inner space and find a way forward.
 
 Use this as the working signature line:
 

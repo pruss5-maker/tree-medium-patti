@@ -38,7 +38,7 @@ sync when the decks change.
 
 ## Before public launch
 
-- Verify the live Stripe payment link redirects to Calendly after successful payment.
+- Confirm a booking email arrives at treemedium@proton.me before the Stripe payment page opens.
 - Add the final domain.
 - Add the final public Booking Terms and Privacy Notice URLs to Stripe, and require Stripe's terms
   consent checkbox.
@@ -51,10 +51,12 @@ before the customer can continue to Stripe. Permanent versions are available in 
 
 ## Current confirmed offer
 
-`Tree Medium reading and coaching` is $44 and includes messages from the trees and coaching from
-Patti during a private 45-minute Zoom call. If the client cannot attend, Patti emails a private
-recorded YouTube link. Refunds are available only when the client cancels at least 24 hours before
-the scheduled appointment.
+`Tree Medium reading and coaching` is $44. Patti emails a private recorded YouTube link, about
+5–7 minutes, within 1–3 business days. Before Stripe opens, the booking window emails
+`treemedium@proton.me` through FormSubmit with the client's first name, last initial, and phone
+number only if a call was requested. The phone call is optional and happens after the client
+reviews the reading. The first live submission must be confirmed from Patti's inbox before later
+booking emails deliver.
 
 The generated woodland hero image is an original draft asset created for this project. Replace it
 with Patti's photography if a future reference better represents the practice.

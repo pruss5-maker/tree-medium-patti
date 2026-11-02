@@ -26,7 +26,7 @@
 
   const makeTendril = () => ({ a: rand(0, TAU), va: rand(-0.25, 0.25), reach: rand(0.75, 1), phase: rand(0, 100), freq: rand(5, 9), amp: rand(10, 22), snap: rand(2, 7) });
   const seedTendrils = () => {
-    const n = w < 700 ? 9 : 14;
+    const n = w < 700 ? 5 : 14;
     tendrils = Array.from({ length: n }, (_, i) => ({ ...makeTendril(), a: (i / n) * TAU + rand(-0.2, 0.2) }));
   };
 
@@ -143,6 +143,7 @@
 
   // Thick limbs glow cyan; fine growth deepens toward blue.
   const color = (gen, a) => {
+    if (w < 700) return `rgba(${Math.round(150 - 40 * Math.min(gen / 7, 1))},${Math.round(190 - 40 * Math.min(gen / 7, 1))},220,${a * 0.8})`;
     const k = Math.min(gen / 7, 1);
     return `rgba(${Math.round(77 - 30 * k)},${Math.round(226 - 87 * k)},255,${a})`;
   };
@@ -219,7 +220,7 @@
     // Renewal: new shoots sprout from older wood.
     if (!still) {
       spawnTimer -= dt;
-      if (spawnTimer <= 0 && growers.length < 40 && mortal.length < maxMortal) {
+      if (spawnTimer <= 0 && growers.length < (w < 700 ? 14 : 40) && mortal.length < maxMortal) {
         spawnTimer = rand(0.25, 0.8);
         const pool = Math.random() < 0.6 ? perm : mortal;
         const from = pool[Math.floor(Math.random() * pool.length)];
@@ -292,7 +293,7 @@
     scale = Math.max(0.6, Math.min(1.4, Math.min(w, h) / 800));
     // Wide screens: tree stands right of the hero text; narrow: centered behind it.
     cx = w > 1000 ? w * 0.7 : w * 0.5; cy = h * 0.55;
-    maxMortal = Math.round(Math.max(700, Math.min(2400, (w * h) / 600)));
+    maxMortal = w < 700 ? 450 : Math.round(Math.max(700, Math.min(2400, (w * h) / 600)));
     globeR = Math.min(Math.min(w, h) * 0.46, w * 0.48);
     seedTendrils();
     leaves = Array.from({ length: w < 700 ? 8 : 18 }, () => makeLeaf(true));

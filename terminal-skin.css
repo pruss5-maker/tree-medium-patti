@@ -32,7 +32,7 @@ main,section,.oracle-hero,.memory-main,.memory-hero,.site-footer,.oracle-explain
 .wordmark small{color:var(--t-dim)!important;-webkit-text-fill-color:var(--t-dim)!important;font-size:.875rem!important;letter-spacing:.2em!important;text-transform:uppercase}
 .site-nav a{color:var(--t-dim)!important;font-size:1rem!important;font-weight:600!important;letter-spacing:.12em!important;text-transform:uppercase}
 .site-nav a:hover,.site-nav a[aria-current="page"]{color:var(--t-cyan)!important;text-shadow:0 0 12px rgba(77,226,255,.6)}
-.site-nav.is-open,.site-nav[data-open],body.menu-open .site-nav{background:rgba(2,5,12,.97)!important}
+.site-nav.is-open,.site-nav[data-open],body.menu-open .site-nav{background:#03060c!important}
 .thumb-control-rail button,.thumb-control-rail a,.thumb-control-rail .menu-toggle,.thumb-control-rail .header-triskele,.ambient-jazz-toggle{background:rgba(4,10,22,.85)!important;border:1px solid var(--t-line)!important;box-shadow:0 0 16px rgba(77,226,255,.3)!important;color:var(--t-cyan)!important}
 .thumb-control-rail img,.thumb-control-rail svg,.header-triskele img{filter:grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.3)!important}
 .thumb-control-label,.thumb-control-rail .thumb-control-label{background:rgba(4,10,22,.9)!important;color:var(--t-cyan)!important;border:1px solid var(--t-line)!important;font-size:.875rem!important}
@@ -344,3 +344,39 @@ canvas[data-rain],canvas[data-petals],canvas[data-moss],canvas[data-samaras],.ke
 .legal-content li,.legal-content p{color:var(--t-text)!important}
 
 }
+
+/* ===== Phones: readable menu and calmer colors ===== */
+@media screen and (max-width:980px){
+ html body .site-header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(3,6,12,.97)!important}
+ html body .site-nav{background:#03060c!important;z-index:60!important;inset:0!important;width:100vw!important;height:100dvh!important;padding-top:110px!important}
+ html body .site-nav a,html body .site-nav button{color:#c9d6e8!important;-webkit-text-fill-color:#c9d6e8!important;font-size:1.15rem!important;text-shadow:none!important;background:none;border-color:rgba(142,201,224,.25)!important}
+ html body .site-nav a[aria-current="page"]{color:#8ec9e0!important;-webkit-text-fill-color:#8ec9e0!important}
+ html body .site-nav .site-nav-booking{background:#5b9ccf!important;color:#001226!important;-webkit-text-fill-color:#001226!important;box-shadow:none!important;padding:14px 20px!important}
+ body.menu-open .net-canvas,body.menu-open .matrix-canvas{visibility:hidden}
+}
+@media screen and (max-width:700px){
+ :root{--t-cyan:#8ec9e0;--t-blue:#4f8fd6;--t-ice:#d7e3ee;--t-line:rgba(142,201,224,.28);--t-glow:none;--t-green:#7fd4a6}
+ html body .net-canvas{opacity:.28!important}
+ html body .matrix-canvas{opacity:.3!important}
+ h1,h2,.eyebrow,.oracle-mini-label,.wordmark span,.wordmark,.holo-hud,[class*="flip-front-copy"] h2{text-shadow:none!important}
+ .button-gold,.oracle-reveal,.memory-button:not(.secondary),.game-action{background:#5b9ccf!important;box-shadow:none!important}
+ .button-secondary,.memory-button.secondary,.oracle-result-actions button{box-shadow:none!important}
+ .memory-game-panel,.oracle-kingdom-switcher,.memory-stats,.oracle-card-brand p,.memory-card-back::before{animation:none!important}
+ .oracle-explainer::before,.site-footer::before{box-shadow:none!important;opacity:.35!important}
+ html body img.holo-ready,html body .holo-figure .holo-face img.holo-art.holo-ready{filter:drop-shadow(0 0 1px rgba(142,201,224,.6))!important;opacity:.85!important}
+ .holo-scan{display:none!important}
+ .matrix-msg{text-shadow:none!important;color:#7fd4a6!important;-webkit-text-fill-color:#7fd4a6!important}
+ .thumb-control-rail button,.thumb-control-rail a,.thumb-control-rail .menu-toggle,.thumb-control-rail .header-triskele,.ambient-jazz-toggle,html body .oracle-companions,html body .oracle-companion-picture{box-shadow:none!important}
+}
+@media screen and (max-width:980px){
+ body.menu-open .site-header{z-index:200!important}
+ body.menu-open main,body.menu-open .memory-main{z-index:0!important}
+ body.menu-open .oracle-companions{visibility:hidden}
+}
+@media screen and (max-width:980px){
+ html body .site-nav{background:#03060c!important;background-image:none!important;opacity:1}
+ html body .site-nav::before,html body .site-nav::after{display:none!important}
+ html body .site-nav:not(.is-open){opacity:0!important}
+ html body .site-nav-oracle-heading{color:#8ba2bf!important;-webkit-text-fill-color:#8ba2bf!important;font-size:.95rem!important;letter-spacing:.2em!important;text-transform:uppercase;text-shadow:none!important}
+}
+@media screen and (max-width:980px){ body.menu-open .thumb-control-rail{z-index:300!important;visibility:visible!important} }

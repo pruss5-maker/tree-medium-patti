@@ -162,3 +162,29 @@ h2{text-shadow:0 0 24px rgba(77,226,255,.22)}
 .booking-field{white-space:nowrap}
 .terms-dialog-actions .button{white-space:nowrap;letter-spacing:.08em;font-size:.95rem;padding:15px 16px}
 .terms-dialog-actions .button-secondary{flex:0 0 auto}
+
+/* ===== Phones: readable menu and calmer colors ===== */
+@media (max-width:980px){
+ /* The header's blur traps a fixed menu inside the header strip; drop it on phones. */
+ .net-header{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(3,6,12,.97)}
+ .net-nav{position:fixed;top:68px;left:0;right:0;bottom:auto;height:calc(100dvh - 68px);overflow-y:auto;background:#03060c;z-index:40;border-top:1px solid var(--line)}
+ .net-nav a{color:#c9d6e8;font-size:1.15rem}
+ .net-nav a:hover{text-shadow:none}
+ body.menu-open .net-canvas,body.menu-open .matrix-canvas{visibility:hidden}
+}
+@media (max-width:700px){
+ :root{--cyan:#8ec9e0;--blue:#4f8fd6;--ice:#d7e3ee}
+ .net-canvas{opacity:.28}
+ .matrix-canvas{opacity:.3}
+ body.net-page::after{background:radial-gradient(ellipse at center,transparent 70%,rgba(0,0,0,.25) 100%)}
+ h1{text-shadow:none}
+ h1 em{background:none;color:#9fc7e6;-webkit-text-fill-color:#9fc7e6}
+ h2,.net-tag,.net-eyebrow,.net-readout b,.net-card h3,.net-num,.net-steps li::before,.net-mark{text-shadow:none}
+ .net-cta,.button{background:#5b9ccf;box-shadow:0 0 0 1px rgba(142,201,224,.4)}
+ .net-cta:hover,.button:hover{box-shadow:0 0 0 1px rgba(142,201,224,.6)}
+ .net-card,.net-steps li,.net-readout{animation:none;box-shadow:none;border-color:rgba(142,201,224,.28)!important}
+ .net-section::before,.net-final::before,.net-footer::before{box-shadow:none;opacity:.35}
+ .net-mark-dot{box-shadow:0 0 6px var(--cyan)}
+ .tw-caret{box-shadow:none}
+ .matrix-msg{text-shadow:none!important;color:#7fd4a6!important;-webkit-text-fill-color:#7fd4a6!important}
+}

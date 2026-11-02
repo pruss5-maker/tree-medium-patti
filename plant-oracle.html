@@ -72,13 +72,22 @@
       }
     </script>
     <script src="atmosphere.js?v=20260825-9" data-atmosphere defer></script>
-    <script src="script.js?v=20260909-home" defer></script>
+    <script src="script.js?v=20261101-stripe" defer></script>
     <script src="free-online-oracle-labels.js?v=20260827-1" defer></script>
     <script src="ux-observer.js?v=20260825-2" data-clarity-project-id="" defer></script>
     <script src="plant-oracle.js?v=20260830-tattoo2" defer></script>
     <script src="patti-oracle-access.js?v=20260827-2" defer></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" />
+    <link rel="stylesheet" href="terminal-skin.css?v=20261101-31" />
+    <script src="matrix-rain.js?v=20261101-6" defer></script>
+    <script src="tree-of-life.js?v=20261101-1" defer></script>
+    <script src="holo-cards.js?v=20261101-5" defer></script>
+    <script src="typewriter.js?v=20261101-1" defer></script>
   </head>
   <body class="oracle-page tree-oracle-page plant-oracle-page">
+    <canvas class="net-canvas" data-net aria-hidden="true"></canvas>
     <a class="skip-link" href="#main">Skip to the plant oracle</a>
 
     <header class="site-header" data-header>
@@ -107,11 +116,12 @@
         <div class="oracle-vignette" aria-hidden="true"></div>
         <div class="shell oracle-layout">
           <div class="oracle-intro">
-            <p class="eyebrow">The Plant Calling · Free online oracle</p>
-            <h1 id="plant-oracle-title">Free Plant Oracle Card</h1>
-            <p class="oracle-lede">One plant is meeting you today. Let its form, history, and living way offer a grounded invitation for reflection.</p>
+            <p class="eyebrow" data-type="hero">The Plant Calling · Free online oracle</p>
+            <h1 data-type="hero" data-type-speed="70" id="plant-oracle-title">Free Plant Oracle Card</h1>
+            <p class="oracle-lede" data-type="hero" data-type-speed="34">One plant is meeting you today. Let its form, history, and living way offer a grounded invitation for reflection.</p>
             <p class="oracle-naming">Take one slow breath. Ask which plant has something to show you, then draw a card and carry its message into your meditation.</p>
-          </div>
+            <p class="matrix-msg" data-type="hero" data-type-speed="45">&gt; you have popped out of the matrix. let’s root new roots.</p>
+            </div>
 
           <div class="oracle-experience" data-plant-oracle>
             <div class="oracle-card tree-oracle-card plant-oracle-card" data-plant-oracle-card>
@@ -209,7 +219,8 @@
       </section>
 
       <section class="oracle-explainer section shell" aria-labelledby="plant-wisdom-title">
-        <div><p class="eyebrow ink">The living garden</p><h2 id="plant-wisdom-title">A plant card is an invitation to notice.</h2></div>
+        <div>
+          <p class="matrix-msg" data-type="scroll" data-type-speed="45">&gt; signal received from the root network. you are already connected.</p><p class="eyebrow ink">The living garden</p><h2 id="plant-wisdom-title">A plant card is an invitation to notice.</h2></div>
         <div class="prose">
           <p>These twenty meanings draw gently from plant histories, folklore, symbolism, and observable ways of growing. Each card turns that inspiration into an original KELA reflection.</p>
           <p>They do not claim universal, Indigenous, religious, supernatural, or medical authority. No card is advice to ingest or apply a plant. Keep what opens useful reflection; your choices remain your own.</p>

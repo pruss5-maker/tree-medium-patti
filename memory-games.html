@@ -26,10 +26,19 @@
     <link rel="stylesheet" href="styles.css?v=20260827-2" />
     <link rel="stylesheet" href="memory-game.css?v=20260830-blue1" />
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://treemedium.vercel.app/memory-games#webpage","url":"https://treemedium.vercel.app/memory-games","name":"Nature Memory Games to Play, Print & Color","description":"Free online and printable animal, tree, and plant matching games from KELA.","isPartOf":{"@id":"https://treemedium.vercel.app/#website"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://treemedium.vercel.app/"},{"@type":"ListItem","position":2,"name":"Nature Memory Games","item":"https://treemedium.vercel.app/memory-games"}]}]}</script>
-    <script src="script.js?v=20260909-home" defer></script>
+    <script src="script.js?v=20261101-stripe" defer></script>
     <script src="free-online-oracle-labels.js?v=20260827-1" defer></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" />
+    <link rel="stylesheet" href="terminal-skin.css?v=20261101-31" />
+    <script src="matrix-rain.js?v=20261101-6" defer></script>
+    <script src="tree-of-life.js?v=20261101-1" defer></script>
+    <script src="holo-cards.js?v=20261101-5" defer></script>
+    <script src="typewriter.js?v=20261101-1" defer></script>
   </head>
   <body class="memory-hub-page">
+    <canvas class="net-canvas" data-net aria-hidden="true"></canvas>
     <a class="skip-link" href="#main">Skip to the games</a>
     <header class="site-header" data-header>
       <a class="wordmark" href="/" aria-label="Kela home"><span>KELA</span><small>Messages from the Trees</small></a>
@@ -44,9 +53,10 @@
     <main class="memory-main" id="main">
       <section class="memory-hero">
         <div class="shell">
-          <p class="eyebrow gold">Play · Remember · Color</p>
-          <h1>Nature Memory Games</h1>
+          <p class="eyebrow gold" data-type="hero">Play · Remember · Color</p>
+          <h1 data-type="hero" data-type-speed="70">Nature Memory Games</h1>
           <p>Turn over two cards. Find each pair. Print the outline cards when you want to cut, color, and play away from the screen.</p>
+          <p class="matrix-msg" data-type="hero" data-type-speed="45">&gt; you have popped out of the matrix. let’s root new roots.</p>
         </div>
       </section>
 

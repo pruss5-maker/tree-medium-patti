@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Meet Tree Medium Patti and book a $44 reading: a 5–7 minute private YouTube video emailed within 1–3 business days, with an optional phone call." />
+    <meta name="description" content="Meet Tree Medium Patti and book a $44 reading: a 5–7 minute private YouTube video emailed within 1–3 business days." />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="theme-color" content="#082b24" />
+    <meta name="theme-color" content="#04070d" />
     <link rel="canonical" href="https://treemedium.vercel.app/" />
     <meta property="og:site_name" content="KELA | Messages from the Trees" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Tree Medium Patti | KELA" />
-    <meta property="og:description" content="A $44 Tree Medium reading: a 5–7 minute private YouTube video within 1–3 business days. A phone call is available if you ask for one." />
+    <meta property="og:description" content="A $44 Tree Medium reading: a 5–7 minute private YouTube video within 1–3 business days." />
     <meta property="og:image" content="https://treemedium.vercel.app/assets/social/kela-tree-readings-social.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -20,20 +20,20 @@
     <meta property="og:url" content="https://treemedium.vercel.app/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Tree Medium Patti | KELA" />
-    <meta name="twitter:description" content="Book a $44 reading with Tree Medium Patti: a private YouTube video, and a phone call if you ask for one." />
+    <meta name="twitter:description" content="Book a $44 reading with Tree Medium Patti: a private YouTube video, emailed to you." />
     <meta name="twitter:image" content="https://treemedium.vercel.app/assets/social/kela-tree-readings-social.jpg" />
     <meta name="twitter:image:alt" content="Tree Medium Patti and a living tree" />
     <title>Tree Medium Patti | KELA</title>
     <link rel="icon" href="assets/kela-mark.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
-    <link rel="preload" href="assets/patti-portrait.webp?v=20260909-1" as="image" type="image/webp" />
-    <link rel="stylesheet" href="styles.css?v=20260827-2" />
-    <link rel="stylesheet" href="portal.css?v=20260909-1" />
-    <link rel="stylesheet" href="header-symbols.css?v=20260825-6" />
-    <link rel="stylesheet" href="booking-modal.css?v=20260915-1" />
-    <link rel="stylesheet" href="theme-experience.css?v=20260828-2" />
-    <script src="script.js?v=20260909-home" defer></script>
-    <script src="free-online-oracle-labels.js?v=20260827-1" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" />
+    <link rel="stylesheet" href="network.css?v=20261101-31" />
+    <script src="network.js?v=20261101-32" defer></script>
+    <script src="matrix-rain.js?v=20261101-6" defer></script>
+    <script src="tree-of-life.js?v=20261101-14" defer></script>
+    <script src="typewriter.js?v=20261101-14" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -84,7 +84,7 @@
             "@id": "https://treemedium.vercel.app/#tree-message-session",
             "name": "Tree Medium Reading and Coaching",
             "serviceType": "Private Tree Medium reading and coaching session",
-            "description": "Patti emails a private recorded YouTube link, about 5–7 minutes, within 1–3 business days, with what comes through from the trees. The client may request a phone call after reviewing the reading. The session is $44. Before payment, the website emails Patti the client’s first name, last initial, and phone number if a call is requested.",
+            "description": "Patti emails a private recorded YouTube link, about 5–7 minutes, within 1–3 business days, with what comes through from the trees. The session is $44. At checkout, the client’s first name, last initial, and email address go to Stripe, and Patti receives them with the payment so she can send the reading.",
             "provider": { "@id": "https://treemedium.vercel.app/#patti" },
             "offers": {
               "@type": "Offer",
@@ -98,88 +98,95 @@
       }
     </script>
   </head>
-  <body class="patti-door-page meet-patti-page">
-    <a class="skip-link" href="#main">Skip to Patti</a>
-    <header class="site-header" data-header>
-      <a class="wordmark" href="/" aria-label="KELA home"><span>KELA</span><small>Messages from the Trees</small></a>
-      <div class="header-actions">
-        <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
-          <a href="/" aria-current="page">Meet Patti</a>
-          <a href="/animal-oracle">Animal Oracle</a>
-          <a href="/tree-oracle">Tree Oracle</a>
-          <a href="/plant-oracle">Plant Oracle</a>
-          <a href="/memory-games">Memory Games</a>
-          <a href="/meet-kela">Meet KELA</a>
-          <button class="site-nav-booking" type="button" data-terms-open>Book with Patti · $44</button>
-        </nav>
-        <button class="header-triskele" type="button" data-terms-open aria-label="Book with Patti, 44 dollars"></button>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span class="sr-only">Open navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
-      </div>
+  <body class="net-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <canvas class="net-canvas" data-net aria-hidden="true"></canvas>
+    <header class="net-header" data-header>
+      <a class="net-mark" href="/" aria-label="KELA home"><span class="net-mark-dot" aria-hidden="true"></span>KELA<small>Tree Network</small></a>
+      <nav class="net-nav" id="site-nav" aria-label="Main navigation" data-nav>
+        <a href="#mission">Mission</a>
+        <a href="#protocol">Protocol</a>
+        <a href="#kela">Kela</a>
+        <a href="/tree-oracle">Tree Oracle</a>
+        <a href="/animal-oracle">Animal Oracle</a>
+        <button class="net-cta net-cta-small" type="button" data-terms-open>Book · $44</button>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span class="sr-only">Open navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
     </header>
 
-    <main class="patti-door-main" id="main">
-      <section class="patti-door-card patti-profile-card" id="meet-patti" aria-labelledby="patti-title">
-        <figure class="patti-portrait-card">
-          <span class="patti-portrait-art">
-            <img src="assets/patti-portrait.webp?v=20260909-1" width="1100" height="1400" alt="Tree Medium Patti smiling with a bird on her shoulder" />
-          </span>
-          <figcaption>
-            <span>KELA · Messages from the Trees</span>
-            <strong>Tree Medium Patti</strong>
-            <small>Listener to the Trees</small>
-          </figcaption>
-        </figure>
-        <div class="patti-profile-copy">
-          <p class="portal-eyebrow">Meet your Tree Medium</p>
-          <h1 id="patti-title">Hi, I’m Patti.</h1>
-          <p>I listen to trees as living spiritual presences with something to say, not as scenery or symbols.</p>
-          <p class="patti-origin-note"><strong>In 2024,</strong> I tuned into my skills when my husband pointed out my unique ability to receive and communicate messages with the trees. His recognition helped me trust what had been asking for my attention.</p>
-          <p>My path has always centered care: I served for three years as a licensed massage therapist and for eight years as a newborn hearing screening coordinator. Today, I serve Spirit as a Tree Medium, helping people protect their minds and return them to sanctuary.</p>
-          <p>For each private reading, I enter Spirit Mode. That means I listen for the words, images, and impressions that arrive from the trees, and prepare them for your private recording.</p>
-          <p>This is a reflective spiritual practice, offered with care and without promises of fixed predictions or guaranteed outcomes.</p>
+    <main id="main">
+      <section class="net-hero" aria-labelledby="hero-title">
+        <p class="net-boot">&gt; establishing secure link to the root network… <b>[ OK ]</b></p>
+        <p class="net-tag"><span class="net-blink" aria-hidden="true"></span> Channel open · Messages from the Trees</p>
+        <h1 id="hero-title" data-type="hero" data-type-speed="75">The trees run a network.<br /><em>You’re already on it.</em></h1>
+        <p class="net-lede" data-type="hero" data-type-speed="38"><span class="net-prompt" aria-hidden="true">&gt; </span>I’m Patti, the Tree Medium. I read your emotional body through the trees and give you insight on how to rewire your system back to balance.</p>
+        <div class="net-actions">
+          <button class="net-cta" type="button" data-terms-open>Request a reading · $44</button>
+          <a class="net-ghost" href="#protocol">See how it works</a>
+        </div>
+        <ul class="net-readout" aria-label="Session at a glance">
+          <li><b>5–7 min</b><span>private video reading</span></li>
+          <li><b>1–3 days</b><span>delivered to your email</span></li>
+          <li><b>Private</b><span>link just for you</span></li>
+        </ul>
+        <p class="matrix-msg" data-type="hero" data-type-speed="45">&gt; you have popped out of the matrix. let’s root new roots.</p>
+      </section>
+
+      <section class="net-section" id="mission" aria-labelledby="mission-title">
+        <p class="net-eyebrow" data-type="scroll">// 01 · Mission</p>
+        <h2 id="mission-title" data-type="scroll" data-type-speed="65">Activate your harmonic roots.</h2>
+        <div class="net-grid">
+          <article class="net-card"><span class="net-num">I</span><h3>Activate</h3><p>I activate your harmonic roots with the trees, so you remember you are part of something living and larger than the noise.</p></article>
+          <article class="net-card"><span class="net-num">II</span><h3>Release</h3><p>Negative thought patterns loosen in the harmony of the trees. You don’t have to fight them forever, only stop feeding them.</p></article>
+          <article class="net-card"><span class="net-num">III</span><h3>Root</h3><p>From that quiet, you root into a new reality: one that is calmer, clearer, and yours.</p></article>
+        </div>
+        <p class="matrix-msg" data-type="scroll" data-type-speed="45">&gt; the old code is falling away. follow the roots, not the noise.</p>
+      </section>
+
+      <section class="net-section" id="protocol" aria-labelledby="protocol-title">
+        <p class="net-eyebrow" data-type="scroll">// 02 · Protocol</p>
+        <h2 id="protocol-title" data-type="scroll" data-type-speed="65">How a reading works.</h2>
+        <ol class="net-steps">
+          <li data-type="scroll" data-type-speed="26"><b>Request.</b> Book the $44 reading and tell me your first name, last initial, and email.</li>
+          <li data-type="scroll" data-type-speed="26"><b>Scan.</b> I enter Spirit Mode and view your emotional body with the trees.</li>
+          <li data-type="scroll" data-type-speed="26"><b>Debrief.</b> You get a private recorded video of 5–7 minutes, with insight on how to rewire and rebalance, within 1–3 business days.</li>
+          <li data-type="scroll" data-type-speed="26"><b>Receive.</b> Open your private link and watch it as often as you need.</li>
+        </ol>
+        <button class="net-cta" type="button" data-terms-open>Request a reading · $44</button>
+      </section>
+
+      <section class="net-section net-kela" id="kela" aria-labelledby="kela-title">
+        <p class="net-eyebrow" data-type="scroll">// 03 · The weapon of choice</p>
+        <h2 id="kela-title" data-type="scroll" data-type-speed="65">Kela is the voice of the spirits.</h2>
+        <p>The trees gave me the name KELA, and a question I haven’t forgotten: <em>why haven’t you asked the trees to protect your mind and energy yet?</em></p>
+        <p>Every mind has a Goliath: a loud, looping thought pattern that takes up the room where peace and ideas want to live. Kela is not small. Kela is the voices of the spirits that are ready to help us balance the playing field of darkness. When people step out of the matrix and the old noise falls away, the first feeling can be emptiness or boredom. I call that sacred space. After it, you begin to create again.</p>
+        <p><a class="net-link" href="/meet-kela">Read the full KELA story →</a></p>
+      </section>
+
+      <section class="net-section net-about" aria-labelledby="about-title">
+        <p class="net-eyebrow" data-type="scroll">// 04 · Your contact</p>
+        <h2 id="about-title" data-type="scroll" data-type-speed="65">Hi, I’m Patti.</h2>
+        <div class="net-about-grid">
+          <img src="assets/patti-portrait.webp?v=20260909-1" width="1100" height="1400" alt="Tree Medium Patti smiling with a bird on her shoulder" loading="lazy" />
+          <div>
+            <p>I listen to trees as living spiritual presences with something to say, not as scenery or symbols. In 2024, my husband pointed out my unique ability to receive and communicate messages with the trees, and I learned to trust what had been asking for my attention.</p>
+            <p>My path has always centered care. I served three years as a licensed massage therapist and eight years as a newborn hearing screening coordinator. Today I serve Spirit as a Tree Medium.</p>
+            <p class="net-note">This is a reflective spiritual practice, offered for insight and reflection. It is not medical, psychological, or legal advice and is not a substitute for professional care. If you are in crisis, call or text <a href="tel:988">988</a>, the free US Suicide &amp; Crisis Lifeline. A trained counselor answers 24 hours a day, 7 days a week.</p>
+          </div>
         </div>
       </section>
 
-      <section class="patti-door-card patti-purpose-card" id="why-i-listen" aria-labelledby="patti-purpose-title">
-        <header class="patti-purpose-heading">
-          <p class="portal-eyebrow">Why I listen</p>
-          <h2 id="patti-purpose-title">Why I do this work.</h2>
-        </header>
-        <div class="patti-purpose-copy">
-          <p>
-            KELA has shown me that negative thought patterns can become a Goliath inside the mind,
-            taking up the space where peace, ideas, and possibility want to live. The trees do not
-            ask us to fight those thoughts forever. They help us quiet the noise, create psychic
-            protection, and return the mind to sanctuary.
-          </p>
-          <p>
-            When that noise leaves, the first feeling may not be inspiration. It may be emptiness.
-            It may even be boredom. I see that quiet as sacred space. After boredom, we begin to
-            create. We imagine again. We discover new thoughts, resolutions, and goals.
-          </p>
-          <p>
-            This is why I listen to the trees: to help create room inside you to breathe, receive
-            what is meant for you, and meet what wants to come next.
-          </p>
-          <p>
-            The trees named that quiet KELA. They asked me why I had not asked them to protect my mind yet.
-            <a href="/meet-kela">Meet KELA</a>
-          </p>
-          <p>
-            I email you a private recorded YouTube link, about five to seven minutes, with what comes through from the trees. You should receive that reading in 1–3 business days. If you want a phone call after you review it, you can ask for one when you book. $44.
-          </p>
-          <button class="patti-booking-button" type="button" data-terms-open>Book Now · $44</button>
-          <p class="patti-quiet-door"><a href="/tree-oracle">Or draw the tree that is calling today.</a></p>
-        </div>
+      <section class="net-final" aria-labelledby="final-title">
+        <p class="matrix-msg" data-type="scroll" data-type-speed="45">&gt; wake up. the trees are calling you home.</p>
+        <h2 id="final-title" data-type="scroll" data-type-speed="65">Ready to connect?</h2>
+        <button class="net-cta" type="button" data-terms-open>Request a reading · $44</button>
+        <p><a class="net-link" href="/tree-oracle">Or draw the tree that is calling today →</a></p>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="shell footer-grid">
-        <div class="footer-brand"><p class="wordmark footer-wordmark"><span>KELA</span><small>Messages from the Trees</small></p><p>with Tree Medium Patti</p></div>
-        <p class="footer-note">Meet the person listening behind KELA.</p>
-        <div class="footer-links"><a href="/meet-kela">Meet KELA</a><a href="/animal-oracle">Animal Oracle</a><a href="/tree-oracle">Tree Oracle</a><a href="/plant-oracle">Plant Oracle</a><a href="/terms">Booking terms</a><a href="/privacy">Privacy</a><a href="mailto:treemedium@proton.me">Email Patti</a></div>
-      </div>
+    <footer class="net-footer">
+      <p class="net-mark">KELA<small>Messages from the Trees · with Tree Medium Patti</small></p>
+      <div><a href="/meet-kela">Meet KELA</a><a href="/animal-oracle">Animal Oracle</a><a href="/tree-oracle">Tree Oracle</a><a href="/plant-oracle">Plant Oracle</a><a href="/terms">Booking terms</a><a href="/privacy">Privacy</a><a href="mailto:treemedium@proton.me">Email Patti</a></div>
     </footer>
 
     <div class="terms-modal" id="booking-terms" data-terms-modal hidden>
@@ -198,11 +205,11 @@
         <div class="terms-dialog-content">
           <p id="terms-intro">Patti emails you a private recorded YouTube link, about 5–7 minutes, with what comes through from the trees. You should receive that reading in 1–3 business days.</p>
           <div class="terms-price" aria-label="Tree Medium reading and coaching price: 44 dollars">
-            <div><p>Tree Medium reading and coaching</p><small>5–7 minute private YouTube reading · optional phone call</small></div><strong>$44</strong>
+            <div><p>Tree Medium reading and coaching</p><small>5–7 minute private YouTube reading, emailed to you</small></div><strong>$44</strong>
           </div>
           <div class="terms-simple-copy">
-            <p>Your name is sent to Patti before payment. Secure payment is handled by Stripe.</p>
-            <p>Refunds are available when you cancel by email at least 24 hours before a scheduled phone call, or before the reading is emailed if you did not ask for a call.</p>
+            <p>Your name and email go to Stripe’s secure checkout, and Patti receives them with your payment so she knows where to send your reading.</p>
+            <p>Refunds are available when you cancel by email before the reading is emailed.</p>
             <div class="terms-links"><a href="/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a><a href="/privacy" target="_blank" rel="noopener">Privacy Notice</a></div>
           </div>
           <div class="booking-intake">
@@ -211,10 +218,8 @@
               <label class="booking-field">Last initial<input data-booking-initial maxlength="1" autocapitalize="characters" /></label>
             </div>
             <p class="booking-example">Example: John S.</p>
-            <label class="booking-call"><input type="checkbox" data-booking-call /><span>Check this box if you would like a phone call with Patti after you review the reading, to go over the results and how to connect more with the trees and spirits.</span></label>
-            <label class="booking-field" data-booking-phone-field hidden>Phone number<input type="tel" data-booking-phone autocomplete="tel" inputmode="tel" maxlength="24" disabled /></label>
+            <label class="booking-field">Email for your reading<input type="email" data-booking-email autocomplete="email" inputmode="email" maxlength="120" required /></label>
             <p class="booking-status" data-booking-status role="status"></p>
-            <label class="booking-honey" aria-hidden="true">Company<input data-booking-honey tabindex="-1" autocomplete="off" /></label>
           </div>
           <label class="terms-consent" for="terms-consent"><input id="terms-consent" type="checkbox" data-terms-consent /><span>I have read and agree to the Terms &amp; Conditions.</span></label>
         </div>

@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="patti-studio.css?v=20260828-2" />
     <link rel="stylesheet" href="oracle-light-blue.css?v=20260831-type1" />
     <script src="atmosphere.js?v=20260825-9" data-atmosphere defer></script>
-    <script src="script.js?v=20260909-home" defer></script>
+    <script src="script.js?v=20261101-stripe" defer></script>
     <script src="free-online-oracle-labels.js?v=20260827-1" defer></script>
     <script src="ux-observer.js?v=20260825-2" data-clarity-project-id="" defer></script>
     <script src="tree-oracle.js?v=20260830-tattoo2" defer></script>
@@ -80,8 +80,17 @@
         ]
       }
     </script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" />
+    <link rel="stylesheet" href="terminal-skin.css?v=20261101-31" />
+    <script src="matrix-rain.js?v=20261101-6" defer></script>
+    <script src="tree-of-life.js?v=20261101-1" defer></script>
+    <script src="holo-cards.js?v=20261101-5" defer></script>
+    <script src="typewriter.js?v=20261101-1" defer></script>
   </head>
   <body class="oracle-page tree-oracle-page">
+    <canvas class="net-canvas" data-net aria-hidden="true"></canvas>
     <a class="skip-link" href="#main">Skip to the tree oracle</a>
 
     <header class="site-header" data-header>
@@ -121,9 +130,9 @@
 
         <div class="shell oracle-layout">
           <div class="oracle-intro">
-            <p class="eyebrow">The Tree Calling · Free online oracle</p>
-            <h1 id="tree-oracle-title">Free Tree Oracle Card</h1>
-            <p class="oracle-lede">
+            <p class="eyebrow" data-type="hero">The Tree Calling · Free online oracle</p>
+            <h1 data-type="hero" data-type-speed="70" id="tree-oracle-title">Free Tree Oracle Card</h1>
+            <p class="oracle-lede" data-type="hero" data-type-speed="34">
               One tree is reaching through the living network to meet you today. Let its shape,
               story, and invitation help you notice what is already stirring within you.
             </p>
@@ -132,7 +141,8 @@
               breath. The meaning may arrive as a feeling now, or echo later in a leaf, a dream, a
               conversation, or an unexpected tree along your path.
             </p>
-          </div>
+            <p class="matrix-msg" data-type="hero" data-type-speed="45">&gt; you have popped out of the matrix. let’s root new roots.</p>
+            </div>
 
           <div class="oracle-experience" data-tree-oracle>
             <div class="oracle-card tree-oracle-card" data-tree-oracle-card>
@@ -283,6 +293,7 @@
 
       <section class="oracle-explainer section shell" aria-labelledby="network-title">
         <div>
+          <p class="matrix-msg" data-type="scroll" data-type-speed="45">&gt; signal received from the root network. you are already connected.</p>
           <p class="eyebrow ink">The living network</p>
           <h2 id="network-title">A calling is an invitation to pay attention.</h2>
         </div>

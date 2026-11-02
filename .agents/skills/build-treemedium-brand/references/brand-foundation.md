@@ -32,8 +32,8 @@ photography have been confirmed yet. Never invent them.
 
 `Tree Medium reading and coaching` is the confirmed service and costs $44. Patti emails a private
 recorded YouTube link, about 5–7 minutes, within 1–3 business days. Before payment, the booking
-window collects a first name and last initial, plus a phone number only if the client asks for a
-call after reviewing the reading. The website emails those details to `treemedium@proton.me`.
+window collects a first name, last initial, and email address for delivering the reading. There is
+no phone call. Those details go to Stripe at checkout, and Patti receives them with the payment notification.
 There is no question field and no Calendly step. The Stripe checkout description should match this
 offer.
 

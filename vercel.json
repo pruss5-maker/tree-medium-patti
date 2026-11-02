@@ -2,6 +2,11 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/animal-adventure",
+      "destination": "/animal-oracle",
+      "permanent": true
+    },
+    {
       "source": "/animal-guide",
       "destination": "/animal-oracle",
       "permanent": true

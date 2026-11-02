@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="kela-story-readability.css?v=20260831-qela1" />
     <link rel="stylesheet" href="header-symbols.css?v=20260825-6" />
     <link rel="stylesheet" href="booking-modal.css?v=20260915-1" />
-    <script src="script.js?v=20260909-home" defer></script>
+    <script src="script.js?v=20261101-stripe" defer></script>
     <script src="free-online-oracle-labels.js?v=20260827-1" defer></script>
     <script type="application/ld+json">
       {
@@ -40,8 +40,16 @@
         ]
       }
     </script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" />
+    <link rel="stylesheet" href="terminal-skin.css?v=20261101-31" />
+    <script src="matrix-rain.js?v=20261101-6" defer></script>
+    <script src="tree-of-life.js?v=20261101-1" defer></script>
+    <script src="typewriter.js?v=20261101-1" defer></script>
   </head>
   <body class="patti-door-page meet-kela-page">
+    <canvas class="net-canvas" data-net aria-hidden="true"></canvas>
     <a class="skip-link" href="#main">Skip to KELA</a>
     <header class="site-header" data-header>
       <a class="wordmark" href="/" aria-label="KELA home"><span>KELA</span><small>Messages from the Trees</small></a>
@@ -67,7 +75,7 @@
         </figure>
         <div class="patti-kela-copy">
           <p class="portal-eyebrow">Messages from the Trees</p>
-          <h1 id="kela-title">Meet KELA.</h1>
+          <h1 data-type="hero" data-type-speed="60" id="kela-title">Meet KELA.</h1>
           <p><strong class="patti-kela-name">KELA</strong> is the name the trees gave Patti for their collective voice, many trees speaking together across the Earth and beyond.</p>
           <p>In 2024, Patti’s ability to receive and communicate messages with trees came into focus. In one of the moments that became central to her story, KELA asked Patti, <strong>“Why haven’t you asked the trees to protect your mind and energy yet?”</strong></p>
           <p>The trees describe themselves as the sling that can help take down the Goliath of humanity’s repetitive thoughts that no longer serve us. KELA has shown Patti unkind thoughts as bugs gathering around the mind and energy field, taking up the space where peace, ideas, and possibility want to live.</p>
@@ -156,18 +164,16 @@
         </header>
         <div class="terms-dialog-content">
           <p id="terms-intro">Patti emails you a private recorded YouTube link, about 5–7 minutes, with what comes through from the trees. You should receive that reading in 1–3 business days.</p>
-          <div class="terms-price" aria-label="Tree Medium reading and coaching price: 44 dollars"><div><p>Tree Medium reading and coaching</p><small>5–7 minute private YouTube reading · optional phone call</small></div><strong>$44</strong></div>
-          <div class="terms-simple-copy"><p>Your name is sent to Patti before payment. Secure payment is handled by Stripe.</p><p>Refunds are available when you cancel by email at least 24 hours before a scheduled phone call, or before the reading is emailed if you did not ask for a call.</p><div class="terms-links"><a href="/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a><a href="/privacy" target="_blank" rel="noopener">Privacy Notice</a></div></div>
+          <div class="terms-price" aria-label="Tree Medium reading and coaching price: 44 dollars"><div><p>Tree Medium reading and coaching</p><small>5–7 minute private YouTube reading, emailed to you</small></div><strong>$44</strong></div>
+          <div class="terms-simple-copy"><p>Your name and email go to Stripe’s secure checkout, and Patti receives them with your payment so she knows where to send your reading.</p><p>Refunds are available when you cancel by email before the reading is emailed.</p><div class="terms-links"><a href="/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a><a href="/privacy" target="_blank" rel="noopener">Privacy Notice</a></div></div>
           <div class="booking-intake">
             <div class="booking-name">
               <label class="booking-field">First name<input data-booking-first autocomplete="given-name" maxlength="30" /></label>
               <label class="booking-field">Last initial<input data-booking-initial maxlength="1" autocapitalize="characters" /></label>
             </div>
             <p class="booking-example">Example: John S.</p>
-            <label class="booking-call"><input type="checkbox" data-booking-call /><span>Check this box if you would like a phone call with Patti after you review the reading, to go over the results and how to connect more with the trees and spirits.</span></label>
-            <label class="booking-field" data-booking-phone-field hidden>Phone number<input type="tel" data-booking-phone autocomplete="tel" inputmode="tel" maxlength="24" disabled /></label>
+            <label class="booking-field">Email for your reading<input type="email" data-booking-email autocomplete="email" inputmode="email" maxlength="120" required /></label>
             <p class="booking-status" data-booking-status role="status"></p>
-            <label class="booking-honey" aria-hidden="true">Company<input data-booking-honey tabindex="-1" autocomplete="off" /></label>
           </div>
           <label class="terms-consent" for="kela-terms-consent"><input id="kela-terms-consent" type="checkbox" data-terms-consent /><span>I have read and agree to the Terms &amp; Conditions.</span></label>
         </div>

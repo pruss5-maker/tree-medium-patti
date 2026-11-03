@@ -95,11 +95,10 @@
         }
         note.textContent = `★ ${golden}`;
       } else note?.remove();
-      art.classList.remove("is-photo");
-      showHolo(art, lineArt(card), () => {
-        art.classList.add("is-photo");
-        art.src = photo?.getAttribute("src") || raster.getAttribute("src");
-      });
+      // The card's original photograph, shown faded inside the frame.
+      art.classList.remove("holo-ready");
+      art.classList.add("is-photo");
+      art.src = raster.getAttribute("src");
       // Replay the build-up each time a new card arrives.
       stage.classList.remove("is-building");
       void stage.offsetWidth;
@@ -173,7 +172,6 @@
     const card = parseCard(img.getAttribute("src"));
     if (!card) return;
     const original = img.getAttribute("src");
-    img.classList.add("holo-thumb");
-    showHolo(img, lineArt(card), () => { img.classList.remove("holo-thumb"); img.src = original; });
+    img.classList.add("photo-thumb");
   });
 })();

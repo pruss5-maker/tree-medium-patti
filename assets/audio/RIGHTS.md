@@ -1,5 +1,18 @@
 # Tree Medium music: rights record
 
+## Root Signal (current site track)
+
+`Root Signal` is an original ambient instrumental composed for the KELA website on November 2,
+2026. Its composition, synthesis, and render source are stored in `tools/render-root-signal.mjs`.
+
+Every sound is generated from project-authored synthesis. The recording contains no imported
+performances, recordings, loops, or samples.
+
+- Track title: `Root Signal`
+- Website artist credit: `Tree Medium`
+- Duration: 2 minutes, seamless loop
+- Website formats: Ogg Vorbis and MP3
+
 ## Mercer Grove Swing
 
 `Mercer Grove Swing` is an original instrumental composition created for the Tree Medium website

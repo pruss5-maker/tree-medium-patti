@@ -1,15 +1,37 @@
 {
   "reviewIntervalHours": 12,
-  "lastReviewed": "2026-09-09",
+  "lastReviewed": "2026-11-02",
   "tracks": [
+    {
+      "id": "root-signal",
+      "title": "Root Signal",
+      "status": "cleared",
+      "rightsBasis": "Original KELA composition rendered entirely from project-authored synthesis (tools/render-root-signal.mjs); no third-party recordings, performances, loops, or samples.",
+      "sources": [
+        {
+          "src": "/assets/audio/root-signal.ogg",
+          "type": "audio/ogg"
+        },
+        {
+          "src": "/assets/audio/root-signal.mp3",
+          "type": "audio/mpeg"
+        }
+      ]
+    },
     {
       "id": "mercer-grove-swing",
       "title": "Mercer Grove Swing",
       "status": "cleared",
       "rightsBasis": "Original Tree Medium composition rendered entirely from project-authored synthesis; no third-party recordings, performances, loops, or samples.",
       "sources": [
-        { "src": "/assets/audio/mercer-grove-swing.ogg", "type": "audio/ogg" },
-        { "src": "/assets/audio/mercer-grove-swing.mp3", "type": "audio/mpeg" }
+        {
+          "src": "/assets/audio/mercer-grove-swing.ogg",
+          "type": "audio/ogg"
+        },
+        {
+          "src": "/assets/audio/mercer-grove-swing.mp3",
+          "type": "audio/mpeg"
+        }
       ]
     }
   ]

@@ -25,3 +25,7 @@
 ## Discovery
 
 - [XML sitemap](https://treemedium.vercel.app/sitemap.xml)
+
+## Lumen Pleroma
+
+- [Lumen Pleroma](https://lumenpleroma.com/): the intention field. People declare what they truly want, and people whose intentions complement theirs find each other, the way trees share through their roots.

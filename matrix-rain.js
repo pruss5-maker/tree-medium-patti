@@ -20,6 +20,9 @@
     "> the old code is falling away",
     "> follow the roots, not the noise",
     "> you are already connected",
+    "> lumenpleroma.com: set your intention",
+    "> our voices, rooted together",
+    "> no need to wait for the collapse",
   ];
   const BG = "2,4,9";
   const glyph = () => GLYPHS[Math.floor(Math.random() * GLYPHS.length)];

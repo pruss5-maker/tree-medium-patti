@@ -1,17 +1,17 @@
 (() => {
   const preferenceKey = "kela-ambient-jazz-muted-v1";
   const positionKey = "kela-ambient-jazz-position-v1";
-  const rightsKey = "kela-ambient-jazz-rights-v2";
+  const rightsKey = "kela-ambient-jazz-rights-v3";
   const rightsUrl = "/assets/audio/music-rights.json";
   const twelveHours = 12 * 60 * 60 * 1000;
-  const listeningVolume = 0.42;
+  const listeningVolume = 0.2;
   const fallbackTrack = {
-    id: "mercer-grove-swing",
-    title: "Mercer Grove Swing",
+    id: "root-signal",
+    title: "Root Signal",
     status: "cleared",
     sources: [
-      { src: "/assets/audio/mercer-grove-swing.ogg", type: "audio/ogg" },
-      { src: "/assets/audio/mercer-grove-swing.mp3", type: "audio/mpeg" },
+      { src: "/assets/audio/root-signal.ogg", type: "audio/ogg" },
+      { src: "/assets/audio/root-signal.mp3", type: "audio/mpeg" },
     ],
   };
 
@@ -148,12 +148,12 @@
     if (isMuted || !isReady) return;
     try {
       player.muted = false;
-      player.volume = Math.max(player.volume, 0.07);
+      player.volume = Math.max(player.volume, 0.01);
       await player.play();
       hasStarted = true;
-      fadeTo(listeningVolume, 560);
+      fadeTo(listeningVolume, 3500);
       updateButton();
-      if (announceStart) announce(`Soft background jazz playing: ${selectedTrack.title}.`);
+      if (announceStart) announce(`Ambient background music playing: ${selectedTrack.title}.`);
     } catch {
       button.classList.add("is-waiting");
       updateButton();

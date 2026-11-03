@@ -158,8 +158,14 @@
     root.querySelectorAll?.(MEMORY_IMGS).forEach((img) => {
       const src = img.getAttribute("src") || "";
       if (img.dataset.holoSrc === src || !src.includes("memory-games/line-art/")) return;
-      img.dataset.holoSrc = src;
-      holoize(src).then((url) => { img.src = url; img.dataset.holoSrc = url; img.classList.add("holo-ready"); }).catch(() => {});
+      // Swap the coloring-page outline for the matching oracle photograph.
+      const m = /line-art\/(tree|animal|plant)\/([a-z0-9-]+)\.webp/.exec(src);
+      if (!m) return;
+      const photo = `assets/oracle-cards/${m[1]}/${m[2]}-front.webp?v=20260828-1`;
+      img.dataset.holoSrc = photo;
+      img.classList.add("memory-photo");
+      img.onerror = () => { img.onerror = null; img.classList.remove("memory-photo"); img.dataset.holoSrc = src; img.src = src; };
+      img.src = photo;
     });
   };
   holoMemory(document);

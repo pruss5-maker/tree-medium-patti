@@ -43,7 +43,7 @@
     </svg>
     <span class="sr-only" data-ambient-jazz-label></span>
   `;
-  button.dataset.tooltip = "Soft jazz will begin after your first tap";
+  button.dataset.tooltip = "Ambient music will begin after your first tap";
 
   const status = document.createElement("span");
   status.className = "sr-only";
@@ -75,12 +75,12 @@
 
   const updateButton = () => {
     const waiting = !hasStarted && !isMuted;
-    const accessibleLabel = isMuted || !hasStarted ? "Play soft background jazz" : "Mute soft background jazz";
+    const accessibleLabel = isMuted || !hasStarted ? "Play ambient background music" : "Mute ambient background music";
     const tooltip = isMuted
-      ? "Play soft jazz"
+      ? "Play ambient music"
       : waiting
-        ? "Soft jazz will begin after your first tap"
-        : "Mute soft jazz";
+        ? "Ambient music will begin after your first tap"
+        : "Mute ambient music";
 
     button.classList.toggle("is-muted", isMuted);
     button.classList.toggle("is-waiting", waiting);
@@ -170,7 +170,7 @@
     rememberPosition();
     fadeTo(0, 420, () => player.pause());
     updateButton();
-    announce("Background jazz muted.");
+    announce("Background music muted.");
   };
 
   const unmuteMusic = async () => {

@@ -481,3 +481,52 @@ html body .terms-dialog .terms-consent input{accent-color:#4de2ff}
 html body .terms-dialog .eyebrow,html body .terms-dialog .terms-oracle-heading{text-align:left!important;justify-content:flex-start!important;align-items:flex-start!important}
 html body .terms-dialog .terms-oracle-heading{display:block!important}
 }
+
+/* ===== Polish pass ===== */
+@media screen{
+/* Menus: Lumen Pleroma link. */
+html body .site-nav a.nav-lp{color:#3dff9a!important;-webkit-text-fill-color:#3dff9a!important}
+/* Minimum readable sizes on Meet KELA and the memory games. */
+.meet-kela-page cite,.meet-kela-page cite *{font-size:.875rem!important}
+.kela-origin-note,.kela-origin-note *{font-size:.875rem!important;line-height:1.55!important}
+.meet-kela-page small,.kela-photo-oracle span,.kela-photo-brand small{font-size:.875rem!important}
+.memory-status{font-size:.95rem!important}
+/* Body copy over the glowing tree. */
+main p,main li{text-shadow:0 0 6px #02040a,0 0 2px #02040a}
+/* Memory games: real photos, softly framed (replaces neon line art). */
+html body img.memory-photo{filter:saturate(.9) brightness(.92)!important;mix-blend-mode:normal!important;object-fit:cover!important;object-position:center 30%!important;width:100%!important;height:100%!important;border-radius:6px!important;opacity:1!important;-webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,#000 72%,transparent 100%)}
+html body .memory-card-front img.memory-photo:not(.holo-ready){opacity:1!important}
+html body .memory-card-front{padding:6px 6px 8px!important}
+html body .memory-hub-art{padding:0!important;overflow:hidden}
+/* Booking steps (Meet KELA window). */
+html body .terms-dialog .booking-steps{list-style:none!important;counter-reset:bs;margin:0 0 16px!important;padding:0!important;display:grid;gap:8px}
+html body .terms-dialog .booking-steps li{counter-increment:bs;position:relative;padding:10px 12px 10px 44px!important;font-size:.95rem!important;line-height:1.5!important;color:#c9d6e8!important;-webkit-text-fill-color:#c9d6e8!important;background:#030914!important;border:1px solid rgba(77,226,255,.3)!important;border-radius:4px!important;text-align:left!important;text-shadow:none!important}
+html body .terms-dialog .booking-steps li::before{content:"0" counter(bs)!important;position:absolute;left:12px;top:10px;font-weight:800;color:#4de2ff;background:none!important}
+html body .terms-dialog .booking-steps b{color:#fff!important;-webkit-text-fill-color:#fff!important}
+}
+@media screen and (max-width:700px){
+/* Phones: controls live in a slim top bar instead of floating over titles. */
+html body .site-header{position:sticky!important;top:0!important;z-index:150!important;min-height:66px!important;padding-right:156px!important;background:#03060c!important;border-bottom:1px solid rgba(142,201,224,.22)!important}
+html body .site-header .wordmark small{display:none!important}
+html body .site-header .wordmark span{font-size:1.45rem!important}
+html body .thumb-control-rail{position:fixed!important;top:5px!important;right:8px!important;left:auto!important;bottom:auto!important;display:flex!important;flex-direction:row!important;align-items:flex-start!important;gap:8px!important;z-index:160!important;width:auto!important;height:auto!important;transform:none!important}
+html body .thumb-control-rail > a,html body .thumb-control-rail > button{position:relative!important;width:42px!important;height:42px!important;min-width:42px!important;margin:0 0 14px!important;flex:none!important;transform:none!important}
+html body .thumb-control-rail .thumb-control-label{position:absolute!important;top:44px!important;left:50%!important;right:auto!important;bottom:auto!important;transform:translateX(-50%)!important;margin:0!important;padding:0 4px!important;font-size:11px!important;line-height:1.2!important;letter-spacing:.08em!important;border:0!important;background:none!important;white-space:nowrap;opacity:1!important;visibility:visible!important}
+html body.memory-page .memory-hero,html body .oracle-hero{padding-top:28px!important}
+/* Memory hub: one game per row. */
+html body .memory-hub-grid{grid-template-columns:1fr!important;gap:18px!important}
+html body .memory-hub-card{min-height:0!important;grid-template-rows:auto auto!important}
+html body .memory-hub-art{aspect-ratio:16/9;height:auto!important;min-height:0!important}
+html body .memory-hub-copy h2{font-size:1.5rem!important}
+html body .memory-hub-copy p,html body .memory-hub-copy small{font-size:.95rem!important}
+}
+@media screen{html body .site-header .wordmark{display:inline-flex!important;flex-direction:column;justify-content:center;min-height:44px;padding:6px 0!important}}
+@media screen and (max-width:700px){
+html body .memory-hub-grid{display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important;gap:18px!important}
+html body .memory-hub-grid > .memory-hub-card{width:100%!important;max-width:none!important;flex:none!important;transform:none!important}
+}
+@media screen{
+html body .memory-hub-art{position:relative!important;overflow:hidden!important}
+html body .memory-hub-art img.memory-photo{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-position:center 38%!important;-webkit-mask-image:none!important;mask-image:none!important;border-radius:0!important}
+}
+@media screen and (max-width:700px){html body .memory-hub-art{height:190px!important;aspect-ratio:auto!important}}

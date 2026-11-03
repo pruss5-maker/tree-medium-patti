@@ -129,6 +129,16 @@
     requestAnimationFrame(loop);
   };
 
+  // A message is placed in empty space; once the page scrolls, text could slide under it.
+  window.addEventListener("scroll", () => {
+    if (!phrase) return;
+    const p = phrase;
+    ctx.fillStyle = `rgb(${BG})`;
+    ctx.fillRect(p.x - 12, p.y - p.size - 2, p.tw + 24, p.size * 1.5 + 4);
+    phrase = null;
+    nextPhrase = Math.max(nextPhrase, 3);
+  }, { passive: true });
+
   let resizeTimer = 0;
   window.addEventListener("resize", () => {
     window.clearTimeout(resizeTimer);
